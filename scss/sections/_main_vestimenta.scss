@@ -1,0 +1,28 @@
+
+.conteCards-vesti{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-title-vesti{
+    font-weight: bold;
+    color: #000000;
+    background-color: #888383;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: 'DM Sans';
+        width: 210px;
+    margin: auto;
+    margin-bottom: 22px;
+    margin-top: -23px;
+}
+.card-text-vesti{
+    text-align: start;
+    font-family: 'DM Sans'
+}
+.precios-vesti {
+    margin-top: -34px;
+    margin-bottom: 19px;
+    color: #60ff60;
+    font-size: 27px;
+}

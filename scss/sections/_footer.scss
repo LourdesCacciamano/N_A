@@ -1,0 +1,82 @@
+.footer {
+    max-height: 34vh;
+    background-color: $gris-mas-oscuro;
+    padding: 20px 40px;
+    margin-top: 117px;
+
+    .section-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .conteRedes {
+        display: flex;
+        a {
+        text-decoration: none;
+        .what{
+            margin-left: 15px;
+        }
+    }
+
+    }
+    .redes {
+        display: flex;
+        font-size: 45px;
+        align-items: baseline;
+
+        h2 {
+            font-family: $bebas-neue;
+            font-size: 27px;
+            color: $gris-claro;
+            margin-left: -23px;
+            text-decoration: underline;
+        }
+    }
+
+    .fa-instagram {
+        margin-left: 20px;
+    }
+}
+
+.imgLogoFoot {
+    width: 14%;
+    margin-right: 42px;
+}
+
+.volverIni {
+    margin-right: 15px;
+    font-size: 33px;
+    background-color: #787171;
+    border-radius: 20px;
+    padding: 8px;
+
+    &:hover {
+        background-color: #ddd6d6;
+    }
+}
+
+.insta,
+.what {
+    &:hover {
+        background-color: #87877F;
+        border-radius: 25px;
+        padding: 5px
+    }
+}
+
+.insta {
+    margin-right: 5px;
+}
+.logoCopy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ .footer-copy {
+            margin-top: -42px;
+            margin-right: 32px;
+            color: #c1c1c1;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }

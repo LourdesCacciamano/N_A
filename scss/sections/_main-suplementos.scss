@@ -1,0 +1,95 @@
+.mainSuple{
+    min-height: 70vh;
+    margin-top: 200px;
+    padding: 10px;
+}
+
+.accordion1{
+    background-color: white;
+    border-color: black;
+}
+.accordion2{
+    margin-top: 10px;
+    background-color: white;
+    border-color: black;
+}
+.accordion3{
+    margin-top: 10px;
+    background-color: white;
+    border-color: black;
+}
+.btn13{
+    background-color: $gris-oscuro;
+    color: white;
+    font-family: $bebas-neue;
+    font-size: 25px;
+    &:focus{
+        background-color: $gris-oscuro;
+        color: white;
+        border-color: $gris-oscuro;
+        box-shadow: none;
+        
+    }
+    &:not(.collapsed){
+        background-color: $gris-oscuro;
+        color: white;
+        border-color: $gris-oscuro;
+        box-shadow: none;
+    }
+    &:hover{
+        background-color: rgba(53, 52, 52, 0.849);
+    }
+}
+.btn2{
+    background-color: $gris-claro;
+    color: black;
+    font-family: $bebas-neue;
+    font-size: 25px;
+    &:focus{
+        background-color: $gris-claro;
+        color: black;
+        border-color: $gris-claro;
+        box-shadow: none;
+    }
+    &:not(.collapsed){
+        background-color: $gris-claro;
+        color: black;
+        border-color: $gris-claro;
+        box-shadow: none;
+    }
+    &:hover{
+        background-color: rgba(53, 52, 52, 0.525);
+    }
+}
+/* Flecha cuando está cerrado */
+.accordion-button::after {
+    filter: invert(1); /* Cambia de negro a blanco */
+}
+
+/* Flecha cuando está abierto */
+.accordion-button:not(.collapsed)::after {
+    filter: invert(1); /* Blanco */
+}
+.conteTiposProte{
+    display: flex;
+    justify-content: space-around;
+}
+.conteTiposCrea{
+    display: flex;
+    justify-content: space-evenly;
+}
+.separador1CardOtros{
+    display: flex;
+    justify-content: space-around;
+}
+.separador2CardOtros{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+.conteTiposOtros{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}

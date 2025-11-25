@@ -1,0 +1,70 @@
+.mainForm{
+    min-height: 70vh;
+    margin-top: 208px;
+}
+.formulario{
+    background-color: $gris-mas-oscuro;
+    border-radius: 15px;
+    margin: 159px;
+    padding: 15px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2{
+    text-align: center;
+    margin-bottom: -144px;
+    font-family: $bebas-neue;
+    color: $gris-oscuro;
+    font-size: 40px;
+}
+
+.label{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.input-radio{
+    margin-left: 13px;
+}
+
+.input-text{
+    border-radius: 11px;
+    border-color: white;
+    padding: 3px;
+    &:hover{
+        background-color: #645e5e;
+        color: rgb(24, 23, 23);
+        border-color: #645e5e;
+    }
+}
+.input-number{
+    border-radius: 11px;
+    border-color: white;
+    padding: 2px;
+    width: 73px;
+    text-align: center;
+    &:hover{
+        background-color: #645e5e;
+        color: rgb(24, 23, 23);
+        border-color: #645e5e;
+    }
+}
+.labelDoble{
+    margin-left: 15px;
+}
+.contenedorBoton{
+    display: flex;
+    justify-content: center;
+}
+.botonEnviar{
+    border-radius: 14px;
+    border-color: #777575;
+    font-size: 22px;
+    padding: 7px 32px;
+    margin-top: 25px;
+    background-color: #645e5e;
+    &:hover{
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+}

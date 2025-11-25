@@ -1,0 +1,99 @@
+.mainIndex{
+    min-height: 70vh;
+    margin-top: 210px; // para separarlo del header
+    background-color: $gris-mas-claro;
+
+    h2{
+        margin-bottom: 12px;
+        margin-top: -49px;
+        font-family: $bebas-neue;
+        font-weight: bold;
+        color: $gris-mas-oscuro;
+    }
+    .animate__pulse{
+        animation-iteration-count: 2;
+        animation-duration: 2s;
+        animation-delay: 3s;
+    }
+}
+
+body{
+    background-color: $gris-mas-claro !important;
+}
+
+ /*CARROUSEL ---------------------------*/
+
+#carouselExampleSlidesOnly {
+    width: 100%; 
+    max-height: 350px; /* <--- Limita la altura del carrusel */
+    overflow: hidden; 
+    
+}
+
+.carousel-inner,
+.carousel-item {
+    height: 100%; 
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen se vea completa dentro de los 450px */
+    object-fit: contain; 
+}
+.img3Carrousel{
+    margin-top: -78px;
+}
+.img2Carrousel{
+    margin-top: -20px;
+    margin-right: 20px;
+}
+
+
+/*CARD ------------------------------*/
+.conteinerCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 24px;
+}
+
+.card{
+    background-color: $gris-oscuro;
+}
+
+.card-img-top{
+    border-radius: 10px;
+     &:hover {
+                    transform: scale(1.1);
+                    transition: 1s;
+            }
+}
+
+.card-body{
+    background-color: $gris-oscuro;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+.card-title{
+    
+    font-weight: bold;
+}
+
+.btn{
+    color: white;
+    background-color: black;
+    border-color: #767171;
+    &:hover{
+        background-color: #4b4a4a;
+        border-color:black ;
+    }
+  
+}
+// cuando apriete el btn se cambia a ese color
+.btn:active {
+    background-color: #615f5f !important;
+    border-color: #615f5f !important;
+    }

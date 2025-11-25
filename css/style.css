@@ -1,0 +1,504 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+/*------------- HEADER------------------*/
+.header {
+  background-color: #272924 !important;
+  width: 100%;
+  height: 140px; }
+
+.nav2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  .nav2 .barra-vertical {
+    width: 2px;
+    height: 109px;
+    background-color: #565252;
+    margin-bottom: 52px; }
+  .nav2 .barra-vertical-suplementos {
+    width: 2px;
+    height: 109px;
+    background-color: #565252;
+    margin-bottom: 75px; }
+  .nav2 .barra-vertical-vestimenta-planes {
+    width: 2px;
+    height: 109px;
+    background-color: #565252;
+    margin-bottom: 70px; }
+  .nav2 .barra-vertical-videos {
+    width: 2px;
+    height: 109px;
+    background-color: #565252;
+    margin-bottom: 60px; }
+  .nav2 .barra-vertical-formulario {
+    width: 2px;
+    height: 109px;
+    background-color: #565252;
+    margin-bottom: 87px; }
+  .nav2 .contLogo {
+    display: flex;
+    align-items: center;
+    padding-right: 15px; }
+  .nav2 .imgLogo {
+    margin-left: 9%;
+    margin-top: -31px;
+    width: 14%; }
+  .nav2 .inicio {
+    font-family: "Bebas Neue", sans-serif !important;
+    color: white;
+    font-size: 34px;
+    margin-bottom: 46px; }
+  .nav2 .inicioSuplementos {
+    font-family: "Bebas Neue", sans-serif !important;
+    color: white;
+    font-size: 34px;
+    margin-bottom: 70px; }
+  .nav2 .iniPlan {
+    font-size: 28px;
+    margin-bottom: 70px; }
+  .nav2 .inicioVestimentaVideo {
+    font-family: "Bebas Neue", sans-serif !important;
+    color: white;
+    font-size: 34px;
+    margin-bottom: 64px; }
+  .nav2 .volverInicio {
+    margin-left: 186%;
+    margin-bottom: 74px;
+    font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: underline;
+    color: #d2cfcb;
+    font-size: 36px; }
+    .nav2 .volverInicio:hover {
+      color: white; }
+  .nav2 .inicioFormulario {
+    font-family: "Bebas Neue", sans-serif !important;
+    color: white;
+    font-size: 34px;
+    margin-bottom: 84px; }
+  .nav2 .animate__backInRight {
+    animation-duration: 1s; }
+
+.container-fluid {
+  height: 177px; }
+
+.opMenu {
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif !important;
+  color: white; }
+
+.botonMenu {
+  color: black;
+  background-color: #d1cece;
+  margin-right: 30px;
+  margin-bottom: 47px; }
+  .botonMenu:hover {
+    background-color: #fff2f2; }
+
+.divOpMenu {
+  background-color: #87877F; }
+
+.divOpMenu2 {
+  background-color: #272924; }
+
+.divOpMenu3 {
+  background-color: #3F4239; }
+
+.logo {
+  width: 50%; }
+
+.logoPlan {
+  width: 16%; }
+
+/* Aplica al contenedor que tiene logo + INICIO */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  justify-content: flex-start;
+  /* espacio entre logo e INICIO */ }
+  .navbar-brand .navPlanes {
+    justify-content: flex-end !important; }
+
+/* Logo con barra a la derecha */
+img, svg {
+  vertical-align: middle;
+  margin-bottom: 53px; }
+
+.carritoPlanes {
+  margin-left: -67%;
+  padding-left: 34px; }
+  .carritoPlanes:hover {
+    transform: scale(1.2);
+    transition: 1s; }
+
+.carritoPlanesSupl {
+  margin-left: -65%;
+  padding-left: 24px;
+  margin-bottom: 72px; }
+  .carritoPlanesSupl:hover {
+    transform: scale(1.2); }
+
+.compraInicio:hover {
+  transform: scale(1.2); }
+
+.carritoVideo {
+  margin-left: 70%;
+  margin-bottom: 62px; }
+
+.carritoVest {
+  margin-left: -75%;
+  margin-bottom: 71px; }
+  .carritoVest:hover {
+    transform: scale(1.2); }
+
+.btnMenuSupl {
+  margin-bottom: 75px;
+  margin-right: 6px; }
+
+.btnMenuVest {
+  margin-right: 42px;
+  margin-bottom: 70px; }
+
+.botonMenuVideo {
+  color: black;
+  background-color: #d1cece;
+  margin-right: 30px;
+  margin-bottom: 60px; }
+  .botonMenuVideo:hover {
+    background-color: #fff2f2; }
+
+/* Submenu dropdown */
+.dropdown-menu {
+  position: relative;
+  z-index: 9999; }
+
+.animate__backInLeft {
+  animation-duration: 1s; }
+
+.animate__backInUp {
+  animation-duration: 1s; }
+
+.mainIndex {
+  min-height: 70vh;
+  margin-top: 210px;
+  background-color: #C9C6C7; }
+  .mainIndex h2 {
+    margin-bottom: 12px;
+    margin-top: -49px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    color: #272924; }
+  .mainIndex .animate__pulse {
+    animation-iteration-count: 2;
+    animation-duration: 2s;
+    animation-delay: 3s; }
+
+body {
+  background-color: #C9C6C7 !important; }
+
+/*CARROUSEL ---------------------------*/
+#carouselExampleSlidesOnly {
+  width: 100%;
+  max-height: 350px;
+  /* <--- Limita la altura del carrusel */
+  overflow: hidden; }
+
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+  width: 100%; }
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  /* Asegura que la imagen se vea completa dentro de los 450px */
+  object-fit: contain; }
+
+.img3Carrousel {
+  margin-top: -78px; }
+
+.img2Carrousel {
+  margin-top: -20px;
+  margin-right: 20px; }
+
+/*CARD ------------------------------*/
+.conteinerCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 24px; }
+
+.card {
+  background-color: #3F4239; }
+
+.card-img-top {
+  border-radius: 10px; }
+  .card-img-top:hover {
+    transform: scale(1.1);
+    transition: 1s; }
+
+.card-body {
+  background-color: #3F4239;
+  border-radius: 4px;
+  color: white;
+  text-align: center; }
+
+.card-title {
+  font-weight: bold; }
+
+.btn {
+  color: white;
+  background-color: black;
+  border-color: #767171; }
+  .btn:hover {
+    background-color: #4b4a4a;
+    border-color: black; }
+
+.btn:active {
+  background-color: #615f5f !important;
+  border-color: #615f5f !important; }
+
+.footer {
+  max-height: 34vh;
+  background-color: #272924;
+  padding: 20px 40px;
+  margin-top: 117px; }
+  .footer .section-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  .footer .conteRedes {
+    display: flex; }
+    .footer .conteRedes a {
+      text-decoration: none; }
+      .footer .conteRedes a .what {
+        margin-left: 15px; }
+  .footer .redes {
+    display: flex;
+    font-size: 45px;
+    align-items: baseline; }
+    .footer .redes h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 27px;
+      color: #87877F;
+      margin-left: -23px;
+      text-decoration: underline; }
+  .footer .fa-instagram {
+    margin-left: 20px; }
+
+.imgLogoFoot {
+  width: 14%;
+  margin-right: 42px; }
+
+.volverIni {
+  margin-right: 15px;
+  font-size: 33px;
+  background-color: #787171;
+  border-radius: 20px;
+  padding: 8px; }
+  .volverIni:hover {
+    background-color: #ddd6d6; }
+
+.insta:hover,
+.what:hover {
+  background-color: #87877F;
+  border-radius: 25px;
+  padding: 5px; }
+
+.insta {
+  margin-right: 5px; }
+
+.logoCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.footer-copy {
+  margin-top: -42px;
+  margin-right: 32px;
+  color: #c1c1c1;
+  font-size: 13px;
+  letter-spacing: 1px; }
+
+.mainForm {
+  min-height: 70vh;
+  margin-top: 208px; }
+
+.formulario {
+  background-color: #272924;
+  border-radius: 15px;
+  margin: 159px;
+  padding: 15px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+
+h2 {
+  text-align: center;
+  margin-bottom: -144px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #3F4239;
+  font-size: 40px; }
+
+.label {
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-size: 20px; }
+
+.input-radio {
+  margin-left: 13px; }
+
+.input-text {
+  border-radius: 11px;
+  border-color: white;
+  padding: 3px; }
+  .input-text:hover {
+    background-color: #645e5e;
+    color: #181717;
+    border-color: #645e5e; }
+
+.input-number {
+  border-radius: 11px;
+  border-color: white;
+  padding: 2px;
+  width: 73px;
+  text-align: center; }
+  .input-number:hover {
+    background-color: #645e5e;
+    color: #181717;
+    border-color: #645e5e; }
+
+.labelDoble {
+  margin-left: 15px; }
+
+.contenedorBoton {
+  display: flex;
+  justify-content: center; }
+
+.botonEnviar {
+  border-radius: 14px;
+  border-color: #777575;
+  font-size: 22px;
+  padding: 7px 32px;
+  margin-top: 25px;
+  background-color: #645e5e; }
+  .botonEnviar:hover {
+    background-color: black;
+    color: white; }
+
+.mainSuple {
+  min-height: 70vh;
+  margin-top: 200px;
+  padding: 10px; }
+
+.accordion1 {
+  background-color: white;
+  border-color: black; }
+
+.accordion2 {
+  margin-top: 10px;
+  background-color: white;
+  border-color: black; }
+
+.accordion3 {
+  margin-top: 10px;
+  background-color: white;
+  border-color: black; }
+
+.btn13 {
+  background-color: #3F4239;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px; }
+  .btn13:focus {
+    background-color: #3F4239;
+    color: white;
+    border-color: #3F4239;
+    box-shadow: none; }
+  .btn13:not(.collapsed) {
+    background-color: #3F4239;
+    color: white;
+    border-color: #3F4239;
+    box-shadow: none; }
+  .btn13:hover {
+    background-color: rgba(53, 52, 52, 0.849); }
+
+.btn2 {
+  background-color: #87877F;
+  color: black;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px; }
+  .btn2:focus {
+    background-color: #87877F;
+    color: black;
+    border-color: #87877F;
+    box-shadow: none; }
+  .btn2:not(.collapsed) {
+    background-color: #87877F;
+    color: black;
+    border-color: #87877F;
+    box-shadow: none; }
+  .btn2:hover {
+    background-color: rgba(53, 52, 52, 0.525); }
+
+/* Flecha cuando está cerrado */
+.accordion-button::after {
+  filter: invert(1);
+  /* Cambia de negro a blanco */ }
+
+/* Flecha cuando está abierto */
+.accordion-button:not(.collapsed)::after {
+  filter: invert(1);
+  /* Blanco */ }
+
+.conteTiposProte {
+  display: flex;
+  justify-content: space-around; }
+
+.conteTiposCrea {
+  display: flex;
+  justify-content: space-evenly; }
+
+.separador1CardOtros {
+  display: flex;
+  justify-content: space-around; }
+
+.separador2CardOtros {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px; }
+
+.conteTiposOtros {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-wrap: nowrap; }
+
+.conteCards-vesti {
+  display: flex;
+  justify-content: space-around; }
+
+.card-title-vesti {
+  font-weight: bold;
+  color: #000000;
+  background-color: #888383;
+  border-radius: 15px;
+  padding: 5px;
+  font-family: 'DM Sans';
+  width: 210px;
+  margin: auto;
+  margin-bottom: 22px;
+  margin-top: -23px; }
+
+.card-text-vesti {
+  text-align: start;
+  font-family: 'DM Sans'; }
+
+.precios-vesti {
+  margin-top: -34px;
+  margin-bottom: 19px;
+  color: #60ff60;
+  font-size: 27px; }
