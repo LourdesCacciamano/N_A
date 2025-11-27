@@ -119,8 +119,12 @@
     }
 }
 .divOpMenu{
-    background-color: $gris-claro;
+    background-color: #575755;
 }
+.offcanvas {
+    width: 260px !important; /* Cambiá el valor a lo que quieras */
+}
+
 .divOpMenu2{
     background-color: $gris-mas-oscuro;
 }
@@ -167,7 +171,7 @@ img, svg {
     padding-left: 24px;
     margin-bottom: 72px;
     &:hover {
-                transform: scale(1.2);
+                transform: scale(1.0);
             }
 }
 .compraInicio{

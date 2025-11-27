@@ -121,7 +121,11 @@
 }
 
 .divOpMenu {
-  background-color: #87877F;
+  background-color: #575755;
+}
+
+.offcanvas {
+  width: 260px !important; /* Cambiá el valor a lo que quieras */
 }
 
 .divOpMenu2 {
@@ -172,7 +176,7 @@ img, svg {
   margin-bottom: 72px;
 }
 .carritoPlanesSupl:hover {
-  transform: scale(1.2);
+  transform: scale(1);
 }
 
 .compraInicio:hover {
@@ -241,7 +245,7 @@ img, svg {
 .mainIndex .animate__pulse {
   animation-iteration-count: 2;
   animation-duration: 2s;
-  animation-delay: 3s;
+  animation-delay: 1s;
 }
 
 body {
@@ -264,9 +268,6 @@ body {
 .carousel-item img {
   width: 100%;
   height: 100%;
-  /* Asegura que la imagen se vea completa dentro de los 450px */
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .img3Carrousel {
@@ -288,6 +289,7 @@ body {
 
 .card {
   background-color: #3F4239;
+  box-shadow: 0px 4px 10px black;
 }
 
 .card-img-top {
@@ -305,8 +307,17 @@ body {
   text-align: center;
 }
 
-.card-title {
-  font-weight: bold;
+.card-title, .precio {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28px;
+}
+
+.card-text {
+  font-family: "DM Sans";
+  text-align: left;
+  margin-top: 28px;
+  font-size: 20px;
+  color: whitesmoke;
 }
 
 .btn {
@@ -317,6 +328,19 @@ body {
 .btn:hover {
   background-color: #4b4a4a;
   border-color: black;
+}
+
+.btn1 {
+  margin-bottom: -184px;
+}
+
+.btnn2 {
+  margin-bottom: -209px;
+}
+
+.btn3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .btn:active {
@@ -502,6 +526,14 @@ h2 {
   border-color: black;
 }
 
+.text-vesti {
+  font-family: "DM Sans";
+  text-align: left;
+  margin-top: 28px;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
 .btn13 {
   background-color: #3F4239;
   color: white;
@@ -546,6 +578,14 @@ h2 {
   background-color: rgba(53, 52, 52, 0.525);
 }
 
+.btnCreatina {
+  margin-top: 10px;
+}
+
+.titleSuple {
+  font-family: "Bebas Neue", sans-serif;
+}
+
 /* Flecha cuando está cerrado */
 .accordion-button::after {
   filter: invert(1); /* Cambia de negro a blanco */
@@ -584,9 +624,46 @@ h2 {
   flex-wrap: nowrap;
 }
 
+.card-title {
+  margin-top: -56px;
+}
+
+/* Oculto el radio original */
+.radioPersonalizado input[type=radio] {
+  display: none;
+}
+
+/* La “cápsula” */
+.radioPersonalizado span {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid #555;
+  border-radius: 50px; /* Forma de pastillita */
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* Cuando está seleccionado */
+.radioPersonalizado input[type=radio]:checked + span {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  transform: scale(1.05);
+}
+
+.opcionesSabor {
+  display: flex;
+  flex-direction: column; /* permite que salten a la siguiente línea */
+  gap: 8px; /* separación entre cápsulas */
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
 .conteCards-vesti {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .card-title-vesti {
@@ -599,7 +676,10 @@ h2 {
   width: 210px;
   margin: auto;
   margin-bottom: 22px;
-  margin-top: -23px;
+}
+
+.card {
+  border-color: white;
 }
 
 .card-text-vesti {
@@ -610,6 +690,49 @@ h2 {
 .precios-vesti {
   margin-top: -34px;
   margin-bottom: 19px;
-  color: #60ff60;
+  color: white;
   font-size: 27px;
+}
+
+/* Oculto el radio original */
+.radioPersonalizado input[type=radio] {
+  display: none;
+}
+
+/* La “cápsula” */
+.radioPersonalizado span {
+  display: inline-block;
+  padding: 2px 9px;
+  border: 1px solid #555;
+  border-radius: 50px; /* Forma de pastillita */
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* Cuando está seleccionado */
+.radioPersonalizado input[type=radio]:checked + span {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  transform: scale(1.05);
+}
+
+.formRemera {
+  margin-bottom: 20px;
+}
+
+.labelColor {
+  margin-top: 12px;
+}
+
+#carouselProducto2 .imag {
+  height: 100%;
+  border-radius: 12px;
+}
+
+#carouselProducto1 .imag {
+  height: 100%;
+  border-radius: 12px;
 }/*# sourceMappingURL=main.css.map */

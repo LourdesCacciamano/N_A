@@ -1,7 +1,7 @@
 
 .conteCards-vesti{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .card-title-vesti{
@@ -11,10 +11,12 @@
     border-radius: 15px;
     padding: 5px;
     font-family: 'DM Sans';
-        width: 210px;
+    width: 210px;
     margin: auto;
     margin-bottom: 22px;
-    margin-top: -23px;
+}
+.card{
+     border-color: white;
 }
 .card-text-vesti{
     text-align: start;
@@ -23,6 +25,44 @@
 .precios-vesti {
     margin-top: -34px;
     margin-bottom: 19px;
-    color: #60ff60;
+    color: white;
     font-size: 27px;
+}
+/* Oculto el radio original */
+.radioPersonalizado input[type="radio"] {
+    display: none;
+}
+
+/* La “cápsula” */
+.radioPersonalizado span {
+    display: inline-block;
+    padding: 2px 9px;
+    border: 1px solid #555;
+    border-radius: 50px; /* Forma de pastillita */
+    cursor: pointer;
+    margin-right: 8px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+/* Cuando está seleccionado */
+.radioPersonalizado input[type="radio"]:checked + span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    transform: scale(1.05);
+}
+.formRemera{
+        margin-bottom: 20px;
+}
+.labelColor{
+    margin-top: 12px;
+}
+#carouselProducto2 .imag{
+    height: 100%;
+    border-radius: 12px;
+}
+#carouselProducto1 .imag{
+    height: 100%;
+    border-radius: 12px;
 }
