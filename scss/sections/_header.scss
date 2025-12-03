@@ -48,7 +48,7 @@
         padding-right: 15px; 
     }
 
-    .imgLogo{
+    .imgLogo, .imgLogoForm, .imgLogoSuple{
         margin-left: 9%;
         margin-top: -31px;
         width: 14%;
@@ -97,6 +97,13 @@
         animation-duration: 1s;
     }
 }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white;
+    &:hover{
+        color: black;
+    }
+}
+
 .container-fluid{
     height: 177px;
 }
@@ -110,13 +117,8 @@
         }
 
 .botonMenu{
-    color: black;
-    background-color: #d1cece;
     margin-right: 30px;
     margin-bottom: 47px;
-    &:hover{
-        background-color: #fff2f2;
-    }
 }
 .divOpMenu{
     background-color: #575755;
@@ -157,55 +159,40 @@ img, svg {
     margin-bottom: 53px;
     
 }
+.compraInicio{
+    margin-left: 78px;
+    margin-bottom: 51px;
+}
 .carritoPlanes{
-    margin-left: -67%;
+    margin-left: -32%;
     padding-left: 34px;
-   
-            &:hover {
-                    transform: scale(1.2);
-                    transition: 1s;
-            }
 }
 .carritoPlanesSupl{
     margin-left: -65%;
-    padding-left: 24px;
-    margin-bottom: 72px;
-    &:hover {
-                transform: scale(1.0);
-            }
+    margin-bottom: 51px;
 }
-.compraInicio{
-    &:hover {
-                transform: scale(1.2);
-            }
-}
+
 .carritoVideo{
     margin-left: 70%;
     margin-bottom: 62px;
 }
 .carritoVest{
-    margin-left: -75%;
-    margin-bottom: 71px;
-    &:hover {
-                transform: scale(1.2);
-            }
+    margin-left: -47%;
+    margin-bottom: 54px;
 }
 .btnMenuSupl{
-    margin-bottom: 75px;
-    margin-right: 6px;
+    margin-bottom: 49px;
+    margin-right: 16px;
 }
 .btnMenuVest{
     margin-right: 42px;
     margin-bottom: 70px;
 }
 .botonMenuVideo{
-    color: black;
-    background-color: #d1cece;
+    border: none;
     margin-right: 30px;
     margin-bottom: 60px;
-    &:hover{
-        background-color: #fff2f2;
-    }
+    
 }
 /* Submenu dropdown */
 .dropdown-menu {
@@ -218,4 +205,159 @@ img, svg {
 }
 .animate__backInUp{
     animation-duration: 1s;
+}
+/* Eliminar ícono de bootstrap */
+.botonMenu .navbar-toggler-icon {
+    background-image: none !important;
+}
+
+/* Estilos del botón */
+.botonMenu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin-right: 30px;
+    margin-bottom: 47px;
+}
+
+/* NUEVO ICONO — 3 rayitas blancas */
+.menu-lines {
+    width: 27px;
+    height: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Líneas */
+/* Selector más fuerte → gana siempre */
+.menu-lines::before,
+.menu-lines::after,
+.menu-lines span {
+    content: "";
+    position: absolute;
+    height: 3px;         /* grosor */
+    width: 100%;
+    background: #fff !important;   /* 🔥 blanco garantizado */
+    border-radius: 20px;
+}
+.botonMenuVideo:focus,
+.botonMenuVideo:active,
+.botonMenuVideo:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+/* línea arriba */
+.menu-lines::before {
+    top: 0;
+}
+
+/* línea medio */
+.menu-lines span {
+    top: 9px;
+}
+
+/* línea abajo */
+.menu-lines::after {
+    bottom: 0;
+}
+.navbar-toggler,
+.botonMenu,
+.btnMenuSupl,
+.btnMenuVest,
+.botonMenuVideo {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    transform: none !important;
+}
+
+/* estado focus + active */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.botonMenu:focus,
+.botonMenu:active,
+.btnMenuSupl:focus,
+.btnMenuSupl:active,
+.btnMenuVest:focus,
+.btnMenuVest:active,
+.botonMenuVideo:focus,
+.botonMenuVideo:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+    transform: none !important;
+}
+
+
+@media (max-width: 390px){
+    .botonMenu{
+        margin-right: 12px;
+        margin-top: -189px;
+    }
+    .compraInicio{
+        margin-left: 280px;
+        margin-top: -191px;
+    }
+    .imgLogo{
+        margin-left: -5% !important;
+        margin-top: -14px !important;
+        width: 29% !important;
+    }
+    .inicio{
+        font-size: 27px !important;
+    }
+    .navbar-brand{
+        gap: 5px;
+    }
+    .header{
+        height: 110px;
+    }
+    .barra-vertical{
+        height: 87px !important;
+        margin-bottom: 63px !important;
+    }
+    .inicioFormulario{
+        font-size: 23px !important;
+    }
+    .imgLogoForm{
+        margin-top: -42px !important;  
+        margin-left: -5% !important;
+        width: 29% !important;
+    }
+    .imgLogoSuple{
+        margin-left: -4% !important;
+        margin-top: -29px !important;
+        width: 27% !important;
+        margin-right: -13px !important;
+    }
+    .volverInicio{
+        margin-left: 56% !important;
+        font-size: 20px !important;
+    }
+    .barra-vertical-formulario{
+        height: 86px !important;
+    }
+    .barra-vertical-suplementos{
+        height: 85px !important;
+    }
+    .inicioSuplementos{
+        font-size: 25px !important;
+    }
+    .btnMenuSupl{
+        margin-top: -216px;
+        margin-left: 304px;
+    }
+    .carritoPlanesSupl{
+        margin-left: 285px;
+        margin-top: -222px;
+    }
+
+    
 }

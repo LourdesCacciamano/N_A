@@ -1,5 +1,5 @@
 .mainSuple{
-    min-height: 70vh;
+    min-height: 40vh;
     margin-top: 200px;
     padding: 10px;
 }
@@ -108,6 +108,18 @@
 }
 .card-title{
     margin-top: -56px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+hr{
+    color: white;
+}
+h6{
+    color: white;
+}
+.card{
+    background-color: $gris-oscuro;
 }
 /* Oculto el radio original */
 .radioPersonalizado input[type="radio"] {
@@ -116,13 +128,16 @@
 /* La “cápsula” */
 .radioPersonalizado span {
     display: inline-block;
-    padding: 2px 9px;
-    border: 1px solid #555;
-    border-radius: 50px; /* Forma de pastillita */
+    padding: 1px 9px;
+    border: 1px solid #b0b0b0;
     cursor: pointer;
     margin-right: 8px;
     font-weight: bold;
     transition: all 0.2s ease;
+    color: white;
+}
+.formSuple{
+        text-align: center !important;
 }
 
 /* Cuando está seleccionado */
@@ -132,10 +147,53 @@
     border-color: #000;
     transform: scale(1.05);
 }
+.titLabel{
+    color: white;
+}
 .opcionesSabor {
     display: flex;
     flex-direction: column;     /* permite que salten a la siguiente línea */
     gap: 8px;             /* separación entre cápsulas */
     margin-top: 8px;
     margin-bottom: 10px;
+}
+.mediaProte1{
+    display: contents; /* ← NO altera el layout */
+    gap: 0;
+}
+.btn{
+    margin-left: 48px;
+    margin-top: 11px;
+}
+
+
+@media (max-width: 390px){
+    .mediaProte1{
+        display: flex;
+    }
+    .card{
+        width: 11rem !important;
+    }
+    .conteTiposProte{
+        flex-direction: column;
+        align-items: center;
+        gap: 18px
+    }
+    .card-img-top{
+            margin-bottom: 0px;
+    }
+    .titleSuple{
+        margin-top: -7px !important;
+    }
+    .text-vesti{
+        margin-top: 8px;
+        font-size: 13px;
+    }
+    h6{
+        font-size: 14px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+
 }

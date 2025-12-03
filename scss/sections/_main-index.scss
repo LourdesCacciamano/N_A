@@ -9,6 +9,8 @@
         font-family: $bebas-neue;
         font-weight: bold;
         color: $gris-mas-oscuro;
+        text-align: center;
+        font-size: 40px;
     }
     .animate__pulse{
         animation-iteration-count: 2;
@@ -57,7 +59,7 @@ body{
     padding: 24px;
 }
 
-.card{
+.card1, .card2, .card3{
     background-color: $gris-oscuro;
     box-shadow: 0px 4px 10px black;
 
@@ -71,22 +73,28 @@ body{
             }
 }
 
-.card-body{
+.card-body-index{
     background-color: $gris-oscuro;
     border-radius: 4px;
     color: white;
     text-align: center;
 }
-.card-title, .precio{
+.card-title-index{
+    font-family: $bebas-neue;
+    font-size: 28px;
+    margin-top: -20px;
+}
+.precio{
     font-family: $bebas-neue;
     font-size: 28px;
 }
-.card-text{
+.card-text-index{
     font-family: 'DM Sans';
     text-align: left;
     margin-top: 28px;
     font-size: 20px;
     color: whitesmoke;
+    padding: 10px;
 }
 
 .btn{
@@ -100,17 +108,63 @@ body{
   
 }
 .btn1{
-    margin-bottom: -184px;
+    margin-bottom: 15px;
+    margin-right: 60px;
 }
 .btnn2{
-     margin-bottom: -209px;
+    margin-bottom: 15px;
+    margin-right: 43px;
 }
 .btn3{
-    margin-top: 10px;
     margin-bottom: 10px;
+    margin-right: 44px;
 }
 // cuando apriete el btn se cambia a ese color
 .btn:active {
     background-color: #615f5f !important;
     border-color: #615f5f !important;
     }
+
+@media (max-width:396px){
+    .mainIndex h2{
+        margin-bottom: 3px;
+        margin-top: -91px;
+        font-size: 30px;
+        margin-left: 88px;
+    }
+    .conteinerCard{
+        display: flex;
+        flex-direction: column;
+    }
+    .card1{
+        width: 21rem !important;
+        height: 43rem !important;
+        margin-left: 3px !important;
+        margin-bottom: 25px;
+    }
+    .btn1{
+        margin-bottom: -20px;
+    }
+    .card-title {
+        margin-top: -41px !important;
+    }
+    .card-text{
+        font-size: 18px;
+        padding: 8px;
+    }
+    .card2{
+        width: 21rem !important;
+        height: 43rem !important;
+        margin-left: 3px !important;
+        margin-bottom: 25px;
+    }
+    .btnn2 {
+        margin-bottom: -19px;
+    }
+    .card3{
+          width: 21rem !important;
+        height: 43rem !important;
+        margin-left: 3px !important;
+        margin-bottom: 25px;
+    }
+}

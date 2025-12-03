@@ -10,7 +10,7 @@
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-h2{
+.tituloForm{
     text-align: center;
     margin-bottom: -144px;
     font-family: $bebas-neue;
@@ -22,22 +22,24 @@ h2{
     margin-right: 15px;
     margin-bottom: 15px;
     font-size: 20px;
+    font-family: math;
 }
 .input-radio{
     margin-left: 13px;
+    font-family: math;
 }
 
 .input-text{
     border-radius: 11px;
     border-color: white;
-    padding: 3px;
+    padding: 5px;
     &:hover{
         background-color: #645e5e;
         color: rgb(24, 23, 23);
         border-color: #645e5e;
     }
 }
-.input-number{
+.input-number, .input-number-dias{
     border-radius: 11px;
     border-color: white;
     padding: 2px;
@@ -50,7 +52,7 @@ h2{
     }
 }
 .labelDoble{
-    margin-left: 15px;
+    margin-left: 53px;
 }
 .contenedorBoton{
     display: flex;
@@ -67,4 +69,54 @@ h2{
         background-color: rgb(0, 0, 0);
         color: white;
     }
+}
+.planSolici {
+    margin-top: 150px;
+    margin-bottom: -137px;
+    color: $gris-oscuro;
+    font-size: 21px;
+}
+.radios{
+    display: contents; /* ← NO altera el layout */
+    gap: 0;
+}
+
+
+@media (max-width:396px){
+    .tituloForm{
+        font-size: 28px;
+        margin-top: -76px;
+    }
+    .planSolici{
+        font-size: 14px;
+    }
+    .formulario{
+        margin-top: 147px;
+        margin-left: 6px;
+        margin-bottom: 15px;
+        width: 97%;
+    }
+    .label{
+        font-size: 16px;
+    }
+    .radios{
+        display: flex;
+        justify-content: center;
+        gap: 7px;
+    }
+    .input-text{
+        margin-left: 33px;
+        width: 74%;
+    }
+    .input-text-contac{
+        margin-top: -10px;
+    }
+    .input-number-dias{
+        width: 69px;
+        margin-left: 8px;
+    }
+    .input-number{
+        width: 70px;
+    }
+
 }
