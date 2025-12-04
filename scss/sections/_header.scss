@@ -361,3 +361,31 @@ img, svg {
 
     
 }
+
+@media (max-width:430px){
+    .imgLogo{
+        margin-left: 0% !important;
+        margin-top: -26px !important;
+        width: 28% !important;
+        margin-right: -25px;
+    }
+    .header{
+        height: 110px;
+    }
+    .barra-vertical{
+        height: 91px !important;
+        margin-bottom: 68px !important;
+    }
+    .inicio{
+        font-size: 28px !important;
+        margin-bottom: 64px !important;
+    }
+    .compraInicio{
+        margin-left: 326px;
+        margin-top: -240px;
+    }
+    .botonMenu{
+        margin-top: -273px;
+        margin-left: 362px;
+    }
+}
