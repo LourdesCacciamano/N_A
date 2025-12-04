@@ -8,126 +8,121 @@
 .header {
   background-color: #272924 !important;
   width: 100%;
-  height: 140px;
+  height: 135px;
+  padding: 0 16px;
 }
 
+.header .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* LOGO + TEXTO */
 .nav2 {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  gap: 12px;
 }
-.nav2 .barra-vertical {
+
+.imgLogo,
+.imgLogoForm,
+.imgLogoSuple {
+  display: block;
+  width: 12%;
+}
+
+.inicio,
+.inicioSuplementos,
+.inicioVestimentaVideo,
+.inicioFormulario {
+  font-family: "Bebas Neue", sans-serif !important;
+  color: white;
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* BARRA */
+.barra-vertical,
+.barra-vertical-suplementos,
+.barra-vertical-vestimenta-planes,
+.barra-vertical-videos,
+.barra-vertical-formulario {
   width: 2px;
-  height: 109px;
+  height: 97px;
   background-color: #565252;
-  margin-bottom: 52px;
+  margin: 0;
 }
-.nav2 .barra-vertical-suplementos {
-  width: 2px;
-  height: 109px;
-  background-color: #565252;
-  margin-bottom: 75px;
-}
-.nav2 .barra-vertical-vestimenta-planes {
-  width: 2px;
-  height: 109px;
-  background-color: #565252;
-  margin-bottom: 70px;
-}
-.nav2 .barra-vertical-videos {
-  width: 2px;
-  height: 109px;
-  background-color: #565252;
-  margin-bottom: 60px;
-}
-.nav2 .barra-vertical-formulario {
-  width: 2px;
-  height: 109px;
-  background-color: #565252;
-  margin-bottom: 87px;
-}
-.nav2 .contLogo {
+
+/* ACCIONES DERECHA (carrito + menú) */
+.accionesHeader {
   display: flex;
   align-items: center;
-  padding-right: 15px;
-}
-.nav2 .imgLogo, .nav2 .imgLogoForm, .nav2 .imgLogoSuple {
-  margin-left: 9%;
-  margin-top: -31px;
-  width: 14%;
-}
-.nav2 .inicio {
-  font-family: "Bebas Neue", sans-serif !important;
-  color: white;
-  font-size: 34px;
-  margin-bottom: 46px;
-}
-.nav2 .inicioSuplementos {
-  font-family: "Bebas Neue", sans-serif !important;
-  color: white;
-  font-size: 34px;
-  margin-bottom: 70px;
-}
-.nav2 .iniPlan {
-  font-size: 28px;
-  margin-bottom: 70px;
-}
-.nav2 .inicioVestimentaVideo {
-  font-family: "Bebas Neue", sans-serif !important;
-  color: white;
-  font-size: 34px;
-  margin-bottom: 64px;
-}
-.nav2 .volverInicio {
-  margin-left: 186%;
-  margin-bottom: 74px;
-  font-weight: bold;
-  font-family: "Bebas Neue", sans-serif;
-  text-decoration: underline;
-  color: #d2cfcb;
-  font-size: 36px;
-}
-.nav2 .volverInicio:hover {
-  color: white;
-}
-.nav2 .inicioFormulario {
-  font-family: "Bebas Neue", sans-serif !important;
-  color: white;
-  font-size: 34px;
-  margin-bottom: 84px;
-}
-.nav2 .animate__backInRight {
-  animation-duration: 1s;
+  gap: 14px;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
-  color: white;
-}
-.navbar-nav .nav-link.active:hover, .navbar-nav .nav-link.show:hover {
-  color: black;
-}
-
-.container-fluid {
-  height: 177px;
+/* CARRITO */
+.compraInicio {
+  width: 26px;
+  margin-bottom: 5px;
 }
 
-.opMenu {
-  font-size: 25px;
-  font-family: "Bebas Neue", sans-serif !important;
-  color: white;
-}
-
+/* BOTÓN MENÚ */
 .botonMenu {
-  margin-right: 30px;
-  margin-bottom: 47px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ÍCONO MENÚ */
+.menu-lines {
+  width: 27px;
+  height: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+.menu-lines::before,
+.menu-lines::after,
+.menu-lines span {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fff !important;
+  border-radius: 20px;
+}
+
+.menu-lines::before {
+  top: 0;
+}
+
+.menu-lines span {
+  top: 9px;
+}
+
+.menu-lines::after {
+  bottom: 0;
+}
+
+/* OFFCANVAS */
+.offcanvas {
+  width: 260px !important;
 }
 
 .divOpMenu {
   background-color: #575755;
-}
-
-.offcanvas {
-  width: 260px !important; /* Cambiá el valor a lo que quieras */
 }
 
 .divOpMenu2 {
@@ -138,159 +133,35 @@
   background-color: #3F4239;
 }
 
-.logo {
-  width: 50%;
+/* LINKS */
+.opMenu {
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif !important;
+  color: white;
 }
 
-.logoPlan {
-  width: 16%;
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: white;
+}
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.show:hover {
+  color: black;
 }
 
-/* Aplica al contenedor que tiene logo + INICIO */
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  justify-content: flex-start; /* espacio entre logo e INICIO */
-}
-.navbar-brand .navPlanes {
-  justify-content: flex-end !important;
-}
-
-/* Logo con barra a la derecha */
-img, svg {
-  vertical-align: middle;
-  margin-bottom: 53px;
-}
-
-.compraInicio {
-  margin-left: 78px;
-  margin-bottom: 51px;
-}
-
-.carritoPlanes {
-  margin-left: -32%;
-  padding-left: 34px;
-}
-
-.carritoPlanesSupl {
-  margin-left: -65%;
-  margin-bottom: 51px;
-}
-
-.carritoVideo {
-  margin-left: 70%;
-  margin-bottom: 62px;
-}
-
-.carritoVest {
-  margin-left: -47%;
-  margin-bottom: 54px;
-}
-
-.btnMenuSupl {
-  margin-bottom: 49px;
-  margin-right: 16px;
-}
-
-.btnMenuVest {
-  margin-right: 42px;
-  margin-bottom: 70px;
-}
-
-.botonMenuVideo {
-  border: none;
-  margin-right: 30px;
-  margin-bottom: 60px;
-}
-
-/* Submenu dropdown */
-.dropdown-menu {
-  position: relative;
-  z-index: 9999;
-}
-
-.animate__backInLeft {
-  animation-duration: 1s;
-}
-
-.animate__backInUp {
-  animation-duration: 1s;
-}
-
-/* Eliminar ícono de bootstrap */
-.botonMenu .navbar-toggler-icon {
-  background-image: none !important;
-}
-
-/* Estilos del botón */
-.botonMenu {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0;
-  margin-right: 30px;
-  margin-bottom: 47px;
-}
-
-/* NUEVO ICONO — 3 rayitas blancas */
-.menu-lines {
-  width: 27px;
-  height: 22px;
-  position: relative;
-  display: inline-block;
-}
-
-/* Líneas */
-/* Selector más fuerte → gana siempre */
-.menu-lines::before,
-.menu-lines::after,
-.menu-lines span {
-  content: "";
-  position: absolute;
-  height: 3px; /* grosor */
-  width: 100%;
-  background: #fff !important; /* 🔥 blanco garantizado */
-  border-radius: 20px;
-}
-
-.botonMenuVideo:focus,
-.botonMenuVideo:active,
-.botonMenuVideo:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* línea arriba */
-.menu-lines::before {
-  top: 0;
-}
-
-/* línea medio */
-.menu-lines span {
-  top: 9px;
-}
-
-/* línea abajo */
-.menu-lines::after {
-  bottom: 0;
-}
-
+/* Quitar borde negro del botón menú en todas las páginas */
 .navbar-toggler,
 .botonMenu,
 .btnMenuSupl,
 .btnMenuVest,
 .botonMenuVideo {
-  outline: none !important;
-  box-shadow: none !important;
   border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
   background: transparent !important;
-  padding: 0 !important;
-  transform: none !important;
 }
 
-/* estado focus + active */
+/* Quitar borde también al hacer focus */
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .botonMenu:focus,
@@ -301,106 +172,38 @@ img, svg {
 .btnMenuVest:active,
 .botonMenuVideo:focus,
 .botonMenuVideo:active {
-  outline: none !important;
-  box-shadow: none !important;
   border: none !important;
-  background: transparent !important;
-  transform: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-@media (max-width: 390px) {
-  .botonMenu {
-    margin-right: 12px;
-    margin-top: -189px;
-  }
-  .compraInicio {
-    margin-left: 280px;
-    margin-top: -191px;
+/* MOBILE */
+@media (max-width: 430px) {
+  .header {
+    height: 95px;
   }
   .imgLogo {
-    margin-left: -5% !important;
-    margin-top: -14px !important;
-    width: 29% !important;
+    width: 103px;
   }
   .inicio {
-    font-size: 27px !important;
+    font-size: 24px;
   }
-  .navbar-brand {
+  .barra-vertical {
+    height: 45px;
+  }
+  .nav2 {
     gap: 5px;
   }
-  .header {
-    height: 110px;
-  }
-  .barra-vertical {
-    height: 87px !important;
-    margin-bottom: 63px !important;
-  }
-  .inicioFormulario {
-    font-size: 23px !important;
-  }
-  .imgLogoForm {
-    margin-top: -42px !important;
-    margin-left: -5% !important;
-    width: 29% !important;
-  }
-  .imgLogoSuple {
-    margin-left: -4% !important;
-    margin-top: -29px !important;
-    width: 27% !important;
-    margin-right: -13px !important;
-  }
-  .volverInicio {
-    margin-left: 56% !important;
-    font-size: 20px !important;
-  }
-  .barra-vertical-formulario {
-    height: 86px !important;
-  }
-  .barra-vertical-suplementos {
-    height: 85px !important;
-  }
-  .inicioSuplementos {
-    font-size: 25px !important;
-  }
-  .btnMenuSupl {
-    margin-top: -216px;
-    margin-left: 304px;
-  }
-  .carritoPlanesSupl {
-    margin-left: 285px;
-    margin-top: -222px;
-  }
-}
-@media (max-width: 430px) {
-  .imgLogo {
-    margin-left: 0% !important;
-    margin-top: -26px !important;
-    width: 28% !important;
-    margin-right: -25px;
-  }
-  .header {
-    height: 110px;
-  }
-  .barra-vertical {
-    height: 91px !important;
-    margin-bottom: 68px !important;
-  }
-  .inicio {
-    font-size: 28px !important;
-    margin-bottom: 64px !important;
-  }
   .compraInicio {
-    margin-left: 326px;
-    margin-top: -240px;
+    width: 22px;
   }
-  .botonMenu {
-    margin-top: -273px;
-    margin-left: 362px;
+  .accionesHeader {
+    gap: 7px;
   }
 }
 .mainIndex {
   min-height: 70vh;
-  margin-top: 210px;
+  padding-top: 200px;
   background-color: #C9C6C7;
 }
 .mainIndex h2 {
@@ -438,6 +241,8 @@ body {
 .carousel-item img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .img3Carrousel {
@@ -460,6 +265,7 @@ body {
 .card1, .card2, .card3 {
   background-color: #3F4239;
   box-shadow: 0px 4px 10px black;
+  width: 20rem;
 }
 
 .card-img-top {
@@ -475,12 +281,14 @@ body {
   border-radius: 4px;
   color: white;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
 }
 
 .card-title-index {
   font-family: "Bebas Neue", sans-serif;
   font-size: 28px;
-  margin-top: -20px;
 }
 
 .precio {
@@ -491,10 +299,9 @@ body {
 .card-text-index {
   font-family: "DM Sans";
   text-align: left;
-  margin-top: 28px;
   font-size: 20px;
   color: whitesmoke;
-  padding: 10px;
+  padding: 11px;
 }
 
 .btn {
@@ -507,70 +314,24 @@ body {
   border-color: black;
 }
 
-.btn1 {
-  margin-bottom: 15px;
-  margin-right: 60px;
-}
-
-.btnn2 {
-  margin-bottom: 15px;
-  margin-right: 43px;
+.btnIndex {
+  width: 110px;
+  margin: auto;
 }
 
 .btn3 {
   margin-bottom: 10px;
-  margin-right: 44px;
 }
 
-.btn:active {
+.btnIndex:active {
   background-color: #615f5f !important;
   border-color: #615f5f !important;
 }
 
-@media (max-width: 396px) {
-  .mainIndex h2 {
-    margin-bottom: 3px;
-    margin-top: -91px;
-    font-size: 30px;
-    margin-left: 88px;
-  }
-  .conteinerCard {
-    display: flex;
-    flex-direction: column;
-  }
-  .card1 {
-    width: 21rem !important;
-    height: 43rem !important;
-    margin-left: 3px !important;
-    margin-bottom: 25px;
-  }
-  .btn1 {
-    margin-bottom: -20px;
-  }
-  .card-title {
-    margin-top: -41px !important;
-  }
-  .card-text {
-    font-size: 18px;
-    padding: 8px;
-  }
-  .card2 {
-    width: 21rem !important;
-    height: 43rem !important;
-    margin-left: 3px !important;
-    margin-bottom: 25px;
-  }
-  .btnn2 {
-    margin-bottom: -19px;
-  }
-  .card3 {
-    width: 21rem !important;
-    height: 43rem !important;
-    margin-left: 3px !important;
-    margin-bottom: 25px;
-  }
-}
 @media (max-width: 430px) {
+  .mainIndex {
+    padding-top: 208px;
+  }
   .mainIndex h2 {
     margin-bottom: 3px;
     margin-top: -93px;
@@ -582,8 +343,9 @@ body {
   }
   .card1, .card2, .card3 {
     margin: auto;
-    width: 22rem !important;
+    width: 90% !important;
     margin-bottom: 20px;
+    max-width: 360px;
   }
   .card-title-index {
     margin-top: -38px;
@@ -594,6 +356,10 @@ body {
   .card-img-top:hover {
     transform: none;
     transition: none;
+  }
+  .card-body-index {
+    margin-top: 19px;
+    margin-bottom: 10px;
   }
 }
 .footer {
@@ -609,32 +375,26 @@ body {
 }
 .footer .conteRedes {
   display: flex;
+  gap: 16px;
 }
 .footer .conteRedes a {
   text-decoration: none;
 }
-.footer .conteRedes a .what {
-  margin-left: 15px;
-}
 .footer .redes {
   display: flex;
   font-size: 45px;
-  align-items: baseline;
+  align-items: center;
+  flex-direction: column;
 }
 .footer .redes h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 27px;
   color: #87877F;
-  margin-left: -23px;
   text-decoration: underline;
-}
-.footer .fa-instagram {
-  margin-left: 20px;
 }
 
 .imgLogoFoot {
   width: 14%;
-  margin-right: 42px;
 }
 
 .volverIni {
@@ -655,10 +415,6 @@ body {
   padding: 5px;
 }
 
-.insta {
-  margin-right: 5px;
-}
-
 .logoCopy {
   display: flex;
   flex-direction: column;
@@ -666,72 +422,30 @@ body {
 }
 
 .footer-copy {
-  margin-top: -42px;
-  margin-right: 32px;
   color: #c1c1c1;
   font-size: 13px;
   letter-spacing: 1px;
+  margin: auto;
 }
 
-@media (max-width: 396px) {
-  .footer {
-    padding: none;
-  }
-  .footer .redes {
-    display: flex;
-    font-size: 45px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .footer .redes h2 {
-    font-size: 19px;
-  }
-  .what, .insta {
-    font-size: 33px;
-  }
-  .conteRedes {
-    align-items: baseline;
-    margin-top: -20px;
-    margin-left: -33px;
-  }
-  .footer-copy {
-    margin-bottom: -10px;
-    margin-left: 23px;
-    font-size: 11px;
-  }
-  .volverIni {
-    margin-right: -27px;
-    font-size: 20px;
-    padding: 6px;
-  }
-  .imgLogoFoot {
-    width: 39%;
-    margin-right: 12px;
-  }
-}
 @media (max-width: 430px) {
   .redes {
     display: flex;
-    font-size: 45px;
-    flex-wrap: wrap;
-    justify-content: center;
+    font-size: 25px !important;
+    align-items: flex-end;
   }
   .redes h2 {
-    font-size: 18px;
+    font-size: 18px !important;
   }
   .what, .insta {
     font-size: 33px;
   }
   .conteRedes {
     align-items: baseline;
-    margin-top: -20px;
-    margin-left: -33px;
   }
   .footer-copy {
-    margin-bottom: -10px;
-    margin-left: 23px;
-    font-size: 11px;
-    margin-top: -60px;
+    font-size: 10px;
+    margin-left: 46px;
   }
   .volverIni {
     margin-right: -27px;
@@ -739,8 +453,14 @@ body {
     padding: 6px;
   }
   .imgLogoFoot {
-    width: 39%;
+    width: 36%;
     margin-right: 12px;
+  }
+  .logoCopy {
+    gap: 7px;
+  }
+  .footer {
+    padding-bottom: 45px;
   }
 }
 .mainForm {
@@ -751,18 +471,40 @@ body {
 .formulario {
   background-color: #272924;
   border-radius: 15px;
-  margin: 159px;
-  padding: 15px;
+  margin: 30px;
+  padding: 30px;
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .tituloForm {
   text-align: center;
-  margin-bottom: -144px;
   font-family: "Bebas Neue", sans-serif;
   color: #3F4239;
   font-size: 40px;
+}
+
+.conteHeaderForm {
+  display: flex;
+}
+
+.conteImg-barra-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volverIndex {
+  color: #e4e4e4;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px;
+}
+.volverIndex:hover {
+  color: white;
+}
+
+.aVolverIndex {
+  text-decoration: none;
 }
 
 .label {
@@ -824,8 +566,7 @@ body {
 }
 
 .planSolici {
-  margin-top: 150px;
-  margin-bottom: -137px;
+  margin-top: 15px;
   color: #3F4239;
   font-size: 21px;
 }
@@ -1058,11 +799,10 @@ h6 {
   gap: 0;
 }
 
-.btn {
-  margin-left: 48px;
-  margin-top: 11px;
-}
-
+/*.btn{
+    margin-left: 48px;
+    margin-top: 11px;
+}*/
 @media (max-width: 390px) {
   .mediaProte1 {
     display: flex;

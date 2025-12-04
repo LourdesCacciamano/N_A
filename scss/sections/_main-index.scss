@@ -1,6 +1,6 @@
 .mainIndex{
     min-height: 70vh;
-    margin-top: 210px; // para separarlo del header
+    padding-top: 200px; // para separarlo del header
     background-color: $gris-mas-claro;
 
     h2{
@@ -28,19 +28,17 @@ body{
 #carouselExampleSlidesOnly {
     width: 100%; 
     max-height: 350px; /* <--- Limita la altura del carrusel */
-    overflow: hidden; 
-    
+    overflow: hidden;
 }
-
 .carousel-inner,
 .carousel-item {
     height: 100%; 
     width: 100%;
 }
-
 .carousel-item img {
     width: 100%;
     height: 100%; 
+    object-fit: cover;
 }
 .img3Carrousel{
     margin-top: -78px;
@@ -50,7 +48,6 @@ body{
     margin-right: 20px;
 }
 
-
 /*CARD ------------------------------*/
 .conteinerCard{
     display: flex;
@@ -58,13 +55,11 @@ body{
     justify-content: space-evenly;
     padding: 24px;
 }
-
 .card1, .card2, .card3{
     background-color: $gris-oscuro;
     box-shadow: 0px 4px 10px black;
-
+    width: 20rem;
 }
-
 .card-img-top{
     border-radius: 10px;
      &:hover {
@@ -72,17 +67,18 @@ body{
          transition: 1s;
             }
 }
-
 .card-body-index{
     background-color: $gris-oscuro;
     border-radius: 4px;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
 }
 .card-title-index{
     font-family: $bebas-neue;
     font-size: 28px;
-    margin-top: -20px;
 }
 .precio{
     font-family: $bebas-neue;
@@ -91,12 +87,10 @@ body{
 .card-text-index{
     font-family: 'DM Sans';
     text-align: left;
-    margin-top: 28px;
     font-size: 20px;
     color: whitesmoke;
-    padding: 10px;
+    padding: 11px;
 }
-
 .btn{
     color: white;
     background-color: black;
@@ -105,72 +99,22 @@ body{
         background-color: #4b4a4a;
         border-color:black ;
     }
-  
 }
-.btn1{
-    margin-bottom: 15px;
-    margin-right: 60px;
-}
-.btnn2{
-    margin-bottom: 15px;
-    margin-right: 43px;
+.btnIndex{
+     width: 110px;
+    margin: auto;
 }
 .btn3{
     margin-bottom: 10px;
-    margin-right: 44px;
 }
-// cuando apriete el btn se cambia a ese color
-.btn:active {
+.btnIndex:active {
     background-color: #615f5f !important;
     border-color: #615f5f !important;
     }
 
-@media (max-width:396px){
-    .mainIndex h2{
-        margin-bottom: 3px;
-        margin-top: -91px;
-        font-size: 30px;
-        margin-left: 88px;
-    }
-    .conteinerCard{
-        display: flex;
-        flex-direction: column;
-    }
-    .card1{
-        width: 21rem !important;
-        height: 43rem !important;
-        margin-left: 3px !important;
-        margin-bottom: 25px;
-    }
-    .btn1{
-        margin-bottom: -20px;
-    }
-    .card-title {
-        margin-top: -41px !important;
-    }
-    .card-text{
-        font-size: 18px;
-        padding: 8px;
-    }
-    .card2{
-        width: 21rem !important;
-        height: 43rem !important;
-        margin-left: 3px !important;
-        margin-bottom: 25px;
-    }
-    .btnn2 {
-        margin-bottom: -19px;
-    }
-    .card3{
-          width: 21rem !important;
-        height: 43rem !important;
-        margin-left: 3px !important;
-        margin-bottom: 25px;
-    }
-}
-
 @media (max-width:430px){
     .mainIndex{
+        padding-top: 208px;
         h2{
             margin-bottom: 3px;
             margin-top: -93px;
@@ -183,8 +127,9 @@ body{
     }
     .card1, .card2, .card3{
         margin: auto;
-        width: 22rem !important;
+        width: 90% !important;
         margin-bottom: 20px;
+        max-width: 360px;
     }
     .card-title-index{
         margin-top: -38px;
@@ -197,5 +142,9 @@ body{
             transform: none;
             transition: none;
         }
+    }
+    .card-body-index{
+        margin-top: 19px;
+        margin-bottom: 10px;
     }
 }

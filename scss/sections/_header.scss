@@ -2,226 +2,84 @@
 .header {
     background-color: $gris-mas-oscuro !important;
     width: 100%;
-    height: 140px;
+    height: 135px;
+    padding: 0 16px;
 }
 
+.header .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
 
+/* LOGO + TEXTO */
 .nav2 {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-
-   .barra-vertical {
-    width: 2px;
-    height: 109px;
-    background-color: #565252;
-    margin-bottom: 52px;
-    }
-    .barra-vertical-suplementos{
-    width: 2px;
-    height: 109px;
-    background-color: #565252;
-    margin-bottom: 75px;
-    }
-    .barra-vertical-vestimenta-planes{
-    width: 2px;
-    height: 109px;
-    background-color: #565252;
-    margin-bottom: 70px;
-    }
-    .barra-vertical-videos{
-    width: 2px;
-    height: 109px;
-    background-color: #565252;
-    margin-bottom: 60px;
-    }
-    .barra-vertical-formulario{
-    width: 2px;
-    height: 109px;
-    background-color: #565252;
-    margin-bottom: 87px;
-    }
-    
-    .contLogo {
-        display: flex;
-        align-items: center;
-        padding-right: 15px; 
-    }
-
-    .imgLogo, .imgLogoForm, .imgLogoSuple{
-        margin-left: 9%;
-        margin-top: -31px;
-        width: 14%;
-    }
-    .inicio{
-        font-family: $bebas-neue !important;
-        color: white;
-        font-size: 34px;
-        margin-bottom: 46px;
-    }
-    .inicioSuplementos{
-        font-family: $bebas-neue !important;
-        color: white;
-        font-size: 34px;
-        margin-bottom: 70px;
-    }
-    .iniPlan{
-        font-size: 28px;
-        margin-bottom: 70px;
-    }
-    .inicioVestimentaVideo{
-         font-family: $bebas-neue !important;
-        color: white;
-        font-size: 34px;
-        margin-bottom: 64px;
-    }
-    .volverInicio{
-     margin-left: 186%;
-     margin-bottom: 74px;
-     font-weight: bold;
-     font-family: $bebas-neue;
-     text-decoration: underline;
-     color: #d2cfcb;
-     font-size: 36px;
-     &:hover{
-        color: white;
-     }
-    }
-    .inicioFormulario{
-        font-family: $bebas-neue !important;
-        color: white;
-        font-size: 34px;
-        margin-bottom: 84px;
-    }
-    .animate__backInRight{
-        animation-duration: 1s;
-    }
+    gap: 12px;
 }
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+
+.imgLogo,
+.imgLogoForm,
+.imgLogoSuple {
+    display: block;
+    width: 12%;
+}
+
+.inicio,
+.inicioSuplementos,
+.inicioVestimentaVideo,
+.inicioFormulario {
+    font-family: $bebas-neue !important;
     color: white;
-    &:hover{
-        color: black;
-    }
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
 }
 
-.container-fluid{
-    height: 177px;
+/* BARRA */
+.barra-vertical,
+.barra-vertical-suplementos,
+.barra-vertical-vestimenta-planes,
+.barra-vertical-videos,
+.barra-vertical-formulario {
+    width: 2px;
+    height: 97px;
+    background-color: #565252;
+    margin: 0;
 }
 
-//menu de opciones
-.opMenu{
-       font-size: 25px;
-       font-family: $bebas-neue !important;
-       color: white;
-       
-        }
-
-.botonMenu{
-    margin-right: 30px;
-    margin-bottom: 47px;
-}
-.divOpMenu{
-    background-color: #575755;
-}
-.offcanvas {
-    width: 260px !important; /* Cambiá el valor a lo que quieras */
-}
-
-.divOpMenu2{
-    background-color: $gris-mas-oscuro;
-}
-.divOpMenu3{
-    background-color: #3F4239;
-}
-
-.logo{
-    width: 50%;
-}
-.logoPlan{
-    width: 16%;
-}
-/* Aplica al contenedor que tiene logo + INICIO */
-.navbar-brand {
+/* ACCIONES DERECHA (carrito + menú) */
+.accionesHeader {
     display: flex;
     align-items: center;
-    gap: 9px;
-    justify-content: flex-start; /* espacio entre logo e INICIO */
-     .navPlanes{
-        justify-content: flex-end !important;
-    }
-
+    gap: 14px;
 }
 
-/* Logo con barra a la derecha */
-
-img, svg {
-    vertical-align: middle;
-    margin-bottom: 53px;
-    
-}
-.compraInicio{
-    margin-left: 78px;
-    margin-bottom: 51px;
-}
-.carritoPlanes{
-    margin-left: -32%;
-    padding-left: 34px;
-}
-.carritoPlanesSupl{
-    margin-left: -65%;
-    margin-bottom: 51px;
+/* CARRITO */
+.compraInicio {
+    width: 26px;
+    margin-bottom: 5px;
 }
 
-.carritoVideo{
-    margin-left: 70%;
-    margin-bottom: 62px;
-}
-.carritoVest{
-    margin-left: -47%;
-    margin-bottom: 54px;
-}
-.btnMenuSupl{
-    margin-bottom: 49px;
-    margin-right: 16px;
-}
-.btnMenuVest{
-    margin-right: 42px;
-    margin-bottom: 70px;
-}
-.botonMenuVideo{
-    border: none;
-    margin-right: 30px;
-    margin-bottom: 60px;
-    
-}
-/* Submenu dropdown */
-.dropdown-menu {
-    position: relative;
-    z-index: 9999;
-}
-
-.animate__backInLeft {
-    animation-duration: 1s;
-}
-.animate__backInUp{
-    animation-duration: 1s;
-}
-/* Eliminar ícono de bootstrap */
-.botonMenu .navbar-toggler-icon {
-    background-image: none !important;
-}
-
-/* Estilos del botón */
+/* BOTÓN MENÚ */
 .botonMenu {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 0;
-    margin-right: 30px;
-    margin-bottom: 47px;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
 }
 
-/* NUEVO ICONO — 3 rayitas blancas */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ÍCONO MENÚ */
 .menu-lines {
     width: 27px;
     height: 22px;
@@ -229,55 +87,58 @@ img, svg {
     display: inline-block;
 }
 
-/* Líneas */
-/* Selector más fuerte → gana siempre */
 .menu-lines::before,
 .menu-lines::after,
 .menu-lines span {
     content: "";
     position: absolute;
-    height: 3px;         /* grosor */
+    height: 3px;
     width: 100%;
-    background: #fff !important;   /* 🔥 blanco garantizado */
+    background: #fff !important;
     border-radius: 20px;
 }
-.botonMenuVideo:focus,
-.botonMenuVideo:active,
-.botonMenuVideo:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
-    border: none !important;
+
+.menu-lines::before { top: 0; }
+.menu-lines span { top: 9px; }
+.menu-lines::after { bottom: 0; }
+
+/* OFFCANVAS */
+.offcanvas {
+    width: 260px !important;
 }
 
+.divOpMenu { background-color: #575755; }
+.divOpMenu2 { background-color: $gris-mas-oscuro; }
+.divOpMenu3 { background-color: #3F4239; }
 
-/* línea arriba */
-.menu-lines::before {
-    top: 0;
+/* LINKS */
+.opMenu {
+    font-size: 25px;
+    font-family: $bebas-neue !important;
+    color: white;
 }
 
-/* línea medio */
-.menu-lines span {
-    top: 9px;
-}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: white;
 
-/* línea abajo */
-.menu-lines::after {
-    bottom: 0;
+    &:hover {
+        color: black;
+    }
 }
+/* Quitar borde negro del botón menú en todas las páginas */
 .navbar-toggler,
 .botonMenu,
 .btnMenuSupl,
 .btnMenuVest,
 .botonMenuVideo {
-    outline: none !important;
-    box-shadow: none !important;
     border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
     background: transparent !important;
-    padding: 0 !important;
-    transform: none !important;
 }
 
-/* estado focus + active */
+/* Quitar borde también al hacer focus */
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .botonMenu:focus,
@@ -288,104 +149,37 @@ img, svg {
 .btnMenuVest:active,
 .botonMenuVideo:focus,
 .botonMenuVideo:active {
-    outline: none !important;
-    box-shadow: none !important;
     border: none !important;
-    background: transparent !important;
-    transform: none !important;
+    box-shadow: none !important;
+    outline: none !important;
 }
 
 
-@media (max-width: 390px){
-    .botonMenu{
-        margin-right: 12px;
-        margin-top: -189px;
+/* MOBILE */
+@media (max-width: 430px) {
+    .header {
+        height: 95px;
     }
-    .compraInicio{
-        margin-left: 280px;
-        margin-top: -191px;
+
+    .imgLogo {
+        width: 103px;
     }
-    .imgLogo{
-        margin-left: -5% !important;
-        margin-top: -14px !important;
-        width: 29% !important;
+
+    .inicio {
+        font-size: 24px;
     }
-    .inicio{
-        font-size: 27px !important;
+
+    .barra-vertical {
+        height: 45px;
     }
-    .navbar-brand{
+    .nav2{
         gap: 5px;
     }
-    .header{
-        height: 110px;
-    }
-    .barra-vertical{
-        height: 87px !important;
-        margin-bottom: 63px !important;
-    }
-    .inicioFormulario{
-        font-size: 23px !important;
-    }
-    .imgLogoForm{
-        margin-top: -42px !important;  
-        margin-left: -5% !important;
-        width: 29% !important;
-    }
-    .imgLogoSuple{
-        margin-left: -4% !important;
-        margin-top: -29px !important;
-        width: 27% !important;
-        margin-right: -13px !important;
-    }
-    .volverInicio{
-        margin-left: 56% !important;
-        font-size: 20px !important;
-    }
-    .barra-vertical-formulario{
-        height: 86px !important;
-    }
-    .barra-vertical-suplementos{
-        height: 85px !important;
-    }
-    .inicioSuplementos{
-        font-size: 25px !important;
-    }
-    .btnMenuSupl{
-        margin-top: -216px;
-        margin-left: 304px;
-    }
-    .carritoPlanesSupl{
-        margin-left: 285px;
-        margin-top: -222px;
-    }
-
-    
-}
-
-@media (max-width:430px){
-    .imgLogo{
-        margin-left: 0% !important;
-        margin-top: -26px !important;
-        width: 28% !important;
-        margin-right: -25px;
-    }
-    .header{
-        height: 110px;
-    }
-    .barra-vertical{
-        height: 91px !important;
-        margin-bottom: 68px !important;
-    }
-    .inicio{
-        font-size: 28px !important;
-        margin-bottom: 64px !important;
-    }
     .compraInicio{
-        margin-left: 326px;
-        margin-top: -240px;
+        width: 22px;
     }
-    .botonMenu{
-        margin-top: -273px;
-        margin-left: 362px;
+    .accionesHeader{
+        gap: 7px
+        ;
     }
 }

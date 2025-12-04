@@ -12,36 +12,32 @@
 
     .conteRedes {
         display: flex;
+        gap: 16px;
         a {
-        text-decoration: none;
-        .what{
-            margin-left: 15px;
-        }
+             text-decoration: none;
     }
 
     }
     .redes {
         display: flex;
         font-size: 45px;
-        align-items: baseline;
+        align-items: center;
+        flex-direction: column;
 
         h2 {
             font-family: $bebas-neue;
             font-size: 27px;
             color: $gris-claro;
-            margin-left: -23px;
+          
             text-decoration: underline;
         }
     }
 
-    .fa-instagram {
-        margin-left: 20px;
-    }
+    
 }
 
 .imgLogoFoot {
     width: 14%;
-    margin-right: 42px;
 }
 
 .volverIni {
@@ -65,70 +61,28 @@
     }
 }
 
-.insta {
-    margin-right: 5px;
-}
+
 .logoCopy{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
  .footer-copy {
-            margin-top: -42px;
-            margin-right: 32px;
-            color: #c1c1c1;
-            font-size: 13px;
-            letter-spacing: 1px;
+        color: #c1c1c1;
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin: auto;
         }
 
-
-@media (max-width:396px){
-    .footer{
-        padding: none ;
-
-        .redes{
-            display: flex;
-            font-size: 45px;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            h2{
-                font-size: 19px;
-            }
-        }
-    }
-    .what, .insta{
-        font-size: 33px;
-    }
-    .conteRedes{
-        align-items: baseline;
-        margin-top: -20px;
-        margin-left: -33px;
-    }
-    .footer-copy{
-        margin-bottom: -10px;
-        margin-left: 23px;
-        font-size: 11px;
-    }
-    .volverIni{
-        margin-right: -27px;
-        font-size: 20px;
-        padding: 6px;
-    }
-    .imgLogoFoot {
-        width: 39%;
-        margin-right: 12px;
-    }
-}
 
 @media (max-width:430px){
     .redes{
          display: flex;
-         font-size: 45px;
-         flex-wrap: wrap;
-         justify-content: center;
+         font-size: 25px !important;
+         align-items: flex-end;
+
         h2{
-            font-size: 18px;
+            font-size: 18px !important;
         }
     }
     .what, .insta{
@@ -136,14 +90,12 @@
     }
     .conteRedes{
         align-items: baseline;
-        margin-top: -20px;
-        margin-left: -33px;
+       //margin-top: -20px;
+       // margin-left: -33px;
     }
     .footer-copy{
-        margin-bottom: -10px;
-        margin-left: 23px;
-        font-size: 11px;
-        margin-top: -60px;
+        font-size: 10px;
+        margin-left: 46px;
     }
     .volverIni{
         margin-right: -27px;
@@ -151,7 +103,13 @@
         padding: 6px;
     }
     .imgLogoFoot {
-        width: 39%;
+        width: 36%;
         margin-right: 12px;
+    }
+    .logoCopy{
+        gap: 7px;
+    }
+    .footer{
+        padding-bottom: 45px;
     }
 }
