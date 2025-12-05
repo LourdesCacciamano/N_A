@@ -80,6 +80,7 @@
          display: flex;
          font-size: 25px !important;
          align-items: flex-end;
+         margin-left: -28px !important;
 
         h2{
             font-size: 18px !important;
@@ -90,8 +91,6 @@
     }
     .conteRedes{
         align-items: baseline;
-       //margin-top: -20px;
-       // margin-left: -33px;
     }
     .footer-copy{
         font-size: 10px;

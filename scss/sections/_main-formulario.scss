@@ -99,7 +99,7 @@
 }
 
 
-@media (max-width:396px){
+@media (max-width:430px){
     .tituloForm{
         font-size: 28px;
         margin-top: -76px;
@@ -108,7 +108,6 @@
         font-size: 14px;
     }
     .formulario{
-        margin-top: 147px;
         margin-left: 6px;
         margin-bottom: 15px;
         width: 97%;
@@ -130,10 +129,19 @@
     }
     .input-number-dias{
         width: 69px;
-        margin-left: 8px;
+        margin-left: 30px;
     }
     .input-number{
         width: 70px;
     }
-
+    .volverIndex{
+        font-size: 18px;
+        margin-left: 18px;
+    }
+    .conteImg-barra-form{
+        gap: 4px
+    }
+    .btnWhat {
+        font-size: 15px;
+    }
 }

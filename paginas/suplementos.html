@@ -21,23 +21,28 @@
 <body>
     <header>
         <nav class="navbar bg-body-tertiary fixed-top header">
-            <div class="container-fluid">
+            <div class="container-fluid header-flex">
+                <div class="conteHeader">
                 <a class="navbar-brand nav2 navPlanes" href="#">
                     <!-- Aca estan las opciones del navbar -->
                     <img src="../imagenes/logoB.png" class="imgLogoSuple logoPlan " width="20%" alt="Logo">
                     <div class="barra-vertical-suplementos"></div>
                     <h3 class="inicioSuplementos animate__animated animate__backInRight">SUPLEMENTOS</h3>
+                </a>
+                <div class="accionesHeader">
                     <a href="../paginasExtras/carritoCompra.html">
                         <img src="../imagenes/shopping_cart_24dp_999999_FILL0_wght400_GRAD0_opsz24.png" alt="compra"
                             class="carritoPlanesSupl">
                     </a>
-                </a>
-                <button class="navbar-toggler btnMenuSupl" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="menu-lines">
-                        <span></span>
-                    </span>
-                </button>
+                    <button class="navbar-toggler btnMenuSupl" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="menu-lines">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header divOpMenu2">
@@ -95,7 +100,7 @@
                 <div id="proteinas" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body conteTiposProte">
                         <div class="mediaProte1">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184737/P-wheyProtein-startNutririon_a2zquh.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184737/P-wheyProtein-startNutririon_a2zquh.jpg"
@@ -107,14 +112,8 @@
                                     <hr>
                                     <h6>- Marca: STAR NUTRITION </h6>
                                     <p class="card-text text-vesti">
-                                        - La Whey Protein de Star Nutrition ofrece proteína de suero de alta calidad
-                                        para
-                                        mejorar la recuperación, favorecer el crecimiento muscular y complementar tu
-                                        ingesta
-                                        diaria de proteína.
-                                        <br><br> - Se mezcla fácil, tiene gran sabor y es ideal para después del
-                                        entrenamiento o
-                                        en cualquier momento del día.
+                                        - Ofrece proteína de suero de alta calidad para mejorar la recuperación, favorecer el crecimiento muscular y complementar tu
+                                        ingesta diaria de proteína.
                                         <br><br> - Contiene: 1kg
                                     </p>
                                     <hr>
@@ -138,11 +137,11 @@
                                         </div>
                                     </form>
 
-                                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184728/P-wheyProtein-hochSport_zvlgmr.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184728/P-wheyProtein-hochSport_zvlgmr.jpg"
@@ -153,13 +152,8 @@
                                     <hr>
                                     <h6>- Marca: HOCH SPORT</h6>
                                     <p class="card-text text-vesti">
-                                        - La Whey Protein de Hoch Sport aporta proteína de suero de alta calidad que
-                                        ayuda a
-                                        recuperar mejor, construir masa muscular y asegurar tu consumo diario de
+                                        - Aporta proteína de suero de alta calidad que ayuda a recuperarte mejor, construir masa muscular y asegurar tu consumo diario de
                                         proteína.
-                                        <br><br> -Es fácil de mezclar, rica y práctica para tomar después de entrenar o
-                                        en
-                                        cualquier momento del día.
                                         <br><br> - Contiene: 1kg
                                     </p>
                                     <hr>
@@ -184,12 +178,12 @@
                                             </label>
                                         </div>
                                     </form>
-                                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
                         </div>
                         <div class="mediaProte1">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184732/P-wheyProtein-nucleoFit_uljiq8.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184732/P-wheyProtein-nucleoFit_uljiq8.jpg"
@@ -200,9 +194,9 @@
                                     <hr>
                                     <h6>- Marca: NUCLEO FIT</h6>
                                     <p class="card-text text-vesti">
-                                        - Proteína de suero ideal para recuperar mejor después de entrenar, ayudar al
+                                        - Proteína de suero ideal para recuperarte mejor después de entrenar, ayudar al
                                         crecimiento muscular y cubrir tus necesidades diarias de proteína de forma
-                                        prácticayrápida.
+                                        práctica y rápida.
                                         <br><br>- Contiene: 1kg
                                     </p>
                                     <hr>
@@ -223,11 +217,11 @@
                                             </label>
                                         </div>
                                     </form>
-                                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple" style="width: 18rem;">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184724/P-extremeMass-hochSport_jgscng.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764365203/P-extremeMass-hochSport_jgscng.jpg"
@@ -238,14 +232,7 @@
                                     <hr>
                                     <h6>- Marca: HOCH SPORT</h6>
                                     <p class="card-text text-vesti">
-                                        - Extreme Mass de Hoch Sport es un ganador de peso diseñado para ayudarte a
-                                        aumentar
-                                        masa muscular y calorías de forma práctica.
-                                        <br><br> - Combina carbohidratos y proteína para mejorar la energía, favorecer
-                                        la
-                                        recuperación y apoyar el crecimiento muscular en personas que buscan subir de
-                                        peso o
-                                        volumen. Ideal para tomar después de entrenar o entre comidas.
+                                        - Ganador de peso diseñado para ayudarte a aumentar masa muscular y calorías de forma práctica.
                                         <br><br> - Contiene: 1.5kg
                                     </p>
                                     <hr>
@@ -263,7 +250,7 @@
                                                 </label>
                                             </div>
                                         </form>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
@@ -286,7 +273,7 @@
                     <div id="creatinas" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body conteTiposCrea">
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184661/C-startNutrition_mlzhs7.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184661/C-startNutrition_mlzhs7.jpg"
@@ -297,20 +284,16 @@
                                     <hr>
                                     <h6>- Marca: STAR NUTRITION</h6>
                                     <p class="card-text text-vesti">
-                                        - La Creatina de Star Nutrition ayuda a mejorar la fuerza, el rendimiento y la
-                                        resistencia durante los entrenamientos.
-                                        <br><br> - Aumenta la energía muscular, favorece la recuperación y apoya el
+                                        - Ayuda a mejorar la fuerza, el rendimiento y la resistencia durante los entrenamientos, aumenta la energía muscular, favorece la recuperación y apoya el
                                         crecimiento muscular.
-                                        <br><br> - Ideal para quienes buscan entrenar más fuerte y obtener mejores
-                                        resultados.
                                         <br><br> - Contiene: 300g
                                         <br><br> -Sin sabor
                                     </p>
-                                    <a href="#" class="btn btn-primary btnCreatina">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnCreatina btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184655/C-creatina-hochSport_qcg7ud.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184655/C-creatina-hochSport_qcg7ud.jpg"
@@ -321,21 +304,16 @@
                                     <hr>
                                     <h6>- Marca: HOCH SPORT</h6>
                                     <p class="card-text text-vesti">
-                                        - La Creatina de Hoch Sport mejora la fuerza, la potencia y el rendimiento en
-                                        cada entrenamiento.
-                                        <br><br> - Aumenta la energía muscular, ayuda a recuperar mejor y favorece el
+                                        - Mejora la fuerza, la potencia y el rendimiento en cada entrenamiento, aumenta la energía muscular, ayuda a recuperar mejor y favorece el
                                         crecimiento muscular.
-                                        <br><br> - Es ideal para quienes buscan entrenar más intenso y lograr resultados
-                                        más
-                                        rápidos.
                                         <br><br> - Contiene: 300g
                                         <br><br> - Sin sabor
                                     </p>
-                                    <a href="#" class="btn btn-primary btnCreatina">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnCreatina btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
-                            <div class="card" style="width: 18rem;">
+                            <div class="card cardSuple">
                                 <a
                                     href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184657/C-nucleoFit_ftclhc.jpg">
                                     <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184657/C-nucleoFit_ftclhc.jpg"
@@ -346,15 +324,12 @@
                                     <hr>
                                     <h6>- Marca: NUCLEO FIT</h6>
                                     <p class="card-text text-vesti">
-                                        - La Creatina de Nucleo Fit te ayuda a mejorar la fuerza, la potencia y el
-                                        rendimiento en tus entrenamientos.
-                                        <br><br> - Aporta energía muscular, favorece la recuperación y apoya el
-                                        crecimiento
-                                        muscular.
+                                        - Ayuda a mejorar la fuerza, la potencia y el rendimiento en tus entrenamientos, aporta energía muscular, favorece la recuperación y apoya el
+                                        crecimiento muscular.
                                         <br><br> - Contiene: 300g
                                         <br><br> - Sabor: Multifruta
                                     </p>
-                                    <a href="#" class="btn btn-primary btnCreatina">Agregar al Carrito</a>
+                                    <a href="#" class="btn btn-primary btnCreatina btnSuple">Agregar al Carrito</a>
                                 </div>
                             </div>
 
@@ -376,7 +351,7 @@
                     <div id="otros" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body conteTiposOtros">
                             <div class="separador1CardOtros">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184679/O-multivitaminico-maxForce_ciut23.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184679/O-multivitaminico-maxForce_ciut23.jpg"
@@ -387,20 +362,16 @@
                                         <hr>
                                         <h6>- Marca: MAX FORCE</h6>
                                         <p class="card-text text-vesti">
-                                            - El Multivitamínico de Max Force aporta vitaminas y minerales esenciales
-                                            para mantener la energía, fortalecer el sistema inmunológico y apoyar el
+                                            - Aporta vitaminas y minerales esenciales para mantener la energía, fortalecer el sistema inmunológico y apoyar el
                                             bienestar general.
-                                            <br><br> - Ayuda a cubrir deficiencias nutricionales y es ideal para
-                                            personas
-                                            activas que buscan un refuerzo diario completo.
                                             <br><br> - Contiene: 60 cápsulas
                                         </p>
                                         <hr>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184716/O-thermogenix-hochSport_ljidnw.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184716/O-thermogenix-hochSport_ljidnw.jpg"
@@ -411,21 +382,15 @@
                                         <hr>
                                         <h6>- Marca: HOCH SPORT</h6>
                                         <p class="card-text text-vesti">
-                                            - Thermogenix de Hoch Sport es un termogénico diseñado para ayudar a
-                                            acelerar
-                                            el metabolismo, aumentar la energía y favorecer la quema de grasa.
-                                            <br><br> - Ideal para acompañar rutinas de entrenamiento y planes de
-                                            descenso de
-                                            peso, aportando un impulso extra para mejorar el rendimiento y la
-                                            definición.
+                                            - Termogénico diseñado para ayudar a acelerar el metabolismo, aumentar la energía y favorecer la quema de grasa.
                                             <br><br> - Contiene: 120 cápsulas
                                         </p>
                                         <hr>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184674/O-colagenoPuro-nucleoFit_h6ppwi.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184674/O-colagenoPuro-nucleoFit_h6ppwi.jpg"
@@ -436,22 +401,17 @@
                                         <hr>
                                         <h6>- Marca: NUCLEO FIT</h6>
                                         <p class="card-text text-vesti">
-                                            - El Colágeno Puro de Nucleo Fit ayuda a mejorar la salud de la piel, las
-                                            articulaciones y los tejidos conectivos.
-                                            <br><br> - Contribuye a mantener la elasticidad, reducir molestias
-                                            articulares y
-                                            fortalecer uñas y cabello.
-                                            <br><br> - Es fácil de consumir y perfecto para complementar el
-                                            bienestar diario.
+                                            - Ayuda a mejorar la salud de la piel, las articulaciones y los tejidos conectivos, contribuye a mantener la elasticidad, reducir molestias
+                                            articulares y fortalecer uñas y cabello.
                                             <br><br> - Contiene: 300g
                                             <br><br> - Sin sabor
                                         </p>
                                         <hr>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184709/O-preEntrenoTNTDynamite-startNutrition_uctevs.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184709/O-preEntrenoTNTDynamite-startNutrition_uctevs.jpg"
@@ -462,11 +422,8 @@
                                         <hr>
                                         <h6>- Marca: START NUTRITION</h6>
                                         <p class="card-text text-vesti">
-                                            - TNT Dynamite de Star Nutrition es un pre entreno formulado para darte más
-                                            energía, foco y rendimiento durante tus sesiones.
-                                            <br><br> - Ayuda a aumentar la fuerza, retrasar la fatiga y mejorar la
-                                            concentración, ideal para entrenamientos intensos donde necesitás un impulso
-                                            extra.
+                                            - Pre entreno formulado para darte más energía, foco y rendimiento durante tus sesiones, ayuda a aumentar la fuerza, retrasar la fatiga y mejorar la
+                                            concentración, ideal para entrenamientos intensos.
                                             <br><br> - Contiene: 240g
                                         </p>
                                         <hr>
@@ -483,12 +440,12 @@
                                                 </label>
                                             </div>
                                         </form>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="separador2CardOtros">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184707/O-preEntrenoPumpV8-startNutrition_cybbnd.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184707/O-preEntrenoPumpV8-startNutrition_cybbnd.jpg"
@@ -499,12 +456,8 @@
                                         <hr>
                                         <h6>- Marca: START NUTRITION</h6>
                                         <p class="card-text text-vesti">
-                                            - Pump V8 de Star Nutrition es un pre entreno diseñado para mejorar la
-                                            energía, el enfoque y el flujo muscular durante tus entrenamientos.
-                                            <br><br> - Ayuda a aumentar la congestión, retrasar la fatiga y potenciar el
+                                            - Pre entreno diseñado para mejorar la energía, el enfoque y el flujo muscular durante tus entrenamientos, ayuda a aumentar la congestión, retrasar la fatiga y potenciar el
                                             rendimiento.
-                                            <br><br> - Ideal para quienes buscan entrenar con más intensidad y sentir un
-                                            mayor “pump”.
                                             <br><br> - Contiene: 285g
                                         </p>
                                         <hr>
@@ -525,11 +478,11 @@
                                                 </label>
                                             </div>
                                         </form>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184666/O-aminoacidosBCAA-maxForce_d0ywsd.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184666/O-aminoacidosBCAA-maxForce_d0ywsd.jpg"
@@ -540,20 +493,16 @@
                                         <hr>
                                         <h6>- Marca: MAX FORCE</h6>
                                         <p class="card-text text-vesti">
-                                            - Los BCAA de Max Force ayudan a mejorar la recuperación muscular, reducir
-                                            la
-                                            fatiga y proteger la masa muscular durante tus entrenamientos.
-                                            <br><br> - Aportan leucina, isoleucina y valina en la proporción ideal para
-                                            favorecer el rendimiento y apoyar el crecimiento muscular.
+                                            - Ayudan a mejorar la recuperación muscular, reducir la fatiga y proteger la masa muscular durante tus entrenamientos, aportan leucina, isoleucina y valina.
                                             <br><br> - Contiene: 280g
                                             <br><br> - Sabor: Multifruta
                                         </p>
                                         <hr>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184721/O-vasosShakers-Everlast_wuuycy.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184721/O-vasosShakers-Everlast_wuuycy.jpg"
@@ -564,13 +513,7 @@
                                         <hr>
                                         <h6>- Marca: EVERLAST</h6>
                                         <p class="card-text text-vesti">
-                                            - Los shakers Everlast son prácticos y resistentes, ideales para mezclar tus
-                                            suplementos sin grumos y de forma rápida.
-                                            <br><br> - Su diseño cómodo y duradero los hace perfectos para llevar al
-                                            gimnasio, al trabajo o donde necesites.
-                                            <br><br> - Ideales para preparar proteína, creatina o cualquier bebida de
-                                            manera
-                                            fácil y segura.
+                                            - Prácticos y resistentes, ideales para mezclar tus suplementos sin grumos y de forma rápida.
                                             <br><br> - Contiene: 450ml
                                         </p>
                                         <hr>
@@ -591,11 +534,11 @@
                                                 </label>
                                             </div>
                                         </form>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
 
-                                <div class="card" style="width: 18rem;">
+                                <div class="card cardSuple">
                                     <a
                                         href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184670/O-citratoMagnesio-startNutrition_abbwtd.jpg">
                                         <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764184670/O-citratoMagnesio-startNutrition_abbwtd.jpg"
@@ -606,17 +549,12 @@
                                         <hr>
                                         <h6>- Marca: START NUTRITION</h6>
                                         <p class="card-text text-vesti">
-                                            - El Citrato de Magnesio de Star Nutrition ayuda a reducir la fatiga,
-                                            mejorar
-                                            la función muscular y favorecer un buen descanso.
-                                            <br><br> - Contribuye al equilibrio electrolítico y al correcto
-                                            funcionamiento
-                                            del sistema nervioso, siendo ideal para personas activas o con
-                                            entrenamientos intensos.
+                                            - Ayuda a reducir la fatiga, mejorar la función muscular y favorecer un buen descanso, contribuye al equilibrio electrolítico y al correcto
+                                            funcionamiento del sistema nervioso.
                                             <br><br> - Contiene: 60 cápsulas
                                         </p>
                                         <hr>
-                                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                        <a href="#" class="btn btn-primary btnSuple">Agregar al Carrito</a>
                                     </div>
                                 </div>
                             </div>

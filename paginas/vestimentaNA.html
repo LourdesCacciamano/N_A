@@ -21,23 +21,26 @@
 <body>
     <header>
         <nav class="navbar bg-body-tertiary fixed-top header">
-            <div class="container-fluid">
+            <div class="container-fluid header-flex">
                 <a class="navbar-brand nav2 navPlanes" href="../index.html">
                     <!-- Aca estan las opciones del navbar -->
                     <img src="../imagenes/logoB.png" class="imgLogo logoPlan" width="20%" alt="Logo">
                     <div class="barra-vertical-vestimenta-planes"></div>
                     <h3 class="inicioVestimentaVideo animate__animated animate__backInRight">VESTIMENTA</h3>
+                </a>
+                <div class="accionesHeader">
                     <a href="../paginasExtras/carritoCompra.html">
                         <img src="../imagenes/shopping_cart_24dp_999999_FILL0_wght400_GRAD0_opsz24.png" alt="compra"
                             class="carritoVest">
                     </a>
-                </a>
-                <button class="navbar-toggler botonMenu btnMenuVest" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="menu-lines">
-                        <span></span>
-                    </span>
-                </button>
+                    <button class="navbar-toggler botonMenu btnMenuVest" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="menu-lines">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header divOpMenu2">
@@ -80,28 +83,30 @@
         </nav>
     </header>
 
-    <main class="mainIndex">
+    <main class="mainVesti">
         <div class="conteCards-vesti">
             <!--REMERA HOMBRES-->
-            <div class="card" style="width: 23rem;">
+            <div class="card cardVesti">
                 <div id="carouselProducto1" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105816/remeraHombre_e1wivu.jpg">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105816/remeraHombre_e1wivu.jpg">
                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105816/remeraHombre_e1wivu.jpg"
-                                class="d-block w-100 imag" alt="remeraHombre">
+                                    class="d-block w-100 imag" alt="remeraHombre">
                             </a>
                         </div>
                         <div class="carousel-item">
                             <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105861/2_pqgvxq.jpg">
                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105861/2_pqgvxq.jpg"
-                                class="d-block w-100 imag" alt="remeraHombreEspalda">
+                                    class="d-block w-100 imag" alt="remeraHombreEspalda">
                             </a>
                         </div>
                         <div class="carousel-item">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105732/talles-hombre_naiwdl.jpg">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105732/talles-hombre_naiwdl.jpg">
                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105732/talles-hombre_naiwdl.jpg"
-                                class="d-block w-100 imag" alt="tallesHombre">
+                                    class="d-block w-100 imag" alt="tallesHombre">
                             </a>
                         </div>
                     </div>
@@ -117,7 +122,7 @@
                     </button>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body cardBodyVest">
                     <h5 class="card-title-vesti">REMERA HOMBRE</h5>
                     <br>
                     <h5 class="precios-vesti">$33.000</h5>
@@ -134,9 +139,6 @@
                         • Tela liviana y cómoda para usar todos los días.
                         <br>
                         • Logo oficial de Asesorías NA.
-                        <br>
-                        <br>
-                        Ideal para entrenar o vestir con vibra fitness sin perder comodidad.
                     </p>
                     <hr>
                     <form action="" class="formRemera">
@@ -161,31 +163,35 @@
 
             </div>
             <!--REMERA MUJER-->
-            <div class="card" style="width: 23rem;">
+            <div class="card cardVesti">
                 <div id="carouselProducto2" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105953/remeraMujer_rwhnny.jpg">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105953/remeraMujer_rwhnny.jpg">
                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764105953/remeraMujer_rwhnny.jpg"
-                                class="d-block w-100 imag" alt="remeraMujer">
+                                    class="d-block w-100 imag" alt="remeraMujer">
                             </a>
                         </div>
                         <div class="carousel-item">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106016/remeraAtrasMujer_tpurkz.jpg">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106016/remeraAtrasMujer_tpurkz.jpg">
                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106016/remeraAtrasMujer_tpurkz.jpg"
-                                class="d-block w-100 imag" alt="remeraMujerEspalda">
+                                    class="d-block w-100 imag" alt="remeraMujerEspalda">
                             </a>
                         </div>
                         <div class="carousel-item">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764191401/remeraMujerBlanco_yoiaas.jpg">
-                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764191401/remeraMujerBlanco_yoiaas.jpg"
-                                class="d-block w-100 imag" alt="remeraMujerBlanco">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764191401/remeraMujerBlanco_yoiaas.jpg">
+                                <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764191401/remeraMujerBlanco_yoiaas.jpg"
+                                    class="d-block w-100 imag" alt="remeraMujerBlanco">
                             </a>
                         </div>
                         <div class="carousel-item">
-                            <a href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106059/talleMujer_sxbbth.jpg">
-                                 <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106059/talleMujer_sxbbth.jpg"
-                                class="d-block w-100 imag" alt="tallesMujer">
+                            <a
+                                href="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106059/talleMujer_sxbbth.jpg">
+                                <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1764106059/talleMujer_sxbbth.jpg"
+                                    class="d-block w-100 imag" alt="tallesMujer">
                             </a>
                         </div>
                     </div>
@@ -201,7 +207,7 @@
                     </button>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body cardBodyVest">
                     <h5 class="card-title-vesti">REMERA MUJER</h5>
                     <br>
                     <h5 class="precios-vesti">$25.000</h5>
@@ -217,13 +223,10 @@
                         • Ajuste cómodo que no molesta ni limita.
                         <br>
                         • Logo oficial de Asesorías NA.
-                        <br>
-                        <br>
-                        Ideal para cualquier entrenamiento o para vestir con vibra fitness en tu día a día.
                     </p>
                     <hr>
                     <form action="" class="formRemera">
-                         <label for="talle" class="labelTalle">Talle: </label>
+                        <label for="talle" class="labelTalle">Talle: </label>
                         <label class="radioPersonalizado">
                             <input type="radio" name="talle" value="S">
                             <span>S</span>
@@ -236,16 +239,16 @@
                         <br>
 
                         <div class="labelColor">
-                        <label for="colorRemera">Color: </label>
-                        <label class="radioPersonalizado">
-                            <input type="radio" name="color" value="Negro">
-                            <span>Negro</span>
-                        </label>
-                        <label class="radioPersonalizado">
-                            <input type="radio" name="color" value="Blanco">
-                            <span>Blanco</span>
-                        </label>
-                    </div>
+                            <label for="colorRemera">Color: </label>
+                            <label class="radioPersonalizado">
+                                <input type="radio" name="color" value="Negro">
+                                <span>Negro</span>
+                            </label>
+                            <label class="radioPersonalizado">
+                                <input type="radio" name="color" value="Blanco">
+                                <span>Blanco</span>
+                            </label>
+                        </div>
 
                     </form>
                     <a href="#" class="btn btn-primary btnVesti">Agregar al Carrito</a>

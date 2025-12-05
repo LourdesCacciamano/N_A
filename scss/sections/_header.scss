@@ -153,6 +153,9 @@
     box-shadow: none !important;
     outline: none !important;
 }
+.conteHeader{
+    display: flex;
+}
 
 
 /* MOBILE */
@@ -179,7 +182,38 @@
         width: 22px;
     }
     .accionesHeader{
-        gap: 7px
-        ;
+        gap: 5px;
+    }
+    .barra-vertical-formulario{
+        height: 75px;
+        margin-bottom: 15px;
+    }
+    .imgLogoForm{
+        width: 39%;
+    }
+    .inicioFormulario{
+        font-size: 21px;
+    }
+    .barra-vertical-suplementos{
+        height: 78px;
+    }
+    .inicioSuplementos{
+        font-size: 21px;
+    }
+    .imgLogoSuple{
+        width: 26%;
+    }
+    .conteHeader{
+        display: flex;
+    }
+    .carritoPlanesSuple{
+        margin-bottom: 4px;
+    }
+    .barra-vertical-vestimenta-planes{
+        height: 74px;
+        margin-bottom: 15px !important;
+    }
+    .inicioVestimentaVideo{
+        font-size: 21px;
     }
 }
