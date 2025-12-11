@@ -304,10 +304,10 @@ body {
   width: 20rem;
 }
 
-.card-img-top {
+.cardImgIndex {
   border-radius: 10px;
 }
-.card-img-top:hover {
+.cardImgIndex:hover {
   transform: scale(1.1);
   transition: 1s;
 }
@@ -383,13 +383,10 @@ body {
     margin-bottom: 20px;
     max-width: 360px;
   }
-  .card-title-index {
-    margin-top: -38px;
-  }
   .card-text-index {
     font-size: 17px;
   }
-  .card-img-top:hover {
+  .cardImgIndex:hover {
     transform: none;
     transition: none;
   }
@@ -682,11 +679,11 @@ body {
   border-color: black;
 }
 
-.text-vesti {
+.text-suple {
   font-family: "DM Sans";
-  text-align: left;
+  text-align: justify;
   margin-top: 28px;
-  font-size: 16px;
+  font-size: 14px;
   color: whitesmoke;
 }
 
@@ -736,6 +733,7 @@ body {
 
 .btnCreatina {
   margin-top: 10px;
+  margin-left: 80px;
 }
 
 .titleSuple {
@@ -835,10 +833,14 @@ h6 {
 
 .opcionesSabor {
   display: flex;
-  flex-direction: column; /* permite que salten a la siguiente línea */
-  gap: 8px; /* separación entre cápsulas */
+  justify-content: center;
   margin-top: 8px;
   margin-bottom: 10px;
+}
+
+.opSaborLargo {
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .mediaProte1 {
@@ -848,6 +850,26 @@ h6 {
 
 .btnSuple {
   margin-left: 47px;
+  margin-top: 10px;
+}
+
+.cardCrea2 {
+  display: flex;
+}
+
+.conteCrea {
+  display: flex;
+  gap: 10px;
+}
+
+.cardSuple-creatin {
+  width: 22rem;
+  margin-right: 20px;
+  background-color: #3F4239;
+}
+
+.espacio-parrafos {
+  margin-bottom: 5px;
 }
 
 @media (max-width: 430px) {
@@ -856,17 +878,17 @@ h6 {
   }
   .mediaProte1 {
     display: flex;
+    gap: 5px;
+    flex-direction: column !important;
   }
   .cardSuple {
-    width: 12rem !important;
+    width: 21rem !important;
+    margin: auto;
   }
   .conteTiposProte {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-  }
-  .card-img-top {
-    margin-bottom: 44px;
   }
   .text-vesti {
     margin-top: 8px;
@@ -877,7 +899,30 @@ h6 {
   }
   .btnSuple {
     font-size: 14px;
-    margin-left: 9px;
+    margin-left: 80px;
+  }
+  .conteCrea {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .cardCrea2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .conteTiposCrea {
+    justify-content: center;
+  }
+  .conteTiposOtros {
+    gap: 15px;
+  }
+  .separador1CardOtros, .separador2CardOtros {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .opSaborLargo {
+    margin-left: 7px;
   }
 }
 .conteCards-vesti {
@@ -900,12 +945,14 @@ h6 {
 }
 
 .card-text-vesti {
-  text-align: start;
+  text-align: justify;
   font-family: "DM Sans";
   color: white;
+  font-size: 15px;
 }
 
 .precios-vesti {
+  font-family: "Bebas Neue", sans-serif;
   margin-top: -34px;
   margin-bottom: 19px;
   color: white;

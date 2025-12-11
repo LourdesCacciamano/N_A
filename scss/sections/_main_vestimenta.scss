@@ -17,11 +17,13 @@
      width: 30rem;
 }
 .card-text-vesti{
-    text-align: start;
+    text-align: justify;
     font-family: 'DM Sans';
     color: white;
+    font-size: 15px;
 }
 .precios-vesti {
+    font-family: $bebas-neue;
     margin-top: -34px;
     margin-bottom: 19px;
     color: white;
