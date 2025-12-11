@@ -752,7 +752,8 @@ h6 {
   .opSaborLargo {
     margin-left: 7px; }
   .cardSuple-creatin {
-    margin-right: 0px; } }
+    margin-right: 0px;
+    width: 21rem; } }
 
 .conteCards-vesti {
   display: flex;
