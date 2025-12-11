@@ -750,7 +750,9 @@ h6 {
     flex-direction: column;
     gap: 10px; }
   .opSaborLargo {
-    margin-left: 7px; } }
+    margin-left: 7px; }
+  .cardSuple-creatin {
+    margin-right: 0px; } }
 
 .conteCards-vesti {
   display: flex;
