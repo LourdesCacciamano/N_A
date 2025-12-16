@@ -51,7 +51,7 @@
 }
 
 /* ACCIONES DERECHA (carrito + menú) */
-.accionesHeader {
+.accionesHeader, .accionesHeaderPlan {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -169,11 +169,13 @@
     }
 
     .inicio {
-        font-size: 24px;
+        font-size: 23px;
+        margin-bottom: 10px;
     }
 
     .barra-vertical {
-        height: 45px;
+        height: 70px;
+        margin-bottom: 12px;
     }
     .nav2{
         gap: 5px;
@@ -183,6 +185,9 @@
     }
     .accionesHeader{
         gap: 5px;
+    }
+    .accionesHeaderPlan{
+        gap: 8px;
     }
     .barra-vertical-formulario{
         height: 75px;
@@ -216,4 +221,5 @@
     .inicioVestimentaVideo{
         font-size: 21px;
     }
+
 }

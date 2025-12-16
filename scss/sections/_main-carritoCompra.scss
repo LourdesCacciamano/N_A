@@ -1,0 +1,11 @@
+.inicioCarrito{
+    margin-top: 26px;
+}
+.mainCompra{
+    min-height: 70vh;
+}
+@media (max-width:430px) {
+    .inicioCarrito {
+        margin-top: 7px;
+    }
+}

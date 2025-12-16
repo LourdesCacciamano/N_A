@@ -1,0 +1,56 @@
+
+.mainPlan{
+    min-height: 70vh;
+    padding-top: 175px; // para separarlo del header
+    background-color: $gris-mas-claro;
+}
+.contePlan{
+    display: flex;
+    justify-content: center;
+}
+.cardBodyPlanes {
+    background-color: transparent !important;
+    border: none !important;
+}
+.plan1{
+    margin-top: 45px;
+}
+.acordPLan {
+    width: 100%;
+}
+
+.accordion-item-plan {
+    margin-bottom: 9px;
+}
+.tituloPlan{
+    text-align: center;
+    padding-bottom: 7px;
+}
+.btnPlanes{
+    font-family:'DM Sans' ;
+}
+.contenidoAcordeon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.lineaPlan{
+    color: black;
+    margin-top: 6px;
+    width: 80rem;
+}
+.opcionesPlan{
+    display: flex;
+}
+@media (max-width:430px) {
+    .btnPlanes{
+        font-size: 14px;
+    }
+    .tituloPlan{
+        padding-bottom: 0px;
+    }
+    .accordion-item-plan {
+        margin-bottom: 9px;
+    }
+}
