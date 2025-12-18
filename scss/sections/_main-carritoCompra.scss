@@ -4,6 +4,31 @@
 .mainCompra{
     min-height: 70vh;
 }
+.conteCardCarrito{
+    margin-top: 171px;
+    width: 98%;
+}
+.bodyCarrito{
+    background-color: $gris-oscuro;
+    border-radius: 5px;
+    color: white;
+    font-family: 'DM Sans';
+    text-align: center;
+    font-size: 18px;
+}
+.tituloCarrito{
+    font-family: $bebas-neue;
+}
+.tituloResumen{
+    font-family: $bebas-neue;
+    font-size: 33px;
+}
+.btnResumen{
+    font-family: 'DM Sans';
+}
+.lineaSeparadora{
+    color: black;
+}
 @media (max-width:430px) {
     .inicioCarrito {
         margin-top: 7px;

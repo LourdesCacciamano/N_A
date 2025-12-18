@@ -55,9 +55,9 @@
                                     GUÍA DE EJERCICIOS
                                 </a>
                                 <ul class="dropdown-menu divOpMenu3">
-                                    <li><a class="dropdown-item opMenu" href="./planesDeAdaptacion.html"> PLANES DE
+                                    <li><a class="dropdown-item opMenu" href="../paginas/planesDeAdaptacion.html"> PLANES DE
                                             ADAPTACIÓN</a></li>
-                                    <li><a class="dropdown-item opMenu" href="./videos.html">VIDEOS
+                                    <li><a class="dropdown-item opMenu" href="../paginas/videos.html">VIDEOS
                                         </a></li>
 
                                 </ul>
@@ -68,8 +68,8 @@
                                     PRODUCTOS
                                 </a>
                                 <ul class="dropdown-menu divOpMenu3">
-                                    <li><a class="dropdown-item opMenu" href="./suplementos.html">SUPLEMENTOS</a></li>
-                                    <li><a class="dropdown-item opMenu" href="./vestimentaNA.html"> VESTIMENTA NA</a>
+                                    <li><a class="dropdown-item opMenu" href="../paginas/suplementos.html">SUPLEMENTOS</a></li>
+                                    <li><a class="dropdown-item opMenu" href="../paginas/vestimentaNA.html"> VESTIMENTA NA</a>
                                     </li>
                                 </ul>
                             </li>
@@ -81,7 +81,17 @@
     </header>
 
     <main class="mainCompra">
-
+        <div class="container mt-4">
+            <div class="row conteCardCarrito" id="contenedorCarrito"></div>
+            <div class="container mt-4" id="resumenCompra">
+                <hr class="lineaSeparadora">
+                <h4 class="tituloResumen">RESUMEN DE COMPRA</h4>
+                <ul class="list-group mb-3" id="listaResumen"></ul>
+                <h5>TOTAL: <span id="totalCompra">$0</span></h5>
+                <button class="btn btn-danger mt-2 btnResumen" id="vaciarCarrito">Eliminar Compra</button>
+                <button class="btn btn-success mt-2 btnResumen" id="enviarWhatsapp">Enviar pedido por Whatsapp</button>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
@@ -113,11 +123,11 @@
 
     </footer>
 
-
-
+    <script src="../javaScript/carritoCompra.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
 </body>
 </html>

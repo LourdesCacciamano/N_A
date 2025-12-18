@@ -89,10 +89,10 @@ Contacto: ${respuestas['Email/Contacto']}
         // 7. Codifica el mensaje y crea el enlace
         const mensajeCodificado = encodeURIComponent(mensajeWhatsapp);
         const urlWhatsapp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
-        
+
         // 8. Abre la nueva pestaña con WhatsApp
         window.open(urlWhatsapp, '_blank');
-        
+
     }); // <--- Cierre de la función de submit (¡aquí estaba el error!)
-    
+
 }); // <--- Cierre de la función DOMContentLoaded
