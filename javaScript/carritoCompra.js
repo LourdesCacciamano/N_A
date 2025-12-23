@@ -54,6 +54,7 @@ function guardarEnCarrito(producto) {
         existe.cantidad++;
     } else {
         carrito.push(producto);
+        mostrarToast('Producto agregado al carrito 🛒');
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
 };
@@ -94,16 +95,16 @@ function mostrarCarrito() {
 
     carrito.forEach(producto => {
         const div = document.createElement('div');
-        div.classList.add('col-md-4', 'mb-4');
+        div.classList.add('col-md-4', 'mb-4', 'tamañoCard');
 
         div.innerHTML = `
             <div class="card h-100 shadow-sm">
                 <img src="${producto.img}" class="card-img-top">
                 <div class="card-body bodyCarrito">
                     <h5 class="card-title tituloCarrito">${producto.titulo}</h5>
-                    <p class="card-text">${producto.marca}</p>
-                    <p class="card-tex">- Sabor: ${producto.sabor}</p>
-                    <p class="fw-bold"> - Precio: $${producto.precio.toLocaleString('es-AR')}</p>
+                    <p class="card-text caracteProd">${producto.marca}</p>
+                    <p class="card-tex caracteProd">- Sabor: ${producto.sabor}</p>
+                    <p class="fw-bold caracteProd"> - Precio: $${producto.precio.toLocaleString('es-AR')}</p>
                     <div class="d-flex align-items-center gap-2 my-2">
                         <button class="btn btn-outline-secondary btn-sm btn-restar" type="button"
                             data-id="${producto.id}" data-sabor="${producto.sabor}">−</button>
@@ -111,7 +112,7 @@ function mostrarCarrito() {
                         <button class="btn btn-outline-secondary btn-sm btn-sumar" type="button"
                             data-id="${producto.id}" data-sabor="${producto.sabor}">+</button>
                     </div>
-                    <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id}, '${producto.sabor}')">
+                    <button class="btn btn-danger btn-sm btnEliminarProduc"  onclick="eliminarProducto(${producto.id}, '${producto.sabor}')">
                         Eliminar
                     </button>
                 </div>
@@ -132,6 +133,7 @@ function eliminarProducto(id, sabor) {
 
     mostrarCarrito();
     mostrarResumenCompra();
+    mostrarToast('Producto eliminado ❌', 'danger');
 };
 
 
@@ -157,19 +159,18 @@ function enviarProductoWhatsapp() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     if (carrito.length === 0) return;
 
-    let mensaje = '*NUEVA COMPRA*\n\n';
+    let mensaje = '* NA | NUEVA COMPRA*\n\n';
     let total = 0;
 
     carrito.forEach((p, i) => {
         const subtotal = p.precio * p.cantidad;
         total += subtotal;
 
-        mensaje += `${i + 1}
-            ${p.titulo}
+        mensaje += `${i + 1} - ${p.titulo}
             ${p.marca}
-            Sabor: ${p.sabor}
-            Precio: $${p.precio}
-            Cantidad: ${p.cantidad}
+            - Sabor: ${p.sabor}
+            - Precio: $${p.precio}
+            - Cantidad: ${p.cantidad}
             Subtotal: $${subtotal.toLocaleString('es-AR')}\n\n
         `;
     });
@@ -208,3 +209,17 @@ function modificarCantidad (id, sabor, cambio) {
     mostrarCarrito();
     mostrarResumenCompra();
 };
+
+function mostrarToast(mensaje, tipo = 'success') {
+    const toastEl = document.getElementById('toastCarrito');
+    const toastMsg = document.getElementById('toastMensaje');
+
+    if (!toastEl || !toastMsg) return;
+
+    toastEl.className = `toast align-items-center diseñoToast ${tipo} border-0`;
+    toastMsg.textContent = mensaje;
+
+    const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+    toast.show();
+}
+

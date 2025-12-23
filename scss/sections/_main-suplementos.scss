@@ -1,132 +1,158 @@
-.mainSuple{
+.mainSuple {
     min-height: 40vh;
     margin-top: 200px;
     padding: 10px;
 }
 
-.accordion1{
-    background-color: white;
+.accordion1 {
+    background-color: $gris-mas-claro;
     border-color: black;
 }
-.accordion2{
+
+.accordion2 {
     margin-top: 10px;
     background-color: white;
     border-color: black;
 }
-.accordion3{
+
+.accordion3 {
     margin-top: 10px;
     background-color: white;
     border-color: black;
 }
+
 .text-suple {
     font-family: 'DM Sans';
     text-align: justify;
-    margin-top: 28px;
     font-size: 14px;
     color: whitesmoke;
 }
-.btn13{
+
+.btn13 {
     background-color: $gris-oscuro;
     color: white;
     font-family: $bebas-neue;
     font-size: 25px;
-    &:focus{
+
+    &:focus {
         background-color: $gris-oscuro;
         color: white;
         border-color: $gris-oscuro;
         box-shadow: none;
-        
+
     }
-    &:not(.collapsed){
+
+    &:not(.collapsed) {
         background-color: $gris-oscuro;
         color: white;
         border-color: $gris-oscuro;
         box-shadow: none;
     }
-    &:hover{
+
+    &:hover {
         background-color: rgba(53, 52, 52, 0.849);
     }
 }
-.btn2{
+
+.btn2 {
     background-color: $gris-claro;
     color: black;
     font-family: $bebas-neue;
     font-size: 25px;
-    &:focus{
+
+    &:focus {
         background-color: $gris-claro;
         color: black;
         border-color: $gris-claro;
         box-shadow: none;
     }
-    &:not(.collapsed){
+
+    &:not(.collapsed) {
         background-color: $gris-claro;
         color: black;
         border-color: $gris-claro;
         box-shadow: none;
     }
-    &:hover{
+
+    &:hover {
         background-color: rgba(53, 52, 52, 0.525);
     }
 }
-.btnCreatina{
+
+.btnCreatina {
     margin-top: 10px;
     margin-left: 80px;
 }
-.titleSuple{
+
+.titleSuple {
     font-family: $bebas-neue;
 }
+
 /* Flecha cuando está cerrado */
 .accordion-button::after {
-    filter: invert(1); /* Cambia de negro a blanco */
+    filter: invert(1);
+    /* Cambia de negro a blanco */
 }
 
 /* Flecha cuando está abierto */
 .accordion-button:not(.collapsed)::after {
-    filter: invert(1); /* Blanco */
+    filter: invert(1);
+    /* Blanco */
 }
-.conteTiposProte{
+
+.conteTiposProte {
     display: flex;
     justify-content: space-around;
 }
-.conteTiposCrea{
+
+.conteTiposCrea {
     display: flex;
     justify-content: space-evenly;
 }
-.separador1CardOtros{
+
+.separador1CardOtros {
     display: flex;
     justify-content: space-around;
 }
-.separador2CardOtros{
+
+.separador2CardOtros {
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
 }
-.conteTiposOtros{
+
+.conteTiposOtros {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex-wrap: nowrap;
 }
-.card-title{
+
+.card-title {
     text-align: center;
     color: white;
     font-size: 30px;
 }
-hr{
+
+hr {
     color: white;
     margin-top: 6px;
 }
-h6{
+
+h6 {
     color: white;
 }
-.cardSuple{
+
+.cardSuple {
     background-color: $gris-oscuro;
-    width: 18rem;
+    width: 19rem;
 }
+
 /* Oculto el radio original */
 .radioPersonalizado input[type="radio"] {
     display: none;
 }
+
 /* La “cápsula” */
 .radioPersonalizado span {
     display: inline-block;
@@ -138,114 +164,192 @@ h6{
     color: white;
     border-radius: 10px !important;
 }
-.formSuple{
+
+.formSuple {
     text-align: center !important;
 }
 
 /* Cuando está seleccionado */
-.radioPersonalizado input[type="radio"]:checked + span {
+.radioPersonalizado input[type="radio"]:checked+span {
     background-color: #000;
     color: #fff;
     border-color: #000;
     transform: scale(1.05);
 }
-.titLabel{
+
+.titLabel {
     color: white;
+    font-family: 'DM Sans';
 }
+
 .opcionesSabor {
     display: flex;
-    justify-content: center;       
+    justify-content: center;
     margin-top: 8px;
     margin-bottom: 10px;
 }
-.opSaborLargo{
-     flex-wrap: wrap;
-     gap: 6px;
+
+.opSaborLargo {
+    flex-wrap: wrap;
+    gap: 6px;
 }
-.mediaProte1{
-    display: contents; /* ← NO altera el layout */
+
+.mediaProte1 {
+    display: contents;
+    /* ← NO altera el layout */
     gap: 0;
 }
-.btnSuple{
+
+.btnSuple {
     margin-left: 47px;
     margin-top: 10px;
- }
- .cardCrea2{
+}
+
+.cardCrea2 {
     display: flex;
- }
- .conteCrea{
+}
+
+.conteCrea {
     display: flex;
     gap: 10px;
- }
- .cardSuple-creatin{
+}
+
+.cardSuple-creatin {
     width: 22rem;
     margin-right: 20px;
     background-color: $gris-oscuro;
- }
- .espacio-parrafos{
+}
+
+.espacio-parrafos {
     margin-bottom: 5px;
- }
-.precioSuple{
+}
+
+.precioSuple {
     text-align: center;
     font-size: 24px;
     font-family: $bebas-neue;
     color: white;
 }
 
-@media (max-width: 430px){
-    .mainSuple{
+/* Quitar fondo blanco del accordion */
+.accordion-item,
+.accordion-body,
+.accordion-collapse {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+.sepaPrimerParteOtros {
+        display: contents;
+    }
+
+
+
+
+
+@media (max-width: 430px) {
+    .mainSuple {
         margin-top: 122px;
     }
-    .mediaProte1{
+
+    .mediaProte1 {
         display: flex;
         gap: 5px;
-        flex-direction: column !important;
     }
-    .cardSuple{
-        width: 21rem !important;
-        margin: auto;
+
+    .cardSuple {
+        width: 13rem !important;
+
     }
-    .conteTiposProte{
+
+    .conteTiposProte {
         flex-direction: column;
         align-items: center;
         gap: 18px
     }
-    .text-vesti{
+
+    .text-vesti {
         margin-top: 8px;
         font-size: 13px;
     }
-    h6{
+
+    h6 {
         font-size: 13px;
     }
-    .btnSuple{
-        font-size: 14px;
-        margin-left: 80px;
+
+    .btnSuple {
+         margin-left: 15px;
+        font-size: 13px;
+        width: 139px;
     }
-    .conteCrea{
+
+    .conteCrea {
         display: flex;
-        gap: 10px;
-        flex-direction: column;
-    }
-    .cardCrea2{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .conteTiposCrea{
+        gap: 8px;
         justify-content: center;
     }
-    .conteTiposOtros{
+
+    .cardCrea2 {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .conteTiposCrea {
+        justify-content: center;
+    }
+    .btnCreatina{
+        margin-left: 15px;
+        font-size: 13px;
+        width: 139px;
+    }
+
+    .conteTiposOtros {
         gap: 15px;
     }
-    .separador1CardOtros, .separador2CardOtros{
+
+    .separador1CardOtros,
+    .separador2CardOtros {
         flex-direction: column;
         gap: 10px;
     }
-   .opSaborLargo{
+
+    .opSaborLargo {
         margin-left: 7px;
-   }
-   .cardSuple-creatin{
+    }
+
+    .cardSuple-creatin {
         margin-right: 0px;
-        width: 21rem;
-   }
+        width: 13rem;
+        margin: auto;
+    }
+
+    .precioSuple {
+        font-size: 20px
+    }
+
+    .titleSuple {
+        font-size: 25px;
+    }
+
+    .text-suple {
+        margin-top: 0px;
+        font-size: 12px;
+    }
+    .radioPersonalizado span {
+        font-size: 14px;
+    }
+    .opcionesSabor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+    .sepaPrimerParteOtros{
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+    
+    
 }
