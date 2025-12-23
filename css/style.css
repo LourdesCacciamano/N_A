@@ -658,7 +658,7 @@ hr {
 h6 {
   color: white; }
 
-.cardSuple {
+.cardSuple, .cardOtros {
   background-color: #3F4239;
   width: 19rem; }
 
@@ -706,7 +706,7 @@ h6 {
   /* ← NO altera el layout */
   gap: 0; }
 
-.btnSuple {
+.btnSuple, .btnOtros {
   margin-left: 47px;
   margin-top: 10px; }
 
@@ -746,9 +746,9 @@ h6 {
     margin-top: 122px; }
   .mediaProte1 {
     display: flex;
-    gap: 5px; }
+    gap: 2px; }
   .cardSuple {
-    width: 13rem !important; }
+    width: 12rem !important; }
   .conteTiposProte {
     flex-direction: column;
     align-items: center;
@@ -764,7 +764,7 @@ h6 {
     width: 139px; }
   .conteCrea {
     display: flex;
-    gap: 8px;
+    gap: 2px;
     justify-content: center; }
   .cardCrea2 {
     display: flex;
@@ -786,7 +786,7 @@ h6 {
     margin-left: 7px; }
   .cardSuple-creatin {
     margin-right: 0px;
-    width: 13rem;
+    width: 12rem;
     margin: auto; }
   .precioSuple {
     font-size: 20px; }
@@ -805,8 +805,14 @@ h6 {
     margin-top: 8px; }
   .sepaPrimerParteOtros {
     display: flex;
-    gap: 8px;
-    justify-content: center; } }
+    gap: 2px;
+    justify-content: center; }
+  .cardOtros {
+    width: 12rem !important; }
+  .btnOtros {
+    margin-left: 4px;
+    font-size: 13px;
+    width: 139px; } }
 
 .conteCards-vesti {
   display: flex;
