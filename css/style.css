@@ -757,7 +757,7 @@ h6 {
     margin-top: 8px;
     font-size: 13px; }
   h6 {
-    font-size: 13px; }
+    font-size: 12px; }
   .btnSuple {
     margin-left: 15px;
     font-size: 13px;
@@ -808,9 +808,12 @@ h6 {
     gap: 2px;
     justify-content: center; }
   .cardOtros {
-    width: 12rem !important; }
+    width: 12rem !important;
+    min-width: 12rem;
+    /* Evita que flexbox las achique */
+    flex-shrink: 0; }
   .btnOtros {
-    margin-left: 4px;
+    margin: auto;
     font-size: 13px;
     width: 139px; } }
 

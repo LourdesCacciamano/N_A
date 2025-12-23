@@ -272,7 +272,7 @@ h6 {
     }
 
     h6 {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .btnSuple {
@@ -351,10 +351,12 @@ h6 {
     }
     .cardOtros{
         width: 12rem !important; 
+        min-width: 12rem; /* Evita que flexbox las achique */
+        flex-shrink: 0;
     }
     .btnOtros{
-        margin-left: 4px;
-         font-size: 13px;
+        margin: auto;
+        font-size: 13px;
         width: 139px;
     }
 }
