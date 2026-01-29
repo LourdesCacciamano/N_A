@@ -26,26 +26,21 @@ body{
  /*CARROUSEL ---------------------------*/
 
 #carouselExampleSlidesOnly {
-    width: 100%; 
+    width: 100% !important; 
+    height: 80dvh;  /* viewport real en iOS */
     max-height: 350px; /* <--- Limita la altura del carrusel */
     overflow: hidden;
 }
 .carousel-inner,
 .carousel-item {
-    height: 100%; 
+    height: 100% !important; 
     width: 100%;
 }
 .carousel-item img {
-    width: 100%;
     height: 100%; 
+    width: 100%;
     object-fit: cover;
-}
-.img3Carrousel{
-    margin-top: -78px;
-}
-.img2Carrousel{
-    margin-top: -20px;
-    margin-right: 20px;
+    object-position: top;
 }
 
 /*CARD ------------------------------*/
@@ -147,5 +142,14 @@ body{
     }
     .img3Carrousel{
         margin-top: 0px;
+    }
+    #carouselExampleSlidesOnly{
+        height: 35dvh;
+    }
+}
+
+@media (min-width:431px) and (max-width:768px) {
+    #carouselExampleSlidesOnly{
+        height: 35dvh;
     }
 }

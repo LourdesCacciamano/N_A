@@ -223,3 +223,14 @@
     }
 
 }
+
+@media (min-width:431px) and (max-width:768px) {
+    .header .container-fluid{
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    .imgLogo{
+        width: 30%;
+    }
+}
+
