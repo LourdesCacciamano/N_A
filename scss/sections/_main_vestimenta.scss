@@ -103,3 +103,12 @@
         padding-top: 120px;
     }
 }
+
+@media (min-width:431px) and (max-width:768px){
+    .cardVesti{
+        width: 15rem;
+    }
+    .card-text-vesti{
+        font-size: 13px;
+    }
+}

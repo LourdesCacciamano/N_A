@@ -94,3 +94,14 @@
         width: 22rem;
     }
 }
+
+@media (min-width:431px) and (max-width:768px){
+    .cardBodyPlanes{
+        width: 30rem;
+    }
+    .tituloPlan{
+        text-align: left;
+        font-size: 16px;
+        padding-left: 25px;
+    }
+}

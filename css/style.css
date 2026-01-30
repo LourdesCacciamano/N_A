@@ -22,9 +22,9 @@
   align-items: center;
   gap: 12px; }
 
-.imgLogo,
-.imgLogoForm,
-.imgLogoSuple {
+.imgLogoInicio,
+.imgLogoForm, .imgLogoCarrito,
+.imgLogoSuple, .imgLogoPlan {
   display: block;
   width: 12%; }
 
@@ -159,7 +159,7 @@
 @media (max-width: 430px) {
   .header {
     height: 95px; }
-  .imgLogo {
+  .imgLogoInicio, .imgLogoPlan {
     width: 103px; }
   .inicio {
     font-size: 23px;
@@ -202,8 +202,12 @@
   .header .container-fluid {
     justify-content: flex-end;
     flex-wrap: nowrap; }
-  .imgLogo {
-    width: 30%; } }
+  .imgLogoInicio, .imgLogoPlan, .imgLogoSuple {
+    width: 30%; }
+  .iniPlan {
+    font-size: 23px; }
+  .inicioSuplementos {
+    font-size: 25px; } }
 
 .mainIndex {
   min-height: 70vh;
@@ -337,7 +341,10 @@ body {
 
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
-    height: 35dvh; } }
+    height: 35dvh; }
+  .conteinerCard {
+    flex-wrap: wrap;
+    gap: 20px; } }
 
 .footer {
   max-height: 34vh;
@@ -425,6 +432,10 @@ body {
     gap: 7px; }
   .footer {
     padding-bottom: 11px; } }
+
+@media (min-width: 431px) and (max-width: 768px) {
+  .what, .insta {
+    font-size: 37px; } }
 
 .mainForm {
   min-height: 70vh;
@@ -748,7 +759,8 @@ h6 {
   border-color: transparent !important; }
 
 .sepaPrimerParteOtros {
-  display: contents; }
+  display: contents;
+  gap: 5px; }
 
 @media (max-width: 430px) {
   .mainSuple {
@@ -825,6 +837,50 @@ h6 {
     margin: auto;
     font-size: 13px;
     width: 139px; } }
+
+@media (min-width: 431px) and (max-width: 768px) {
+  .mediaProte1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 6px; }
+  .cardSuple {
+    width: 15rem; }
+  .conteTiposProte {
+    justify-content: center;
+    gap: 5px; }
+  .opcionesSabor {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; }
+  .btnSuple {
+    margin-left: 25px; }
+  .conteCrea {
+    flex-wrap: wrap;
+    flex-direction: column; }
+  .cardSuple-creatin {
+    width: 14rem;
+    height: 34rem;
+    margin-right: 5px; }
+  .conteTiposCrea {
+    justify-content: center; }
+  .btnCreatina {
+    margin-top: 24px;
+    margin-left: 25px; }
+  .cardOtros {
+    width: 15rem; }
+  .separador1CardOtros,
+  .separador2CardOtros {
+    flex-direction: column;
+    gap: 10px; }
+  .sepaPrimerParteOtros {
+    display: flex;
+    gap: 5px;
+    justify-content: center; }
+  .conteTiposOtros {
+    gap: 5px; }
+  .btnOtros {
+    margin-left: 18px; } }
 
 .conteCards-vesti {
   display: flex;
@@ -924,6 +980,12 @@ h6 {
   .mainVesti {
     padding-top: 120px; } }
 
+@media (min-width: 431px) and (max-width: 768px) {
+  .cardVesti {
+    width: 15rem; }
+  .card-text-vesti {
+    font-size: 13px; } }
+
 .mainPlan {
   min-height: 70vh;
   padding-top: 175px;
@@ -1009,6 +1071,14 @@ h6 {
     width: 41%; }
   .lineaPlan {
     width: 22rem; } }
+
+@media (min-width: 431px) and (max-width: 768px) {
+  .cardBodyPlanes {
+    width: 30rem; }
+  .tituloPlan {
+    text-align: left;
+    font-size: 16px;
+    padding-left: 25px; } }
 
 .inicioCarrito {
   margin-top: 26px; }

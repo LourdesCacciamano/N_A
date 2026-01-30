@@ -152,4 +152,8 @@ body{
     #carouselExampleSlidesOnly{
         height: 35dvh;
     }
+    .conteinerCard{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }

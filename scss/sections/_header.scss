@@ -20,9 +20,9 @@
     gap: 12px;
 }
 
-.imgLogo,
-.imgLogoForm,
-.imgLogoSuple {
+.imgLogoInicio,
+.imgLogoForm, .imgLogoCarrito,
+.imgLogoSuple, .imgLogoPlan {
     display: block;
     width: 12%;
 }
@@ -164,7 +164,7 @@
         height: 95px;
     }
 
-    .imgLogo {
+    .imgLogoInicio, .imgLogoPlan {
         width: 103px;
     }
 
@@ -229,8 +229,14 @@
         justify-content: flex-end;
         flex-wrap: nowrap;
     }
-    .imgLogo{
+    .imgLogoInicio, .imgLogoPlan, .imgLogoSuple{
         width: 30%;
+    }
+    .iniPlan{
+        font-size: 23px;
+    }
+    .inicioSuplementos{
+        font-size: 25px;
     }
 }
 

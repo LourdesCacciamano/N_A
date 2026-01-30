@@ -239,9 +239,10 @@ h6 {
     border-color: transparent !important;
 }
 .sepaPrimerParteOtros {
-        display: contents;
+       display: contents;
+       
+       gap: 5px;
     }
-
 
 
 
@@ -358,5 +359,65 @@ h6 {
         margin: auto;
         font-size: 13px;
         width: 139px;
+    }
+}
+
+@media (min-width:431px) and (max-width:768px){
+    .mediaProte1{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .cardSuple{
+        width: 15rem;
+    }
+
+    .conteTiposProte{
+        justify-content: center;
+        gap: 5px;
+    }
+    .opcionesSabor{
+        flex-direction: column;
+        align-items: center;
+        gap: 5px
+    }
+    .btnSuple{
+        margin-left: 25px;
+    }
+    .conteCrea{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .cardSuple-creatin{
+        width: 14rem;
+        height: 34rem;
+        margin-right: 5px;
+    }
+    .conteTiposCrea{
+        justify-content: center;
+    }
+    .btnCreatina{
+        margin-top: 24px;
+        margin-left: 25px;
+    }
+    .cardOtros{
+        width: 15rem;
+    }
+    .separador1CardOtros,
+    .separador2CardOtros {
+        flex-direction: column;
+        gap: 10px;
+    }
+     .sepaPrimerParteOtros{
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    .conteTiposOtros{
+        gap: 5px;
+    }
+    .btnOtros{
+        margin-left: 18px;
     }
 }
