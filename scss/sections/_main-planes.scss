@@ -26,12 +26,13 @@
 .accordion-item-plan {
     margin-bottom: 9px;
 }
-.tituloPlan{
+.tituloPlanSup{
     text-align: center;
     padding-bottom: 7px;
-    font-size: 14px;
+    font-size: 20px;
     color: black;
     padding-left: 17px;
+    font-family: $bebas-neue;
 }
 .btnPlanes{
     font-family:'DM Sans' ;
@@ -45,7 +46,7 @@
     gap: 15px;
 }
 .lineaPlan{
-    color: black;
+    color: white;
     width: 49rem;
 }
 .opcionesPlan{
@@ -54,9 +55,9 @@
 }
 .conteCadaEj{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .videoPlan{
     width: 22%;
@@ -67,25 +68,39 @@
 .btnPlanAcordion{
     background-color: #3d3d3d !important;
     color: white !important;
+    font-family: $bebas-neue;
+    font-size: 25px;
 }
 .ejercicios{
     text-align: center;
+    font-family: $bebas-neue;
+    font-size: 22px;
 }
+.tituloPlanInf{
+    text-align: center;
+    padding-bottom: 7px;
+    font-size: 20px;
+    color: black;
+    padding-left: 17px;
+    font-family: $bebas-neue;
+    margin-top: 25px;
+}
+
 
 
 @media (max-width:430px) {
     .btnPlanes{
         font-size: 14px;
     }
-    .tituloPlan{
+    .tituloPlanSup{
         padding-bottom: 0px;
-        text-align: left;
+        font-size: 14px;
+    }
+    .tituloPlanInf{
+        font-size: 16px;
     }
     .accordion-item-plan {
         margin-bottom: 9px;
-    }
-    .conteCadaEj{
-        justify-content: space-between;
     }
     .videoPlan{
         width: 41%;
@@ -93,15 +108,30 @@
     .lineaPlan{
         width: 22rem;
     }
+    .cardBodyPlanes{
+        width: 25rem;
+    }
+    .ejercicios{
+        font-size: 18px;
+    }
 }
 
 @media (min-width:431px) and (max-width:768px){
     .cardBodyPlanes{
         width: 30rem;
     }
-    .tituloPlan{
+    .tituloPlanSup{
         text-align: left;
         font-size: 16px;
         padding-left: 25px;
+    }
+    .tituloPlanInf{
+        font-size: 17px;
+    }
+    .ejercicios{
+        font-size: 20px;
+    }
+    .lineaPlan{
+        width: 22rem;
     }
 }
