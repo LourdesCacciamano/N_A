@@ -196,7 +196,14 @@
     height: 74px;
     margin-bottom: 15px !important; }
   .inicioVestimentaVideo {
-    font-size: 21px; } }
+    font-size: 21px; }
+  .header .headerCarrito {
+    justify-content: flex-end;
+    flex-wrap: nowrap; }
+  .imgLogoCarrito {
+    width: 30%; }
+  .inicioCarrito {
+    font-size: 18px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .header .container-fluid {

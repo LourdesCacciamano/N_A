@@ -221,6 +221,16 @@
     .inicioVestimentaVideo{
         font-size: 21px;
     }
+    .header .headerCarrito{
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+    }
+    .imgLogoCarrito{
+        width: 30%;
+    }
+    .inicioCarrito{
+        font-size: 18px;
+    }
 
 }
 
