@@ -31,7 +31,7 @@
 .inicio,
 .inicioSuplementos,
 .inicioCarrito,
-.inicioFormulario {
+.inicioFormulario, .inicioVestimenta {
   font-family: "Bebas Neue", sans-serif !important;
   color: white;
   font-size: 28px;
