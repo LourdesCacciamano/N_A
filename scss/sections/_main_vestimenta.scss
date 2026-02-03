@@ -91,16 +91,19 @@
 }
 
 @media (max-width:430px){
-    .conteCards-vesti{
-        flex-direction: column !important;
-        gap: 20px !important;
-    }
+    
     .cardVesti{
-        width: 23rem;
-        margin: auto;
+        width: 13rem;
     }
     .mainVesti{
         padding-top: 120px;
+    }
+    .card-text-vesti{
+        font-size: 12px;
+    }
+    .labelColor{
+        display: flex;
+        gap: 5px;
     }
 }
 

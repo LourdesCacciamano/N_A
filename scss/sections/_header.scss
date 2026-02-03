@@ -29,7 +29,7 @@
 
 .inicio,
 .inicioSuplementos,
-.inicioVestimentaVideo,
+.inicioCarrito,
 .inicioFormulario {
     font-family: $bebas-neue !important;
     color: white;
@@ -239,14 +239,23 @@
         justify-content: flex-end;
         flex-wrap: nowrap;
     }
-    .imgLogoInicio, .imgLogoPlan, .imgLogoSuple{
+    .imgLogoInicio, .imgLogoPlan, .imgLogoSuple, .imgLogoCarrito{
         width: 30%;
     }
-    .iniPlan{
+    .imgLogoForm{
+        width: 34%;
+    }
+    .iniPlan, .inicioCarrito{
         font-size: 23px;
     }
     .inicioSuplementos{
         font-size: 25px;
+    }
+    .inicioFormulario{
+        font-size: 22px;
+    }
+    .volverIndex{
+        font-size: 21px !important;
     }
 }
 

@@ -30,7 +30,7 @@
 
 .inicio,
 .inicioSuplementos,
-.inicioVestimentaVideo,
+.inicioCarrito,
 .inicioFormulario {
   font-family: "Bebas Neue", sans-serif !important;
   color: white;
@@ -209,12 +209,18 @@
   .header .container-fluid {
     justify-content: flex-end;
     flex-wrap: nowrap; }
-  .imgLogoInicio, .imgLogoPlan, .imgLogoSuple {
+  .imgLogoInicio, .imgLogoPlan, .imgLogoSuple, .imgLogoCarrito {
     width: 30%; }
-  .iniPlan {
+  .imgLogoForm {
+    width: 34%; }
+  .iniPlan, .inicioCarrito {
     font-size: 23px; }
   .inicioSuplementos {
-    font-size: 25px; } }
+    font-size: 25px; }
+  .inicioFormulario {
+    font-size: 22px; }
+  .volverIndex {
+    font-size: 21px !important; } }
 
 .mainIndex {
   min-height: 70vh;
@@ -255,6 +261,9 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: top; }
+
+.img4Carrousel {
+  object-position: center 30% !important; }
 
 /*CARD ------------------------------*/
 .conteinerCard {
@@ -978,14 +987,15 @@ h6 {
   background-color: #C9C6C7; }
 
 @media (max-width: 430px) {
-  .conteCards-vesti {
-    flex-direction: column !important;
-    gap: 20px !important; }
   .cardVesti {
-    width: 23rem;
-    margin: auto; }
+    width: 13rem; }
   .mainVesti {
-    padding-top: 120px; } }
+    padding-top: 120px; }
+  .card-text-vesti {
+    font-size: 12px; }
+  .labelColor {
+    display: flex;
+    gap: 5px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .cardVesti {
