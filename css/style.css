@@ -55,6 +55,9 @@
   align-items: center;
   gap: 14px; }
 
+.accionHeadTimer {
+  margin-left: 105px; }
+
 /* CARRITO */
 .compraInicio {
   width: 26px;
@@ -1212,3 +1215,7 @@ h6 {
     gap: 5px; }
   .caracteProd {
     font-size: 14px; } }
+
+.mainTimer {
+  min-height: 70vh;
+  padding-top: 160px; }
