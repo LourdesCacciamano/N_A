@@ -94,6 +94,7 @@
     background-color: grey;
     border-radius: 5px;
     width: 16%;
+    color: black;
 
     &:hover{
         background-color: $gris-oscuro;
@@ -143,6 +144,9 @@
     .mainTimer{
         padding-top: 125px;
     }
+    .textoTiempos{
+        font-size: 21px;
+    }
 }
 
 @media (min-width:431px) and (max-width:768px){
@@ -167,5 +171,8 @@
     }
     .botonesTimer{
         gap: 22px
+    }
+    .textoTiempos{
+        font-size: 21px;
     }
 }

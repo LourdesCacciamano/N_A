@@ -1313,7 +1313,8 @@ h6 {
   border-color: #7e6969;
   background-color: grey;
   border-radius: 5px;
-  width: 16%; }
+  width: 16%;
+  color: black; }
   .estiloBtn:hover {
     background-color: #3F4239;
     color: white; }
@@ -1348,7 +1349,9 @@ h6 {
   .botonesTimer {
     gap: 25px; }
   .mainTimer {
-    padding-top: 125px; } }
+    padding-top: 125px; }
+  .textoTiempos {
+    font-size: 21px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .btnAcordion {
@@ -1366,4 +1369,6 @@ h6 {
     font-size: 21px;
     width: 27%; }
   .botonesTimer {
-    gap: 22px; } }
+    gap: 22px; }
+  .textoTiempos {
+    font-size: 21px; } }
