@@ -22,7 +22,7 @@
 
 .imgLogoInicio,
 .imgLogoForm, .imgLogoCarrito,
-.imgLogoSuple, .imgLogoPlan {
+.imgLogoSuple, .imgLogoPlan, .imgLogoTimer {
     display: block;
     width: 12%;
 }
@@ -43,7 +43,7 @@
 .barra-vertical-suplementos,
 .barra-vertical-vestimenta-planes,
 .barra-vertical-videos,
-.barra-vertical-formulario {
+.barra-vertical-formulario, .barra-vertical-timer {
     width: 2px;
     height: 97px;
     background-color: #565252;
@@ -235,6 +235,12 @@
     .inicioCarrito{
         font-size: 18px;
     }
+    .imgLogoTimer{
+        width: 58%;
+    }
+    .barra-vertical-timer{
+        height: 65px;
+    }
 
 }
 
@@ -260,6 +266,9 @@
     }
     .volverIndex{
         font-size: 21px !important;
+    }
+    .imgLogoTimer{
+        width: 54%;
     }
 }
 

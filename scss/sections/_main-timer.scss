@@ -2,3 +2,170 @@
     min-height: 70vh;
     padding-top: 160px;
 }
+.contenedorFlexTiempos{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 10px;
+}
+.btnAcordion{
+    width: 66%;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: $bebas-neue;
+    background-color: $gris-oscuro;
+    color: white;
+}
+.inputTiempos{
+    width: 43px;
+    text-align: center;
+    border-radius: 5px;
+}
+.textoTiempos{
+    font-size: 23px;
+    font-family: $bebas-neue;
+}
+.configuracionTimer {
+    margin: auto;
+    background-color: $gris-oscuro;
+    color: white;
+    width: 53%;
+    border-radius: 18px;
+    padding: 5px;
+}
+
+/* Aplica a tu acordeón personalizado */
+
+
+/* Cuando está abierto (activo) */
+.btnAcordion:not(.collapsed) {
+    background-color: $gris-oscuro; /* mantiene tu color */
+    color: #000;
+    box-shadow: none;
+}
+
+/* Quitar borde azul y sombra al hacer focus */
+.btnAcordion:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+/* Evitar cambio de color al pasar el mouse */
+.btnAcordion:hover {
+    background-color: $gris-claro;
+    color: #000;
+}
+.estados{
+    text-align: center;
+    margin-top: 25px;
+    font-family: $bebas-neue;
+    font-size: 60px;
+    background-color: yellow;
+    width: 70%;
+    margin: auto;
+    border-radius: 15px;
+    margin-top: 45px;
+}
+.tiempo {
+    text-align: center;
+    font-size: 112px;
+    font-weight: bold;
+    background-color: black;
+    width: 22%;
+    margin: auto;
+    margin-top: 12px;
+    border-radius: 15px;
+    color: white;
+    font-family: $bebas-neue;
+}
+.botonesTimer{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+.estiloBtn{
+    padding: 5px;
+    font-family: $bebas-neue;
+    font-size: 30px;
+    border-color: #7e6969;
+    background-color: grey;
+    border-radius: 5px;
+    width: 16%;
+
+    &:hover{
+        background-color: $gris-oscuro;
+        color: white;
+    }
+    &:focus{
+        background-color: $gris-oscuro;
+        color: white;
+    }
+}
+.entrComp{
+    font-size: 49px;
+}
+
+
+@media (max-width: 430px) {
+    .btnAcordion{
+        width: 91%;
+    }
+    .configuracionTimer{
+        width: 102%;
+    }
+    .inputTiempos{
+        width: 35px;
+    }
+    .contenedorFlexTiempos{
+        justify-content: flex-start;
+        padding-left: 34px;
+        gap: 59px;
+    }
+    .estados{
+        width: 90%;
+        font-size: 55px;
+        margin-top: 29px;
+    }
+    .tiempo{
+        font-size: 95px;
+        width: 51%;
+    }
+    .estiloBtn{
+        font-size: 16px;
+        width: 25%;
+    }
+    .botonesTimer{
+        gap: 25px
+    }
+    .mainTimer{
+        padding-top: 125px;
+    }
+}
+
+@media (min-width:431px) and (max-width:768px){
+    .btnAcordion{
+        width: 88%;
+    }
+    .configuracionTimer{
+        width: 93%;
+    }
+    .estados{
+        font-size: 55px;
+        width: 89%;
+        margin-top: 17px;
+    }
+    .tiempo{
+        font-size: 98px;
+        width: 47%;
+    }
+    .estiloBtn{
+        font-size: 21px;
+        width: 27%;
+    }
+    .botonesTimer{
+        gap: 22px
+    }
+}

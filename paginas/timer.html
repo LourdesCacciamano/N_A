@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Charm:wght@400;700&display=swap');
     </style>
-    </head>
-
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
 <body>
     <header>
@@ -22,8 +23,8 @@
                 <div class="conteHeader">
                     <a class="navbar-brand nav2 navPlanes" href="../index.html">
                         <!-- Aca estan las opciones del navbar -->
-                        <img src="../imagenes/logoB.png" class="imgLogoSuple logoPlan " width="20%" alt="Logo">
-                        <div class="barra-vertical-suplementos"></div>
+                        <img src="../imagenes/logoB.png" class="imgLogoTimer logoPlan " width="20%" alt="Logo">
+                        <div class="barra-vertical-timer"></div>
                         <h3 class="inicioSuplementos animate__animated animate__backInRight">TIMER</h3>
                     </a>
                     <div class="accionesHeader accionHeadTimer">
@@ -52,7 +53,7 @@
                                 <a class="nav-link active opMenu" aria-current="page" href="../index.html">INICIO</a>
                             </li>
                             <li><a class="dropdown-item opMenu" href="./planesDeAdaptacion.html"> PLANES DE
-                                            ADAPTACIÓN</a></li>
+                                    ADAPTACIÓN</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle opMenu" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,7 +65,7 @@
                                     </li>
                                 </ul>
                             </li>
-                             <li><a class="dropdown-item opMenu" href="./timer.html"> 
+                            <li><a class="dropdown-item opMenu" href="./timer.html">
                                     TIMER</a></li>
                         </ul>
                     </div>
@@ -75,28 +76,90 @@
 
     <main class="mainTimer">
         <div class="timer">
-            <h1 id="estado">PREPÁRATE</h1>
-            <div id="tiempo">00:00</div>
 
-            <div class="configuracionTimer">
-                <label>Prepárate <input type="number" id="preparate" value="10"></label>
-                <label>Entrenar <input type="number" id="entrenar" value="30"></label>
-                <label>Descansar <input type="number" id="descansar" value="15"></label>
-                <label>Rondas <input type="number" id="rondas" value="5"></label>
-                <label>Descansar entre Ciclos <input type="number" id="descansarCiclo" value="60"></label>
-                <label>Ciclos <input type="number" id="ciclos" value="2"></label>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button btnAcordion" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Configurar Tiempos
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="configuracionTimer">
+                                <div class="contenedorFlexTiempos">
+                                    <label class="textoTiempos">Prepárate: <input type="number" id="preparate" value="3"
+                                            class="inputTiempos"> ''</label>
+                                    <label class="textoTiempos">Entrenar: <input type="number" id="entrenar" value="15"
+                                            class="inputTiempos"> ''</label>
+                                </div>
+                                <div class="contenedorFlexTiempos">
+                                    <label class="textoTiempos">Rondas: <input type="number" id="rondas" value="4"
+                                            class="inputTiempos"> ''</label>
+                                    <label class="textoTiempos">Descansar: <input type="number" id="descansar" value="5"
+                                            class="inputTiempos"> ''</label>
+                                </div>
+                                <div class="contenedorFlexTiempos">
+                                    <label class="textoTiempos">Ciclos: <input type="number" id="ciclos" value="2"
+                                            class="inputTiempos"> ''</label>
+                                    <label class="textoTiempos">Descansar: <input type="number"
+                                            id="descansarCiclo" value="5" class="inputTiempos"> ''</label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <button id="empezar"> ▶️ EMPEZAR</button>
-            <button id="pausar">⏸️ PAUSAR</button>
-        </div>
 
-        <!--Sonidos-->
-        <audio id="tick" src="tick.mp3"></audio>
-        <audio id="beep" src="beep.mp3"></audio>
-        <audio id="longBeep" src="long-beep.mp3"></audio>
+            <h1 id="estado" class="estados"> PREPÁRATE </h1>
+            <div id="tiempo" class="tiempo">00:00</div>
+
+            <div class="botonesTimer">
+                <button id="empezar" class="estiloBtn"> <i class="fa-solid fa-play" style="color: #ffffff;"></i>  EMPEZAR</button>
+                <button id="pausar" class="estiloBtn"> <i class="fa-solid fa-pause" style="color: #f3f3f1;"></i>  PAUSAR</button>
+                <button id="restablecer" class="estiloBtn"><i class="fa-solid fa-arrows-rotate" style="color: #fafafa;"></i>  RESTABLECER </button>
+            </div>
+
+            <!--Sonidos-->
+            <audio id="tick" src="../audios/Sonido reloj tic tac - Tic tac clock sound (FX).mp3"></audio>
+            <audio id="beep"
+                src="../audios/5-second-countdown-timer-with-beep-sound-and-alarm-digital-clock-green-fire-fla_eTMRMHsa.mp3"></audio>
+
 
     </main>
+
+    <footer class="footer">
+        <section class="section-footer">
+            <div class="redes">
+                <h2>CONTACTO</h2>
+                <div class="conteRedes">
+                    <a href="https://wa.me/message/S7RX4FHJ6J22M1" target="_blank">
+                        <i class="fa-brands fa-whatsapp what" style="color: #000000;"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nahuu.aballay?igsh=MTRmcXJtejh1dHk3Nw==" target="_blank">
+                        <i class="fa-brands fa-instagram insta" style="color: #000000;"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="logoCopy">
+                <img src="../imagenes/logoB.png" class="imgLogoFoot" width="20%" alt="Logo">
+                <p class="footer-copy">Asesoramientos Nahuel Aballay</p>
+            </div>
+            <div class="volverArriba">
+                <a href="#topVestimenta"><i class="fa-solid fa-arrow-up" style="color: #000000;"></i></a>
+
+            </div>
+
+        </section>
+
+
+    </footer>
 
 
 
@@ -108,4 +171,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
