@@ -34,7 +34,6 @@
 }
 .tamañoCard{
     width: 27%;
-    height: 1%;
 }
 .d-flex{
     justify-content: center !important;
@@ -99,4 +98,23 @@
     .caracteProd{
         font-size: 14px;
     }
+}
+
+@media (min-width:431px) and (max-width:768px){
+    .tamañoCard{
+        width: 50%;
+    }
+    .conteCardCarrito{
+        width: 105%;
+    }
+    .conteResumen{
+        width: 99%;
+    }
+    .list-group-item{
+        font-size: 13px;
+    }
+    .conteBotonesResumen{
+        justify-content: space-evenly;
+    }
+    
 }

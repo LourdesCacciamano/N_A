@@ -160,6 +160,12 @@
 .conteHeader{
     display: flex;
 }
+.carritoIcono{
+    font-size: 26px;
+    &:hover{
+        color: #3F4239;
+    }
+}
 
 
 /* MOBILE */
@@ -241,6 +247,9 @@
     .barra-vertical-timer{
         height: 65px;
     }
+    .carritoIcono{
+        font-size: 22px;
+    }
 
 }
 
@@ -269,6 +278,9 @@
     }
     .imgLogoTimer{
         width: 54%;
+    }
+    .carritoIcono{
+        font-size: 22px;
     }
 }
 
