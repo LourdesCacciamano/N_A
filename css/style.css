@@ -917,7 +917,8 @@ h6 {
 
 .conteCards-vesti {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  flex-wrap: wrap; }
 
 .card-title-vesti {
   color: white;
@@ -1014,27 +1015,24 @@ h6 {
 
 @media (max-width: 430px) {
   .cardVesti {
-    width: 13rem; }
+    width: 48%; }
   .mainVesti {
     padding-top: 120px; }
-  .card-text-vesti {
-    font-size: 12px; }
   .labelColor {
     display: flex;
     gap: 5px; }
   .formRemera {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 3px; }
   .radioPersonalizado span {
     padding: 2px 6px;
     margin-right: 2px; }
-  .cardVesti {
-    width: 11rem; }
   .radioPersonalizadoColor span {
     padding: 1px 4px;
     margin-right: 0px;
-    font-size: 12px; }
+    font-size: 13px; }
   .card-title-vesti {
     font-size: 26px; }
   .precios-vesti {
