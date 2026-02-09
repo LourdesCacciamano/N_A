@@ -35,9 +35,12 @@
 .radioPersonalizado input[type="radio"] {
     display: none;
 }
+.radioPersonalizadoColor input[type="radio"] {
+    display: none;
+}
 
 /* La “cápsula” */
-.radioPersonalizado span {
+.radioPersonalizado span, .radioPersonalizadoColor span {
     display: inline-block;
     padding: 2px 9px;
     border: 1px solid #555;
@@ -50,6 +53,12 @@
 
 /* Cuando está seleccionado */
 .radioPersonalizado input[type="radio"]:checked + span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    transform: scale(1.05);
+}
+.radioPersonalizadoColor input[type="radio"]:checked + span {
     background-color: #000;
     color: #fff;
     border-color: #000;
@@ -105,13 +114,44 @@
         display: flex;
         gap: 5px;
     }
+    .formRemera{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+    }
+    .radioPersonalizado span{
+        padding: 2px 6px;
+        margin-right: 2px;
+    };
+    .cardVesti{
+         width: 11rem;
+    }
+    .radioPersonalizadoColor span {
+        padding: 1px 4px;
+        margin-right: 0px;
+        font-size: 12px;
+    }
+    .card-title-vesti{
+        font-size: 26px;
+    }
+    .precios-vesti{
+        font-size: 25px;
+    }
+    .btnVesti{
+        font-size: 15px;
+        width: 145px;
+    }
 }
 
 @media (min-width:431px) and (max-width:768px){
     .cardVesti{
-        width: 15rem;
+        width: 14rem;
     }
     .card-text-vesti{
         font-size: 13px;
+    }
+    .labelColor{
+        display: flex;
+        gap: 3px;
     }
 }
