@@ -58,11 +58,11 @@
     color: #000;
 }
 .estados{
+    background-color: rgb(241, 241, 7);
     text-align: center;
     margin-top: 25px;
     font-family: $bebas-neue;
     font-size: 60px;
-    background-color: yellow;
     width: 70%;
     margin: auto;
     border-radius: 15px;
@@ -108,6 +108,15 @@
 .entrComp{
     font-size: 49px;
 }
+.estatado-prep-desc {
+    background-color: rgb(241, 241, 7);
+}
+.estado-entre-compl {
+    background-color: rgb(45, 245, 45);
+}
+.conteFlexTime1 {
+    margin-right: 95px;
+}
 
 
 @media (max-width: 430px) {
@@ -123,7 +132,7 @@
     .contenedorFlexTiempos{
         justify-content: flex-start;
         padding-left: 34px;
-        gap: 59px;
+        gap: 42px;
     }
     .estados{
         width: 90%;
@@ -146,7 +155,7 @@
         padding-top: 125px;
     }
     .textoTiempos{
-        font-size: 21px;
+        font-size: 18px;
     }
 }
 

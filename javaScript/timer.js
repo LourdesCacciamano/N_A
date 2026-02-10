@@ -44,6 +44,7 @@ function iniciarCuenta(nombre, duracion, restante) {
     pausado = false;
     enCuentaFinal = false;
     estado.textContent = nombre;
+    background(nombre);
     animarEstados();
     segundos =duracion;
     tiempo.textContent = formatoTiempo(segundos);
@@ -117,6 +118,7 @@ function iniciarDescansoRonda() {
                     iniciarDescansoCiclo();
                 } else{
                     estado.innerHTML = `ENTRENAMIENTO COMPLETADO <i class="fa-regular fa-circle-check entrComp" style="color: #000000;"></i`;
+                    background("ENTRENAMIENTO COMPLETADO")
                 }
             }
         }
@@ -155,13 +157,24 @@ function animarEstados () {
     estado.classList.add("animate__animated", "animate__fadeInRight");
 }
 
+function background(nombre){
+    estado.classList.remove(
+        "estatado-prep-desc",
+        "estado-entre-compl"
+    );
+    if (nombre === "PREPÁRATE" || nombre.startsWith("DESCANSAR")){
+        estado.classList.add("estado-prep-des");
+    } else if(nombre.startsWith("ENTRENAR") || nombre.startsWith("ENTRENAMIENTO COMPLETADO")){
+        estado.classList.add("estado-entre-compl");
+    } 
+}
 
 document.getElementById("empezar").addEventListener("click", () => {
     beep.play().then(() => {beep.pause(); beep.currentTime = 0;}).catch(() => {});
     pausaBtn.textContent = "⏸️ PAUSAR";
 
     tiempos = {
-        preparate: +document.getElementById("preparate").value || 0,
+        preparate: 3, //fijo
         entrenar: +document.getElementById("entrenar").value || 0,
         descansar: +document.getElementById("descansar").value || 0,
         descansarCiclo: +document.getElementById("descansarCiclo").value || 0

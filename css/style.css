@@ -1327,11 +1327,11 @@ h6 {
   color: #000; }
 
 .estados {
+  background-color: #f1f107;
   text-align: center;
   margin-top: 25px;
   font-family: "Bebas Neue", sans-serif;
   font-size: 60px;
-  background-color: yellow;
   width: 70%;
   margin: auto;
   border-radius: 15px;
@@ -1374,6 +1374,15 @@ h6 {
 .entrComp {
   font-size: 49px; }
 
+.estatado-prep-desc {
+  background-color: #f1f107; }
+
+.estado-entre-compl {
+  background-color: #2df52d; }
+
+.conteFlexTime1 {
+  margin-right: 95px; }
+
 @media (max-width: 430px) {
   .btnAcordion {
     width: 91%; }
@@ -1384,7 +1393,7 @@ h6 {
   .contenedorFlexTiempos {
     justify-content: flex-start;
     padding-left: 34px;
-    gap: 59px; }
+    gap: 42px; }
   .estados {
     width: 90%;
     font-size: 47px;
@@ -1401,7 +1410,7 @@ h6 {
   .mainTimer {
     padding-top: 125px; }
   .textoTiempos {
-    font-size: 21px; } }
+    font-size: 18px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .btnAcordion {
