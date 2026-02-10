@@ -199,8 +199,13 @@ pausaBtn.addEventListener("click", () => {
         tick.pause(); //pausa el sonido si esta sonando
         beep.pause();
     } else {
-        if(tipoEstado === "NORMAL" && segundos > 3) tick.play();
-        else if (tipoEstado === "PREP" && segundos > 0) beep.play();
+        if (enCuentaFinal && segundos > 0){
+            playBeep();
+        } else if (tipoEstado === "NORMAL" && segundos > 3) {
+            tick.play();
+        } else if (tipoEstado === "PREP" && segundos > 0) {
+            playBeep();
+        }
     }
 });
 
