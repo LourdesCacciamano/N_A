@@ -171,7 +171,7 @@ function background(nombre){
 
 document.getElementById("empezar").addEventListener("click", () => {
     beep.play().then(() => {beep.pause(); beep.currentTime = 0;}).catch(() => {});
-    pausaBtn.textContent = "⏸️ PAUSAR";
+    pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
     tiempos = {
         preparate: 3, //fijo
@@ -193,7 +193,7 @@ pausaBtn.addEventListener("click", () => {
     if (!timer) return;
 
     pausado = !pausado;
-    pausaBtn.textContent = pausado ? "▶️ REANUDAR" : "⏸️ PAUSAR";
+    pausaBtn.innerHTML = pausado ? ` <i class="fa-solid fa-play" style="color: #ffffff;"></i>  REANUDAR` : `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
     if (pausado) {
         tick.pause(); //pausa el sonido si esta sonando
@@ -216,7 +216,7 @@ restablecer.addEventListener("click", () => {
     estado.textContent = "PREPÁRATE";
     tiempo.textContent = "00:00";
 
-    pausaBtn.textContent = "⏸️ PAUSAR";
+    pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
     [tick, beep].forEach(audio => {
         audio.pause();
