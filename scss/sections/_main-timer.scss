@@ -117,12 +117,6 @@
 .conteFlexTime1 {
     margin-right: 95px;
 }
-.textoTiempos{
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-}
 
 
 @media (max-width: 430px) {
@@ -133,14 +127,12 @@
         width: 102%;
     }
     .inputTiempos{
-        width: 38px;
+        width: 35px;
     }
     .contenedorFlexTiempos{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-left: 0px;
-        gap: 12px 20px;
+        justify-content: flex-start;
+        padding-left: 34px;
+        gap: 42px;
     }
     .estados{
         width: 90%;
@@ -164,7 +156,6 @@
     }
     .textoTiempos{
         font-size: 18px;
-        width: 48%;
     }
 }
 

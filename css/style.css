@@ -1383,25 +1383,17 @@ h6 {
 .conteFlexTime1 {
   margin-right: 95px; }
 
-.textoTiempos {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap; }
-
 @media (max-width: 430px) {
   .btnAcordion {
     width: 91%; }
   .configuracionTimer {
     width: 102%; }
   .inputTiempos {
-    width: 38px; }
+    width: 35px; }
   .contenedorFlexTiempos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 0px;
-    gap: 12px 20px; }
+    justify-content: flex-start;
+    padding-left: 34px;
+    gap: 42px; }
   .estados {
     width: 90%;
     font-size: 47px;
@@ -1418,8 +1410,7 @@ h6 {
   .mainTimer {
     padding-top: 125px; }
   .textoTiempos {
-    font-size: 18px;
-    width: 48%; } }
+    font-size: 18px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .btnAcordion {
