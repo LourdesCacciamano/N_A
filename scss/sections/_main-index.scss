@@ -31,8 +31,8 @@ body{
     max-height: 350px; /* <--- Limita la altura del carrusel */
     overflow: hidden;
 }
-.carousel-inner,
-.carousel-item {
+.carInner,
+.carItem {
     height: 100% !important; 
     width: 100%;
 }

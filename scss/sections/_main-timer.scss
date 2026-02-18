@@ -164,25 +164,33 @@
         width: 88%;
     }
     .configuracionTimer{
-        width: 93%;
+        width: 100%;
     }
     .estados{
         font-size: 55px;
         width: 89%;
         margin-top: 17px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .tiempo{
-        font-size: 98px;
-        width: 47%;
+        font-size: 146px;
+        width: 65%;
     }
     .estiloBtn{
         font-size: 21px;
-        width: 27%;
+        width: 30%;
     }
     .botonesTimer{
-        gap: 22px
+        gap: 14px;
+        margin-top: 30px;
     }
     .textoTiempos{
         font-size: 21px;
+    }
+    .contenedorFlexTiempos{
+        justify-content: space-around;
+        padding-left: 9px;
+        gap: 52px;
     }
 }

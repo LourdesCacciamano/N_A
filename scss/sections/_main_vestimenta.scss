@@ -1,51 +1,99 @@
-
-.conteCards-vesti{
+.conteCards-vesti {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
-.card-title-vesti{
-    color: white;;
+.card-title-vesti {
+    color: white;
     font-family: $bebas-neue;
     margin: auto;
     margin-bottom: 11px;
     text-align: center;
     font-size: 30px;
 }
-.cardVesti{
-     box-shadow: 0px 4px 10px black;
-     width: 20rem;
-     border-radius: 14px;
+
+.cardVesti {
+    box-shadow: 0px 4px 10px black;
+    width: 20rem;
+    border-radius: 14px;
 }
-.card-text-vesti{
+
+.card-text-vesti {
     text-align: justify;
     font-family: 'DM Sans';
     color: white;
     font-size: 15px;
 }
+
 .precios-vesti {
     font-family: $bebas-neue;
     margin-top: -34px;
-    margin-bottom: 19px;
     color: white;
     font-size: 27px;
     text-align: center;
 }
+
+.colorMusculosa {
+    font-family: $bebas-neue;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    margin-top: -12px;
+}
+
+.btnVesti {
+    display: flex;
+    width: 153px;
+    margin: auto;
+}
+
+.separadorVestiDesktop {
+    display: flex;
+    gap: 30px;
+}
+
+#carouselProducto2 .imag,
+#carouselProducto1 .imag,
+#carouselProducto3 .imag,
+#carouselProducto4 .imag,
+#carouselProducto5 .imag,
+#carouselProducto6 .imag {
+    height: 100%;
+    border-radius: 12px;
+}
+
+.cardBodyVest {
+    background-color: $gris-oscuro;
+    border-radius: 8px;
+    box-shadow: 2px 2px #100d0d;
+}
+
+.mainVesti {
+    min-height: 70vh;
+    padding-top: 200px; // para separarlo del header
+    background-color: $gris-mas-claro;
+}
+
+//INPUTS
+
 /* Oculto el radio original */
-.radioPersonalizado input[type="radio"] {
+.radioPersonalizadoVestiTalle input[type="radio"] {
     display: none;
 }
-.radioPersonalizadoColor input[type="radio"] {
+
+.radioPersonalizadoVestiColor input[type="radio"] {
     display: none;
 }
 
 /* La “cápsula” */
-.radioPersonalizado span, .radioPersonalizadoColor span {
+.radioPersonalizadoVestiTalle span {
     display: inline-block;
+    color: white;
     padding: 2px 9px;
-    border: 1px solid #555;
-    border-radius: 50px; /* Forma de pastillita */
+    border: 1px solid #928c8c;
+    border-radius: 50px;
     cursor: pointer;
     margin-right: 8px;
     font-weight: bold;
@@ -53,101 +101,164 @@
 }
 
 /* Cuando está seleccionado */
-.radioPersonalizado input[type="radio"]:checked + span {
+.radioPersonalizadoVestiTalle input[type="radio"]:checked+span {
     background-color: #000;
     color: #fff;
-    border-color: #000;
     transform: scale(1.05);
 }
-.radioPersonalizadoColor input[type="radio"]:checked + span {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
-    transform: scale(1.05);
+
+/* Hover */
+.radioPersonalizadoVestiColor,
+.color {
+    &:hover {
+        transform: scale(1.05);
+    }
 }
-.formRemera{
+
+/* 🔥 Cuando está seleccionado */
+.radioPersonalizadoVestiColor input:checked+.color {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 6px #161616;
+    transform: scale(1.1);
+}
+
+.formRemera {
     margin-bottom: 20px;
     text-align: center;
 }
-.labelColor{
-    margin-top: 12px;
+
+.labelColor {
     color: white;
-}
-.labelTalle{
-    color: white;
-}
-.btnVesti{
     display: flex;
-    width: 153px;
-    margin: auto;
-}
-#carouselProducto2 .imag{
-    height: 100%;
-    border-radius: 12px;
-}
-#carouselProducto1 .imag{
-    height: 100%;
-    border-radius: 12px;
-}
-.cardBodyVest{
-    background-color: $gris-oscuro;
-    border-radius: 8px;
-    box-shadow: 2px 2px #100d0d;
-}
-.mainVesti{
-    min-height: 70vh;
-    padding-top: 200px; // para separarlo del header
-    background-color: $gris-mas-claro;
+    justify-content: center;
+    gap: 7px;
+    align-items: flex-start;
+    font-family: $bebas-neue;
+    font-size: 18px;
 }
 
-@media (max-width:430px){
-    
-    .cardVesti{
-        width: 48%;
+.labelTalle {
+    color: white;
+    font-family: $bebas-neue;
+    font-size: 18px;
+}
+
+.color {
+    padding: 11px;
+    border: none !important;
+    border-radius: 23px;
+    font-size: 1px;
+    border: 2px solid transparent;
+}
+
+.negro {
+    background-color: black;
+}
+
+.blanco {
+    background-color: white;
+}
+
+.gris {
+    background-color: grey;
+}
+
+.marron {
+    background-color: rgb(85, 51, 6);
+}
+
+.separadorVestiMobile {
+    display: none;
+}
+.filaTalle {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
     }
-    .mainVesti{
+
+@media (max-width:430px) {
+
+    .cardVesti {
+        width: 45%;
+    }
+
+    .mainVesti {
         padding-top: 120px;
     }
-    .labelColor{
+
+    .labelColor {
         display: flex;
         gap: 5px;
     }
-    .formRemera{
+
+    .formRemera {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 3px;
     }
-    .radioPersonalizado span{
+
+    .radioPersonalizadoVestiTalle span {
         padding: 2px 6px;
-        margin-right: 2px;
-    };
+        margin-right: 5px;
+    }
+
+
     .radioPersonalizadoColor span {
         padding: 1px 4px;
         margin-right: 0px;
         font-size: 13px;
     }
-    .card-title-vesti{
+
+    .card-title-vesti {
         font-size: 26px;
     }
-    .precios-vesti{
+
+    .precios-vesti {
         font-size: 25px;
     }
-    .btnVesti{
+
+    .btnVesti {
         font-size: 15px;
         width: 145px;
     }
+
+    .separadorVestiDesktop {
+        display: none;
+    }
+
+    .separadorVestiMobile {
+        display: flex;
+    }
+
+    .conteTalles {
+        display: flex;
+    }
 }
 
-@media (min-width:431px) and (max-width:768px){
-    .cardVesti{
-        width: 14rem;
+@media (min-width:431px) and (max-width:768px) {
+    .cardVesti {
+        width: 15rem;
     }
-    .card-text-vesti{
+
+    .card-text-vesti {
         font-size: 13px;
     }
-    .labelColor{
+
+    .labelColor {
         display: flex;
         gap: 3px;
+    }
+
+    .conteTalles {
+        display: flex;
+    }
+
+    
+
+    .formRemera {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
     }
 }

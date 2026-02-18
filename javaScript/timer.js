@@ -1,6 +1,6 @@
 const estado = document.getElementById("estado");
 const tiempo = document.getElementById("tiempo");
-const tick = document.getElementById("tick");
+//const tick = document.getElementById("tick");
 const beep = document.getElementById("beep");
 const pausaBtn = document.getElementById("pausar");
 const restablecer = document.getElementById("restablecer");
@@ -24,11 +24,11 @@ function playBeep () {
     beep.play();
 }
 
-function playTick() {
+/*function playTick() {
     if (!tick.paused) return;
     tick.currentTime = 0;
     tick.play();
-}
+}*/
 
 function formatoTiempo(s) {
     const m = Math.floor(s/60);
@@ -53,18 +53,19 @@ function iniciarCuenta(nombre, duracion, restante) {
 
     if (tipoEstado === "PREP" && segundos > 0) {
             playBeep();
-    } else if (tipoEstado === "NORMAL") {
+    } 
+    /*else if (tipoEstado === "NORMAL") {
             playTick();
-    }
+    }*/
 
     timer = setInterval(cuentaRegresiva, 1000);
 }
 
 function cuentaRegresiva() {
-    if (pausado) {
+    /*if (pausado) {
         tick.pause(); //pausa el sonido si esta sonando
         return;
-    }
+    }*/
 
     tiempo.textContent = formatoTiempo(segundos);
 
@@ -80,19 +81,19 @@ function cuentaRegresiva() {
         tick.pause();
     } 
     
-    if (segundos > 3 && tipoEstado === "NORMAL") {
+    /*if (segundos > 3 && tipoEstado === "NORMAL") {
         if (tick.paused) {
             tick.loop = true; // hace que el sonido suene continuo
             tick.play();
         }
-    }
+    }*/
 
     segundos--;
 
 
     if (segundos < 0) {
         clearInterval(timer);
-        tick.pause() ; //detiene el sonido al finalizar
+        //tick.pause() ; //detiene el sonido al finalizar
         descansoActual && descansoActual();
     }
 }
@@ -196,14 +197,14 @@ pausaBtn.addEventListener("click", () => {
     pausaBtn.innerHTML = pausado ? ` <i class="fa-solid fa-play" style="color: #ffffff;"></i>  REANUDAR` : `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
     if (pausado) {
-        tick.pause(); //pausa el sonido si esta sonando
+       // tick.pause(); //pausa el sonido si esta sonando
         beep.pause();
     } else {
         if (enCuentaFinal && segundos > 0){
             playBeep();
-        } else if (tipoEstado === "NORMAL" && segundos > 3) {
-            tick.play();
-        } else if (tipoEstado === "PREP" && segundos > 0) {
+        } /*else if (tipoEstado === "NORMAL" && segundos > 3) {
+            tick.play(); 
+        } */ else if (tipoEstado === "PREP" && segundos > 0) {
             playBeep();
         }
     }

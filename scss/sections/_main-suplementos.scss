@@ -154,7 +154,7 @@ h6 {
 }
 
 /* La “cápsula” */
-.radioPersonalizado span {
+/*.radioPersonalizado span {
     display: inline-block;
     border: 1px solid #b0b0b0;
     cursor: pointer;
@@ -163,19 +163,19 @@ h6 {
     transition: all 0.2s ease;
     color: white;
     border-radius: 10px !important;
-}
+}*/
 
 .formSuple {
     text-align: center !important;
 }
 
 /* Cuando está seleccionado */
-.radioPersonalizado input[type="radio"]:checked+span {
+/*.radioPersonalizado input[type="radio"]:checked+span {
     background-color: #000;
     color: #fff;
     border-color: #000;
     transform: scale(1.05);
-}
+}*/
 
 .titLabel {
     color: white;
@@ -368,7 +368,7 @@ h6 {
         gap: 6px;
     }
     .cardSuple{
-        width: 15rem;
+        width: 14rem;
     }
 
     .conteTiposProte{

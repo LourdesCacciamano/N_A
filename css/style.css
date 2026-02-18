@@ -269,8 +269,8 @@ body {
   /* <--- Limita la altura del carrusel */
   overflow: hidden; }
 
-.carousel-inner,
-.carousel-item {
+.carInner,
+.carItem {
   height: 100% !important;
   width: 100%; }
 
@@ -720,26 +720,26 @@ h6 {
   display: none; }
 
 /* La “cápsula” */
-.radioPersonalizado span {
-  display: inline-block;
-  border: 1px solid #b0b0b0;
-  cursor: pointer;
-  margin-right: 8px;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  color: white;
-  border-radius: 10px !important; }
-
+/*.radioPersonalizado span {
+    display: inline-block;
+    border: 1px solid #b0b0b0;
+    cursor: pointer;
+    margin-right: 8px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    color: white;
+    border-radius: 10px !important;
+}*/
 .formSuple {
   text-align: center !important; }
 
 /* Cuando está seleccionado */
-.radioPersonalizado input[type="radio"]:checked + span {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-  transform: scale(1.05); }
-
+/*.radioPersonalizado input[type="radio"]:checked+span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    transform: scale(1.05);
+}*/
 .titLabel {
   color: white;
   font-family: 'DM Sans'; }
@@ -878,7 +878,7 @@ h6 {
     flex-direction: column;
     gap: 6px; }
   .cardSuple {
-    width: 15rem; }
+    width: 14rem; }
   .conteTiposProte {
     justify-content: center;
     gap: 5px; }
@@ -917,8 +917,9 @@ h6 {
 
 .conteCards-vesti {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap; }
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; }
 
 .card-title-vesti {
   color: white;
@@ -942,64 +943,32 @@ h6 {
 .precios-vesti {
   font-family: "Bebas Neue", sans-serif;
   margin-top: -34px;
-  margin-bottom: 19px;
   color: white;
   font-size: 27px;
   text-align: center; }
 
-/* Oculto el radio original */
-.radioPersonalizado input[type="radio"] {
-  display: none; }
-
-.radioPersonalizadoColor input[type="radio"] {
-  display: none; }
-
-/* La “cápsula” */
-.radioPersonalizado span, .radioPersonalizadoColor span {
-  display: inline-block;
-  padding: 2px 9px;
-  border: 1px solid #555;
-  border-radius: 50px;
-  /* Forma de pastillita */
-  cursor: pointer;
-  margin-right: 8px;
-  font-weight: bold;
-  transition: all 0.2s ease; }
-
-/* Cuando está seleccionado */
-.radioPersonalizado input[type="radio"]:checked + span {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-  transform: scale(1.05); }
-
-.radioPersonalizadoColor input[type="radio"]:checked + span {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-  transform: scale(1.05); }
-
-.formRemera {
-  margin-bottom: 20px;
-  text-align: center; }
-
-.labelColor {
-  margin-top: 12px;
-  color: white; }
-
-.labelTalle {
-  color: white; }
+.colorMusculosa {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  margin-top: -12px; }
 
 .btnVesti {
   display: flex;
   width: 153px;
   margin: auto; }
 
-#carouselProducto2 .imag {
-  height: 100%;
-  border-radius: 12px; }
+.separadorVestiDesktop {
+  display: flex;
+  gap: 30px; }
 
-#carouselProducto1 .imag {
+#carouselProducto2 .imag,
+#carouselProducto1 .imag,
+#carouselProducto3 .imag,
+#carouselProducto4 .imag,
+#carouselProducto5 .imag,
+#carouselProducto6 .imag {
   height: 100%;
   border-radius: 12px; }
 
@@ -1013,9 +982,89 @@ h6 {
   padding-top: 200px;
   background-color: #C9C6C7; }
 
+/* Oculto el radio original */
+.radioPersonalizadoVestiTalle input[type="radio"] {
+  display: none; }
+
+.radioPersonalizadoVestiColor input[type="radio"] {
+  display: none; }
+
+/* La “cápsula” */
+.radioPersonalizadoVestiTalle span {
+  display: inline-block;
+  color: white;
+  padding: 2px 9px;
+  border: 1px solid #928c8c;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: all 0.2s ease; }
+
+/* Cuando está seleccionado */
+.radioPersonalizadoVestiTalle input[type="radio"]:checked + span {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05); }
+
+/* Hover */
+.radioPersonalizadoVestiColor:hover,
+.color:hover {
+  transform: scale(1.05); }
+
+/* 🔥 Cuando está seleccionado */
+.radioPersonalizadoVestiColor input:checked + .color {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 6px #161616;
+  transform: scale(1.1); }
+
+.formRemera {
+  margin-bottom: 20px;
+  text-align: center; }
+
+.labelColor {
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  align-items: flex-start;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px; }
+
+.labelTalle {
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px; }
+
+.color {
+  padding: 11px;
+  border: none !important;
+  border-radius: 23px;
+  font-size: 1px;
+  border: 2px solid transparent; }
+
+.negro {
+  background-color: black; }
+
+.blanco {
+  background-color: white; }
+
+.gris {
+  background-color: grey; }
+
+.marron {
+  background-color: #553306; }
+
+.separadorVestiMobile {
+  display: none; }
+
+.filaTalle {
+  display: flex;
+  justify-content: center;
+  gap: 6px; }
+
 @media (max-width: 430px) {
   .cardVesti {
-    width: 48%; }
+    width: 45%; }
   .mainVesti {
     padding-top: 120px; }
   .labelColor {
@@ -1026,9 +1075,9 @@ h6 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 3px; }
-  .radioPersonalizado span {
+  .radioPersonalizadoVestiTalle span {
     padding: 2px 6px;
-    margin-right: 2px; }
+    margin-right: 5px; }
   .radioPersonalizadoColor span {
     padding: 1px 4px;
     margin-right: 0px;
@@ -1039,16 +1088,29 @@ h6 {
     font-size: 25px; }
   .btnVesti {
     font-size: 15px;
-    width: 145px; } }
+    width: 145px; }
+  .separadorVestiDesktop {
+    display: none; }
+  .separadorVestiMobile {
+    display: flex; }
+  .conteTalles {
+    display: flex; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .cardVesti {
-    width: 14rem; }
+    width: 15rem; }
   .card-text-vesti {
     font-size: 13px; }
   .labelColor {
     display: flex;
-    gap: 3px; } }
+    gap: 3px; }
+  .conteTalles {
+    display: flex; }
+  .formRemera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px; } }
 
 .mainPlan {
   min-height: 70vh;
@@ -1156,7 +1218,7 @@ h6 {
 
 @media (min-width: 431px) and (max-width: 768px) {
   .cardBodyPlanes {
-    width: 30rem; }
+    width: 27rem; }
   .tituloPlanSup {
     text-align: left;
     font-size: 16px;
@@ -1416,18 +1478,25 @@ h6 {
   .btnAcordion {
     width: 88%; }
   .configuracionTimer {
-    width: 93%; }
+    width: 100%; }
   .estados {
     font-size: 55px;
     width: 89%;
-    margin-top: 17px; }
+    margin-top: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px; }
   .tiempo {
-    font-size: 98px;
-    width: 47%; }
+    font-size: 146px;
+    width: 65%; }
   .estiloBtn {
     font-size: 21px;
-    width: 27%; }
+    width: 30%; }
   .botonesTimer {
-    gap: 22px; }
+    gap: 14px;
+    margin-top: 30px; }
   .textoTiempos {
-    font-size: 21px; } }
+    font-size: 21px; }
+  .contenedorFlexTiempos {
+    justify-content: space-around;
+    padding-left: 9px;
+    gap: 52px; } }
