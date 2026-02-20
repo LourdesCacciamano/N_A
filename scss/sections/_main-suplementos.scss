@@ -149,33 +149,34 @@ h6 {
 }
 
 /* Oculto el radio original */
-.radioPersonalizado input[type="radio"] {
+.radioPersonalizadoSabor input[type="radio"] {
     display: none;
 }
 
 /* La “cápsula” */
-/*.radioPersonalizado span {
+.radioPersonalizadoSabor span {
     display: inline-block;
-    border: 1px solid #b0b0b0;
+    color: white;
+    padding: 2px 9px;
+    border: 1px solid #928c8c;
+    border-radius: 9px;
     cursor: pointer;
     margin-right: 8px;
     font-weight: bold;
     transition: all 0.2s ease;
-    color: white;
-    border-radius: 10px !important;
-}*/
+}
 
 .formSuple {
     text-align: center !important;
 }
 
 /* Cuando está seleccionado */
-/*.radioPersonalizado input[type="radio"]:checked+span {
+.radioPersonalizadoSabor input[type="radio"]:checked+span {
     background-color: #000;
     color: #fff;
     border-color: #000;
     transform: scale(1.05);
-}*/
+}
 
 .titLabel {
     color: white;
@@ -185,6 +186,7 @@ h6 {
 .opcionesSabor {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 8px;
     margin-bottom: 10px;
 }
@@ -201,7 +203,7 @@ h6 {
 }
 
 .btnSuple, .btnOtros {
-    margin-left: 47px;
+    margin-left: 61px;
     margin-top: 10px;
 }
 
@@ -239,10 +241,9 @@ h6 {
     border-color: transparent !important;
 }
 .sepaPrimerParteOtros {
-       display: contents;
-       
-       gap: 5px;
-    }
+    display: contents;
+    gap: 5px;
+}
 
 
 @media (max-width: 430px) {
@@ -333,7 +334,7 @@ h6 {
         margin-top: 0px;
         font-size: 12px;
     }
-    .radioPersonalizado span {
+    .radioPersonalizadoSabor span {
         font-size: 14px;
     }
     .opcionesSabor {
@@ -376,9 +377,9 @@ h6 {
         gap: 5px;
     }
     .opcionesSabor{
-        flex-direction: column;
-        align-items: center;
-        gap: 5px
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 7px
     }
     .btnSuple{
         margin-left: 25px;
@@ -418,4 +419,7 @@ h6 {
     .btnOtros{
         margin-left: 18px;
     }
+    .radioPersonalizadoSabor span{
+        font-size: 13px
+    };
 }

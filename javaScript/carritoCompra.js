@@ -125,7 +125,15 @@ function mostrarResumenCompra() {
         const subtotal = producto.precio * producto.cantidad;
         total += subtotal;
 
-        li.textContent = `- ${producto.titulo} | Sabor: ${producto.sabor} | Cantidad: ${producto.cantidad} | Subtotal: $${subtotal.toLocaleString('es-AR')}`;
+        let infoProducto = '';
+
+        if (producto.sabor) {
+            infoProducto = `Sabor: ${producto.sabor}`;
+        } else if (producto.detalles) {
+            infoProducto = producto.detalles.replace(/\n/g, ' | ');
+        }
+
+        li.textContent = `- ${producto.titulo} | ${infoProducto} | Cantidad: ${producto.cantidad} | Subtotal: $${subtotal.toLocaleString('es-AR')}`;
         listaResumen.appendChild(li);
     });
 

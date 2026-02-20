@@ -716,30 +716,31 @@ h6 {
   width: 19rem; }
 
 /* Oculto el radio original */
-.radioPersonalizado input[type="radio"] {
+.radioPersonalizadoSabor input[type="radio"] {
   display: none; }
 
 /* La “cápsula” */
-/*.radioPersonalizado span {
-    display: inline-block;
-    border: 1px solid #b0b0b0;
-    cursor: pointer;
-    margin-right: 8px;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    color: white;
-    border-radius: 10px !important;
-}*/
+.radioPersonalizadoSabor span {
+  display: inline-block;
+  color: white;
+  padding: 2px 9px;
+  border: 1px solid #928c8c;
+  border-radius: 9px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-weight: bold;
+  transition: all 0.2s ease; }
+
 .formSuple {
   text-align: center !important; }
 
 /* Cuando está seleccionado */
-/*.radioPersonalizado input[type="radio"]:checked+span {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
-    transform: scale(1.05);
-}*/
+.radioPersonalizadoSabor input[type="radio"]:checked + span {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  transform: scale(1.05); }
+
 .titLabel {
   color: white;
   font-family: 'DM Sans'; }
@@ -747,6 +748,7 @@ h6 {
 .opcionesSabor {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 8px;
   margin-bottom: 10px; }
 
@@ -760,7 +762,7 @@ h6 {
   gap: 0; }
 
 .btnSuple, .btnOtros {
-  margin-left: 47px;
+  margin-left: 61px;
   margin-top: 10px; }
 
 .cardCrea2 {
@@ -849,7 +851,7 @@ h6 {
   .text-suple {
     margin-top: 0px;
     font-size: 12px; }
-  .radioPersonalizado span {
+  .radioPersonalizadoSabor span {
     font-size: 14px; }
   .opcionesSabor {
     display: flex;
@@ -883,9 +885,9 @@ h6 {
     justify-content: center;
     gap: 5px; }
   .opcionesSabor {
-    flex-direction: column;
-    align-items: center;
-    gap: 5px; }
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px; }
   .btnSuple {
     margin-left: 25px; }
   .conteCrea {
@@ -913,13 +915,16 @@ h6 {
   .conteTiposOtros {
     gap: 5px; }
   .btnOtros {
-    margin-left: 18px; } }
+    margin-left: 18px; }
+  .radioPersonalizadoSabor span {
+    font-size: 13px; } }
 
 .conteCards-vesti {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px; }
+  gap: 15px;
+  align-items: stretch; }
 
 .card-title-vesti {
   color: white;
@@ -932,7 +937,10 @@ h6 {
 .cardVesti {
   box-shadow: 0px 4px 10px black;
   width: 20rem;
-  border-radius: 14px; }
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
 
 .card-text-vesti {
   text-align: justify;
@@ -975,7 +983,11 @@ h6 {
 .cardBodyVest {
   background-color: #3F4239;
   border-radius: 8px;
-  box-shadow: 2px 2px #100d0d; }
+  box-shadow: 2px 2px #100d0d;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .mainVesti {
   min-height: 70vh;
