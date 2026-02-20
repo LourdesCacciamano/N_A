@@ -57,11 +57,7 @@ function cuentaRegresiva() {
 
     tiempo.textContent = formatoTiempo(segundos);
 
-    if (tipoEstado === "PREP" && segundos > 0) {
-        if (beep.paused) {
-            playBeep();
-        }
-    }
+    
 
     if (segundos <= 3 && segundos > 0 && !enCuentaFinal) {
         enCuentaFinal = true;
@@ -205,3 +201,7 @@ restablecer.addEventListener("click", () => {
         audio.currentTime = 0;
     });
 });
+
+/*para que el navegador en mobile no me bloquee el sonido */
+document.addEventListener("touchstart", desbloquearAudio, { once: true });
+document.addEventListener("click", desbloquearAudio, { once: true });
