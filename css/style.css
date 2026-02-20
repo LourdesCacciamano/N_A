@@ -370,7 +370,10 @@ body {
   .img3Carrousel {
     margin-top: 0px; }
   #carouselExampleSlidesOnly {
-    height: 35dvh; } }
+    height: 35dvh; }
+  .img4Carrousel {
+    object-fit: contain !important;
+    background-color: #000; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {

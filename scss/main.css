@@ -464,6 +464,11 @@ body {
   #carouselExampleSlidesOnly {
     height: 35dvh;
   }
+  .img4Carrousel {
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+    background-color: #000;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
