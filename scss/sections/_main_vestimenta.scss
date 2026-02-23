@@ -242,6 +242,9 @@
     .conteTalles {
         display: flex;
     }
+    .btnTop{
+        margin-top: 25px;
+    }
 }
 
 @media (min-width:431px) and (max-width:768px) {
@@ -273,6 +276,9 @@
     .btnVesti{
         font-size: 14px;
         padding-left: 18px;
+    }
+    .btnTop{
+        margin-top: 25px;
     }
 }
 

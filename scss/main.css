@@ -329,8 +329,10 @@ body {
 /*CARROUSEL ---------------------------*/
 #carouselExampleSlidesOnly {
   width: 100% !important;
-  height: 80dvh; /* viewport real en iOS */
-  max-height: 350px; /* <--- Limita la altura del carrusel */
+  height: 80dvh;
+  /* viewport real en iOS */
+  max-height: 350px;
+  /* <--- Limita la altura del carrusel */
   overflow: hidden;
 }
 
@@ -357,7 +359,9 @@ body {
   padding: 24px;
 }
 
-.card1, .card2, .card3 {
+.card1,
+.card2,
+.card3 {
   background-color: #3F4239;
   box-shadow: 0px 4px 10px black;
   width: 20rem;
@@ -430,7 +434,21 @@ body {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
   color: #272924;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
+  text-decoration: underline;
+}
+
+.carouselImgCambios {
+  width: 44% !important;
+  margin-left: 28%;
+}
+
+.carousel-control-prev {
+  margin-left: 146px;
+}
+
+.carousel-control-next {
+  margin-right: 146px;
 }
 
 @media (max-width: 430px) {
@@ -446,7 +464,9 @@ body {
     display: flex;
     flex-direction: column;
   }
-  .card1, .card2, .card3 {
+  .card1,
+  .card2,
+  .card3 {
     margin: auto;
     width: 90% !important;
     margin-bottom: 20px;
@@ -468,6 +488,16 @@ body {
   #carouselExampleSlidesOnly {
     height: 35dvh;
   }
+  .carouselImgCambios {
+    width: 89% !important;
+    margin-left: 6%;
+  }
+  .carousel-control-next {
+    margin-right: 0px;
+  }
+  .carousel-control-prev {
+    margin-left: 0px;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
@@ -476,6 +506,16 @@ body {
   .conteinerCard {
     flex-wrap: wrap;
     gap: 20px;
+  }
+  .carouselImgCambios {
+    width: 86% !important;
+    margin-left: 8%;
+  }
+  .carousel-control-prev {
+    margin-left: 0px;
+  }
+  .carousel-control-next {
+    margin-right: 0px;
   }
 }
 .footer {
@@ -1414,6 +1454,9 @@ h6 {
   .conteTalles {
     display: flex;
   }
+  .btnTop {
+    margin-top: 25px;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   .cardVesti {
@@ -1441,6 +1484,9 @@ h6 {
   .btnVesti {
     font-size: 14px;
     padding-left: 18px;
+  }
+  .btnTop {
+    margin-top: 25px;
   }
 }
 .mainPlan {

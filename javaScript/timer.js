@@ -16,9 +16,18 @@ let descansoActual = null;
 let tipoEstado = "";
 let enCuentaFinal = false;
 
-function playBeep () {
-    if (!beep.paused) return; // evita que se reinicie el audio
-    beep.play();
+function playBeep (reiniciar=false) {
+    if(reiniciar) {
+        beep.currentTime=0;
+    }
+
+    const playPromise = beep.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {})
+    }
+
+  
 }
 
 function formatoTiempo(s) {
@@ -42,34 +51,40 @@ function iniciarCuenta(nombre, duracion, restante) {
     tipoEstado = (nombre == "PREPÁRATE") ? "PREP" : "NORMAL";
 
     if (tipoEstado === "PREP" && segundos > 0) {
-            beep.currentTime = 0;
-            playBeep();
+            playBeep(true);
     } 
     
     timer = setInterval(cuentaRegresiva, 1000);
 }
 
 function cuentaRegresiva() {
-    if (pausado) {
-        beep.pause(); //pausa el sonido si esta sonando
-        return;
-    }
+    if (!pausado) {
 
-    tiempo.textContent = formatoTiempo(segundos);
+        tiempo.textContent = formatoTiempo(segundos);
 
-    
+        // Beep PREP o últimos 3 segundos
+        if (enCuentaFinal && segundos > 0) {
+            playBeep(false);
+        } else if (tipoEstado === "PREP" && segundos > 0){
+            playBeep(false);
+        }
 
-    if (segundos <= 3 && segundos > 0 && !enCuentaFinal) {
-        enCuentaFinal = true;
-        beep.currentTime = 0;
-        playBeep();
-    } 
+        // Inicia cuenta final a los 3 segundos
+        if (segundos === 3 && !enCuentaFinal) {
+            enCuentaFinal = true;
+            playBeep(true);
+        }
 
-    segundos--;
+        segundos--;
 
-    if (segundos < 0) {
-        clearInterval(timer);
-        descansoActual && descansoActual();
+        if (segundos < 0) {
+            clearInterval(timer);
+            descansoActual && descansoActual();
+        }
+
+    } else {
+        // Si está pausado, solo pausamos el audio
+        beep.pause();
     }
 }
 
@@ -121,9 +136,11 @@ function iniciarDescansoCiclo() {
 }
 
 function desbloquearAudio() {
+    beep.muted = true
     beep.play().then(() => {
         beep.pause();
         beep.currentTime = 0;
+        beep.muted= false
     }). catch(() => {});
 }
 
@@ -174,10 +191,8 @@ pausaBtn.addEventListener("click", () => {
     if (pausado) {
         beep.pause();
     } else {
-        if (enCuentaFinal && segundos > 0){
-            playBeep();
-        } else if (tipoEstado === "PREP" && segundos > 0) {
-            playBeep();
+        if ((enCuentaFinal && segundos > 0) || (tipoEstado === "PREP" && segundos > 0)) {
+            playBeep(false);
         }
     }
 });

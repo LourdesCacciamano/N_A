@@ -1,9 +1,9 @@
-.mainIndex{
+.mainIndex {
     min-height: 70vh;
     padding-top: 200px; // para separarlo del header
     background-color: $gris-mas-claro;
 
-    h2{
+    h2 {
         margin-bottom: 12px;
         margin-top: -49px;
         font-family: $bebas-neue;
@@ -12,58 +12,69 @@
         text-align: center;
         font-size: 40px;
     }
-    .animate__pulse{
+
+    .animate__pulse {
         animation-iteration-count: 2;
         animation-duration: 2s;
         animation-delay: 1s;
     }
 }
 
-body{
+body {
     background-color: $gris-mas-claro !important;
 }
 
- /*CARROUSEL ---------------------------*/
+/*CARROUSEL ---------------------------*/
 
 #carouselExampleSlidesOnly {
-    width: 100% !important; 
-    height: 80dvh;  /* viewport real en iOS */
-    max-height: 350px; /* <--- Limita la altura del carrusel */
+    width: 100% !important;
+    height: 80dvh;
+    /* viewport real en iOS */
+    max-height: 350px;
+    /* <--- Limita la altura del carrusel */
     overflow: hidden;
 }
+
 .carInner,
 .carItem {
-    height: 100% !important; 
+    height: 100% !important;
     width: 100%;
 }
+
 .carousel-item img {
-    height: 100%; 
+    height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: top;
 }
 
 /*CARD ------------------------------*/
-.conteinerCard{
+.conteinerCard {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 24px;
 }
-.card1, .card2, .card3{
+
+.card1,
+.card2,
+.card3 {
     background-color: $gris-oscuro;
     box-shadow: 0px 4px 10px black;
     width: 20rem;
     border-radius: 10px;
 }
-.cardImgIndex{
+
+.cardImgIndex {
     border-radius: 10px;
-     &:hover {
-         transform: scale(1.1);
-         transition: 1s;
-            }
+
+    &:hover {
+        transform: scale(1.1);
+        transition: 1s;
+    }
 }
-.card-body-index{
+
+.card-body-index {
     background-color: $gris-oscuro;
     border-radius: 4px;
     color: white;
@@ -72,95 +83,155 @@ body{
     flex-direction: column;
     padding-top: 32px;
 }
-.card-title-index{
+
+.card-title-index {
     font-family: $bebas-neue;
     font-size: 28px;
 }
-.precio{
+
+.precio {
     font-family: $bebas-neue;
     font-size: 28px;
 }
-.card-text-index{
+
+.card-text-index {
     font-family: 'DM Sans';
     text-align: left;
     font-size: 20px;
     color: whitesmoke;
     padding: 11px;
 }
-.btn{
+
+.btn {
     color: white;
     background-color: black;
     border-color: #767171;
-    &:hover{
+
+    &:hover {
         background-color: #4b4a4a;
-        border-color:black ;
+        border-color: black;
     }
 }
-.btnIndex{
-     width: 110px;
+
+.btnIndex {
+    width: 110px;
     margin: auto;
 }
-.btn3{
+
+.btn3 {
     margin-bottom: 10px;
 }
+
 .btnIndex:active {
     background-color: #615f5f !important;
     border-color: #615f5f !important;
 }
-.cambiosTitulo{
+
+.cambiosTitulo {
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
     font-family: $bebas-neue;
     color: $gris-mas-oscuro;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
+    text-decoration: underline;
 }
 
-@media (max-width:430px){
-    .mainIndex{
+.carouselImgCambios {
+    width: 44% !important;
+    margin-left: 28%;
+}
+
+.carousel-control-prev {
+    margin-left: 146px;
+}
+
+.carousel-control-next {
+    margin-right: 146px;
+}
+
+@media (max-width:430px) {
+    .mainIndex {
         padding-top: 208px;
-        h2{
+
+        h2 {
             margin-bottom: 3px;
             margin-top: -107px;
             font-size: 30px;
         }
     }
-    .conteinerCard{
+
+    .conteinerCard {
         display: flex;
         flex-direction: column;
     }
-    .card1, .card2, .card3{
+
+    .card1,
+    .card2,
+    .card3 {
         margin: auto;
         width: 90% !important;
         margin-bottom: 20px;
         max-width: 360px;
     }
-    .card-text-index{
+
+    .card-text-index {
         font-size: 17px;
     }
-    .cardImgIndex{
-        &:hover{
+
+    .cardImgIndex {
+        &:hover {
             transform: none;
             transition: none;
         }
     }
-    .card-body-index{
+
+    .card-body-index {
         margin-bottom: 10px;
     }
-    .img3Carrousel{
+
+    .img3Carrousel {
         margin-top: 0px;
     }
-    #carouselExampleSlidesOnly{
+
+    #carouselExampleSlidesOnly {
         height: 35dvh;
+    }
+
+    .carouselImgCambios {
+        width: 89% !important;
+        margin-left: 6%;
+    }
+
+    .carousel-control-next{
+        margin-right: 0px;
+    }
+
+    .carousel-control-prev{
+        margin-left: 0px;
     }
 }
 
 @media (min-width:431px) and (max-width:768px) {
-    #carouselExampleSlidesOnly{
+    #carouselExampleSlidesOnly {
         height: 35dvh;
     }
-    .conteinerCard{
+
+    .conteinerCard {
         flex-wrap: wrap;
         gap: 20px;
+    }
+
+    .carouselImgCambios {
+        width: 86% !important;
+        margin-left: 8%;
+    }
+
+    .carousel-control-prev {
+        margin-left: 0px;
+    }
+
+    .carousel-control-next {
+        margin-right: 0px;
     }
 }
