@@ -1442,8 +1442,8 @@ h6 {
     font-size: 25px;
   }
   .btnVesti {
-    font-size: 15px;
-    width: 145px;
+    font-size: 12px;
+    width: 125px;
   }
   .separadorVestiDesktop {
     display: none;
@@ -1741,7 +1741,7 @@ h6 {
     width: 99%;
   }
   .list-group-item {
-    font-size: 13px;
+    font-size: 12px;
   }
   .btnResumen {
     font-size: 14px;
@@ -1751,6 +1751,10 @@ h6 {
   }
   .caracteProd {
     font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .tituloCarrito {
+    font-size: 20px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
@@ -1768,6 +1772,13 @@ h6 {
   }
   .conteBotonesResumen {
     justify-content: space-evenly;
+  }
+  .caracteProd {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .tituloCarrito {
+    font-size: 20px;
   }
 }
 .mainTimer {
