@@ -223,7 +223,7 @@ h6 {
     gap: 10px;
 }
 
-.cardSuple-creatin {
+.cardSuple-creatin, .cardCreProb {
      max-width: 19rem;
     width: 100%;
     margin-right: 20px;
@@ -329,7 +329,7 @@ h6 {
         margin-left: 7px;
     }
 
-    .cardSuple-creatin {
+    .cardSuple-creatin, .cardCreProb{
         margin-right: 0px;
         width: 12rem;
         margin: auto;
@@ -382,37 +382,47 @@ h6 {
         gap: 6px;
     }
     .cardSuple{
-        width: 14rem;
-        height: 50%;
+        width: 100%;
     }
 
     .conteTiposProte{
         justify-content: center;
-        gap: 5px;
+        gap: 12px;
         align-items: flex-start;
+        width: 103%;
     }
     .opcionesSabor{
         flex-wrap: wrap;
         justify-content: center;
         gap: 7px
     }
-    //.btnSuple{
-        //margin-left: 25px;
-    //}
+    .btnSuple{
+        font-size: 14px;
+    }
     .conteCrea{
         flex-wrap: wrap;
         flex-direction: column;
     }
     .cardSuple-creatin{
-        width: 14rem;
+        width: 111%;
         height: 34rem;
         margin-right: 5px;
     }
+    .cardCreProb{
+        width: 91%;
+        height: 49%;
+        margin-left: 8px;
+    }
+    .cardCrea2{
+        gap: 15px;
+    }
+   
     .conteTiposCrea{
         justify-content: center;
     }
     .btnCreatina{
         margin-top: 24px;
+        font-size: 14px;
        // margin-left: 25px;
     }
     .cardOtros{
@@ -430,6 +440,7 @@ h6 {
     }
     .conteTiposOtros{
         gap: 5px;
+        width: 104%;
     }
     //.btnOtros{
         //margin-left: 18px;
@@ -442,5 +453,8 @@ h6 {
     }
     h6{
         font-size: 13px;
+    }
+    .text-suple{
+        text-align: unset;
     }
 }

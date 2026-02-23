@@ -126,7 +126,7 @@
 /* 🔥 Cuando está seleccionado */
 .radioPersonalizadoVestiColor input:checked+.color {
     box-shadow: 0 0 0 3px #fff, 0 0 0 6px #161616;
-    transform: scale(1.1);
+    transform: scale(0.5);
 }
 
 .formRemera {
@@ -246,7 +246,7 @@
 
 @media (min-width:431px) and (max-width:768px) {
     .cardVesti {
-        width: 15rem;
+        width: 48%;
     }
 
     .card-text-vesti {
@@ -267,4 +267,13 @@
         justify-content: center;
         gap: 5px;
     }
+    .conteCards-vesti{
+        gap: 7px;
+    }
+    .btnVesti{
+        font-size: 14px;
+        padding-left: 18px;
+    }
 }
+
+//iphone 17 mide 440px
