@@ -16,22 +16,21 @@ let descansoActual = null;
 let tipoEstado = "";
 let enCuentaFinal = false;
 
-function playBeep (reiniciar=false) {
-    if(reiniciar) {
-        beep.currentTime=0;
+function playBeep(reiniciar = false) {
+    if (reiniciar) {
+        beep.currentTime = 0;
     }
 
     const playPromise = beep.play();
 
     if (playPromise !== undefined) {
-        playPromise.catch(() => {})
+        playPromise.catch(() => { })
     }
 
-  
 }
 
 function formatoTiempo(s) {
-    const m = Math.floor(s/60);
+    const m = Math.floor(s / 60);
     const sec = s % 60;
     return `${m.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
 }
@@ -51,44 +50,43 @@ function iniciarCuenta(nombre, duracion, restante) {
     tipoEstado = (nombre == "PREPÁRATE") ? "PREP" : "NORMAL";
 
     if (tipoEstado === "PREP" && segundos > 0) {
-            playBeep(true);
-    } 
-    
+        playBeep(true);
+    }
+
     timer = setInterval(cuentaRegresiva, 1000);
 }
 
 function cuentaRegresiva() {
-    if (!pausado) {
+    if (pausado) {
+        return;
+    }
 
-        tiempo.textContent = formatoTiempo(segundos);
+    tiempo.textContent = formatoTiempo(segundos);
 
-        // Beep PREP o últimos 3 segundos
-        if (enCuentaFinal && segundos > 0) {
-            playBeep(false);
-        } else if (tipoEstado === "PREP" && segundos > 0){
-            playBeep(false);
+    if (segundos <= 3 && segundos > 0) {
+        enCuentaFinal=true;
+        if (beep.paused) {
+            beep.play().catch(() => { });
         }
+    } else{
+        enCuentaFinal=false;
+    }
 
-        // Inicia cuenta final a los 3 segundos
-        if (segundos === 3 && !enCuentaFinal) {
-            enCuentaFinal = true;
-            playBeep(true);
-        }
+    segundos--;
 
-        segundos--;
+    if (segundos < 0) {
+        clearInterval(timer);
 
-        if (segundos < 0) {
-            clearInterval(timer);
+        setTimeout(() => {
             descansoActual && descansoActual();
-        }
-
-    } else {
-        // Si está pausado, solo pausamos el audio
-        beep.pause();
+        },200)
     }
 }
 
 function iniciarRonda() {
+    //beep.currentTime = 0;
+   // beep.play().then(() => beep.pause()).catch(() => { });
+
     iniciarCuenta(
         `ENTRENAR: Ronda ${rondaActual}/${totalRondas}`,
         tiempos.entrenar,
@@ -107,7 +105,7 @@ function iniciarDescansoRonda() {
             } else {
                 if (cicloActual < totalCiclos) {
                     iniciarDescansoCiclo();
-                } else{
+                } else {
                     estado.innerHTML = `ENTRENAMIENTO COMPLETADO <i class="fa-regular fa-circle-check entrComp" style="color: #000000;"></i`;
                     background("ENTRENAMIENTO COMPLETADO")
                 }
@@ -117,7 +115,7 @@ function iniciarDescansoRonda() {
 }
 
 function iniciarDescansoCiclo() {
-    if (!tiempos.descansarCiclo || tiempos.descansarCiclo <= 0){
+    if (!tiempos.descansarCiclo || tiempos.descansarCiclo <= 0) {
         cicloActual++;
         rondaActual = 1;
         iniciarRonda();
@@ -140,30 +138,30 @@ function desbloquearAudio() {
     beep.play().then(() => {
         beep.pause();
         beep.currentTime = 0;
-        beep.muted= false
-    }). catch(() => {});
+        beep.muted = false
+    }).catch(() => { });
 }
 
-function animarEstados () {
-    estado.classList.remove("animate__animated" , "animate__fadeInRight");
+function animarEstados() {
+    estado.classList.remove("animate__animated", "animate__fadeInRight");
     void estado.offsetWidth;
     estado.classList.add("animate__animated", "animate__fadeInRight");
 }
 
-function background(nombre){
+function background(nombre) {
     estado.classList.remove(
         "estatado-prep-desc",
         "estado-entre-compl"
     );
-    if (nombre === "PREPÁRATE" || nombre.startsWith("DESCANSAR")){
+    if (nombre === "PREPÁRATE" || nombre.startsWith("DESCANSAR")) {
         estado.classList.add("estado-prep-des");
-    } else if(nombre.startsWith("ENTRENAR") || nombre.startsWith("ENTRENAMIENTO COMPLETADO")){
+    } else if (nombre.startsWith("ENTRENAR") || nombre.startsWith("ENTRENAMIENTO COMPLETADO")) {
         estado.classList.add("estado-entre-compl");
-    } 
+    }
 }
 
 document.getElementById("empezar").addEventListener("click", () => {
-    beep.play().then(() => {beep.pause(); beep.currentTime = 0;}).catch(() => {});
+    beep.play().then(() => { beep.pause(); beep.currentTime = 0; }).catch(() => { });
     pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
     tiempos = {
@@ -179,7 +177,7 @@ document.getElementById("empezar").addEventListener("click", () => {
     rondaActual = 1;
     cicloActual = 1;
 
-   iniciarCuenta("PREPÁRATE", tiempos.preparate, iniciarRonda);
+    iniciarCuenta("PREPÁRATE", tiempos.preparate, iniciarRonda);
 });
 
 pausaBtn.addEventListener("click", () => {
@@ -191,8 +189,8 @@ pausaBtn.addEventListener("click", () => {
     if (pausado) {
         beep.pause();
     } else {
-        if ((enCuentaFinal && segundos > 0) || (tipoEstado === "PREP" && segundos > 0)) {
-            playBeep(false);
+        if (enCuentaFinal && segundos > 0) {
+            beep.play().catch(() => {});
         }
     }
 });
