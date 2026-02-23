@@ -42,9 +42,6 @@ body{
     object-fit: cover;
     object-position: top;
 }
-.img4Carrousel {
-    object-position: center 30% !important;
-}
 
 /*CARD ------------------------------*/
 .conteinerCard{
@@ -109,7 +106,15 @@ body{
 .btnIndex:active {
     background-color: #615f5f !important;
     border-color: #615f5f !important;
-    }
+}
+.cambiosTitulo{
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    font-family: $bebas-neue;
+    color: $gris-mas-oscuro;
+    margin-bottom: 20px;
+}
 
 @media (max-width:430px){
     .mainIndex{
@@ -147,10 +152,6 @@ body{
     }
     #carouselExampleSlidesOnly{
         height: 35dvh;
-    }
-    .img4Carrousel {
-        object-fit: contain !important;
-        background-color: #000; 
     }
 }
 

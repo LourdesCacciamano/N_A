@@ -81,7 +81,7 @@
 
 .btnCreatina {
     margin-top: 10px;
-    margin-left: 80px;
+    //margin-left: 80px;
 }
 
 .titleSuple {
@@ -145,7 +145,13 @@ h6 {
 
 .cardSuple, .cardOtros {
     background-color: $gris-oscuro;
-    width: 19rem;
+    max-width: 19rem;
+    width: 100%;
+}
+.cardSuple{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* Oculto el radio original */
@@ -197,13 +203,14 @@ h6 {
 }
 
 .mediaProte1 {
-    display: contents;
-    /* ← NO altera el layout */
-    gap: 0;
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   align-items: stretch;
 }
 
 .btnSuple, .btnOtros {
-    margin-left: 61px;
+   // margin-left: 61px;
     margin-top: 10px;
 }
 
@@ -217,7 +224,8 @@ h6 {
 }
 
 .cardSuple-creatin {
-    width: 22rem;
+     max-width: 19rem;
+    width: 100%;
     margin-right: 20px;
     background-color: $gris-oscuro;
 }
@@ -243,6 +251,11 @@ h6 {
 .sepaPrimerParteOtros {
     display: contents;
     gap: 5px;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;   /* 🔥 hace que el body ocupe todo el alto */
 }
 
 
@@ -370,20 +383,22 @@ h6 {
     }
     .cardSuple{
         width: 14rem;
+        height: 50%;
     }
 
     .conteTiposProte{
         justify-content: center;
         gap: 5px;
+        align-items: flex-start;
     }
     .opcionesSabor{
         flex-wrap: wrap;
         justify-content: center;
         gap: 7px
     }
-    .btnSuple{
-        margin-left: 25px;
-    }
+    //.btnSuple{
+        //margin-left: 25px;
+    //}
     .conteCrea{
         flex-wrap: wrap;
         flex-direction: column;
@@ -398,7 +413,7 @@ h6 {
     }
     .btnCreatina{
         margin-top: 24px;
-        margin-left: 25px;
+       // margin-left: 25px;
     }
     .cardOtros{
         width: 15rem;
@@ -416,10 +431,16 @@ h6 {
     .conteTiposOtros{
         gap: 5px;
     }
-    .btnOtros{
-        margin-left: 18px;
-    }
+    //.btnOtros{
+        //margin-left: 18px;
+    //}
     .radioPersonalizadoSabor span{
         font-size: 13px
     };
+    .card-title{
+        font-size: 27px;
+    }
+    h6{
+        font-size: 13px;
+    }
 }
