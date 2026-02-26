@@ -1591,7 +1591,43 @@ h6 {
   margin-top: 25px;
 }
 
+.tabla {
+  border: "1";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black; /* Líneas */
+  padding: 10px; /* Espacio interno */
+  text-align: center; /* Centrar texto */
+}
+
+th {
+  background-color: #232124; /* Color al encabezado */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #3F4239; /* Color alternado filas */
+  color: white;
+}
+
+.videoPlanes {
+  width: 160px; /* tamaño visual */
+  height: 90px; /* proporción 16:9 */
+  -o-object-fit: cover;
+     object-fit: cover; /* evita deformación */
+  border-radius: 10px; /* bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra suave */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
 @media (max-width: 430px) {
+  .mainPlan {
+    padding-top: 122px;
+  }
   .btnPlanes {
     font-size: 14px;
   }
@@ -1612,10 +1648,10 @@ h6 {
     width: 22rem;
   }
   .cardBodyPlanes {
-    width: 25rem;
+    width: 24rem;
   }
   .ejercicios {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
