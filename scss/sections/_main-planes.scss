@@ -12,7 +12,7 @@
     background-color: #787575a6 !important;
     border: none !important;
     margin: 5px;
-    width: 57rem;
+    width: 77rem;
     margin: auto;
     border-color: black !important;
 }
@@ -35,9 +35,14 @@
     font-family: $bebas-neue;
 }
 .btnPlanes{
-    font-family:'DM Sans' ;
+    font-family:$bebas-neue ;
+    font-size: 25px;
     padding-left: 33px;
     padding-right: 33px;
+
+    &:active{
+        background-color: $gris-oscuro !important;
+    }
 }
 .contenidoAcordeon{
     display: flex;
@@ -121,7 +126,7 @@ th {
          padding-top: 122px;
     }
     .btnPlanes{
-        font-size: 14px;
+        font-size: 20px;
     }
     .tituloPlanSup{
         padding-bottom: 0px;

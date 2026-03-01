@@ -1215,7 +1215,7 @@ h6 {
   background-color: #787575a6 !important;
   border: none !important;
   margin: 5px;
-  width: 57rem;
+  width: 77rem;
   margin: auto;
   border-color: black !important; }
 
@@ -1237,9 +1237,12 @@ h6 {
   font-family: "Bebas Neue", sans-serif; }
 
 .btnPlanes {
-  font-family: 'DM Sans';
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px;
   padding-left: 33px;
   padding-right: 33px; }
+  .btnPlanes:active {
+    background-color: #3F4239 !important; }
 
 .contenidoAcordeon {
   display: flex;
@@ -1328,7 +1331,7 @@ tr:nth-child(even) {
   .mainPlan {
     padding-top: 122px; }
   .btnPlanes {
-    font-size: 14px; }
+    font-size: 20px; }
   .tituloPlanSup {
     padding-bottom: 0px;
     font-size: 14px; }
