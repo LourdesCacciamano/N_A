@@ -353,9 +353,9 @@ body {
 
 .cambiosTitulo {
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'DM Sans';
   color: #272924;
   margin-bottom: 6px;
   text-decoration: underline; }
@@ -845,6 +845,16 @@ h6 {
 .btnSuple, .btnOtros {
   margin-top: 10px; }
 
+.btnCreatina, .btnOtros, .btnSuple {
+  width: 87px; }
+
+.agregarCar {
+  font-size: 22px; }
+
+.contenedorCantAgreg {
+  display: flex;
+  justify-content: space-around; }
+
 .cardCrea2 {
   display: flex; }
 
@@ -1055,13 +1065,6 @@ h6 {
   font-size: 27px;
   text-align: center; }
 
-.colorMusculosa {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 17px;
-  color: white;
-  text-align: center;
-  margin-top: -12px; }
-
 .btnVesti {
   display: flex;
   width: 153px;
@@ -1263,10 +1266,10 @@ h6 {
 .tituloPlanSup {
   text-align: center;
   padding-bottom: 7px;
-  font-size: 20px;
+  font-size: 16px;
   color: black;
   padding-left: 17px;
-  font-family: "Bebas Neue", sans-serif; }
+  font-family: 'DM Sans'; }
 
 .btnPlanes {
   font-family: "Bebas Neue", sans-serif;
@@ -1310,8 +1313,8 @@ h6 {
 
 .ejercicios {
   text-align: center;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 22px; }
+  font-family: 'DM Sans';
+  font-size: 15px; }
 
 .tituloPlanInf {
   text-align: center;
@@ -1319,8 +1322,13 @@ h6 {
   font-size: 20px;
   color: black;
   padding-left: 17px;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'DM Sans';
   margin-top: 25px; }
+
+.ejerciciosTitulo {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px; }
 
 .tabla {
   border: "1";
@@ -1366,9 +1374,11 @@ tr:nth-child(even) {
     font-size: 20px; }
   .tituloPlanSup {
     padding-bottom: 0px;
-    font-size: 14px; }
+    font-size: 10px;
+    padding-left: 2px;
+    margin-top: -22px; }
   .tituloPlanInf {
-    font-size: 16px; }
+    font-size: 11px; }
   .accordion-item-plan {
     margin-bottom: 9px; }
   .videoPlan {
@@ -1378,19 +1388,22 @@ tr:nth-child(even) {
   .cardBodyPlanes {
     width: 24rem; }
   .ejercicios {
+    font-size: 12px; }
+  .ejerciciosTitulo {
     font-size: 15px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .cardBodyPlanes {
     width: 27rem; }
   .tituloPlanSup {
-    text-align: left;
-    font-size: 16px;
-    padding-left: 25px; }
+    text-align: center;
+    font-size: 11px;
+    padding-left: 1px;
+    margin-top: -22px; }
   .tituloPlanInf {
-    font-size: 17px; }
+    font-size: 12px; }
   .ejercicios {
-    font-size: 20px; }
+    font-size: 15px; }
   .lineaPlan {
     width: 22rem; } }
 

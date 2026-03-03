@@ -5,6 +5,7 @@ let productosArray = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     eventListeners();
+    actualizarContadoresCard();
 });
 
 function eventListeners() {
@@ -25,10 +26,17 @@ function eventListeners() {
 };
 
 function capturarProductos(e) {
-    if (e.target.classList.contains('botonSupJs')) {
-        const elementosHtml = e.target.parentElement.parentElement;
+    /*if (e.target.classList.contains('botonSupJs')) {
+        const elementosHtml = e.target.closest('.card');
         seleccionarDatos(elementosHtml);
-    };
+    };*/
+
+    const boton = e.target.closest('.botonSupJs');
+
+    if (boton){
+        const card = boton.closest('.card');
+        seleccionarDatos(card, boton);
+    }
 };
 
 function capturarVestimenta(e) {
@@ -38,7 +46,7 @@ function capturarVestimenta(e) {
     };
 };
 
-function seleccionarDatos(productos) {
+function seleccionarDatos(productos, boton) {
     const saborSeleccionado = productos.querySelector(
         'input[type="radio"]:checked'
     );
@@ -50,8 +58,8 @@ function seleccionarDatos(productos) {
         marca: productos.querySelector('h6').textContent,
         //condicion ? valorTrue : valorFalse (TERNARIO)
         sabor: saborSeleccionado ? saborSeleccionado.value : 'Sin seleccionar',
-        id: parseInt(productos.querySelector('button[type="button"]').dataset.id, 10),
-        cantidad: 1
+        id: parseInt(boton.dataset.id, 10),
+        cantidad: parseInt(productos.querySelector('.cantidad-card').textContent)
     };
     guardarEnCarrito(producto);
 };
@@ -65,6 +73,7 @@ function seleccionarDatosVestimenta(card, boton) {
         mostrarToast('Seleccioná un talle 👕', 'danger');
         return;
     }
+    //hacer lo mismo con color
 
     const producto = {
         img: card.querySelector('.imag').src,
@@ -80,7 +89,7 @@ function seleccionarDatosVestimenta(card, boton) {
             color ? `Color: ${color.value}` : null
         ].filter(linea => linea).join('\n'),
         id: parseInt(boton.dataset.id),
-        cantidad: 1
+        cantidad: parseInt(card.querySelector('.cantidad-card').textContent)
     };
     guardarEnCarrito(producto);
 
@@ -105,6 +114,9 @@ function guardarEnCarrito(producto) {
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
     mostrarCarrito();
+
+    actualizarContadoresCard();
+
 };
 
 function mostrarResumenCompra() {
@@ -161,21 +173,15 @@ function mostrarCarrito() {
                     <p class="card-text caracteProd">${producto.marca}</p>
                     ${producto.sabor ? `<p class="caracteProd"> Sabor: ${producto.sabor}</p>` : ''}
                     ${producto.detalles
-                         ? producto.detalles.split('\n')
-                        .map(linea => `<p class="caracteProd">${linea}</p>`)
-                        .join('')
-                    : ''}
+                ? producto.detalles.split('\n')
+                    .map(linea => `<p class="caracteProd">${linea}</p>`)
+                    .join('')
+                : ''}
+                    <p class="caracteProd" >Cantidad: ${producto.cantidad}</p>
                     <p class="fw-bold caracteProd"> Precio: $${producto.precio.toLocaleString('es-AR')}</p>
-                    <div class="d-flex align-items-center gap-2 my-2">
-                        <button class="btn btn-outline-secondary btn-sm btn-restar" type="button"
-                            data-id="${producto.id}" data-key="${producto.sabor || producto.detalles}">−</button>
-                        <span class="fw-bold">${producto.cantidad}</span>
-                        <button class="btn btn-outline-secondary btn-sm btn-sumar" type="button"
-                            data-id="${producto.id}" data-key="${producto.sabor || producto.detalles}">+</button>
-                    </div>
                     <button class="btn btn-danger btn-sm btnEliminarProduc"  
                         data-id="${producto.id}"
-                        data-key="${producto.sabor || producto.detalles}">
+                        data-key="${producto.sabor || producto.detalles || ''}">
                         Eliminar
                     </button>
                 </div>
@@ -184,6 +190,7 @@ function mostrarCarrito() {
         contenedorCarrito.appendChild(div);
     });
     mostrarResumenCompra();
+    actualizarContadoresCard();
 };
 
 function eliminarProducto(id, info) {
@@ -200,6 +207,8 @@ function eliminarProducto(id, info) {
     mostrarCarrito();
     mostrarResumenCompra();
     mostrarToast('Producto eliminado ❌', 'danger');
+
+    actualizarContadoresCard();
 };
 
 
@@ -269,16 +278,107 @@ function enviarProductoWhatsapp() {
     window.open(urlWhatsapp, '_blank');
 };
 
+function mostrarToast(mensaje, tipo = 'success') {
+    const toastEl = document.getElementById('toastCarrito');
+    const toastMsg = document.getElementById('toastMensaje');
+
+    if (!toastEl || !toastMsg) return;
+
+    toastEl.className = `toast align-items-center diseñoToast ${tipo} border-0`;
+    toastMsg.textContent = mensaje;
+
+    const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
+    toast.show();
+}
+
+function actualizarContadoresCard() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const contadores = document.querySelectorAll('.contador-card');
+
+    contadores.forEach(contador => {
+        const id = parseInt(contador.dataset.id);
+        const cantidadSpan = contador.querySelector('.cantidad-card');
+
+        const total = carrito
+            .filter(p => p.id === id)
+            .reduce((acc, p) => acc + p.cantidad, 0);
+
+        if (total > 0) {
+            cantidadSpan.textContent = total;
+            contador.style.display = 'flex';
+        } else {
+            contador.style.display = 'none';
+        }
+
+        /* const productos = carrito.filter(p => p.id === id);
+ 
+         let total = 0;
+         productos.forEach(p => {
+             total += p.cantidad;
+         });
+ 
+         cantidadSpan.textContent = total;
+ 
+         if(total === 0) {
+             contador.style.display = 'none';
+         } else {
+             contador.style.display = 'flex';
+         }*/
+    });
+}
+
+function modificarCantidadesCard(id, cambio) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    carrito = carrito.map(producto => {
+        if (producto.id === id) {
+            producto.cantidad += cambio;
+            if (producto.cantidad < 1) producto.cantidad = 1;
+        }
+        return producto;
+    });
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    actualizarContadoresCard();
+    mostrarCarrito();
+    mostrarResumenCompra();
+}
+
 // sumar y restar la cantidad
 document.addEventListener('click', e => {
-    if (e.target.classList.contains('btn-sumar')) {
-        modificarCantidad(parseInt(e.target.dataset.id), e.target.dataset.key, 1);
+    if (e.target.classList.contains('btn-sumar-card')) {
+        const card = e.target.closest('.contador-card');
+        const spanCantidad = card.querySelector('.cantidad-card');
+        let cantidad = parseInt(spanCantidad.textContent);
+        cantidad++;
+        spanCantidad.textContent = cantidad;
     };
 
-    if (e.target.classList.contains('btn-restar')) {
-        modificarCantidad(parseInt(e.target.dataset.id), e.target.dataset.key, -1);
+    if (e.target.classList.contains('btn-restar-card')) {
+        const card = e.target.closest('.contador-card');
+        const spanCantidad = card.querySelector('.cantidad-card');
+        let cantidad = parseInt(spanCantidad.textContent);
+        if (cantidad > 1){
+            cantidad--;
+            spanCantidad.textContent = cantidad;
+        }
     };
 });
+
+
+
+/*<div class="d-flex align-items-center gap-2 my-2">
+                        <button class="btn btn-outline-secondary btn-sm btn-restar" type="button"
+                            data-id="${producto.id}" data-key="${producto.sabor || producto.detalles}">−</button>
+                        <span class="fw-bold">${producto.cantidad}</span>
+                        <button class="btn btn-outline-secondary btn-sm btn-sumar" type="button"
+                            data-id="${producto.id}" data-key="${producto.sabor || producto.detalles}">+</button>
+                    </div>
+
+
+
+
 
 function modificarCantidad(id, key, cambio) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -297,16 +397,4 @@ function modificarCantidad(id, key, cambio) {
     mostrarResumenCompra();
 };
 
-function mostrarToast(mensaje, tipo = 'success') {
-    const toastEl = document.getElementById('toastCarrito');
-    const toastMsg = document.getElementById('toastMensaje');
-
-    if (!toastEl || !toastMsg) return;
-
-    toastEl.className = `toast align-items-center diseñoToast ${tipo} border-0`;
-    toastMsg.textContent = mensaje;
-
-    const toast = new bootstrap.Toast(toastEl, { delay: 2000 });
-    toast.show();
-}
-
+*/

@@ -29,10 +29,10 @@
 .tituloPlanSup{
     text-align: center;
     padding-bottom: 7px;
-    font-size: 20px;
+    font-size: 16px;
     color: black;
     padding-left: 17px;
-    font-family: $bebas-neue;
+    font-family: 'DM Sans';
 }
 .btnPlanes{
     font-family:$bebas-neue ;
@@ -78,8 +78,8 @@
 }
 .ejercicios{
     text-align: center;
-    font-family: $bebas-neue;
-    font-size: 22px;
+    font-family: 'DM Sans';
+    font-size: 15px;
 }
 .tituloPlanInf{
     text-align: center;
@@ -87,8 +87,13 @@
     font-size: 20px;
     color: black;
     padding-left: 17px;
-    font-family: $bebas-neue;
+    font-family: 'DM Sans';
     margin-top: 25px;
+}
+.ejerciciosTitulo{
+    text-align: center;
+    font-family: $bebas-neue;
+    font-size: 20px;
 }
 
 .tabla{
@@ -130,10 +135,12 @@ th {
     }
     .tituloPlanSup{
         padding-bottom: 0px;
-        font-size: 14px;
+        font-size: 10px;
+        padding-left: 2px;
+        margin-top: -22px;
     }
     .tituloPlanInf{
-        font-size: 16px;
+        font-size: 11px;
     }
     .accordion-item-plan {
         margin-bottom: 9px;
@@ -148,6 +155,9 @@ th {
         width: 24rem;
     }
     .ejercicios{
+        font-size: 12px;
+    }
+    .ejerciciosTitulo{
         font-size: 15px;
     }
 }
@@ -157,15 +167,16 @@ th {
         width: 27rem;
     }
     .tituloPlanSup{
-        text-align: left;
-        font-size: 16px;
-        padding-left: 25px;
+        text-align: center;
+        font-size: 11px;
+        padding-left: 1px;
+        margin-top: -22px;
     }
     .tituloPlanInf{
-        font-size: 17px;
+        font-size: 12px;
     }
     .ejercicios{
-        font-size: 20px;
+        font-size: 15px;
     }
     .lineaPlan{
         width: 22rem;
