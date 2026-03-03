@@ -282,15 +282,15 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: top; }
+  object-position: center; }
 
 /*CARD ------------------------------*/
-.conteinerCard {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 24px; }
-
+/*.conteinerCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 24px;
+}*/
 .card1,
 .card2,
 .card3 {
@@ -393,9 +393,10 @@ body {
       margin-bottom: 3px;
       margin-top: -107px;
       font-size: 30px; }
-  .conteinerCard {
-    display: flex;
-    flex-direction: column; }
+  /*.conteinerCard {
+        display: flex;
+        flex-direction: column;
+    }*/
   .card1,
   .card2,
   .card3 {
@@ -406,11 +407,8 @@ body {
   .card-text-index {
     font-size: 15px; }
   .cardImgIndex {
-    height: 165px;
+    height: 185px;
     object-fit: cover; }
-    .cardImgIndex:hover {
-      transform: none;
-      transition: none; }
   .card-body-index {
     margin-bottom: 10px;
     padding: 15px; }
@@ -439,9 +437,10 @@ body {
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
     height: 35dvh; }
-  .conteinerCard {
-    flex-wrap: wrap;
-    gap: 20px; }
+  /*.conteinerCard {
+        flex-wrap: wrap;
+        gap: 20px;
+    }*/
   .carouselImgCambios {
     width: 86% !important;
     margin-left: 8%; }

@@ -45,16 +45,16 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
 }
 
 /*CARD ------------------------------*/
-.conteinerCard {
+/*.conteinerCard {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 24px;
-}
+}*/
 
 .card1,
 .card2,
@@ -179,10 +179,10 @@ body {
         }
     }
 
-    .conteinerCard {
+    /*.conteinerCard {
         display: flex;
         flex-direction: column;
-    }
+    }*/
 
     .card1,
     .card2,
@@ -198,11 +198,7 @@ body {
     }
 
     .cardImgIndex {
-        &:hover {
-            transform: none;
-            transition: none;
-        }
-        height: 165px;
+        height: 185px;
         object-fit: cover;
     }
 
@@ -252,10 +248,10 @@ body {
         height: 35dvh;
     }
 
-    .conteinerCard {
+    /*.conteinerCard {
         flex-wrap: wrap;
         gap: 20px;
-    }
+    }*/
 
     .carouselImgCambios {
         width: 86% !important;
