@@ -21,13 +21,14 @@
 }
 .tituloCarrito{
     font-family: $bebas-neue;
+    font-size: 25px;
 }
 .tituloResumen{
     font-family: $bebas-neue;
     font-size: 33px;
 }
 .btnResumen{
-    font-family: 'DM Sans';
+    font-family: $bebas-min;
 }
 .lineaSeparadora{
     color: black;
@@ -39,11 +40,14 @@
     justify-content: center !important;
 }
 .btnEliminarProduc{
-    margin-top: 10px;
+        width: 42px;
+    margin: auto;
 }
+
 .caracteProd{
-    font-size: 16px;
-    font-family: 'DM Sans';
+    font-size: 15px;
+    font-family: $bebas-min;
+    margin-bottom: 2px;
 }
 .conteResumen{
     background-color: $gris-claro;
@@ -55,11 +59,12 @@
     background-color: $gris-oscuro;
     border-color: black;
     color: white;
-    font-family: 'DM Sans' ;
+    font-family: $bebas-min ;
 }
 .conteBotonesResumen{
     display: flex;
     justify-content: center;
+    gap: 15px;
 }
 .totalResumen{
     font-family: $bebas-neue;
@@ -69,6 +74,9 @@
 .diseñoToast{
     background-color: black;
     color: white;
+}
+.iconoBorrar, .iconoWhat {
+    font-size: 22px;
 }
 
 
@@ -88,6 +96,8 @@
     }
     .list-group-item{
         font-size: 12px;
+        width: 107%;
+        margin-left: -12px;
     }
     .btnResumen{
         font-size: 14px;
@@ -101,6 +111,10 @@
     }
     .tituloCarrito{
         font-size: 20px;
+    }
+    .conteResumen{
+        width: 102% !important;
+        margin-left: -5px;
     }
 }
 
@@ -116,6 +130,8 @@
     }
     .list-group-item{
         font-size: 13px;
+        width: 105%;
+        margin-left: -10px;
     }
     .conteBotonesResumen{
         justify-content: space-evenly;

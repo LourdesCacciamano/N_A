@@ -33,23 +33,27 @@ function capturarProductos(e) {
 
     const boton = e.target.closest('.botonSupJs');
 
-    if (boton){
+    if (boton) {
         const card = boton.closest('.card');
         seleccionarDatos(card, boton);
     }
 };
 
 function capturarVestimenta(e) {
-    if (e.target.classList.contains('botonVestiJs')) {
-        const card = e.target.closest('.cardVesti');
-        seleccionarDatosVestimenta(card, e.target);
-    };
+    const boton = e.target.closest('.botonVestiJs');
+
+    if (boton) {
+        const card = boton.closest('.cardVesti');
+        seleccionarDatosVestimenta(card, boton);
+    }
 };
 
 function seleccionarDatos(productos, boton) {
-    const saborSeleccionado = productos.querySelector(
-        'input[type="radio"]:checked'
-    );
+    const select = productos.querySelector('select[name="suple"]');
+    if (!select || !select.value) {
+        mostrarToast('Seleccioná una opción', 'danger');
+        return;
+    }
 
     const producto = {
         img: productos.querySelector('img').src,
@@ -57,7 +61,7 @@ function seleccionarDatos(productos, boton) {
         precio: parseFloat(productos.querySelector('h3').textContent.replace('$', '').replace('.', '')),
         marca: productos.querySelector('h6').textContent,
         //condicion ? valorTrue : valorFalse (TERNARIO)
-        sabor: saborSeleccionado ? saborSeleccionado.value : 'Sin seleccionar',
+        sabor: select && select.value ? select.value : 'Sin seleccionar',
         id: parseInt(boton.dataset.id, 10),
         cantidad: parseInt(productos.querySelector('.cantidad-card').textContent)
     };
@@ -182,7 +186,7 @@ function mostrarCarrito() {
                     <button class="btn btn-danger btn-sm btnEliminarProduc"  
                         data-id="${producto.id}"
                         data-key="${producto.sabor || producto.detalles || ''}">
-                        Eliminar
+                        <i class="fa-regular fa-trash-can iconoBorrar" style="color: rgb(255, 255, 255);"></i>
                     </button>
                 </div>
             </div>
@@ -214,11 +218,14 @@ function eliminarProducto(id, info) {
 
 //vaciar carrito
 document.addEventListener('click', e => {
-    if (e.target.id === 'vaciarCarrito') {
+    const botonVaciar = e.target.closest('#vaciarCarrito');
+
+    if (botonVaciar) {
         localStorage.removeItem('carrito');
         mostrarCarrito();
         mostrarResumenCompra();
-    };
+        mostrarToast('Carrito vaciado 🗑️', 'danger');
+    }
 });
 
 //enviar todo por whatsapp
@@ -228,10 +235,13 @@ document.addEventListener('click', e => {
     };
 });
 
+//btn eliminar producto indiv
 document.addEventListener('click', e => {
-    if (e.target.classList.contains('btnEliminarProduc')) {
-        const id = parseInt(e.target.dataset.id);
-        const key = e.target.dataset.key;
+    const botonEliminar = e.target.closest('.btnEliminarProduc');
+
+    if (botonEliminar) {
+        const id = parseInt(botonEliminar.dataset.id);
+        const key = botonEliminar.dataset.key;
         eliminarProducto(id, key);
     }
 });
@@ -359,7 +369,7 @@ document.addEventListener('click', e => {
         const card = e.target.closest('.contador-card');
         const spanCantidad = card.querySelector('.cantidad-card');
         let cantidad = parseInt(spanCantidad.textContent);
-        if (cantidad > 1){
+        if (cantidad > 1) {
             cantidad--;
             spanCantidad.textContent = cantidad;
         }

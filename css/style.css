@@ -264,7 +264,7 @@
 body {
   background-color: #C9C6C7 !important; }
 
-/*CARROUSEL ---------------------------*/
+/*CARROUSEL FOTOS ALEATORIAS ---------------------------*/
 #carouselExampleSlidesOnly {
   width: 100% !important;
   height: 80dvh;
@@ -282,15 +282,36 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center; }
+  object-position: top; }
 
-/*CARD ------------------------------*/
-/*.conteinerCard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 24px;
-}*/
+.cambiosTitulo {
+  margin-top: 20px;
+  font-size: 22px;
+  text-align: center;
+  font-family: 'DM Sans';
+  color: #272924;
+  margin-bottom: 6px;
+  text-decoration: underline; }
+
+.carouselImgCambios {
+  width: 44% !important;
+  margin-left: 28%;
+  margin-top: 42px; }
+
+.flechaIzqCambios {
+  margin-left: 146px; }
+
+.flechaDerCambios {
+  margin-right: 146px; }
+
+.descripCambios {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  background-color: #494949;
+  color: white;
+  border-radius: 3px; }
+
 .card1,
 .card2,
 .card3 {
@@ -303,7 +324,9 @@ body {
 
 .cardImgIndex {
   border-radius: 10px;
-  height: 165px !important; }
+  height: 165px !important;
+  object-fit: cover !important;
+  object-position: center !important; }
 
 .card-body-index {
   background-color: #3F4239;
@@ -324,7 +347,7 @@ body {
   font-size: 26px; }
 
 .card-text-index {
-  font-family: 'DM Sans';
+  font-family: "Oswald", sans-serif;
   text-align: left;
   font-size: 16px;
   color: whitesmoke;
@@ -342,7 +365,8 @@ body {
   width: 110px;
   margin: auto;
   margin-bottom: 10px;
-  margin-top: -13px; }
+  margin-top: -13px;
+  font-family: "Oswald", sans-serif; }
 
 .btn3 {
   margin-bottom: 10px; }
@@ -350,25 +374,6 @@ body {
 .btnIndex:active {
   background-color: #615f5f !important;
   border-color: #615f5f !important; }
-
-.cambiosTitulo {
-  margin-top: 20px;
-  font-size: 22px;
-  text-align: center;
-  font-family: 'DM Sans';
-  color: #272924;
-  margin-bottom: 6px;
-  text-decoration: underline; }
-
-.carouselImgCambios {
-  width: 44% !important;
-  margin-left: 28%; }
-
-.carousel-control-prev {
-  margin-left: 146px; }
-
-.carousel-control-next {
-  margin-right: 146px; }
 
 .lineaSeparadoraIndex {
   margin-top: -5px;
@@ -393,10 +398,17 @@ body {
       margin-bottom: 3px;
       margin-top: -107px;
       font-size: 30px; }
-  /*.conteinerCard {
-        display: flex;
-        flex-direction: column;
-    }*/
+  .img3Carrousel {
+    margin-top: 0px; }
+  #carouselExampleSlidesOnly {
+    height: 35dvh; }
+  .carouselImgCambios {
+    width: 97% !important;
+    margin-left: 2%; }
+  .flechaDerCambios {
+    margin-right: -14px; }
+  .flechaIzqCambios {
+    margin-left: -12px; }
   .card1,
   .card2,
   .card3 {
@@ -405,25 +417,15 @@ body {
     margin-top: 65px;
     max-width: none; }
   .card-text-index {
-    font-size: 15px; }
+    font-size: 16px; }
   .cardImgIndex {
     height: 185px;
     object-fit: cover; }
   .card-body-index {
     margin-bottom: 10px;
     padding: 15px; }
-  .img3Carrousel {
-    margin-top: 0px; }
-  #carouselExampleSlidesOnly {
-    height: 35dvh; }
-  .carouselImgCambios {
-    width: 89% !important;
-    margin-left: 6%; }
-  .carousel-control-next {
-    margin-right: 0px; }
-  .carousel-control-prev {
-    margin-left: 0px; }
-  .card-title-index, .precio {
+  .card-title-index,
+  .precio {
     font-size: 23px;
     margin-top: 0; }
   .btnIndex {
@@ -437,17 +439,16 @@ body {
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
     height: 35dvh; }
-  /*.conteinerCard {
-        flex-wrap: wrap;
-        gap: 20px;
-    }*/
   .carouselImgCambios {
     width: 86% !important;
     margin-left: 8%; }
-  .carousel-control-prev {
-    margin-left: 0px; }
-  .carousel-control-next {
-    margin-right: 0px; } }
+  /*.carousel-control-prev {
+        margin-left: -16px;
+    }
+
+    .carousel-control-next {
+        margin-right: -19px;
+    }*/ }
 
 .footer {
   max-height: 34vh;
@@ -693,10 +694,11 @@ body {
   border-color: black; }
 
 .text-suple {
-  font-family: 'DM Sans';
+  font-family: "Oswald", sans-serif;
   text-align: justify;
   font-size: 14px;
-  color: whitesmoke; }
+  color: whitesmoke;
+  margin-bottom: 5px; }
 
 .btn13 {
   background-color: #3F4239;
@@ -782,10 +784,8 @@ hr {
   color: white;
   margin-top: 6px; }
 
-h6 {
-  color: white; }
-
-.cardSuple, .cardOtros {
+.cardSuple,
+.cardOtros {
   background-color: #3F4239;
   max-width: 19rem;
   width: 100%; }
@@ -809,10 +809,19 @@ h6 {
   cursor: pointer;
   margin-right: 8px;
   font-weight: bold;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+  font-family: "Oswald", sans-serif; }
+
+.selec {
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 0 3px; }
 
 .formSuple {
-  text-align: center !important; }
+  text-align: justify !important;
+  margin-bottom: 2px; }
 
 /* Cuando está seleccionado */
 .radioPersonalizadoSabor input[type="radio"]:checked + span {
@@ -823,7 +832,8 @@ h6 {
 
 .titLabel {
   color: white;
-  font-family: 'DM Sans'; }
+  font-family: "Oswald", sans-serif;
+  font-size: 15px; }
 
 .opcionesSabor {
   display: flex;
@@ -842,18 +852,23 @@ h6 {
   justify-content: center;
   align-items: stretch; }
 
-.btnSuple, .btnOtros {
+.btnSuple,
+.btnOtros {
   margin-top: 10px; }
 
-.btnCreatina, .btnOtros, .btnSuple {
-  width: 87px; }
+.btnCreatina,
+.btnOtros,
+.btnSuple {
+  width: 53px; }
 
 .agregarCar {
-  font-size: 22px; }
+  font-size: 22px;
+  margin-right: 2px; }
 
 .contenedorCantAgreg {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-top: -14px; }
 
 .cardCrea2 {
   display: flex; }
@@ -862,7 +877,8 @@ h6 {
   display: flex;
   gap: 10px; }
 
-.cardSuple-creatin, .cardCreProb {
+.cardSuple-creatin,
+.cardCreProb {
   max-width: 19rem;
   width: 100%;
   margin-right: 20px;
@@ -875,7 +891,8 @@ h6 {
   text-align: center;
   font-size: 24px;
   font-family: "Bebas Neue", sans-serif;
-  color: white; }
+  color: white;
+  margin-bottom: -5px; }
 
 /* Quitar fondo blanco del accordion */
 .accordion-item,
@@ -937,14 +954,17 @@ h6 {
     gap: 10px; }
   .opSaborLargo {
     margin-left: 7px; }
-  .cardSuple-creatin, .cardCreProb {
+  .cardSuple-creatin,
+  .cardCreProb {
     margin-right: 0px;
     width: 12rem;
     margin: auto; }
   .precioSuple {
-    font-size: 20px; }
+    font-size: 19px;
+    margin-top: -6px; }
   .titleSuple {
-    font-size: 25px; }
+    font-size: 23px;
+    margin-top: -11px; }
   .text-suple {
     margin-top: 0px;
     font-size: 12px; }
@@ -968,7 +988,11 @@ h6 {
   .btnOtros {
     margin: auto;
     font-size: 13px;
-    width: 139px; } }
+    width: 139px; }
+  .selecLargo {
+    font-size: 13px; }
+  .tilLabelLargo {
+    font-size: 12px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .mediaProte1 {
@@ -977,10 +1001,10 @@ h6 {
     flex-direction: column;
     gap: 6px; }
   .cardSuple {
-    width: 100%; }
+    width: 13rem !important;
+    margin-right: 7px; }
   .conteTiposProte {
     justify-content: center;
-    gap: 12px;
     align-items: flex-start;
     width: 103%; }
   .opcionesSabor {
@@ -993,15 +1017,15 @@ h6 {
     flex-wrap: wrap;
     flex-direction: column; }
   .cardSuple-creatin {
-    width: 111%;
-    height: 34rem;
-    margin-right: 5px; }
+    width: 13rem;
+    height: 25rem;
+    margin-right: 4px; }
   .cardCreProb {
-    width: 91%;
+    width: 13rem;
     height: 49%;
-    margin-left: 8px; }
+    margin-right: 2px; }
   .cardCrea2 {
-    gap: 15px; }
+    gap: 0px; }
   .conteTiposCrea {
     justify-content: center; }
   .btnCreatina {
@@ -1027,7 +1051,9 @@ h6 {
   h6 {
     font-size: 13px; }
   .text-suple {
-    text-align: unset; } }
+    text-align: unset; }
+  .contenedorCantAgregCreatina {
+    align-items: baseline; } }
 
 .conteCards-vesti {
   display: flex;
@@ -1067,8 +1093,16 @@ h6 {
 
 .btnVesti {
   display: flex;
-  width: 153px;
-  margin: auto; }
+  width: 55px; }
+
+.agregarVest {
+  font-size: 22px; }
+
+.contenedorCantCarrVest {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; }
 
 .separadorVestiDesktop {
   display: flex;
@@ -1180,7 +1214,7 @@ h6 {
 
 @media (max-width: 430px) {
   .cardVesti {
-    width: 45%; }
+    width: 48%; }
   .mainVesti {
     padding-top: 120px; }
   .labelColor {
@@ -1189,34 +1223,44 @@ h6 {
   .formRemera {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 3px; }
+    justify-content: flex-start;
+    gap: 4px; }
   .radioPersonalizadoVestiTalle span {
-    padding: 2px 6px;
+    padding: 2px 8px;
     margin-right: 5px; }
   .radioPersonalizadoColor span {
     padding: 1px 4px;
     margin-right: 0px;
     font-size: 13px; }
   .card-title-vesti {
-    font-size: 26px; }
+    font-size: 21px;
+    margin-top: -8px; }
   .precios-vesti {
-    font-size: 25px; }
+    font-size: 22px;
+    margin-bottom: -2px; }
   .btnVesti {
-    font-size: 12px;
-    width: 125px; }
+    width: 47px; }
   .separadorVestiDesktop {
     display: none; }
+  .contenedorCantCarrVest {
+    justify-content: space-between; }
+  .agregarVest {
+    margin-left: -2px; }
   .separadorVestiMobile {
     display: flex; }
   .conteTalles {
     display: flex; }
   .btnTop {
-    margin-top: 25px; } }
+    margin-top: 25px; }
+  .conteCards-vesti {
+    gap: 9px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
+  .mainVesti {
+    padding-top: 177px; }
   .cardVesti {
-    width: 48%; }
+    width: 48%;
+    margin-left: 0px; }
   .card-text-vesti {
     font-size: 13px; }
   .labelColor {
@@ -1235,7 +1279,13 @@ h6 {
     font-size: 14px;
     padding-left: 18px; }
   .btnTop {
-    margin-top: 25px; } }
+    margin-top: 25px; }
+  .card-title-vesti {
+    font-size: 24px;
+    margin-top: -7px; }
+  .precios-vesti {
+    font-size: 22px;
+    margin-bottom: -2px; } }
 
 .mainPlan {
   min-height: 70vh;
@@ -1262,14 +1312,6 @@ h6 {
 
 .accordion-item-plan {
   margin-bottom: 9px; }
-
-.tituloPlanSup {
-  text-align: center;
-  padding-bottom: 7px;
-  font-size: 16px;
-  color: black;
-  padding-left: 17px;
-  font-family: 'DM Sans'; }
 
 .btnPlanes {
   font-family: "Bebas Neue", sans-serif;
@@ -1313,8 +1355,9 @@ h6 {
 
 .ejercicios {
   text-align: center;
-  font-family: 'DM Sans';
-  font-size: 15px; }
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
+  font-weight: bold; }
 
 .tituloPlanInf {
   text-align: center;
@@ -1322,8 +1365,16 @@ h6 {
   font-size: 20px;
   color: black;
   padding-left: 17px;
-  font-family: 'DM Sans';
+  font-family: "Oswald", sans-serif;
   margin-top: 25px; }
+
+.tituloPlanSup {
+  text-align: center;
+  padding-bottom: 7px;
+  font-size: 16px;
+  color: black;
+  padding-left: 17px;
+  font-family: "Oswald", sans-serif; }
 
 .ejerciciosTitulo {
   text-align: center;
@@ -1338,7 +1389,7 @@ h6 {
 th, td {
   border: 1px solid black;
   /* Líneas */
-  padding: 10px;
+  padding: 5px;
   /* Espacio interno */
   text-align: center;
   /* Centrar texto */ }
@@ -1365,7 +1416,8 @@ tr:nth-child(even) {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* sombra suave */
   cursor: pointer;
-  transition: transform 0.3s ease; }
+  transition: transform 0.3s ease;
+  margin-top: 4px; }
 
 @media (max-width: 430px) {
   .mainPlan {
@@ -1374,11 +1426,11 @@ tr:nth-child(even) {
     font-size: 20px; }
   .tituloPlanSup {
     padding-bottom: 0px;
-    font-size: 10px;
+    font-size: 12px;
     padding-left: 2px;
     margin-top: -22px; }
   .tituloPlanInf {
-    font-size: 11px; }
+    font-size: 13px; }
   .accordion-item-plan {
     margin-bottom: 9px; }
   .videoPlan {
@@ -1388,7 +1440,7 @@ tr:nth-child(even) {
   .cardBodyPlanes {
     width: 24rem; }
   .ejercicios {
-    font-size: 12px; }
+    font-size: 19px; }
   .ejerciciosTitulo {
     font-size: 15px; } }
 
@@ -1397,13 +1449,13 @@ tr:nth-child(even) {
     width: 27rem; }
   .tituloPlanSup {
     text-align: center;
-    font-size: 11px;
+    font-size: 13px;
     padding-left: 1px;
     margin-top: -22px; }
   .tituloPlanInf {
-    font-size: 12px; }
+    font-size: 14px; }
   .ejercicios {
-    font-size: 15px; }
+    font-size: 18px; }
   .lineaPlan {
     width: 22rem; } }
 
@@ -1429,14 +1481,15 @@ tr:nth-child(even) {
   font-size: 18px; }
 
 .tituloCarrito {
-  font-family: "Bebas Neue", sans-serif; }
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px; }
 
 .tituloResumen {
   font-family: "Bebas Neue", sans-serif;
   font-size: 33px; }
 
 .btnResumen {
-  font-family: 'DM Sans'; }
+  font-family: "Oswald", sans-serif; }
 
 .lineaSeparadora {
   color: black; }
@@ -1448,11 +1501,13 @@ tr:nth-child(even) {
   justify-content: center !important; }
 
 .btnEliminarProduc {
-  margin-top: 10px; }
+  width: 42px;
+  margin: auto; }
 
 .caracteProd {
-  font-size: 16px;
-  font-family: 'DM Sans'; }
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 2px; }
 
 .conteResumen {
   background-color: #87877F;
@@ -1464,11 +1519,12 @@ tr:nth-child(even) {
   background-color: #3F4239;
   border-color: black;
   color: white;
-  font-family: 'DM Sans'; }
+  font-family: "Oswald", sans-serif; }
 
 .conteBotonesResumen {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  gap: 15px; }
 
 .totalResumen {
   font-family: "Bebas Neue", sans-serif;
@@ -1478,6 +1534,9 @@ tr:nth-child(even) {
 .diseñoToast {
   background-color: black;
   color: white; }
+
+.iconoBorrar, .iconoWhat {
+  font-size: 22px; }
 
 @media (max-width: 430px) {
   .inicioCarrito {
@@ -1490,7 +1549,9 @@ tr:nth-child(even) {
   .conteResumen {
     width: 99%; }
   .list-group-item {
-    font-size: 12px; }
+    font-size: 12px;
+    width: 107%;
+    margin-left: -12px; }
   .btnResumen {
     font-size: 14px; }
   .conteBotonesResumen {
@@ -1499,7 +1560,10 @@ tr:nth-child(even) {
     font-size: 14px;
     margin-bottom: 5px; }
   .tituloCarrito {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .conteResumen {
+    width: 102% !important;
+    margin-left: -5px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .tamañoCard {
@@ -1509,7 +1573,9 @@ tr:nth-child(even) {
   .conteResumen {
     width: 99%; }
   .list-group-item {
-    font-size: 13px; }
+    font-size: 13px;
+    width: 105%;
+    margin-left: -10px; }
   .conteBotonesResumen {
     justify-content: space-evenly; }
   .caracteProd {
@@ -1543,8 +1609,8 @@ tr:nth-child(even) {
   border-radius: 5px; }
 
 .textoTiempos {
-  font-size: 23px;
-  font-family: "Bebas Neue", sans-serif; }
+  font-size: 18px;
+  font-family: "Oswald", sans-serif; }
 
 .configuracionTimer {
   margin: auto;
@@ -1639,8 +1705,8 @@ tr:nth-child(even) {
     width: 35px; }
   .contenedorFlexTiempos {
     justify-content: flex-start;
-    padding-left: 34px;
-    gap: 42px; }
+    padding-left: 26px;
+    gap: 48px; }
   .estados {
     width: 90%;
     font-size: 47px;
@@ -1657,7 +1723,7 @@ tr:nth-child(even) {
   .mainTimer {
     padding-top: 125px; }
   .textoTiempos {
-    font-size: 18px; } }
+    font-size: 14px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .btnAcordion {
@@ -1680,8 +1746,8 @@ tr:nth-child(even) {
     gap: 14px;
     margin-top: 30px; }
   .textoTiempos {
-    font-size: 21px; }
+    font-size: 15px; }
   .contenedorFlexTiempos {
-    justify-content: space-around;
-    padding-left: 9px;
-    gap: 52px; } }
+    justify-content: flex-start;
+    padding-left: 26px;
+    gap: 48px; } }

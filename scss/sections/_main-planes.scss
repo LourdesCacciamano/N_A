@@ -26,14 +26,7 @@
 .accordion-item-plan {
     margin-bottom: 9px;
 }
-.tituloPlanSup{
-    text-align: center;
-    padding-bottom: 7px;
-    font-size: 16px;
-    color: black;
-    padding-left: 17px;
-    font-family: 'DM Sans';
-}
+
 .btnPlanes{
     font-family:$bebas-neue ;
     font-size: 25px;
@@ -78,8 +71,9 @@
 }
 .ejercicios{
     text-align: center;
-    font-family: 'DM Sans';
-    font-size: 15px;
+    font-family: $bebas-min;
+    font-size: 19px;
+    font-weight: bold;
 }
 .tituloPlanInf{
     text-align: center;
@@ -87,8 +81,16 @@
     font-size: 20px;
     color: black;
     padding-left: 17px;
-    font-family: 'DM Sans';
+    font-family: $bebas-min;
     margin-top: 25px;
+}
+.tituloPlanSup{
+    text-align: center;
+    padding-bottom: 7px;
+    font-size: 16px;
+    color: black;
+    padding-left: 17px;
+    font-family: $bebas-min;
 }
 .ejerciciosTitulo{
     text-align: center;
@@ -103,7 +105,7 @@
 }
 th, td{
      border: 1px solid black; /* Líneas */
-        padding: 10px; /* Espacio interno */
+        padding: 5px; /* Espacio interno */
         text-align: center; /* Centrar texto */
 }
 th {
@@ -124,6 +126,7 @@ th {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra suave */
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-top: 4px;
 }
 
 @media (max-width:430px) {
@@ -135,12 +138,12 @@ th {
     }
     .tituloPlanSup{
         padding-bottom: 0px;
-        font-size: 10px;
+        font-size: 12px;
         padding-left: 2px;
         margin-top: -22px;
     }
     .tituloPlanInf{
-        font-size: 11px;
+        font-size: 13px;
     }
     .accordion-item-plan {
         margin-bottom: 9px;
@@ -155,7 +158,7 @@ th {
         width: 24rem;
     }
     .ejercicios{
-        font-size: 12px;
+        font-size: 19px;
     }
     .ejerciciosTitulo{
         font-size: 15px;
@@ -168,15 +171,15 @@ th {
     }
     .tituloPlanSup{
         text-align: center;
-        font-size: 11px;
+        font-size: 13px;
         padding-left: 1px;
         margin-top: -22px;
     }
     .tituloPlanInf{
-        font-size: 12px;
+        font-size: 14px;
     }
     .ejercicios{
-        font-size: 15px;
+        font-size: 18px;
     }
     .lineaPlan{
         width: 22rem;

@@ -24,7 +24,7 @@ body {
     background-color: $gris-mas-claro !important;
 }
 
-/*CARROUSEL ---------------------------*/
+/*CARROUSEL FOTOS ALEATORIAS ---------------------------*/
 
 #carouselExampleSlidesOnly {
     width: 100% !important;
@@ -45,17 +45,44 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: top;
 }
 
-/*CARD ------------------------------*/
-/*.conteinerCard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 24px;
-}*/
+//CARROUSEL CAMBIOS ---------------------------------------------------------------- 
+.cambiosTitulo {
+    margin-top: 20px;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'DM Sans';
+    color: $gris-mas-oscuro;
+    margin-bottom: 6px;
+    text-decoration: underline;
+}
 
+.carouselImgCambios {
+    width: 44% !important;
+    margin-left: 28%;
+    margin-top: 42px;
+}
+
+.flechaIzqCambios {
+    margin-left: 146px;
+}
+
+.flechaDerCambios {
+    margin-right: 146px;
+}
+
+.descripCambios {
+    text-align: center;
+    font-family: $bebas-min;
+    font-size: 20px;
+    background-color: #494949;
+    color: white;
+    border-radius: 3px;
+}
+
+//CARROUSEL CARDS PLANES ---------------------
 .card1,
 .card2,
 .card3 {
@@ -71,7 +98,10 @@ body {
 .cardImgIndex {
     border-radius: 10px;
     height: 165px !important;
+    object-fit: cover !important;
+    object-position: center !important;
 }
+
 
 .card-body-index {
     background-color: $gris-oscuro;
@@ -95,7 +125,7 @@ body {
 }
 
 .card-text-index {
-    font-family: 'DM Sans';
+    font-family: $bebas-min;
     text-align: left;
     font-size: 16px;
     color: whitesmoke;
@@ -118,6 +148,7 @@ body {
     margin: auto;
     margin-bottom: 10px;
     margin-top: -13px;
+    font-family: $bebas-min;
 }
 
 .btn3 {
@@ -129,42 +160,23 @@ body {
     border-color: #615f5f !important;
 }
 
-.cambiosTitulo {
-    margin-top: 20px;
-    font-size: 22px;
-    text-align: center;
-    font-family: 'DM Sans';
-    color: $gris-mas-oscuro;
-    margin-bottom: 6px;
-    text-decoration: underline;
-}
-
-.carouselImgCambios {
-    width: 44% !important;
-    margin-left: 28%;
-}
-
-.carousel-control-prev {
-    margin-left: 146px;
-}
-
-.carousel-control-next {
-    margin-right: 146px;
-}
-.lineaSeparadoraIndex{
+.lineaSeparadoraIndex {
     margin-top: -5px;
     margin-bottom: 2px;
-    color: white ;
+    color: white;
     width: 261px;
     margin: auto;
 }
-.carousel-indicators{
+
+.carousel-indicators {
     margin-bottom: -28px;
 }
+
 .flechaIzq {
     margin-left: 25%;
 }
-.flechaDer{
+
+.flechaDer {
     margin-right: 25%;
 }
 
@@ -179,11 +191,30 @@ body {
         }
     }
 
-    /*.conteinerCard {
-        display: flex;
-        flex-direction: column;
-    }*/
+    //CARROUSEL 1
+    .img3Carrousel {
+        margin-top: 0px;
+    }
 
+    #carouselExampleSlidesOnly {
+        height: 35dvh;
+    }
+
+    //CAMBIOS
+    .carouselImgCambios {
+        width: 97% !important;
+        margin-left: 2%;
+    }
+
+    .flechaDerCambios {
+        margin-right: -14px;
+    }
+
+    .flechaIzqCambios {
+        margin-left: -12px;
+    }
+
+    // CARDS
     .card1,
     .card2,
     .card3 {
@@ -194,7 +225,7 @@ body {
     }
 
     .card-text-index {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .cardImgIndex {
@@ -207,62 +238,42 @@ body {
         padding: 15px;
     }
 
-    .img3Carrousel {
-        margin-top: 0px;
-    }
-
-    #carouselExampleSlidesOnly {
-        height: 35dvh;
-    }
-
-    .carouselImgCambios {
-        width: 89% !important;
-        margin-left: 6%;
-    }
-
-    .carousel-control-next{
-        margin-right: 0px;
-    }
-
-    .carousel-control-prev{
-        margin-left: 0px;
-    }
-    .card-title-index, .precio{
+    .card-title-index,
+    .precio {
         font-size: 23px;
         margin-top: 0;
     }
-    .btnIndex{
+
+    .btnIndex {
         margin-bottom: -4px;
         margin-top: -22px;
     }
-    .flechaIzq{
+
+    .flechaIzq {
         margin-left: -6px;
     }
-    .flechaDer{
+
+    .flechaDer {
         margin-right: -6px;
     }
 }
 
 @media (min-width:431px) and (max-width:768px) {
+    // CARROUSEL 1
     #carouselExampleSlidesOnly {
         height: 35dvh;
     }
-
-    /*.conteinerCard {
-        flex-wrap: wrap;
-        gap: 20px;
-    }*/
-
+    //CAMBIOS
     .carouselImgCambios {
         width: 86% !important;
         margin-left: 8%;
     }
 
-    .carousel-control-prev {
-        margin-left: 0px;
+    /*.carousel-control-prev {
+        margin-left: -16px;
     }
 
     .carousel-control-next {
-        margin-right: 0px;
-    }
+        margin-right: -19px;
+    }*/
 }

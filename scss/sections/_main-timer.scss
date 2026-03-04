@@ -23,8 +23,8 @@
     border-radius: 5px;
 }
 .textoTiempos{
-    font-size: 23px;
-    font-family: $bebas-neue;
+    font-size: 18px;
+    font-family: $bebas-min;
 }
 .configuracionTimer {
     margin: auto;
@@ -131,8 +131,8 @@
     }
     .contenedorFlexTiempos{
         justify-content: flex-start;
-        padding-left: 34px;
-        gap: 42px;
+        padding-left: 26px;
+        gap: 48px;
     }
     .estados{
         width: 90%;
@@ -155,7 +155,7 @@
         padding-top: 125px;
     }
     .textoTiempos{
-        font-size: 18px;
+        font-size: 14px;
     }
 }
 
@@ -186,11 +186,11 @@
         margin-top: 30px;
     }
     .textoTiempos{
-        font-size: 21px;
+        font-size: 15px;
     }
     .contenedorFlexTiempos{
-        justify-content: space-around;
-        padding-left: 9px;
-        gap: 52px;
+        justify-content: flex-start;
+        padding-left: 26px;
+        gap: 48px;
     }
 }
