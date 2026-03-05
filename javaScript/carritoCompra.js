@@ -50,8 +50,8 @@ function capturarVestimenta(e) {
 
 function seleccionarDatos(productos, boton) {
     const select = productos.querySelector('select[name="suple"]');
-    if (!select || !select.value) {
-        mostrarToast('Seleccioná un Sabor', 'warning');
+    if (select && !select.value) {
+        mostrarToast('¡Seleccioná un Sabor!', 'warning');
         return;
     }
 
@@ -61,7 +61,7 @@ function seleccionarDatos(productos, boton) {
         precio: parseFloat(productos.querySelector('h3').textContent.replace('$', '').replace('.', '')),
         marca: productos.querySelector('h6').textContent,
         //condicion ? valorTrue : valorFalse (TERNARIO)
-        sabor: select && select.value ? select.value : 'Sin seleccionar',
+        sabor: select ? select.value : 'Sin seleccionar',
         id: parseInt(boton.dataset.id, 10),
         cantidad: parseInt(productos.querySelector('.cantidad-card').textContent)
     };
@@ -69,15 +69,22 @@ function seleccionarDatos(productos, boton) {
 };
 
 function seleccionarDatosVestimenta(card, boton) {
+    const talleInput = card.querySelectorAll('input[name^="talle"]');
+    const colorInput = card.querySelectorAll('input[name^="color"]');
+
     const talle = card.querySelector('input[name^="talle"]:checked');
     const color = card.querySelector('input[name^="color"]:checked');
 
     //si o si eligan talle
-    if (!talle) {
-        mostrarToast('Seleccioná un talle 👕', 'warning');
+    if (talleInput.length > 0 && !talle) {
+        mostrarToast('¡Seleccioná un talle!', 'warning');
         return;
     }
-    //hacer lo mismo con color
+    //si o si eliga color
+    if (colorInput.length > 0 && !color) {
+        mostrarToast('¡Seleccioná un color!', 'warning');
+        return;
+    }
 
     const producto = {
         img: card.querySelector('.imag').src,
