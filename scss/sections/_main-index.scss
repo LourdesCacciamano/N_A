@@ -80,6 +80,7 @@ body {
     background-color: #494949;
     color: white;
     border-radius: 3px;
+    font-weight: bold;
 }
 
 //CARROUSEL CARDS PLANES ---------------------
@@ -269,11 +270,16 @@ body {
         margin-left: 8%;
     }
 
-    /*.carousel-control-prev {
-        margin-left: -16px;
+    .flechaIzqCambios{
+        margin-left: -15px;
     }
-
-    .carousel-control-next {
-        margin-right: -19px;
-    }*/
+    .flechaDerCambios{
+        margin-right: -10px;
+    }
+    .flechaIzq{
+        margin-left: 0%;
+    }
+    .flechaDer{
+        margin-right: 0%;
+    }
 }

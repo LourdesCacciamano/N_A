@@ -40,7 +40,7 @@
     margin-right: 15px;
     margin-bottom: 15px;
     font-size: 20px;
-    font-family: math;
+    font-family: $bebas-min;
 }
 .input-radio{
     margin-left: 13px;
@@ -92,6 +92,10 @@
     margin-top: 15px;
     color: $gris-oscuro;
     font-size: 21px;
+    font-family: $bebas-min;
+}
+strong{
+     font-family: $bebas-min;
 }
 .radios{
     display: contents; /* ← NO altera el layout */
@@ -102,10 +106,11 @@
 @media (max-width:430px){
     .tituloForm{
         font-size: 28px;
-        margin-top: -76px;
+        margin-top: -94px;
     }
     .planSolici{
         font-size: 14px;
+        margin-bottom: -14px;
     }
     .formulario{
         margin-left: 6px;
@@ -150,6 +155,13 @@
     .formulario{
         width: 96%;
         margin: auto;
+        margin-bottom: 10px;
+    }
+    .label{
+        font-size: 13px;
+    }
+    .tituloForm{
+        margin-top: -45px;
     }
 }
     

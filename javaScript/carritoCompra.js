@@ -51,7 +51,7 @@ function capturarVestimenta(e) {
 function seleccionarDatos(productos, boton) {
     const select = productos.querySelector('select[name="suple"]');
     if (!select || !select.value) {
-        mostrarToast('Seleccioná una opción', 'danger');
+        mostrarToast('Seleccioná un Sabor', 'warning');
         return;
     }
 
@@ -74,7 +74,7 @@ function seleccionarDatosVestimenta(card, boton) {
 
     //si o si eligan talle
     if (!talle) {
-        mostrarToast('Seleccioná un talle 👕', 'danger');
+        mostrarToast('Seleccioná un talle 👕', 'warning');
         return;
     }
     //hacer lo mismo con color
@@ -114,7 +114,7 @@ function guardarEnCarrito(producto) {
         existe.cantidad++;
     } else {
         carrito.push(producto);
-        mostrarToast('Producto agregado al carrito 🛒');
+        mostrarToast('Producto agregado al carrito 🛒', 'success');
     }
     localStorage.setItem('carrito', JSON.stringify(carrito));
     mostrarCarrito();
@@ -294,7 +294,7 @@ function mostrarToast(mensaje, tipo = 'success') {
 
     if (!toastEl || !toastMsg) return;
 
-    toastEl.className = `toast align-items-center diseñoToast ${tipo} border-0`;
+    toastEl.className = `toast align-items-center diseñoToast text-bg-${tipo} border-0`;
     toastMsg.textContent = mensaje;
 
     const toast = new bootstrap.Toast(toastEl, { delay: 2000 });

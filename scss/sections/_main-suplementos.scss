@@ -179,6 +179,7 @@ hr {
     color: white;
     border-radius: 5px;
     padding: 0 3px;
+    appearance: auto;
 }
 
 .formSuple {
@@ -415,7 +416,7 @@ hr {
     .btnOtros {
         margin: auto;
         font-size: 13px;
-        width: 139px;
+        width: 49px;
     }
 
     .selecLargo {
@@ -424,6 +425,9 @@ hr {
 
     .tilLabelLargo {
         font-size: 12px;
+    }
+    .contenedorCantAgreOtros {
+        margin-top: -2px;
     }
 }
 
@@ -528,7 +532,8 @@ hr {
     .text-suple {
         text-align: unset;
     }
-    .contenedorCantAgregCreatina{
+
+    .contenedorCantAgregCreatina {
         align-items: baseline;
     }
 }
