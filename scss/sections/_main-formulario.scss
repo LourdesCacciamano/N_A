@@ -101,7 +101,9 @@ strong{
     display: contents; /* ← NO altera el layout */
     gap: 0;
 }
-
+.btnWhat{
+    font-family: $bebas-min;
+}
 
 @media (max-width:430px){
     .tituloForm{

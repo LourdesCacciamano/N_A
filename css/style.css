@@ -405,7 +405,7 @@ body {
     height: 35dvh; }
   .carouselImgCambios {
     width: 97% !important;
-    margin-left: 2%; }
+    margin-left: 7px; }
   .flechaDerCambios {
     margin-right: -14px; }
   .flechaIzqCambios {
@@ -442,7 +442,7 @@ body {
     height: 35dvh; }
   .carouselImgCambios {
     width: 86% !important;
-    margin-left: 8%; }
+    margin-left: 7%; }
   .flechaIzqCambios {
     margin-left: -15px; }
   .flechaDerCambios {
@@ -640,6 +640,9 @@ strong {
   display: contents;
   /* ← NO altera el layout */
   gap: 0; }
+
+.btnWhat {
+  font-family: "Oswald", sans-serif; }
 
 @media (max-width: 430px) {
   .tituloForm {
@@ -1713,9 +1716,6 @@ tr:nth-child(even) {
 .estado-entre-compl {
   background-color: #2df52d; }
 
-/*.conteFlexTime1 {
-    margin-right: 95px;
-}*/
 @media (max-width: 430px) {
   .btnAcordion {
     width: 91%; }
