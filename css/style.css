@@ -306,12 +306,11 @@ body {
 
 .descripCambios {
   text-align: center;
-  font-family: "Oswald", sans-serif;
-  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
   background-color: #494949;
   color: white;
-  border-radius: 3px;
-  font-weight: bold; }
+  border-radius: 3px; }
 
 .card1,
 .card2,
@@ -348,7 +347,7 @@ body {
   font-size: 26px; }
 
 .card-text-index {
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
   font-size: 16px;
   color: whitesmoke;
@@ -367,7 +366,7 @@ body {
   margin: auto;
   margin-bottom: 10px;
   margin-top: -13px;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .btn3 {
   margin-bottom: 10px; }
@@ -583,7 +582,7 @@ body {
   margin-right: 15px;
   margin-bottom: 15px;
   font-size: 20px;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .input-radio {
   margin-left: 13px;
@@ -634,7 +633,7 @@ body {
   font-family: "Oswald", sans-serif; }
 
 strong {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .radios {
   display: contents;
@@ -642,7 +641,7 @@ strong {
   gap: 0; }
 
 .btnWhat {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 @media (max-width: 430px) {
   .tituloForm {
@@ -709,7 +708,7 @@ strong {
   border-color: black; }
 
 .text-suple {
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: justify;
   font-size: 14px;
   color: whitesmoke;
@@ -834,7 +833,7 @@ hr {
   margin-right: 8px;
   font-weight: bold;
   transition: all 0.2s ease;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .selec {
   font-size: 14px;
@@ -857,7 +856,7 @@ hr {
 
 .titLabel {
   color: white;
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 15px; }
 
 .opcionesSabor {
@@ -1203,13 +1202,13 @@ hr {
   justify-content: center;
   gap: 7px;
   align-items: flex-start;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 18px; }
+  font-family: "Oswald", sans-serif;
+  font-size: 17px; }
 
 .labelTalle {
   color: white;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 18px; }
+  font-family: "Oswald", sans-serif;
+  font-size: 17px; }
 
 .color {
   margin-right: 2px;
@@ -1516,7 +1515,7 @@ tr:nth-child(even) {
   font-size: 33px; }
 
 .btnResumen {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .lineaSeparadora {
   color: black; }
@@ -1533,7 +1532,7 @@ tr:nth-child(even) {
 
 .caracteProd {
   font-size: 15px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 2px; }
 
 .conteResumen {
