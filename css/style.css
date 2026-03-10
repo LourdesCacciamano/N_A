@@ -434,7 +434,9 @@ body {
   .flechaIzq {
     margin-left: -6px; }
   .flechaDer {
-    margin-right: -6px; } }
+    margin-right: -6px; }
+  .descripCambios {
+    font-size: 18px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
@@ -449,7 +451,9 @@ body {
   .flechaIzq {
     margin-left: 0%; }
   .flechaDer {
-    margin-right: 0%; } }
+    margin-right: 0%; }
+  .descripCambios {
+    font-size: 18px; } }
 
 .footer {
   max-height: 34vh;
