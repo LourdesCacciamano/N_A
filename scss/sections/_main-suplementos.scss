@@ -361,7 +361,7 @@ hr {
     }
 
     .conteTiposOtros {
-        gap: 15px;
+        gap: 0px;
     }
 
     .separador1CardOtros,
@@ -436,6 +436,10 @@ hr {
     }
     .contenedorCantAgreOtros {
         margin-top: -2px;
+    }
+    .cardShaker{
+        width: 12rem !important;
+        margin-left: -24px;
     }
 }
 
@@ -543,5 +547,9 @@ hr {
 
     .contenedorCantAgregCreatina {
         align-items: baseline;
+    }
+    .cardShaker{
+        width: 12rem !important;
+        margin-left: 0px;
     }
 }

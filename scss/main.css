@@ -1214,7 +1214,7 @@ hr {
     width: 139px;
   }
   .conteTiposOtros {
-    gap: 15px;
+    gap: 0px;
   }
   .separador1CardOtros,
   .separador2CardOtros {
@@ -1276,6 +1276,10 @@ hr {
   }
   .contenedorCantAgreOtros {
     margin-top: -2px;
+  }
+  .cardShaker {
+    width: 12rem !important;
+    margin-left: -24px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
@@ -1357,6 +1361,10 @@ hr {
   }
   .contenedorCantAgregCreatina {
     align-items: baseline;
+  }
+  .cardShaker {
+    width: 12rem !important;
+    margin-left: 0px;
   }
 }
 .conteCards-vesti {

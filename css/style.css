@@ -975,7 +975,7 @@ hr {
     font-size: 13px;
     width: 139px; }
   .conteTiposOtros {
-    gap: 15px; }
+    gap: 0px; }
   .separador1CardOtros,
   .separador2CardOtros {
     flex-direction: column;
@@ -1022,7 +1022,10 @@ hr {
   .tilLabelLargo {
     font-size: 12px; }
   .contenedorCantAgreOtros {
-    margin-top: -2px; } }
+    margin-top: -2px; }
+  .cardShaker {
+    width: 12rem !important;
+    margin-left: -24px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .mediaProte1 {
@@ -1083,7 +1086,10 @@ hr {
   .text-suple {
     text-align: unset; }
   .contenedorCantAgregCreatina {
-    align-items: baseline; } }
+    align-items: baseline; }
+  .cardShaker {
+    width: 12rem !important;
+    margin-left: 0px; } }
 
 .conteCards-vesti {
   display: flex;
