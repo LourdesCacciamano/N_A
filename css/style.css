@@ -1279,7 +1279,8 @@ hr {
   .separadorVestiDesktop {
     display: none; }
   .contenedorCantCarrVest {
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: flex-end; }
   .agregarVest {
     margin-left: -2px; }
   .separadorVestiMobile {
@@ -1289,7 +1290,9 @@ hr {
   .btnTop {
     margin-top: 25px; }
   .conteCards-vesti {
-    gap: 9px; } }
+    gap: 9px; }
+  .conteCardVesTopDepor {
+    margin-top: -21px; } }
 
 @media (min-width: 431px) and (max-width: 768px) {
   .mainVesti {
@@ -1321,7 +1324,13 @@ hr {
     margin-top: -7px; }
   .precios-vesti {
     font-size: 22px;
-    margin-bottom: -2px; } }
+    margin-bottom: -2px; }
+  .contenedorCantCarrVest {
+    align-items: flex-end; }
+  .agregarVest {
+    margin-left: -4px; }
+  .conteCardVesTopDepor {
+    margin-top: -21px; } }
 
 .mainPlan {
   min-height: 70vh;

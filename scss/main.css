@@ -1594,6 +1594,7 @@ hr {
   }
   .contenedorCantCarrVest {
     justify-content: space-between;
+    align-items: flex-end;
   }
   .agregarVest {
     margin-left: -2px;
@@ -1609,6 +1610,9 @@ hr {
   }
   .conteCards-vesti {
     gap: 9px;
+  }
+  .conteCardVesTopDepor {
+    margin-top: -21px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
@@ -1652,6 +1656,15 @@ hr {
   .precios-vesti {
     font-size: 22px;
     margin-bottom: -2px;
+  }
+  .contenedorCantCarrVest {
+    align-items: flex-end;
+  }
+  .agregarVest {
+    margin-left: -4px;
+  }
+  .conteCardVesTopDepor {
+    margin-top: -21px;
   }
 }
 .mainPlan {

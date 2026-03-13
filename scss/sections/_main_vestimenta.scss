@@ -241,6 +241,7 @@
     }
     .contenedorCantCarrVest{
         justify-content: space-between;
+        align-items: flex-end;
     }
     .agregarVest{
             margin-left: -2px;
@@ -259,6 +260,9 @@
     }
     .conteCards-vesti{
         gap: 9px;
+    }
+    .conteCardVesTopDepor{
+            margin-top: -21px;
     }
 }
 
@@ -310,6 +314,15 @@
     .precios-vesti{
         font-size: 22px;
         margin-bottom: -2px;
+    }
+    .contenedorCantCarrVest{
+        align-items: flex-end;
+    }
+    .agregarVest{
+            margin-left: -4px;
+    }
+     .conteCardVesTopDepor{
+            margin-top: -21px;
     }
 }
 
