@@ -1,14 +1,16 @@
-.mainTimer{
+.mainTimer {
     min-height: 70vh;
     padding-top: 160px;
 }
-.contenedorFlexTiempos{
+
+.contenedorFlexTiempos {
     display: flex;
     justify-content: center;
     gap: 100px;
     margin-bottom: 10px;
 }
-.btnAcordion{
+
+.btnAcordion {
     width: 66%;
     margin: auto;
     text-align: center;
@@ -17,13 +19,15 @@
     background-color: $gris-oscuro;
     color: white;
 }
-.inputTiempos{
+
+.inputTiempos {
     width: 84px;
     text-align: center;
     border-radius: 5px;
     margin-left: 10px;
 }
-.textoTiempos{
+
+.textoTiempos {
     font-size: 18px;
     font-family: $oswald;
     display: flex;
@@ -32,6 +36,7 @@
     width: 240px;
 
 }
+
 .configuracionTimer {
     margin: auto;
     background-color: $gris-oscuro;
@@ -46,7 +51,8 @@
 
 /* Cuando está abierto (activo) */
 .btnAcordion:not(.collapsed) {
-    background-color: $gris-oscuro; /* mantiene tu color */
+    background-color: $gris-oscuro;
+    /* mantiene tu color */
     color: #000;
     box-shadow: none;
 }
@@ -63,7 +69,8 @@
     background-color: $gris-claro;
     color: #000;
 }
-.estados{
+
+.estados {
     background-color: rgb(241, 241, 7);
     text-align: center;
     margin-top: 25px;
@@ -74,6 +81,7 @@
     border-radius: 15px;
     margin-top: 45px;
 }
+
 .tiempo {
     text-align: center;
     font-size: 112px;
@@ -86,13 +94,15 @@
     color: white;
     font-family: $bebas-neue;
 }
-.botonesTimer{
+
+.botonesTimer {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin-top: 40px;
 }
-.estiloBtn{
+
+.estiloBtn {
     padding: 5px;
     font-family: $bebas-neue;
     font-size: 30px;
@@ -102,99 +112,123 @@
     width: 16%;
     color: black;
 
-    &:hover{
+    &:hover {
         background-color: $gris-oscuro;
         color: white;
     }
-    &:focus{
+
+    &:focus {
         background-color: $gris-oscuro;
         color: white;
     }
 }
-.entrComp{
+
+.entrComp {
     font-size: 49px;
 }
+
 .estatado-prep-desc {
     background-color: rgb(241, 241, 7);
 }
+
 .estado-entre-compl {
     background-color: rgb(45, 245, 45);
 }
 
 
 @media (max-width: 430px) {
-    .btnAcordion{
+    .btnAcordion {
         width: 91%;
     }
-    .configuracionTimer{
+
+    .configuracionTimer {
         width: 107%;
         margin-left: -13px;
     }
-    .inputTiempos{
+
+    .inputTiempos {
         width: 35px;
     }
-    .contenedorFlexTiempos{
+
+    .contenedorFlexTiempos {
         justify-content: flex-start;
         padding-left: 26px;
         gap: 48px;
         padding-right: 11px;
     }
-    .estados{
+
+    .estados {
         width: 90%;
         font-size: 47px;
         margin-top: 29px;
         padding: 5px;
     }
-    .tiempo{
+
+    .tiempo {
         font-size: 95px;
         width: 51%;
     }
-    .estiloBtn{
+
+    .estiloBtn {
         font-size: 16px;
         width: 25%;
     }
-    .botonesTimer{
+
+    .botonesTimer {
         gap: 25px
     }
-    .mainTimer{
+
+    .mainTimer {
         padding-top: 125px;
     }
-    .textoTiempos{
+
+    .textoTiempos {
         font-size: 13px;
+    }
+
+    .menuTimer {
+        margin-left: -25px;
     }
 }
 
-@media (min-width:431px) and (max-width:768px){
-    .btnAcordion{
+@media (min-width:431px) and (max-width:768px) {
+    .btnAcordion {
         width: 88%;
     }
-    .configuracionTimer{
+
+    .configuracionTimer {
         width: 105%;
         margin-left: -11px;
     }
-    .estados{
+
+    .estados {
         font-size: 55px;
         width: 89%;
         margin-top: 17px;
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    .tiempo{
+
+    .tiempo {
         font-size: 146px;
         width: 65%;
     }
-    .estiloBtn{
+
+    .estiloBtn {
         font-size: 21px;
         width: 30%;
     }
-    .botonesTimer{
+
+    .botonesTimer {
         gap: 14px;
         margin-top: 30px;
     }
-    .textoTiempos{
+
+    .textoTiempos {
         font-size: 13px;
     }
-    .contenedorFlexTiempos{
+
+    .contenedorFlexTiempos {
         justify-content: flex-start;
         padding: 0 10px;
         gap: 48px;

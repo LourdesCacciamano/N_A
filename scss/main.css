@@ -523,6 +523,24 @@ body {
   margin-right: 25%;
 }
 
+.modal-body {
+  background-color: #C9C6C7;
+}
+
+.modal-header, .btnIniciarSesion {
+  background-color: #272924;
+  color: white;
+}
+
+.hrLogin {
+  color: black;
+}
+
+.crearCuenta {
+  color: black;
+  font-size: 17px;
+}
+
 @media (max-width: 430px) {
   .mainIndex {
     padding-top: 208px;
@@ -1317,6 +1335,9 @@ hr {
   .cardShaker {
     width: 12rem !important;
     margin-left: -24px;
+  }
+  .menuLineSuple {
+    margin-left: -13px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
@@ -2116,7 +2137,8 @@ tr:nth-child(even) {
 /* Aplica a tu acordeón personalizado */
 /* Cuando está abierto (activo) */
 .btnAcordion:not(.collapsed) {
-  background-color: #3F4239; /* mantiene tu color */
+  background-color: #3F4239;
+  /* mantiene tu color */
   color: #000;
   box-shadow: none;
 }
@@ -2236,6 +2258,9 @@ tr:nth-child(even) {
   }
   .textoTiempos {
     font-size: 13px;
+  }
+  .menuTimer {
+    margin-left: -25px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {

@@ -180,6 +180,26 @@ body {
     margin-right: 25%;
 }
 
+
+//LOGIN
+
+.modal-body{
+    background-color: $gris-mas-claro;
+}
+.modal-header,.btnIniciarSesion{
+    background-color: $gris-mas-oscuro;
+    color: white;
+}
+.hrLogin{
+    color: black;
+}
+.crearCuenta{
+    color: black;
+    font-size: 17px;
+}
+
+
+
 @media (max-width:430px) {
     .mainIndex {
         padding-top: 208px;
