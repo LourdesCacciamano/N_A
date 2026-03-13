@@ -5,6 +5,15 @@
 }
 
 /*------------- HEADER------------------*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 .header {
   background-color: #272924 !important;
   width: 100%;
@@ -60,7 +69,7 @@
 .accionesHeader, .accionesHeaderPlan {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
 }
 
 .accionHeadTimer {
@@ -70,7 +79,6 @@
 /* CARRITO */
 .compraInicio {
   width: 26px;
-  margin-bottom: 5px;
 }
 
 /* BOTÓN MENÚ */
@@ -192,13 +200,23 @@
   color: #3F4239;
 }
 
+.userIconoIndex {
+  font-size: 27px;
+}
+
 /* MOBILE */
 @media (max-width: 430px) {
   .header {
     height: 95px;
   }
-  .imgLogoInicio, .imgLogoPlan {
+  .imgLogoInicio, .imgLogoPlan, .imgLogoSuple, .imgLogoTimer {
     width: 103px;
+    margin-left: -28px;
+    margin-top: -10px;
+    margin-right: -13px;
+  }
+  .menuTimer {
+    margin-left: -20px;
   }
   .inicio {
     font-size: 23px;
@@ -218,7 +236,7 @@
     width: 22px;
   }
   .accionesHeader {
-    gap: 5px;
+    gap: 22px;
   }
   .accionesHeaderPlan {
     gap: 8px;
@@ -239,11 +257,9 @@
   .inicioSuplementos {
     font-size: 21px;
   }
-  .imgLogoSuple {
-    width: 26%;
-  }
   .conteHeader {
     display: flex;
+    gap: 95px;
   }
   .carritoPlanesSuple {
     margin-bottom: 4px;
@@ -265,23 +281,39 @@
   .inicioCarrito {
     font-size: 18px;
   }
-  .imgLogoTimer {
-    width: 58%;
-  }
   .barra-vertical-timer {
     height: 65px;
   }
   .carritoIcono {
     font-size: 22px;
+    margin-right: -8px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
+  .header {
+    height: 123px;
+  }
   .header .container-fluid {
     justify-content: flex-end;
     flex-wrap: nowrap;
   }
-  .imgLogoInicio, .imgLogoPlan, .imgLogoSuple, .imgLogoCarrito {
-    width: 30%;
+  .imgLogoInicio, .imgLogoCarrito {
+    width: 49%;
+    margin-left: -32px;
+    margin-right: -27px;
+  }
+  .imgLogoPlan {
+    width: 33%;
+    margin-left: -32px;
+    margin-right: -27px;
+  }
+  .imgLogoSuple {
+    width: 41%;
+    margin-left: -32px;
+    margin-right: -27px;
+  }
+  .imgLogoVest {
+    width: 39%;
   }
   .imgLogoForm {
     width: 34%;
@@ -293,9 +325,12 @@
     font-size: 20px;
   }
   .inicioSuplementos {
-    font-size: 25px;
+    font-size: 22px;
   }
   .inicioFormulario {
+    font-size: 22px;
+  }
+  .inicioVestimenta {
     font-size: 22px;
   }
   .volverIndex {
@@ -303,6 +338,8 @@
   }
   .imgLogoTimer {
     width: 54%;
+    margin-left: -32px;
+    margin-right: -27px;
   }
   .carritoIcono {
     font-size: 22px;
