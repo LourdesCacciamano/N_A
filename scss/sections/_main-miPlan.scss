@@ -1,0 +1,118 @@
+.mainMiPlan {
+    min-height: 70vh;
+    padding-top: 175px; // para separarlo del header
+    background-color: $gris-mas-claro;
+}
+
+.tituloMiPlan {
+    font-family: $oswald;
+    text-align: center;
+    font-size: 37px;
+}
+
+.acordeonMiPlan {
+    width: 97%;
+    margin: auto;
+    background-color: #b0b0b0;
+}
+
+.acorBtnMiPlan {
+    background-color: $gris-mas-oscuro;
+    color: white;
+    font-family: $bebas-neue;
+    font-size: 30px;
+}
+
+.acItemMiPlan {
+    margin-bottom: 13px;
+}
+
+.acorBtnMiPlan:not(.collapsed) {
+    background-color: $gris-mas-oscuro;
+    /* O el color que prefieras */
+    color: white;
+    /* Mantiene el color de texto original */
+    box-shadow: 0 4px 8px black;
+    /* Quita el resplandor azul en los bordes */
+}
+
+/* Opcional: Quita el borde azul de enfoque (focus) al hacer click */
+.acorBtnMiPlan:focus {
+    border-color: rgba(240, 240, 240, 0.125);
+    box-shadow: 0 4px 8px black;
+    ;
+}
+
+.tituloGrupo {
+    text-align: center;
+    font-family: $bebas-neue !important;
+    font-size: 25px !important;
+    font-weight: bold;
+    color: black;
+    padding-right: 155px;
+    background-color: white;
+}
+
+.filaEj td {
+    font-family: $oswald;
+    font-size: 20px;
+}
+
+.fila-titulo th {
+    font-family: $bebas-neue;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.tablaAct td {
+    font-family: $oswald;
+    font-size: 20px;
+}
+
+.tituloThGrupo th {
+    color: blue;
+}
+
+@media (max-width: 430px) {
+    .tituloMiPlan {
+        font-size: 23px;
+        margin-top: -61px;
+        margin-bottom: 17px;
+    }
+    .tabla{
+        width: 109%;
+        margin-left: -16px;
+    }
+    .fila-titulo th{
+        font-size: 20px;
+    }
+    .tituloGrupo{
+        padding-right: 39px;
+    }
+    .tablaAct td{
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width:431px) and (max-width:768px){
+       .tituloMiPlan {
+        font-size: 23px;
+        margin-top: -39px;
+        margin-bottom: 17px;
+    }
+    .tabla{
+        width: 109%;
+        margin-left: -16px;
+    }
+    .fila-titulo th{
+        font-size: 20px;
+    }
+    .tituloGrupo{
+        padding-right: 39px;
+    }
+    .tablaAct td{
+        font-size: 18px;
+    }
+
+}

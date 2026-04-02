@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUOTA | NA</title>
+    <link rel="Shortcut icon" class="logo" href="../imagenes/logoB.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Charm:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary fixed-top header">
+            <div class="container-fluid header-flex">
+                <div class="navbar-brand nav2">
+                    <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1773408617/NA/logoB_nkaugk.png"
+                        class="imgLogoInicio animate__animated animate__backInLeft" width="20%" alt="Logo">
+                    <div class="barra-vertical animate__animated animate__backInUp"></div>
+                    <h3 class="inicio animate__animated animate__backInRight">CUOTA</h3>
+                </div>
+                <div class="accionesHeader">
+                    <div class="nav2">
+                        <a href="../paginasExtras/carritoCompra.html">
+                            <i class="fa-solid fa-cart-shopping carritoIcono" style="color: #ffffff;"></i>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler botonMenu" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="menu-lines">
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header divOpMenu2">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body divOpMenu">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active opMenu" aria-current="page" href="../index.html">INICIO</a>
+                            </li>
+                            <li><a class="dropdown-item opMenu" href="../paginas/planesDeAdaptacion.html"> PLANES
+                                    DE ADAPTACIÓN</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle opMenu" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    PRODUCTOS
+                                </a>
+                                <ul class="dropdown-menu divOpMenu3">
+                                    <li><a class="dropdown-item opMenu"
+                                            href="../paginas/suplementos.html">SUPLEMENTOS</a></li>
+                                    <li><a class="dropdown-item opMenu" href="../paginas/vestimentaNA.html">VESTIMENTA
+                                            NA</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item opMenu" href="../paginas/timer.html">
+                                    TIMER</a></li>
+                            <li><a class="dropdown-item opMenu" href="../paginasLogin/miPlan.html">
+                                    MI PLAN</a></li>
+                            <li><a class="dropdown-item opMenu" href="../paginasLogin/cuota.html">
+                                    CUOTA</a></li>
+                        </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mainCuota">
+        <section class="sectionCuota">
+            <h2 class="mesCuota" id="mesCuota"></h2>
+            <div class="contenedorFlexCuota">
+                <div>
+                    <p class="parrafosCuota"> - Plan: <span id="planCuota"></span> </p>
+                    <p class="parrafosCuota"> - Valor: <span id="valorCuota"></span> </p>
+                </div>
+                <div>
+                     <p class="parrafosCuota">- Vencimiento: <span id="vntoCuota"</span> </p>
+                    <button type="button" class="btnEstado" id="estadoCuota"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../javaScript/cuota.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

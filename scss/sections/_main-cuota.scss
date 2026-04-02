@@ -1,0 +1,71 @@
+.mainCuota{
+    min-height: 70vh;
+    padding-top: 175px; // para separarlo del header
+    background-color: $gris-mas-claro;
+}
+.sectionCuota{
+    background-color: $gris-mas-oscuro;
+    text-align: center;
+    color: white;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px black;
+    width: 54%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.mesCuota{
+    font-family: $bebas-neue;
+    background-color: #ffffff;
+    border-radius: 11px;
+    color: black;
+    font-size: 41px;
+    padding: 3px;
+}
+.contenedorFlexCuota{
+    display: flex;
+    justify-content: center;
+    gap: 149px;
+}
+.btnEstado{
+    font-family: $bebas-neue;
+    width: 63%;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 35px;
+    border-color: transparent;
+}
+.parrafosCuota{
+    font-size: 27px;
+    font-family: $oswald;
+}
+.estado-verde{
+    background-color: rgb(69, 228, 69);
+}
+.estado-rojo{
+    background-color: red;
+}
+@media (max-width: 430px){
+    .sectionCuota{
+            width: 96%;
+            margin-top: -39px;
+    }
+    .contenedorFlexCuota{
+        gap: 47px;
+    }
+    .parrafosCuota{
+        font-size: 18px;
+    }
+}
+
+@media (min-width:431px) and (max-width:768px){
+    .sectionCuota{
+            width: 96%;
+            margin-top: -39px;
+    }
+    .contenedorFlexCuota{
+        gap: 47px;
+    }
+    .parrafosCuota{
+        font-size: 18px;
+    }
+}

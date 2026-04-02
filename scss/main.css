@@ -19,6 +19,7 @@ html, body {
   width: 100%;
   height: 135px;
   padding: 0 16px;
+  box-shadow: 0 13px 8px #ffffff;
 }
 
 .header .container-fluid {
@@ -539,6 +540,31 @@ body {
 .crearCuenta {
   color: black;
   font-size: 17px;
+}
+
+.infoCuenta {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 8px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.modal-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+}
+
+.labelLogin {
+  font-family: "Oswald", sans-serif;
+}
+
+.btnIniciarSesion {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+}
+
+.text-center, .crearCuenta {
+  font-family: "Oswald", sans-serif;
 }
 
 @media (max-width: 430px) {
@@ -2297,5 +2323,197 @@ tr:nth-child(even) {
     justify-content: flex-start;
     padding: 0 10px;
     gap: 48px;
+  }
+}
+.mainMiPlan {
+  min-height: 70vh;
+  padding-top: 175px;
+  background-color: #C9C6C7;
+}
+
+.tituloMiPlan {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  font-size: 37px;
+}
+
+.acordeonMiPlan {
+  width: 97%;
+  margin: auto;
+  background-color: #b0b0b0;
+}
+
+.acorBtnMiPlan {
+  background-color: #272924;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+}
+
+.acItemMiPlan {
+  margin-bottom: 13px;
+}
+
+.acorBtnMiPlan:not(.collapsed) {
+  background-color: #272924;
+  /* O el color que prefieras */
+  color: white;
+  /* Mantiene el color de texto original */
+  box-shadow: 0 4px 8px black;
+  /* Quita el resplandor azul en los bordes */
+}
+
+/* Opcional: Quita el borde azul de enfoque (focus) al hacer click */
+.acorBtnMiPlan:focus {
+  border-color: rgba(240, 240, 240, 0.125);
+  box-shadow: 0 4px 8px black;
+}
+
+.tituloGrupo {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif !important;
+  font-size: 25px !important;
+  font-weight: bold;
+  color: black;
+  padding-right: 155px;
+  background-color: white;
+}
+
+.filaEj td {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.fila-titulo th {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.tablaAct td {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.tituloThGrupo th {
+  color: blue;
+}
+
+@media (max-width: 430px) {
+  .tituloMiPlan {
+    font-size: 23px;
+    margin-top: -61px;
+    margin-bottom: 17px;
+  }
+  .tabla {
+    width: 109%;
+    margin-left: -16px;
+  }
+  .fila-titulo th {
+    font-size: 20px;
+  }
+  .tituloGrupo {
+    padding-right: 39px;
+  }
+  .tablaAct td {
+    font-size: 18px;
+  }
+}
+@media (min-width: 431px) and (max-width: 768px) {
+  .tituloMiPlan {
+    font-size: 23px;
+    margin-top: -39px;
+    margin-bottom: 17px;
+  }
+  .tabla {
+    width: 109%;
+    margin-left: -16px;
+  }
+  .fila-titulo th {
+    font-size: 20px;
+  }
+  .tituloGrupo {
+    padding-right: 39px;
+  }
+  .tablaAct td {
+    font-size: 18px;
+  }
+}
+.mainCuota {
+  min-height: 70vh;
+  padding-top: 175px;
+  background-color: #C9C6C7;
+}
+
+.sectionCuota {
+  background-color: #272924;
+  text-align: center;
+  color: white;
+  border-radius: 13px;
+  box-shadow: 0 4px 8px black;
+  width: 54%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.mesCuota {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: #ffffff;
+  border-radius: 11px;
+  color: black;
+  font-size: 41px;
+  padding: 3px;
+}
+
+.contenedorFlexCuota {
+  display: flex;
+  justify-content: center;
+  gap: 149px;
+}
+
+.btnEstado {
+  font-family: "Bebas Neue", sans-serif;
+  width: 63%;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 35px;
+  border-color: transparent;
+}
+
+.parrafosCuota {
+  font-size: 27px;
+  font-family: "Oswald", sans-serif;
+}
+
+.estado-verde {
+  background-color: rgb(69, 228, 69);
+}
+
+.estado-rojo {
+  background-color: red;
+}
+
+@media (max-width: 430px) {
+  .sectionCuota {
+    width: 96%;
+    margin-top: -39px;
+  }
+  .contenedorFlexCuota {
+    gap: 47px;
+  }
+  .parrafosCuota {
+    font-size: 18px;
+  }
+}
+@media (min-width: 431px) and (max-width: 768px) {
+  .sectionCuota {
+    width: 96%;
+    margin-top: -39px;
+  }
+  .contenedorFlexCuota {
+    gap: 47px;
+  }
+  .parrafosCuota {
+    font-size: 18px;
   }
 }/*# sourceMappingURL=main.css.map */
