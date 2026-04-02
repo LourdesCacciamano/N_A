@@ -567,6 +567,12 @@ body {
   font-family: "Oswald", sans-serif !important;
 }
 
+.btnEstado:focus,
+.btnEstado:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 @media (max-width: 430px) {
   .mainIndex {
     padding-top: 208px;

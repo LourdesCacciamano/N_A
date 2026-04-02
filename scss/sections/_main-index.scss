@@ -217,7 +217,11 @@ body {
 .text-center, .crearCuenta{
     font-family: $oswald !important;
 }
-
+.btnEstado:focus,
+.btnEstado:active {
+    box-shadow: none !important;
+    outline: none !important;
+}
 
 
 @media (max-width:430px) {
