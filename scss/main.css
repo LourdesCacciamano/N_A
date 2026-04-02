@@ -567,8 +567,10 @@ body {
   font-family: "Oswald", sans-serif !important;
 }
 
+.btnEstado:hover,
 .btnEstado:focus,
 .btnEstado:active {
+  color: black !important;
   box-shadow: none !important;
   outline: none !important;
 }
