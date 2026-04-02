@@ -177,9 +177,7 @@ html, body{
 .userIconoIndex{
     font-size: 27px;
 }
-#btnLogout{
-    margin-top: 121%;
-}
+
 
 /* MOBILE */
 @media (max-width: 430px) {
@@ -267,9 +265,6 @@ html, body{
         font-size: 22px;
         margin-right: -8px;
     }
-   #btnLogout {
-        margin-top: 100%;
-    }
 
 }
 
@@ -327,9 +322,6 @@ html, body{
     }
     .carritoIcono{
         font-size: 22px;
-    }
-    #btnLogout {
-        margin-top: 81%;
     }
 }
 

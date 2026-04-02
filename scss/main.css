@@ -205,10 +205,6 @@ html, body {
   font-size: 27px;
 }
 
-#btnLogout {
-  margin-top: 121%;
-}
-
 /* MOBILE */
 @media (max-width: 430px) {
   .header {
@@ -293,9 +289,6 @@ html, body {
     font-size: 22px;
     margin-right: -8px;
   }
-  #btnLogout {
-    margin-top: 100%;
-  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   .header {
@@ -351,9 +344,6 @@ html, body {
   }
   .carritoIcono {
     font-size: 22px;
-  }
-  #btnLogout {
-    margin-top: 81%;
   }
 }
 .mainIndex {
