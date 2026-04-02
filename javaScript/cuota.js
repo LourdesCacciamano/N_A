@@ -58,5 +58,7 @@ async function cargarCuota() {
     document.getElementById("mesCuota").innerText = "Mes: " + mes;
 }
 
+
+
 // esperar DOM
 window.addEventListener("DOMContentLoaded", cargarCuota);

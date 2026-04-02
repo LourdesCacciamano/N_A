@@ -1,18 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const logueado = localStorage.getItem("usuarioLogueado");
+
+    const dni = localStorage.getItem("dni");
 
     const menuMiPlan = document.getElementById("menuMiPlan");
     const menuCuota = document.getElementById("menuCuota");
     const btnLogin = document.getElementById("btnLogin");
+    const btnLogout = document.getElementById("btnLogout");
 
-    if (logueado === "true") {
-        menuMiPlan.style.display = "block";
-        menuCuota.style.display = "block";
-        btnLogin.style.display = "none";
+    if (dni) {
+        // usuario logueado
+        if (menuMiPlan) menuMiPlan.style.display = "block";
+        if (menuCuota) menuCuota.style.display = "block";
+        if (btnLogin) btnLogin.style.display = "none";
+        if (btnLogout) btnLogout.style.display = "block";
+
     } else {
-        menuMiPlan.style.display = "none";
-        menuCuota.style.display = "none";
-        btnLogin.style.display = "block";
+        // usuario NO logueado
+        if (menuMiPlan) menuMiPlan.style.display = "none";
+        if (menuCuota) menuCuota.style.display = "none";
+        if (btnLogin) btnLogin.style.display = "block";
+        if (btnLogout) btnLogout.style.display = "none"; // 🔥 ESTA LÍNEA ES LA CLAVE
     }
 });
 
@@ -62,4 +69,29 @@ window.loginUsuario = async function () {
         const toastError = new bootstrap.Toast(document.getElementById('toastError'));
         toastError.show();
     }
+}
+
+const btnLogout = document.getElementById("btnLogout");
+
+if (btnLogout) {
+    btnLogout.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        Swal.fire({
+            title: "¿Cerrar sesión?",
+            text: "Vas a salir de tu cuenta",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Sí, salir",
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                localStorage.removeItem("dni");
+                localStorage.removeItem("usuarioLogueado");
+
+                window.location.href = "./index.html";
+            }
+        });
+    });
 }
