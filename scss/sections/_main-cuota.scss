@@ -40,9 +40,11 @@
 }
 .estado-verde{
     background-color: rgb(69, 228, 69);
+    color: black !important;
 }
 .estado-rojo{
     background-color: red;
+    color: black !important;
 }
 @media (max-width: 430px){
     .sectionCuota{

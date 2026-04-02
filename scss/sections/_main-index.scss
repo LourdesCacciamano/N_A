@@ -195,27 +195,27 @@ body {
 }
 .crearCuenta{
     color: black;
-    font-size: 17px;
+    font-size: 17px !important;
 }
 .infoCuenta{
-    font-size: 11px;
+    font-size: 11px ;
     text-align: center;
     margin-top: 8px;
     font-family: $open-sans;
 }
 .modal-title{
-    font-family: $bebas-neue;
-    font-size: 20px;
+    font-family: $bebas-neue !important;
+    font-size: 20px !important;
 }
 .labelLogin{
-    font-family: $oswald;
+    font-family: $oswald !important;
 }
 .btnIniciarSesion{
-    font-family: $oswald;
-    font-size: 17px;
+    font-family: $oswald !important;
+    font-size: 17px !important;
 }
 .text-center, .crearCuenta{
-    font-family: $oswald;
+    font-family: $oswald !important;
 }
 
 

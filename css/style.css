@@ -434,7 +434,7 @@ body {
 
 .crearCuenta {
   color: black;
-  font-size: 17px; }
+  font-size: 17px !important; }
 
 .infoCuenta {
   font-size: 11px;
@@ -443,18 +443,18 @@ body {
   font-family: "Open Sans", sans-serif; }
 
 .modal-title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 20px; }
+  font-family: "Bebas Neue", sans-serif !important;
+  font-size: 20px !important; }
 
 .labelLogin {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif !important; }
 
 .btnIniciarSesion {
-  font-family: "Oswald", sans-serif;
-  font-size: 17px; }
+  font-family: "Oswald", sans-serif !important;
+  font-size: 17px !important; }
 
 .text-center, .crearCuenta {
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif !important; }
 
 @media (max-width: 430px) {
   .mainIndex {
@@ -2004,10 +2004,12 @@ tr:nth-child(even) {
   font-family: "Oswald", sans-serif; }
 
 .estado-verde {
-  background-color: #45e445; }
+  background-color: #45e445;
+  color: black !important; }
 
 .estado-rojo {
-  background-color: red; }
+  background-color: red;
+  color: black !important; }
 
 @media (max-width: 430px) {
   .sectionCuota {
