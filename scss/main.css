@@ -294,7 +294,7 @@ html, body {
     margin-right: -8px;
   }
   #btnLogout {
-    margin-top: 81%;
+    margin-top: 100%;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
