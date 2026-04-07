@@ -33,13 +33,20 @@ async function cargarRutina() {
     const docRef = doc(db, "usuarios", dni);
     const docSnap = await getDoc(docRef);
 
+    console.log("DNI: ", dni);
+    console.log("Doc existe:", docSnap.exists());
+
+
     if (!docSnap.exists()) {
         console.log("No se encontró usuario");
         return;
     }
 
     const data = docSnap.data();
+    console.log("DATA COMPLETA:", data);
+
     const rutina = data.rutina;
+    console.log("RUTINA:", rutina);
 
     // 👉 nombre
     const nombreSpan = document.getElementById("nombreUsuario");
@@ -53,82 +60,96 @@ async function cargarRutina() {
 
     const grupos = obtenerGruposDias(cantidadDias);
 
-    // 🔥 ACTIVACIÓN
+    // ACTIVACIÓN
     const tablaActivacion = document.getElementById("tablaActivacion");
 
     if (rutina.activacion && tablaActivacion) {
 
+        const tieneGrupo1 = rutina.activacion?.grupo1?.length > 0;
+        const tieneGrupo2 = rutina.activacion?.grupo2?.length > 0;
 
         tablaActivacion.innerHTML = "";
 
         let contador = 1;
 
         // 🔥 GRUPO 1
-        if (rutina.activacion.grupo1) {
+        if (tieneGrupo1) {
+
+            let titulo;
+
+            if (!tieneGrupo2) {
+                titulo = "Todos los días";
+            } else {
+                titulo = grupos[0];
+            }
 
             tablaActivacion.innerHTML += `
-            <tr>
-                <td colspan="3" class="tituloGrupo">${grupos[0]}</td>
-            </tr>
-        `;
+    <tr>
+        <td colspan="3" class="tituloGrupo">${titulo}</td>
+    </tr>
+    `;
 
             rutina.activacion.grupo1.forEach((ej) => {
                 tablaActivacion.innerHTML += `
-                <tr class="filaEj">
-                    <td>${contador++}</td>
-                    <td>${ej.ejercicio}</td>
-                    <td>${ej.cantidad}</td>
-                </tr>
-            `;
+        <tr class="filaEj">
+            <td>${contador++}</td>
+            <td>${ej.ejercicio}</td>
+            <td>${ej.cantidad}</td>
+        </tr>
+        `;
             });
         }
 
         // 🔥 GRUPO 2
-        if (rutina.activacion.grupo2) {
+        if (tieneGrupo2) {
+
+            const titulo = grupos[1];
 
             tablaActivacion.innerHTML += `
-            <tr>
-                <td colspan="3" class="tituloGrupo">${grupos[1]}</td>
-            </tr>
-        `;
+    <tr>
+        <td colspan="3" class="tituloGrupo">${titulo}</td>
+    </tr>
+    `;
 
             rutina.activacion.grupo2.forEach((ej) => {
                 tablaActivacion.innerHTML += `
-                <tr class="filaEj">
-                    <td>${contador++}</td>
-                    <td>${ej.ejercicio}</td>
-                    <td>${ej.cantidad}</td>
-                </tr>
-            `;
+        <tr class="filaEj">
+            <td>${contador++}</td>
+            <td>${ej.ejercicio}</td>
+            <td>${ej.cantidad}</td>
+        </tr>
+        `;
             });
         }
 
+    }
 
-        dias.forEach(nombre => {
-            const tabla = document.getElementById(`tabla${nombre}`);
-            const bloque = document.getElementById(`bloque${nombre}`);
-            const clave = nombre.toLowerCase();
 
-            if (rutina[clave] && tabla) {
+    //Días rutina
+    dias.forEach(nombre => {
+        const tabla = document.getElementById(`tabla${nombre}`);
+        const bloque = document.getElementById(`bloque${nombre}`);
+        const clave = nombre.toLowerCase();
 
-                tabla.innerHTML = "";
+        if (rutina[clave] && tabla) {
 
-                rutina[clave].forEach((ej, index) => {
-                    tabla.innerHTML += `
+            tabla.innerHTML = "";
+
+            rutina[clave].forEach((ej, index) => {
+                tabla.innerHTML += `
                 <tr>
                     <td>${index + 1}</td>
                     <td>${ej.ejercicio}</td>
                     <td>${ej.cantidad}</td>
                 </tr>
             `;
-                });
+            });
 
-            } else {
-                // oculta días que no existen
-                if (bloque) bloque.style.display = "none";
-            }
-        });
-    }
+        } else {
+            // oculta días que no existen
+            if (bloque) bloque.style.display = "none";
+        }
+    });
 }
 
 cargarRutina();
