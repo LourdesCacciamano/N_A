@@ -72,7 +72,7 @@ async function cargarRutina() {
 
         let contador = 1;
 
-        // 🔥 GRUPO 1
+        //  GRUPO 1
         if (tieneGrupo1) {
 
             let titulo;
@@ -100,7 +100,7 @@ async function cargarRutina() {
             });
         }
 
-        // 🔥 GRUPO 2
+        //  GRUPO 2
         if (tieneGrupo2) {
 
             const titulo = grupos[1];
@@ -112,6 +112,26 @@ async function cargarRutina() {
     `;
 
             rutina.activacion.grupo2.forEach((ej) => {
+                tablaActivacion.innerHTML += `
+        <tr class="filaEj">
+            <td>${contador++}</td>
+            <td>${ej.ejercicio}</td>
+            <td>${ej.cantidad}</td>
+        </tr>
+        `;
+            });
+        }
+
+        //  MOVILIDAD
+        if (rutina.activacion.movilidad && rutina.activacion.movilidad.length > 0) {
+
+            tablaActivacion.innerHTML += `
+    <tr>
+        <td colspan="3" class="tituloGrupo">Movilidad</td>
+    </tr>
+    `;
+
+            rutina.activacion.movilidad.forEach((ej) => {
                 tablaActivacion.innerHTML += `
         <tr class="filaEj">
             <td>${contador++}</td>
