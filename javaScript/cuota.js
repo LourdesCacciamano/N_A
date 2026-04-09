@@ -40,11 +40,16 @@ async function cargarCuota() {
     let fecha;
 
     if (cuota.vencimiento.toDate) {
-        // 👉 si es Timestamp de Firebase
+        // 👉 Timestamp (esto está perfecto, no lo toques)
         fecha = cuota.vencimiento.toDate();
     } else {
-        // 👉 si es string o número
-        fecha = new Date(cuota.vencimiento);
+        // 👉 STRING tipo "yyyy-mm-dd" (acá está el fix)
+        const partes = cuota.vencimiento.split("-");
+        fecha = new Date(
+            partes[0],        // año
+            partes[1] - 1,    // mes (0-11)
+            partes[2]         // día
+        );
     }
 
     const fechaFormateada = fecha.toLocaleDateString("es-AR", {
