@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
-     apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
+    apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
     authDomain: "asesoramiento-na.firebaseapp.com",
     projectId: "asesoramiento-na",
     storageBucket: "asesoramiento-na.firebasestorage.app",
@@ -37,9 +37,23 @@ async function cargarCuota() {
     document.getElementById("planCuota").innerText = cuota.plan;
     document.getElementById("valorCuota").innerText = cuota.valor;
 
-    const fecha = new Date(cuota.vencimiento);
-    document.getElementById("vntoCuota").innerText =
-        fecha.toLocaleDateString();
+    let fecha;
+
+    if (cuota.vencimiento.toDate) {
+        // 👉 si es Timestamp de Firebase
+        fecha = cuota.vencimiento.toDate();
+    } else {
+        // 👉 si es string o número
+        fecha = new Date(cuota.vencimiento);
+    }
+
+    const fechaFormateada = fecha.toLocaleDateString("es-AR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    });
+
+    document.getElementById("vntoCuota").innerText = fechaFormateada;
 
     // 👉 estado visual
     const estadoBtn = document.getElementById("estadoCuota");
