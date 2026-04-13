@@ -67,6 +67,7 @@ async function cargarRutina() {
 
         const tieneGrupo1 = rutina.activacion?.grupo1?.length > 0;
         const tieneGrupo2 = rutina.activacion?.grupo2?.length > 0;
+        const tieneGrupo3 = rutina.activacion?.grupo3?.length > 0;
 
         tablaActivacion.innerHTML = "";
 
@@ -77,10 +78,12 @@ async function cargarRutina() {
 
             let titulo;
 
-            if (!tieneGrupo2) {
+            if (!tieneGrupo2 && !tieneGrupo3) {
                 titulo = "Todos los días";
+            } else if (tieneGrupo3 && cantidadDias === 5) {
+                titulo = "Días 1 y 3"; // solo para este caso
             } else {
-                titulo = grupos[0];
+                titulo = grupos[0]; // 🔥 TODO lo demás sigue igual
             }
 
             tablaActivacion.innerHTML += `
@@ -103,7 +106,13 @@ async function cargarRutina() {
         //  GRUPO 2
         if (tieneGrupo2) {
 
-            const titulo = grupos[1];
+            let titulo;
+
+            if (tieneGrupo3 && cantidadDias === 5) {
+                titulo = "Días 2 y 4"; // solo este caso especial
+            } else {
+                titulo = grupos[1]; // 🔥 comportamiento original
+            }
 
             tablaActivacion.innerHTML += `
     <tr>
@@ -112,6 +121,26 @@ async function cargarRutina() {
     `;
 
             rutina.activacion.grupo2.forEach((ej) => {
+                tablaActivacion.innerHTML += `
+        <tr class="filaEj">
+            <td>${contador++}</td>
+            <td>${ej.ejercicio}</td>
+            <td>${ej.cantidad}</td>
+        </tr>
+        `;
+            });
+        }
+
+        // GRUPO 3
+        if (tieneGrupo3) {
+
+            tablaActivacion.innerHTML += `
+    <tr>
+        <td colspan="3" class="tituloGrupo">Día 5</td>
+    </tr>
+    `;
+
+            rutina.activacion.grupo3.forEach((ej) => {
                 tablaActivacion.innerHTML += `
         <tr class="filaEj">
             <td>${contador++}</td>
@@ -143,7 +172,6 @@ async function cargarRutina() {
         }
 
     }
-
 
     //Días rutina
     dias.forEach(nombre => {
