@@ -225,6 +225,39 @@ body {
     outline: none !important;
 }
 
+//Promociones
+.contePromos{
+    background-color: #696969;
+    padding: 15px 0px 15px 0px;
+    margin-top: 38px;
+}
+.cardPromo{
+    margin: auto !important;
+    background-color: #0b0a0a;
+    color: white;
+    border-radius: 9px;
+    border: 5px solid white;
+}
+.bodyPromo{
+     font-family: $open-sans; 
+    font-size: 16px;
+    padding: 11px;
+    text-align: left;
+}
+.imgPromo{
+     height: 219px;
+}
+.btnPromo{
+    color: black;
+    background-color: white;
+    border-color: #767171;
+    font-family: $bebas-neue;
+    font-size: 23px;
+        width: 177px;
+    border-radius: 7px;
+    border: none;
+    margin: auto;
+}
 
 @media (max-width:430px) {
     .mainIndex {

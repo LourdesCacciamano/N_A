@@ -76,9 +76,9 @@
                             <li id="menuCuota" style="display: none;"><a class="dropdown-item opMenu"
                                     href="./paginasLogin/cuota.html">
                                     CUOTA</a></li>
-                            <li class="mt-auto pt-3 border-top"><a class="dropdown-item opMenu " id="btnLogout"
-                                    href="#" style="display: none;">
-                                    Cerrar Sesión</a></li>  
+                            <li class="mt-auto pt-3 border-top"><a class="dropdown-item opMenu " id="btnLogout" href="#"
+                                    style="display: none;">
+                                    Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,6 +105,17 @@
                         class="d-block w-100 img3Carrousel" alt="ejercicio">
                 </div>
             </div>
+        </div>
+
+        <!--Promociones -->
+        <div class="contePromos"> 
+        <div class="card cardPromo" style="width: 18rem;">
+            <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/q_auto/f_auto/v1776470215/NA/ChatGPT_Image_17_abr_2026_08_55_51_p.m._i6b381.png" class="card-img-top imgPromo" alt="img-promo">
+            <div class="card-body bodyPromo">
+                <p class="card-text">Pagando 2 Meses de Asesoría Completa, te queda a solo $70.000</p>
+                <button class="btnPromo">Aprovechar Promo</button>
+            </div>
+        </div>
         </div>
 
         <!--Cambios ------------------>
@@ -179,7 +190,7 @@
                             class="card-img-top cardImgIndex" alt="planEntrenamiento">
                         <div class="card-body-index">
                             <h5 class="card-title-index">Plan de Entrenamiento</h5>
-                            <h5 class="precio">$20.000</h5>
+                            <h5 class="precio">$22.000</h5>
                             <hr class="lineaSeparadoraIndex">
                             <p class="card-text-index">
                                 Entrenamientos personalizados según tu objetivo, con progresiones semanales y rutinas
@@ -198,7 +209,7 @@
                             class="card-img-top cardImgIndex" alt="planAlimentacion">
                         <div class="card-body-index">
                             <h5 class="card-title-index">Plan de Alimentación</h5>
-                            <h5 class="precio">$20.000</h5>
+                            <h5 class="precio">$15.000</h5>
                             <hr class="lineaSeparadoraIndex">
                             <p class="card-text-index">
                                 Plan nutricional hecho a tu medida, basado en tus objetivos, gustos y hábitos, para que
@@ -321,22 +332,26 @@
 
                         <div class="mb-3">
                             <label class="labelLogin">Nombre</label>
-                            <input type="text" class="form-control labelLogin" placeholder="Ingresa tu nombre" id="nombre" required>
+                            <input type="text" class="form-control labelLogin" placeholder="Ingresa tu nombre"
+                                id="nombre" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="labelLogin">Apellido</label>
-                            <input type="text" class="form-control labelLogin" placeholder="Ingresa tu apellido" id="apellido" required>
+                            <input type="text" class="form-control labelLogin" placeholder="Ingresa tu apellido"
+                                id="apellido" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="labelLogin">D.N.I</label>
-                            <input type="number" class="form-control labelLogin" placeholder="Ingresa tu DNI" id="dni" required>
+                            <input type="number" class="form-control labelLogin" placeholder="Ingresa tu DNI" id="dni"
+                                required>
                         </div>
 
                         <div class="mb-3">
                             <label class="labelLogin">Email</label>
-                            <input type="email" class="form-control labelLogin" placeholder="Ingresa tu email" id="email" required>
+                            <input type="email" class="form-control labelLogin" placeholder="Ingresa tu email"
+                                id="email" required>
                         </div>
 
                         <button class="btn btn-dark w-100 btnIniciarSesion" type="submit">
@@ -364,8 +379,8 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
 
-    
-        
+
+
     <!--TOAST ----------------- -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
 
@@ -391,17 +406,17 @@
 
     </div>
     <div class="toast-container position-fixed top-0 end-0 p-3">
-    
-    <div id="miToast" class="toast align-items-center text-white bg-success border-0" role="alert">
-        <div class="d-flex">
-            <div class="toast-body" id="toastMensaje">
-                Mensaje
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
-        </div>
-    </div>
 
-</div>
+        <div id="miToast" class="toast align-items-center text-white bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMensaje">
+                    Mensaje
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
