@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
@@ -11,6 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const db = getFirestore(app);
 
 // DNI guardado
@@ -32,9 +34,12 @@ async function cargarRutina() {
 
     const docRef = doc(db, "usuarios", dni);
     const docSnap = await getDoc(docRef);
+    
 
     console.log("DNI: ", dni);
     console.log("Doc existe:", docSnap.exists());
+
+    
 
 
     if (!docSnap.exists()) {
@@ -200,4 +205,12 @@ async function cargarRutina() {
     });
 }
 
-cargarRutina();
+signInAnonymously(auth)
+  .then(() => {
+    console.log("Usuario autenticado anónimamente");
+    cargarRutina(); // 🔥 importante: se ejecuta DESPUÉS del login
+  })
+  .catch((error) => {
+    console.error("Error en auth:", error);
+  });
+
