@@ -64,10 +64,10 @@ async function cargarCuota() {
     const estadoBtn = document.getElementById("estadoCuota");
 
     if (cuota.estado === "al_dia") {
-        estadoBtn.innerText = "Al día";
+        estadoBtn.innerText = "ACTIVO";
         estadoBtn.classList.add("estado-verde");
     } else {
-        estadoBtn.innerText = "Atrasado";
+        estadoBtn.innerText = "VENCIDO";
         estadoBtn.classList.add("estado-rojo");
     }
 

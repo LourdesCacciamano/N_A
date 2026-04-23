@@ -21,6 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
         if (btnLogin) btnLogin.style.display = "block";
         if (btnLogout) btnLogout.style.display = "none"; // 🔥 ESTA LÍNEA ES LA CLAVE
     }
+
+    if (btnLogout) {
+        btnLogout.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "¿Cerrar sesión?",
+                text: "Vas a salir de tu cuenta",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Sí, salir",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    localStorage.removeItem("dni");
+                    localStorage.removeItem("usuarioLogueado");
+
+                    window.location.href = "../index.html";
+                }
+            });
+        });
+    }
 });
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -71,27 +94,3 @@ window.loginUsuario = async function () {
     }
 }
 
-const btnLogout = document.getElementById("btnLogout");
-
-if (btnLogout) {
-    btnLogout.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        Swal.fire({
-            title: "¿Cerrar sesión?",
-            text: "Vas a salir de tu cuenta",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Sí, salir",
-            cancelButtonText: "Cancelar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                localStorage.removeItem("dni");
-                localStorage.removeItem("usuarioLogueado");
-
-                window.location.href = "./index.html";
-            }
-        });
-    });
-}
