@@ -895,6 +895,7 @@ strong {
   display: flex;
   justify-content: flex-start;
   margin-top: 15px;
+  margin-left: 9px;
   gap: 18px; }
 
 .cardShaker {
@@ -1081,7 +1082,7 @@ hr {
   .conteTiposOtros {
     gap: 0px; }
   .separador1CardOtros,
-  .separador2CardOtros {
+  .separador2CardOtros, .separador3CardOtros {
     flex-direction: column;
     gap: 10px; }
   .opSaborLargo {
@@ -1108,6 +1109,8 @@ hr {
     justify-content: center;
     gap: 8px;
     margin-top: 8px; }
+  .separador3CardOtros {
+    margin-left: 0px; }
   .sepaPrimerParteOtros {
     display: flex;
     gap: 2px;
@@ -1173,9 +1176,11 @@ hr {
   .cardOtros {
     width: 15rem; }
   .separador1CardOtros,
-  .separador2CardOtros {
+  .separador2CardOtros, .separador3CardOtros {
     flex-direction: column;
     gap: 10px; }
+  .separador3CardOtros {
+    margin-left: 0px; }
   .sepaPrimerParteOtros {
     display: flex;
     gap: 5px;
@@ -1255,7 +1260,10 @@ hr {
 #carouselProducto3 .imag,
 #carouselProducto4 .imag,
 #carouselProducto5 .imag,
-#carouselProducto6 .imag {
+#carouselProducto6 .imag,
+#carouselProducto7 .imag,
+#carouselProducto8 .imag,
+#carouselProducto9 .imag {
   height: 100%;
   border-radius: 12px; }
 
@@ -1345,6 +1353,12 @@ hr {
 
 .marron {
   background-color: #553306; }
+
+.rosa {
+  background-color: #f596a6; }
+
+.rojo {
+  background-color: red; }
 
 .separadorVestiMobile {
   display: none; }

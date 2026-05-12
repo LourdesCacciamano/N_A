@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
@@ -59,7 +59,17 @@ const firebaseConfig = {
     measurementId: "G-EJMVKDR61V"
 };
 
-const app = initializeApp(firebaseConfig);
+
+import { getApp, getApps, initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+let app;
+
+if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+} else {
+    app = getApp(); // 🔥 usa la app existente sin comparar config
+}
+const auth = getAuth(app);
 const db = getFirestore(app);
 
 window.loginUsuario = async function () {
@@ -67,28 +77,36 @@ window.loginUsuario = async function () {
 
     if (!dni) return;
 
+    await signInAnonymously(auth);
+
+    // 🔥 esperar a que auth esté listo de verdad
+    await new Promise((resolve) => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user) {
+                unsubscribe();
+                resolve();
+            }
+        });
+    });
+
     const docRef = doc(db, "usuarios", dni);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
 
-        // 👉 toast éxito
         const toastOk = new bootstrap.Toast(document.getElementById('toastSuccess'));
         document.querySelector('#toastSuccess .toast-body').innerText = "Bienvenido 👋";
         toastOk.show();
 
-        // guardamos sesión
         localStorage.setItem("usuarioLogueado", "true");
         localStorage.setItem("dni", dni);
 
-        // esperamos un toque para que se vea el toast
         setTimeout(() => {
             location.reload();
         }, 1200);
 
     } else {
 
-        // 👉 toast error
         const toastError = new bootstrap.Toast(document.getElementById('toastError'));
         toastError.show();
     }

@@ -86,6 +86,15 @@ function seleccionarDatosVestimenta(card, boton) {
         return;
     }
 
+    const detalles = [];
+
+    if (talle) {
+        detalles.push(`Talle: ${talle.value}`);
+    }
+    if (color) {
+        detalles.push(`Color: ${color.value}`);
+    }
+
     const producto = {
         img: card.querySelector('.imag').src,
         titulo: card.querySelector('.card-title-vesti').textContent,
@@ -95,10 +104,7 @@ function seleccionarDatosVestimenta(card, boton) {
                 .replace('$', '')
                 .replace('.', '')
         ),
-        detalles: [
-            `Talle: ${talle.value}`,
-            color ? `Color: ${color.value}` : null
-        ].filter(linea => linea).join('\n'),
+        detalles: detalles.join('\n'),
         id: parseInt(boton.dataset.id),
         cantidad: parseInt(card.querySelector('.cantidad-card').textContent)
     };
