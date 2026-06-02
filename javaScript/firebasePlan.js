@@ -196,8 +196,8 @@ async function cargarRutina() {
                 tabla.innerHTML += `
                 <tr>
                     <td>${index + 1}</td>
-                    <td>${ej.ejercicio}</td>
-                    <td>${ej.cantidad}</td>
+                    <td>${ej.ejercicio.replace(/\n/g, '<br>')}</td>
+                    <td>${ej.cantidad.replace(/\n/g, '<br>')}</td>
                 </tr>
             `;
             });
