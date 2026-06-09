@@ -1,40 +1,47 @@
 @charset "UTF-8";
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*------------- HEADER------------------*/
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 html, body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 .header {
   background-color: #272924 !important;
   width: 100%;
   height: 135px;
   padding: 0 16px;
-  box-shadow: 0 1px 4px black; }
+  box-shadow: 0 1px 4px black;
+}
 
 .header .container-fluid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%; }
+  height: 100%;
+}
 
 /* LOGO + TEXTO */
 .nav2 {
   display: flex;
   align-items: center;
-  gap: 12px; }
+  gap: 12px;
+}
 
 .imgLogoInicio,
 .imgLogoForm, .imgLogoCarrito,
 .imgLogoSuple, .imgLogoPlan, .imgLogoTimer {
   display: block;
-  width: 12%; }
+  width: 12%;
+}
 
 .inicio,
 .inicioSuplementos,
@@ -44,7 +51,8 @@ html, body {
   color: white;
   font-size: 28px;
   margin: 0;
-  line-height: 1; }
+  line-height: 1;
+}
 
 /* BARRA */
 .barra-vertical,
@@ -55,20 +63,24 @@ html, body {
   width: 2px;
   height: 97px;
   background-color: #565252;
-  margin: 0; }
+  margin: 0;
+}
 
 /* ACCIONES DERECHA (carrito + menú) */
 .accionesHeader, .accionesHeaderPlan {
   display: flex;
   align-items: center;
-  gap: 18px; }
+  gap: 18px;
+}
 
 .accionHeadTimer {
-  margin-left: 105px; }
+  margin-left: 105px;
+}
 
 /* CARRITO */
 .compraInicio {
-  width: 26px; }
+  width: 26px;
+}
 
 /* BOTÓN MENÚ */
 .botonMenu {
@@ -77,19 +89,22 @@ html, body {
   box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  transform: none !important; }
+  transform: none !important;
+}
 
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none !important;
-  box-shadow: none !important; }
+  box-shadow: none !important;
+}
 
 /* ÍCONO MENÚ */
 .menu-lines {
   width: 27px;
   height: 22px;
   position: relative;
-  display: inline-block; }
+  display: inline-block;
+}
 
 .menu-lines::before,
 .menu-lines::after,
@@ -99,42 +114,53 @@ html, body {
   height: 3px;
   width: 100%;
   background: #fff !important;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
 .menu-lines::before {
-  top: 0; }
+  top: 0;
+}
 
 .menu-lines span {
-  top: 9px; }
+  top: 9px;
+}
 
 .menu-lines::after {
-  bottom: 0; }
+  bottom: 0;
+}
 
 /* OFFCANVAS */
 .offcanvas {
-  width: 260px !important; }
+  width: 260px !important;
+}
 
 .divOpMenu {
-  background-color: #575755; }
+  background-color: #575755;
+}
 
 .divOpMenu2 {
-  background-color: #272924; }
+  background-color: #272924;
+}
 
 .divOpMenu3 {
-  background-color: #3F4239; }
+  background-color: #3F4239;
+}
 
 /* LINKS */
 .opMenu {
   font-size: 25px;
   font-family: "Bebas Neue", sans-serif !important;
-  color: white; }
+  color: white;
+}
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-  color: white; }
-  .navbar-nav .nav-link.active:hover,
-  .navbar-nav .nav-link.show:hover {
-    color: black; }
+  color: white;
+}
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.show:hover {
+  color: black;
+}
 
 /* Quitar borde negro del botón menú en todas las páginas */
 .navbar-toggler,
@@ -145,7 +171,8 @@ html, body {
   border: none !important;
   box-shadow: none !important;
   outline: none !important;
-  background: transparent !important; }
+  background: transparent !important;
+}
 
 /* Quitar borde también al hacer focus */
 .navbar-toggler:focus,
@@ -160,140 +187,188 @@ html, body {
 .botonMenuVideo:active {
   border: none !important;
   box-shadow: none !important;
-  outline: none !important; }
+  outline: none !important;
+}
 
 .conteHeader {
-  display: flex; }
+  display: flex;
+}
 
 .carritoIcono {
-  font-size: 26px; }
-  .carritoIcono:hover {
-    color: #3F4239; }
+  font-size: 26px;
+}
+.carritoIcono:hover {
+  color: #3F4239;
+}
 
 .userIconoIndex {
-  font-size: 27px; }
+  font-size: 27px;
+}
 
 /* MOBILE */
 @media (max-width: 430px) {
   .header {
-    height: 95px; }
+    height: 95px;
+  }
   .imgLogoInicio, .imgLogoPlan, .imgLogoSuple, .imgLogoTimer {
     width: 103px;
     margin-left: -28px;
     margin-top: -10px;
-    margin-right: -13px; }
+    margin-right: -13px;
+  }
   .menuTimer {
-    margin-left: -20px; }
+    margin-left: -20px;
+  }
   .inicio {
     font-size: 23px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+  }
   .iniPlan {
-    font-size: 18px; }
+    font-size: 18px;
+  }
   .barra-vertical {
     height: 70px;
-    margin-bottom: 12px; }
+    margin-bottom: 12px;
+  }
   .nav2 {
-    gap: 5px; }
+    gap: 5px;
+  }
   .compraInicio {
-    width: 22px; }
+    width: 22px;
+  }
   .accionesHeader {
-    gap: 22px; }
+    gap: 22px;
+  }
   .accionesHeaderPlan {
-    gap: 8px; }
+    gap: 8px;
+  }
   .barra-vertical-formulario {
     height: 75px;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+  }
   .imgLogoForm {
-    width: 39%; }
+    width: 39%;
+  }
   .inicioFormulario {
-    font-size: 21px; }
+    font-size: 21px;
+  }
   .barra-vertical-suplementos {
-    height: 78px; }
+    height: 78px;
+  }
   .inicioSuplementos {
-    font-size: 21px; }
+    font-size: 21px;
+  }
   .conteHeader {
     display: flex;
-    gap: 95px; }
+    gap: 95px;
+  }
   .carritoPlanesSuple {
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+  }
   .barra-vertical-vestimenta-planes {
     height: 74px;
-    margin-bottom: 15px !important; }
+    margin-bottom: 15px !important;
+  }
   .inicioVestimentaVideo {
-    font-size: 21px; }
+    font-size: 21px;
+  }
   .header .headerCarrito {
     justify-content: flex-end;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+  }
   .imgLogoCarrito {
-    width: 30%; }
+    width: 30%;
+  }
   .inicioCarrito {
-    font-size: 18px; }
+    font-size: 18px;
+  }
   .barra-vertical-timer {
-    height: 65px; }
+    height: 65px;
+  }
   .carritoIcono {
     font-size: 22px;
-    margin-right: -8px; } }
-
+    margin-right: -8px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .header {
-    height: 123px; }
+    height: 123px;
+  }
   .header .container-fluid {
     justify-content: flex-end;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+  }
   .imgLogoInicio, .imgLogoCarrito {
     width: 49%;
     margin-left: -32px;
-    margin-right: -27px; }
+    margin-right: -27px;
+  }
   .imgLogoPlan {
     width: 33%;
     margin-left: -32px;
-    margin-right: -27px; }
+    margin-right: -27px;
+  }
   .imgLogoSuple {
     width: 41%;
     margin-left: -32px;
-    margin-right: -27px; }
+    margin-right: -27px;
+  }
   .imgLogoVest {
-    width: 39%; }
+    width: 39%;
+  }
   .imgLogoForm {
-    width: 34%; }
+    width: 34%;
+  }
   .inicioCarrito {
-    font-size: 23px; }
+    font-size: 23px;
+  }
   .iniPlan {
-    font-size: 20px; }
+    font-size: 20px;
+  }
   .inicioSuplementos {
-    font-size: 22px; }
+    font-size: 22px;
+  }
   .inicioFormulario {
-    font-size: 22px; }
+    font-size: 22px;
+  }
   .inicioVestimenta {
-    font-size: 22px; }
+    font-size: 22px;
+  }
   .volverIndex {
-    font-size: 21px !important; }
+    font-size: 21px !important;
+  }
   .imgLogoTimer {
     width: 54%;
     margin-left: -32px;
-    margin-right: -27px; }
+    margin-right: -27px;
+  }
   .carritoIcono {
-    font-size: 22px; } }
-
+    font-size: 22px;
+  }
+}
 .mainIndex {
   min-height: 70vh;
   padding-top: 200px;
-  background-color: #C9C6C7; }
-  .mainIndex h2 {
-    margin-bottom: 12px;
-    margin-top: -49px;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: bold;
-    color: #272924;
-    text-align: center;
-    font-size: 40px; }
-  .mainIndex .animate__pulse {
-    animation-iteration-count: 2;
-    animation-duration: 2s;
-    animation-delay: 1s; }
+  background-color: #C9C6C7;
+}
+.mainIndex h2 {
+  margin-bottom: 12px;
+  margin-top: -49px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #272924;
+  text-align: center;
+  font-size: 40px;
+}
+.mainIndex .animate__pulse {
+  animation-iteration-count: 2;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}
 
 body {
-  background-color: #C9C6C7 !important; }
+  background-color: #C9C6C7 !important;
+}
 
 /*CARROUSEL FOTOS ALEATORIAS ---------------------------*/
 #carouselExampleSlidesOnly {
@@ -302,38 +377,45 @@ body {
   /* viewport real en iOS */
   max-height: 350px;
   /* <--- Limita la altura del carrusel */
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .carInner,
 .carItem {
   height: 100% !important;
-  width: 100%; }
+  width: 100%;
+}
 
 .carousel-item img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: top; }
+  object-position: top;
+}
 
 .cambiosTitulo {
   margin-top: 20px;
   font-size: 22px;
   text-align: center;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   color: #272924;
   margin-bottom: 6px;
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 .carouselImgCambios {
   width: 44% !important;
   margin-left: 28%;
-  margin-top: 42px; }
+  margin-top: 42px;
+}
 
 .flechaIzqCambios {
-  margin-left: 146px; }
+  margin-left: 146px;
+}
 
 .flechaDerCambios {
-  margin-right: 146px; }
+  margin-right: 146px;
+}
 
 .descripCambios {
   text-align: center;
@@ -341,7 +423,8 @@ body {
   font-size: 22px;
   background-color: #494949;
   color: white;
-  border-radius: 3px; }
+  border-radius: 3px;
+}
 
 .card1,
 .card2,
@@ -351,13 +434,15 @@ body {
   width: 20rem;
   border-radius: 10px;
   margin: auto;
-  margin-top: 50px; }
+  margin-top: 50px;
+}
 
 .cardImgIndex {
   border-radius: 10px;
   height: 165px !important;
   object-fit: cover !important;
-  object-position: center !important; }
+  object-position: center !important;
+}
 
 .card-body-index {
   background-color: #3F4239;
@@ -366,123 +451,150 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding-top: 32px; }
+  padding-top: 32px;
+}
 
 .card-title-index {
   font-family: "Bebas Neue", sans-serif;
   font-size: 26px;
-  margin-top: -19px; }
+  margin-top: -19px;
+}
 
 .precio {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 26px; }
+  font-size: 26px;
+}
 
 .card-text-index {
   font-family: "Open Sans", sans-serif;
   text-align: left;
   font-size: 16px;
   color: whitesmoke;
-  padding: 11px; }
+  padding: 11px;
+}
 
 .btn {
   color: white;
   background-color: black;
-  border-color: #767171; }
-  .btn:hover {
-    background-color: #4b4a4a;
-    border-color: black; }
+  border-color: #767171;
+}
+.btn:hover {
+  background-color: #4b4a4a;
+  border-color: black;
+}
 
 .btnIndex {
   width: 110px;
   margin: auto;
   margin-bottom: 10px;
   margin-top: -13px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .btn3 {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .btnIndex:active {
   background-color: #615f5f !important;
-  border-color: #615f5f !important; }
+  border-color: #615f5f !important;
+}
 
 .lineaSeparadoraIndex {
   margin-top: -5px;
   margin-bottom: 2px;
   color: white;
   width: 261px;
-  margin: auto; }
+  margin: auto;
+}
 
 .carousel-indicators {
-  margin-bottom: -28px; }
+  margin-bottom: -28px;
+}
 
 .flechaIzq {
-  margin-left: 25%; }
+  margin-left: 25%;
+}
 
 .flechaDer {
-  margin-right: 25%; }
+  margin-right: 25%;
+}
 
 .modal-body {
-  background-color: #C9C6C7; }
+  background-color: #C9C6C7;
+}
 
 .modal-header, .btnIniciarSesion {
   background-color: #272924;
-  color: white; }
+  color: white;
+}
 
 .hrLogin {
-  color: black; }
+  color: black;
+}
 
 .crearCuenta {
   color: black;
-  font-size: 17px !important; }
+  font-size: 17px !important;
+}
 
 .infoCuenta {
   font-size: 11px;
   text-align: center;
   margin-top: 8px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .modal-title {
   font-family: "Bebas Neue", sans-serif !important;
-  font-size: 20px !important; }
+  font-size: 20px !important;
+}
 
 .labelLogin {
-  font-family: "Oswald", sans-serif !important; }
+  font-family: "Oswald", sans-serif !important;
+}
 
 .btnIniciarSesion {
   font-family: "Oswald", sans-serif !important;
-  font-size: 17px !important; }
+  font-size: 17px !important;
+}
 
 .text-center, .crearCuenta {
-  font-family: "Oswald", sans-serif !important; }
+  font-family: "Oswald", sans-serif !important;
+}
 
 .btnEstado:hover,
 .btnEstado:focus,
 .btnEstado:active {
   color: black !important;
   box-shadow: none !important;
-  outline: none !important; }
+  outline: none !important;
+}
 
 .contePromos {
   background-color: #696969;
   padding: 15px 0px 15px 0px;
-  margin-top: 38px; }
+  margin-top: 38px;
+}
 
 .cardPromo {
   margin: auto !important;
   background-color: #0b0a0a;
   color: white;
   border-radius: 9px;
-  border: 5px solid white; }
+  border: 5px solid white;
+}
 
 .bodyPromo {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   padding: 11px;
-  text-align: left; }
+  text-align: left;
+}
 
 .imgPromo {
-  height: 219px; }
+  height: 219px;
+}
 
 .btnPromo {
   color: black;
@@ -493,99 +605,130 @@ body {
   width: 177px;
   border-radius: 7px;
   border: none;
-  margin: auto; }
+  margin: auto;
+}
 
 @media (max-width: 430px) {
   .mainIndex {
-    padding-top: 208px; }
-    .mainIndex h2 {
-      margin-bottom: 3px;
-      margin-top: -107px;
-      font-size: 30px; }
+    padding-top: 208px;
+  }
+  .mainIndex h2 {
+    margin-bottom: 3px;
+    margin-top: -107px;
+    font-size: 30px;
+  }
   .img3Carrousel {
-    margin-top: 0px; }
+    margin-top: 0px;
+  }
   #carouselExampleSlidesOnly {
-    height: 35dvh; }
+    height: 35dvh;
+  }
   .carouselImgCambios {
     width: 97% !important;
-    margin-left: 7px; }
+    margin-left: 7px;
+  }
   .flechaDerCambios {
-    margin-right: -14px; }
+    margin-right: -14px;
+  }
   .flechaIzqCambios {
-    margin-left: -12px; }
+    margin-left: -12px;
+  }
   .card1,
   .card2,
   .card3 {
     margin: auto;
     width: 79% !important;
     margin-top: 65px;
-    max-width: none; }
+    max-width: none;
+  }
   .card-text-index {
-    font-size: 16px; }
+    font-size: 16px;
+  }
   .cardImgIndex {
     height: 185px;
-    object-fit: cover; }
+    object-fit: cover;
+  }
   .card-body-index {
     margin-bottom: 10px;
-    padding: 15px; }
+    padding: 15px;
+  }
   .card-title-index,
   .precio {
     font-size: 23px;
-    margin-top: 0; }
+    margin-top: 0;
+  }
   .btnIndex {
     margin-bottom: -4px;
-    margin-top: -22px; }
+    margin-top: -22px;
+  }
   .flechaIzq {
-    margin-left: -6px; }
+    margin-left: -6px;
+  }
   .flechaDer {
-    margin-right: -6px; }
+    margin-right: -6px;
+  }
   .descripCambios {
-    font-size: 18px; } }
-
+    font-size: 18px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
-    height: 35dvh; }
+    height: 35dvh;
+  }
   .carouselImgCambios {
     width: 86% !important;
-    margin-left: 7%; }
+    margin-left: 7%;
+  }
   .flechaIzqCambios {
-    margin-left: -15px; }
+    margin-left: -15px;
+  }
   .flechaDerCambios {
-    margin-right: -10px; }
+    margin-right: -10px;
+  }
   .flechaIzq {
-    margin-left: 0%; }
+    margin-left: 0%;
+  }
   .flechaDer {
-    margin-right: 0%; }
+    margin-right: 0%;
+  }
   .descripCambios {
-    font-size: 18px; } }
-
+    font-size: 18px;
+  }
+}
 .footer {
   max-height: 34vh;
   background-color: #272924;
   padding: 20px 40px;
-  margin-top: 117px; }
-  .footer .section-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; }
-  .footer .conteRedes {
-    display: flex;
-    gap: 16px; }
-    .footer .conteRedes a {
-      text-decoration: none; }
-  .footer .redes {
-    display: flex;
-    font-size: 45px;
-    align-items: center;
-    flex-direction: column; }
-    .footer .redes h2 {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 27px;
-      color: #87877F;
-      text-decoration: underline; }
+  margin-top: 117px;
+}
+.footer .section-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer .conteRedes {
+  display: flex;
+  gap: 16px;
+}
+.footer .conteRedes a {
+  text-decoration: none;
+}
+.footer .redes {
+  display: flex;
+  font-size: 45px;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .redes h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 27px;
+  color: #87877F;
+  text-decoration: underline;
+}
 
 .imgLogoFoot {
-  width: 14%; }
+  width: 14%;
+}
 
 .volverArriba i {
   font-size: 33px;
@@ -594,65 +737,81 @@ body {
   padding: 9px;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 .volverArriba:hover {
   transform: scale(1.1);
-  transition: 0.2s; }
+  transition: 0.2s;
+}
 
 .insta:hover,
 .what:hover {
   background-color: #87877F;
   border-radius: 25px;
-  padding: 5px; }
+  padding: 5px;
+}
 
 .logoCopy {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .footer-copy {
   color: #c1c1c1;
   font-size: 13px;
   letter-spacing: 1px;
-  margin: auto; }
+  margin: auto;
+}
 
 @media (max-width: 430px) {
   .redes {
     display: flex;
     font-size: 25px !important;
     align-items: flex-end;
-    margin-left: -28px !important; }
-    .redes h2 {
-      font-size: 18px !important; }
+    margin-left: -28px !important;
+  }
+  .redes h2 {
+    font-size: 18px !important;
+  }
   .what,
   .insta {
-    font-size: 33px; }
+    font-size: 33px;
+  }
   .conteRedes {
-    align-items: baseline; }
+    align-items: baseline;
+  }
   .footer-copy {
     font-size: 10px;
-    margin-left: 46px; }
+    margin-left: 46px;
+  }
   .volverArriba {
     margin-right: -27px;
-    padding: 6px; }
-    .volverArriba i {
-      font-size: 20px; }
+    padding: 6px;
+  }
+  .volverArriba i {
+    font-size: 20px;
+  }
   .imgLogoFoot {
     width: 36%;
-    margin-right: 12px; }
+    margin-right: 12px;
+  }
   .logoCopy {
-    gap: 7px; }
+    gap: 7px;
+  }
   .footer {
-    padding-bottom: 11px; } }
-
+    padding-bottom: 11px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .what, .insta {
-    font-size: 37px; } }
-
+    font-size: 37px;
+  }
+}
 .mainForm {
   min-height: 70vh;
-  margin-top: 208px; }
+  margin-top: 208px;
+}
 
 .formulario {
   background-color: #272924;
@@ -660,68 +819,83 @@ body {
   margin: 30px;
   padding: 30px;
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
 .tituloForm {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
   color: #3F4239;
-  font-size: 40px; }
+  font-size: 40px;
+}
 
 .conteHeaderForm {
-  display: flex; }
+  display: flex;
+}
 
 .conteImg-barra-form {
   display: flex;
   align-items: center;
-  gap: 10px; }
+  gap: 10px;
+}
 
 .volverIndex {
   color: #e4e4e4;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px; }
-  .volverIndex:hover {
-    color: white; }
+  font-size: 25px;
+}
+.volverIndex:hover {
+  color: white;
+}
 
 .aVolverIndex {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .label {
   margin-right: 15px;
   margin-bottom: 15px;
   font-size: 20px;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .input-radio {
   margin-left: 13px;
-  font-family: math; }
+  font-family: math;
+}
 
 .input-text {
   border-radius: 11px;
   border-color: white;
-  padding: 5px; }
-  .input-text:hover {
-    background-color: #645e5e;
-    color: #181717;
-    border-color: #645e5e; }
+  padding: 5px;
+}
+.input-text:hover {
+  background-color: #645e5e;
+  color: rgb(24, 23, 23);
+  border-color: #645e5e;
+}
 
 .input-number, .input-number-dias {
   border-radius: 11px;
   border-color: white;
   padding: 2px;
   width: 73px;
-  text-align: center; }
-  .input-number:hover, .input-number-dias:hover {
-    background-color: #645e5e;
-    color: #181717;
-    border-color: #645e5e; }
+  text-align: center;
+}
+.input-number:hover, .input-number-dias:hover {
+  background-color: #645e5e;
+  color: rgb(24, 23, 23);
+  border-color: #645e5e;
+}
 
 .labelDoble {
-  margin-left: 53px; }
+  margin-left: 53px;
+}
 
 .contenedorBoton {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .botonEnviar {
   border-radius: 14px;
@@ -729,207 +903,256 @@ body {
   font-size: 22px;
   padding: 7px 32px;
   margin-top: 25px;
-  background-color: #645e5e; }
-  .botonEnviar:hover {
-    background-color: black;
-    color: white; }
+  background-color: #645e5e;
+}
+.botonEnviar:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
 
 .planSolici {
   margin-top: 15px;
   color: #3F4239;
   font-size: 21px;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+}
 
 strong {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .radios {
-  display: contents;
-  /* ← NO altera el layout */
-  gap: 0; }
+  display: contents; /* ← NO altera el layout */
+  gap: 0;
+}
 
 .btnWhat {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 @media (max-width: 430px) {
   .tituloForm {
     font-size: 28px;
-    margin-top: -94px; }
+    margin-top: -94px;
+  }
   .planSolici {
     font-size: 14px;
-    margin-bottom: -14px; }
+    margin-bottom: -14px;
+  }
   .formulario {
     margin-left: 6px;
     margin-bottom: 15px;
-    width: 97%; }
+    width: 97%;
+  }
   .label {
-    font-size: 16px; }
+    font-size: 16px;
+  }
   .radios {
     display: flex;
     justify-content: center;
-    gap: 7px; }
+    gap: 7px;
+  }
   .input-text {
     margin-left: 33px;
-    width: 74%; }
+    width: 74%;
+  }
   .input-text-contac {
-    margin-top: -10px; }
+    margin-top: -10px;
+  }
   .input-number-dias {
     width: 69px;
-    margin-left: 30px; }
+    margin-left: 30px;
+  }
   .input-number {
-    width: 70px; }
+    width: 70px;
+  }
   .volverIndex {
     font-size: 18px;
-    margin-left: 18px; }
+    margin-left: 18px;
+  }
   .conteImg-barra-form {
-    gap: 4px; }
+    gap: 4px;
+  }
   .btnWhat {
-    font-size: 15px; } }
-
+    font-size: 15px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .formulario {
     width: 96%;
     margin: auto;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+  }
   .label {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .tituloForm {
-    margin-top: -45px; } }
-
+    margin-top: -45px;
+  }
+}
 .mainSuple {
   min-height: 40vh;
   margin-top: 200px;
-  padding: 10px; }
+  padding: 10px;
+}
 
 .accordion1 {
   background-color: #C9C6C7;
-  border-color: black; }
+  border-color: black;
+}
 
 .accordion2 {
   margin-top: 10px;
   background-color: white;
-  border-color: black; }
+  border-color: black;
+}
 
 .accordion3 {
   margin-top: 10px;
   background-color: white;
-  border-color: black; }
+  border-color: black;
+}
 
 .text-suple {
   font-family: "Open Sans", sans-serif;
   text-align: justify;
   font-size: 14px;
   color: whitesmoke;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .btn13 {
   background-color: #3F4239;
   color: white;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px; }
-  .btn13:focus {
-    background-color: #3F4239;
-    color: white;
-    border-color: #3F4239;
-    box-shadow: none; }
-  .btn13:not(.collapsed) {
-    background-color: #3F4239;
-    color: white;
-    border-color: #3F4239;
-    box-shadow: none; }
-  .btn13:hover {
-    background-color: rgba(53, 52, 52, 0.849); }
+  font-size: 25px;
+}
+.btn13:focus {
+  background-color: #3F4239;
+  color: white;
+  border-color: #3F4239;
+  box-shadow: none;
+}
+.btn13:not(.collapsed) {
+  background-color: #3F4239;
+  color: white;
+  border-color: #3F4239;
+  box-shadow: none;
+}
+.btn13:hover {
+  background-color: rgba(53, 52, 52, 0.849);
+}
 
 .btn2 {
   background-color: #87877F;
   color: black;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px; }
-  .btn2:focus {
-    background-color: #87877F;
-    color: black;
-    border-color: #87877F;
-    box-shadow: none; }
-  .btn2:not(.collapsed) {
-    background-color: #87877F;
-    color: black;
-    border-color: #87877F;
-    box-shadow: none; }
-  .btn2:hover {
-    background-color: rgba(53, 52, 52, 0.525); }
+  font-size: 25px;
+}
+.btn2:focus {
+  background-color: #87877F;
+  color: black;
+  border-color: #87877F;
+  box-shadow: none;
+}
+.btn2:not(.collapsed) {
+  background-color: #87877F;
+  color: black;
+  border-color: #87877F;
+  box-shadow: none;
+}
+.btn2:hover {
+  background-color: rgba(53, 52, 52, 0.525);
+}
 
 .btnCreatina {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .titleSuple {
-  font-family: "Bebas Neue", sans-serif; }
+  font-family: "Bebas Neue", sans-serif;
+}
 
 /* Flecha cuando está cerrado */
 .accordion-button::after {
   filter: invert(1);
-  /* Cambia de negro a blanco */ }
+  /* Cambia de negro a blanco */
+}
 
 /* Flecha cuando está abierto */
 .accordion-button:not(.collapsed)::after {
   filter: invert(1);
-  /* Blanco */ }
+  /* Blanco */
+}
 
 .conteTiposProte {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .conteTiposCrea {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+}
 
 .separador1CardOtros {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .separador2CardOtros {
   display: flex;
   justify-content: space-around;
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 
 .separador3CardOtros {
   display: flex;
   justify-content: flex-start;
   margin-top: 15px;
   margin-left: 9px;
-  gap: 18px; }
+  gap: 18px;
+}
 
 .cardShaker {
-  margin-left: 9px; }
+  margin-left: 9px;
+}
 
 .conteTiposOtros {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+}
 
 .card-title {
   text-align: center;
   color: white;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 hr {
   color: white;
-  margin-top: 6px; }
+  margin-top: 6px;
+}
 
 .cardSuple,
 .cardOtros {
   background-color: #3F4239;
   max-width: 19rem;
-  width: 100%; }
+  width: 100%;
+}
 
 .cardSuple {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 /* Oculto el radio original */
-.radioPersonalizadoSabor input[type="radio"] {
-  display: none; }
+.radioPersonalizadoSabor input[type=radio] {
+  display: none;
+}
 
 /* La “cápsula” */
 .radioPersonalizadoSabor span {
@@ -942,7 +1165,8 @@ hr {
   margin-right: 8px;
   font-weight: bold;
   transition: all 0.2s ease;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .selec {
   font-size: 14px;
@@ -950,264 +1174,353 @@ hr {
   color: white;
   border-radius: 5px;
   padding: 0 3px;
-  appearance: auto; }
+  appearance: auto;
+}
 
 .formSuple {
   text-align: justify !important;
-  margin-bottom: 2px; }
+  margin-bottom: 2px;
+}
 
 /* Cuando está seleccionado */
-.radioPersonalizadoSabor input[type="radio"]:checked + span {
+.radioPersonalizadoSabor input[type=radio]:checked + span {
   background-color: #000;
   color: #fff;
   border-color: #000;
-  transform: scale(1.05); }
+  transform: scale(1.05);
+}
 
 .titLabel {
   color: white;
   font-family: "Open Sans", sans-serif;
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 .opcionesSabor {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 8px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .opSaborLargo {
   flex-wrap: wrap;
-  gap: 6px; }
+  gap: 6px;
+}
 
 .mediaProte1 {
   display: flex;
   gap: 10px;
   justify-content: center;
-  align-items: stretch; }
+  align-items: stretch;
+}
 
 .btnSuple,
 .btnOtros {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
 
 .btnCreatina,
 .btnOtros,
 .btnSuple {
-  width: 53px; }
+  width: 53px;
+}
 
 .agregarCar {
   font-size: 22px;
-  margin-right: 2px; }
+  margin-right: 2px;
+}
 
 .contenedorCantAgreg {
   display: flex;
   justify-content: space-around;
-  margin-top: -14px; }
+  margin-top: -14px;
+}
 
 .cardCrea2 {
-  display: flex; }
+  display: flex;
+}
 
 .conteCrea {
   display: flex;
-  gap: 10px; }
+  gap: 10px;
+}
 
 .cardSuple-creatin,
 .cardCreProb {
   max-width: 19rem;
   width: 100%;
   margin-right: 20px;
-  background-color: #3F4239; }
+  background-color: #3F4239;
+}
 
 .espacio-parrafos {
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .precioSuple {
   text-align: center;
   font-size: 24px;
   font-family: "Bebas Neue", sans-serif;
   color: white;
-  margin-bottom: -5px; }
+  margin-bottom: -5px;
+}
 
 /* Quitar fondo blanco del accordion */
 .accordion-item,
 .accordion-body,
 .accordion-collapse {
   background-color: transparent !important;
-  border-color: transparent !important; }
+  border-color: transparent !important;
+}
 
 .sepaPrimerParteOtros {
   display: contents;
-  gap: 5px; }
+  gap: 5px;
+}
 
 .card-body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* 🔥 hace que el body ocupe todo el alto */ }
+  /* 🔥 hace que el body ocupe todo el alto */
+}
+
+.dtoSuplemento {
+  color: rgb(47, 240, 47);
+  font-size: 25px;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.precioTachado {
+  text-decoration: line-through !important;
+  font-size: 18px !important;
+}
 
 @media (max-width: 430px) {
   .mainSuple {
-    margin-top: 122px; }
+    margin-top: 122px;
+  }
   .mediaProte1 {
     display: flex;
-    gap: 2px; }
+    gap: 2px;
+  }
   .cardSuple {
-    width: 12rem !important; }
+    width: 12rem !important;
+  }
   .conteTiposProte {
     flex-direction: column;
     align-items: center;
-    gap: 18px; }
+    gap: 18px;
+  }
   .text-vesti {
     margin-top: 8px;
-    font-size: 13px; }
+    font-size: 13px;
+  }
   h6 {
-    font-size: 12px; }
+    font-size: 12px;
+  }
   .btnSuple {
     margin-left: 15px;
     font-size: 13px;
-    width: 139px; }
+    width: 139px;
+  }
   .conteCrea {
     display: flex;
     gap: 2px;
-    justify-content: center; }
+    justify-content: center;
+  }
   .cardCrea2 {
     display: flex;
     flex-direction: column;
-    gap: 8px; }
+    gap: 8px;
+  }
   .conteTiposCrea {
-    justify-content: center; }
+    justify-content: center;
+  }
   .btnCreatina {
     margin-left: 15px;
     font-size: 13px;
-    width: 139px; }
+    width: 139px;
+  }
   .conteTiposOtros {
-    gap: 0px; }
+    gap: 0px;
+  }
   .separador1CardOtros,
   .separador2CardOtros, .separador3CardOtros {
     flex-direction: column;
-    gap: 10px; }
+    gap: 10px;
+  }
   .opSaborLargo {
-    margin-left: 7px; }
+    margin-left: 7px;
+  }
   .cardSuple-creatin,
   .cardCreProb {
     margin-right: 0px;
     width: 12rem;
-    margin: auto; }
+    margin: auto;
+  }
   .precioSuple {
     font-size: 19px;
-    margin-top: -6px; }
+  }
   .titleSuple {
     font-size: 23px;
-    margin-top: -11px; }
+    margin-top: -11px;
+  }
   .text-suple {
     margin-top: 0px;
-    font-size: 12px; }
+    font-size: 12px;
+  }
   .radioPersonalizadoSabor span {
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .opcionesSabor {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin-top: 8px; }
+    margin-top: 8px;
+  }
   .separador3CardOtros {
-    margin-left: 0px; }
+    margin-left: 0px;
+  }
   .sepaPrimerParteOtros {
     display: flex;
     gap: 2px;
-    justify-content: center; }
+    justify-content: center;
+  }
   .cardOtros {
     width: 12rem !important;
     min-width: 12rem;
     /* Evita que flexbox las achique */
-    flex-shrink: 0; }
+    flex-shrink: 0;
+  }
   .btnOtros {
     margin: auto;
     font-size: 13px;
-    width: 49px; }
+    width: 49px;
+  }
   .selecLargo {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .tilLabelLargo {
-    font-size: 12px; }
+    font-size: 12px;
+  }
   .contenedorCantAgreOtros {
-    margin-top: -2px; }
+    margin-top: -2px;
+  }
   .cardShaker {
     width: 12rem !important;
-    margin-left: -24px; }
+    margin-left: -24px;
+  }
   .menuLineSuple {
-    margin-left: -13px; } }
-
+    margin-left: -13px;
+  }
+  .dtoSuplemento {
+    font-size: 19px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .mediaProte1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    gap: 6px; }
+    gap: 6px;
+  }
   .cardSuple {
     width: 13rem !important;
-    margin-right: 7px; }
+    margin-right: 7px;
+  }
   .conteTiposProte {
     justify-content: center;
     align-items: flex-start;
-    width: 103%; }
+    width: 103%;
+  }
   .opcionesSabor {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 7px; }
+    gap: 7px;
+  }
   .btnSuple {
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .conteCrea {
     flex-wrap: wrap;
-    flex-direction: column; }
+    flex-direction: column;
+  }
   .cardSuple-creatin {
     width: 13rem;
     height: 25rem;
-    margin-right: 4px; }
+    margin-right: 4px;
+  }
   .cardCreProb {
     width: 13rem;
     height: 49%;
-    margin-right: 2px; }
+    margin-right: 2px;
+  }
   .cardCrea2 {
-    gap: 0px; }
+    gap: 0px;
+  }
   .conteTiposCrea {
-    justify-content: center; }
+    justify-content: center;
+  }
   .btnCreatina {
     margin-top: 24px;
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .cardOtros {
-    width: 15rem; }
+    width: 15rem;
+  }
   .separador1CardOtros,
   .separador2CardOtros, .separador3CardOtros {
     flex-direction: column;
-    gap: 10px; }
+    gap: 10px;
+  }
   .separador3CardOtros {
-    margin-left: 0px; }
+    margin-left: 0px;
+  }
   .sepaPrimerParteOtros {
     display: flex;
     gap: 5px;
-    justify-content: center; }
+    justify-content: center;
+  }
   .conteTiposOtros {
     gap: 5px;
-    width: 104%; }
+    width: 104%;
+  }
   .radioPersonalizadoSabor span {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .card-title {
-    font-size: 27px; }
+    font-size: 27px;
+  }
   h6 {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .text-suple {
-    text-align: unset; }
+    text-align: unset;
+  }
   .contenedorCantAgregCreatina {
-    align-items: baseline; }
+    align-items: baseline;
+  }
   .cardShaker {
     width: 12rem !important;
-    margin-left: 0px; } }
-
+    margin-left: 0px;
+  }
+  .dtoSuplemento {
+    font-size: 19px;
+  }
+}
 .conteCards-vesti {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  align-items: stretch; }
+  align-items: stretch;
+}
 
 .card-title-vesti {
   color: white;
@@ -1215,7 +1528,8 @@ hr {
   margin: auto;
   margin-bottom: 11px;
   text-align: center;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .cardVesti {
   box-shadow: 0px 4px 10px black;
@@ -1223,37 +1537,44 @@ hr {
   border-radius: 14px;
   display: flex;
   flex-direction: column;
-  height: 100%; }
+  height: 100%;
+}
 
 .card-text-vesti {
   text-align: justify;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   color: white;
-  font-size: 15px; }
+  font-size: 15px;
+}
 
 .precios-vesti {
   font-family: "Bebas Neue", sans-serif;
   margin-top: -34px;
   color: white;
   font-size: 27px;
-  text-align: center; }
+  text-align: center;
+}
 
 .btnVesti {
   display: flex;
-  width: 55px; }
+  width: 55px;
+}
 
 .agregarVest {
-  font-size: 22px; }
+  font-size: 22px;
+}
 
 .contenedorCantCarrVest {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+}
 
 .separadorVestiDesktop {
   display: flex;
-  gap: 30px; }
+  gap: 30px;
+}
 
 #carouselProducto2 .imag,
 #carouselProducto1 .imag,
@@ -1265,7 +1586,8 @@ hr {
 #carouselProducto8 .imag,
 #carouselProducto9 .imag {
   height: 100%;
-  border-radius: 12px; }
+  border-radius: 12px;
+}
 
 .cardBodyVest {
   background-color: #3F4239;
@@ -1274,19 +1596,23 @@ hr {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .mainVesti {
   min-height: 70vh;
   padding-top: 200px;
-  background-color: #C9C6C7; }
+  background-color: #C9C6C7;
+}
 
 /* Oculto el radio original */
-.radioPersonalizadoVestiTalle input[type="radio"] {
-  display: none; }
+.radioPersonalizadoVestiTalle input[type=radio] {
+  display: none;
+}
 
-.radioPersonalizadoVestiColor input[type="radio"] {
-  display: none; }
+.radioPersonalizadoVestiColor input[type=radio] {
+  display: none;
+}
 
 /* La “cápsula” */
 .radioPersonalizadoVestiTalle span {
@@ -1298,27 +1624,32 @@ hr {
   cursor: pointer;
   margin-right: 8px;
   font-weight: bold;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+}
 
 /* Cuando está seleccionado */
-.radioPersonalizadoVestiTalle input[type="radio"]:checked + span {
+.radioPersonalizadoVestiTalle input[type=radio]:checked + span {
   background-color: #000;
   color: #fff;
-  transform: scale(1.05); }
+  transform: scale(1.05);
+}
 
 /* Hover */
 .radioPersonalizadoVestiColor:hover,
 .color:hover {
-  transform: scale(1.05); }
+  transform: scale(1.05);
+}
 
 /* 🔥 Cuando está seleccionado */
 .radioPersonalizadoVestiColor input:checked + .color {
   box-shadow: 0 0 0 3px #fff, 0 0 0 6px #161616;
-  transform: scale(0.5); }
+  transform: scale(0.5);
+}
 
 .formRemera {
   margin-bottom: 20px;
-  text-align: center; }
+  text-align: center;
+}
 
 .labelColor {
   color: white;
@@ -1327,12 +1658,14 @@ hr {
   gap: 7px;
   align-items: flex-start;
   font-family: "Oswald", sans-serif;
-  font-size: 17px; }
+  font-size: 17px;
+}
 
 .labelTalle {
   color: white;
   font-family: "Oswald", sans-serif;
-  font-size: 17px; }
+  font-size: 17px;
+}
 
 .color {
   margin-right: 2px;
@@ -1340,189 +1673,245 @@ hr {
   border: none !important;
   border-radius: 23px;
   font-size: 1px;
-  border: 2px solid transparent; }
+  border: 2px solid transparent;
+}
 
 .negro {
-  background-color: black; }
+  background-color: black;
+}
 
 .blanco {
-  background-color: white; }
+  background-color: white;
+}
 
 .gris {
-  background-color: grey; }
+  background-color: grey;
+}
 
 .marron {
-  background-color: #553306; }
+  background-color: rgb(85, 51, 6);
+}
 
 .rosa {
-  background-color: #f596a6; }
+  background-color: rgb(245, 150, 166);
+}
 
 .rojo {
-  background-color: red; }
+  background-color: red;
+}
 
 .separadorVestiMobile {
-  display: none; }
+  display: none;
+}
 
 .filaTalle {
   display: flex;
   justify-content: center;
-  gap: 6px; }
+  gap: 6px;
+}
 
 @media (max-width: 430px) {
   .cardVesti {
-    width: 48%; }
+    width: 48%;
+  }
   .mainVesti {
-    padding-top: 120px; }
+    padding-top: 120px;
+  }
   .labelColor {
     display: flex;
-    gap: 5px; }
+    gap: 5px;
+  }
   .formRemera {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 4px; }
+    gap: 4px;
+  }
   .radioPersonalizadoVestiTalle span {
     padding: 2px 8px;
-    margin-right: 5px; }
+    margin-right: 5px;
+  }
   .radioPersonalizadoColor span {
     padding: 1px 4px;
     margin-right: 0px;
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .card-title-vesti {
     font-size: 21px;
-    margin-top: -8px; }
+    margin-top: -8px;
+  }
   .precios-vesti {
     font-size: 22px;
-    margin-bottom: -2px; }
+    margin-bottom: -2px;
+  }
   .btnVesti {
-    width: 47px; }
+    width: 47px;
+  }
   .separadorVestiDesktop {
-    display: none; }
+    display: none;
+  }
   .contenedorCantCarrVest {
     justify-content: space-between;
-    align-items: flex-end; }
+    align-items: flex-end;
+  }
   .agregarVest {
-    margin-left: -2px; }
+    margin-left: -2px;
+  }
   .separadorVestiMobile {
-    display: flex; }
+    display: flex;
+  }
   .conteTalles {
-    display: flex; }
+    display: flex;
+  }
   .btnTop {
-    margin-top: 25px; }
+    margin-top: 25px;
+  }
   .conteCards-vesti {
-    gap: 9px; }
+    gap: 9px;
+  }
   .conteCardVesTopDepor {
-    margin-top: -21px; } }
-
+    margin-top: -21px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .mainVesti {
-    padding-top: 177px; }
+    padding-top: 177px;
+  }
   .cardVesti {
     width: 48%;
-    margin-left: 0px; }
+    margin-left: 0px;
+  }
   .card-text-vesti {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .labelColor {
     display: flex;
-    gap: 3px; }
+    gap: 3px;
+  }
   .conteTalles {
-    display: flex; }
+    display: flex;
+  }
   .formRemera {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px; }
+    gap: 5px;
+  }
   .conteCards-vesti {
-    gap: 7px; }
+    gap: 7px;
+  }
   .btnVesti {
     font-size: 14px;
-    padding-left: 18px; }
+    padding-left: 18px;
+  }
   .btnTop {
-    margin-top: 25px; }
+    margin-top: 25px;
+  }
   .card-title-vesti {
     font-size: 24px;
-    margin-top: -7px; }
+    margin-top: -7px;
+  }
   .precios-vesti {
     font-size: 22px;
-    margin-bottom: -2px; }
+    margin-bottom: -2px;
+  }
   .contenedorCantCarrVest {
-    align-items: flex-end; }
+    align-items: flex-end;
+  }
   .agregarVest {
-    margin-left: -4px; }
+    margin-left: -4px;
+  }
   .conteCardVesTopDepor {
-    margin-top: -21px; } }
-
+    margin-top: -21px;
+  }
+}
 .mainPlan {
   min-height: 70vh;
   padding-top: 175px;
-  background-color: #C9C6C7; }
+  background-color: #C9C6C7;
+}
 
 .contePlan {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .cardBodyPlanes {
-  background-color: #787575a6 !important;
+  background-color: rgba(120, 117, 117, 0.6509803922) !important;
   border: none !important;
   margin: 5px;
   width: 77rem;
   margin: auto;
-  border-color: black !important; }
+  border-color: black !important;
+}
 
 .plan1 {
-  margin-top: 45px; }
+  margin-top: 45px;
+}
 
 .acordPLan {
-  width: 100%; }
+  width: 100%;
+}
 
 .accordion-item-plan {
-  margin-bottom: 9px; }
+  margin-bottom: 9px;
+}
 
 .btnPlanes {
   font-family: "Bebas Neue", sans-serif;
   font-size: 25px;
   padding-left: 33px;
-  padding-right: 33px; }
-  .btnPlanes:active {
-    background-color: #3F4239 !important; }
+  padding-right: 33px;
+}
+.btnPlanes:active {
+  background-color: #3F4239 !important;
+}
 
 .contenidoAcordeon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px; }
+  gap: 15px;
+}
 
 .lineaPlan {
   color: white;
-  width: 49rem; }
+  width: 49rem;
+}
 
 .opcionesPlan {
   display: flex;
-  gap: 35px !important; }
+  gap: 35px !important;
+}
 
 .conteCadaEj {
   display: flex;
   align-items: flex-start;
   width: 100%;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .videoPlan {
-  width: 22%; }
+  width: 22%;
+}
 
 .videoPlanDist {
-  width: 20%; }
+  width: 20%;
+}
 
 .btnPlanAcordion {
   background-color: #3d3d3d !important;
   color: white !important;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .ejercicios {
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-size: 19px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .tituloPlanInf {
   text-align: center;
@@ -1531,7 +1920,8 @@ hr {
   color: black;
   padding-left: 17px;
   font-family: "Oswald", sans-serif;
-  margin-top: 25px; }
+  margin-top: 25px;
+}
 
 .tituloPlanSup {
   text-align: center;
@@ -1539,225 +1929,274 @@ hr {
   font-size: 16px;
   color: black;
   padding-left: 17px;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+}
 
 .ejerciciosTitulo {
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 .tabla {
   border: "1";
   border-collapse: collapse;
-  width: 100%; }
+  width: 100%;
+}
 
 th, td {
-  border: 1px solid black;
-  /* Líneas */
-  padding: 5px;
-  /* Espacio interno */
-  text-align: center;
-  /* Centrar texto */ }
+  border: 1px solid black; /* Líneas */
+  padding: 5px; /* Espacio interno */
+  text-align: center; /* Centrar texto */
+}
 
 th {
-  background-color: #232124;
-  /* Color al encabezado */
-  color: white; }
+  background-color: #232124; /* Color al encabezado */
+  color: white;
+}
 
 tr:nth-child(even) {
-  background-color: #3F4239;
-  /* Color alternado filas */
-  color: white; }
+  background-color: #3F4239; /* Color alternado filas */
+  color: white;
+}
 
 .videoPlanes {
-  width: 160px;
-  /* tamaño visual */
-  height: 90px;
-  /* proporción 16:9 */
-  object-fit: cover;
-  /* evita deformación */
-  border-radius: 10px;
-  /* bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* sombra suave */
+  width: 160px; /* tamaño visual */
+  height: 90px; /* proporción 16:9 */
+  object-fit: cover; /* evita deformación */
+  border-radius: 10px; /* bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra suave */
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-top: 4px; }
+  margin-top: 4px;
+}
 
 @media (max-width: 430px) {
   .mainPlan {
-    padding-top: 122px; }
+    padding-top: 122px;
+  }
   .btnPlanes {
-    font-size: 20px; }
+    font-size: 20px;
+  }
   .tituloPlanSup {
     padding-bottom: 0px;
     font-size: 12px;
     padding-left: 2px;
-    margin-top: -22px; }
+    margin-top: -22px;
+  }
   .tituloPlanInf {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .accordion-item-plan {
-    margin-bottom: 9px; }
+    margin-bottom: 9px;
+  }
   .videoPlan {
-    width: 41%; }
+    width: 41%;
+  }
   .lineaPlan {
-    width: 22rem; }
+    width: 22rem;
+  }
   .cardBodyPlanes {
-    width: 24rem; }
+    width: 24rem;
+  }
   .ejercicios {
-    font-size: 16px; }
+    font-size: 16px;
+  }
   .ejerciciosTitulo {
-    font-size: 15px; } }
-
+    font-size: 15px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .cardBodyPlanes {
-    width: 27rem; }
+    width: 27rem;
+  }
   .tituloPlanSup {
     text-align: center;
     font-size: 13px;
     padding-left: 1px;
-    margin-top: -22px; }
+    margin-top: -22px;
+  }
   .tituloPlanInf {
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .ejercicios {
-    font-size: 18px; }
+    font-size: 18px;
+  }
   .lineaPlan {
-    width: 22rem; } }
-
+    width: 22rem;
+  }
+}
 .inicioCarrito {
-  margin-top: 26px; }
+  margin-top: 26px;
+}
 
 .mainCompra {
-  min-height: 70vh; }
+  min-height: 70vh;
+}
 
 .conteCardCarrito {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 171px;
-  width: 98%; }
+  width: 98%;
+}
 
 .bodyCarrito {
   background-color: #3F4239;
   border-radius: 5px;
   color: white;
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   text-align: center;
-  font-size: 18px; }
+  font-size: 18px;
+}
 
 .tituloCarrito {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .tituloResumen {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 33px; }
+  font-size: 33px;
+}
 
 .btnResumen {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+}
 
 .lineaSeparadora {
-  color: black; }
+  color: black;
+}
 
 .tamañoCard {
-  width: 27%; }
+  width: 27%;
+}
 
 .d-flex {
-  justify-content: center !important; }
+  justify-content: center !important;
+}
 
 .btnEliminarProduc {
   width: 42px;
-  margin: auto; }
+  margin: auto;
+}
 
 .caracteProd {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 2px; }
+  margin-bottom: 2px;
+}
 
 .conteResumen {
   background-color: #87877F;
   padding: 15px;
   border-radius: 5px;
-  width: 65%; }
+  width: 65%;
+}
 
 .list-group-item {
   background-color: #3F4239;
   border-color: black;
   color: white;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+}
 
 .conteBotonesResumen {
   display: flex;
   justify-content: center;
-  gap: 15px; }
+  gap: 15px;
+}
 
 .totalResumen {
   font-family: "Bebas Neue", sans-serif;
   font-size: 26px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .diseñoToast {
   background-color: black;
-  color: white; }
+  color: white;
+}
 
 .iconoBorrar, .iconoWhat {
-  font-size: 22px; }
+  font-size: 22px;
+}
 
 @media (max-width: 430px) {
   .inicioCarrito {
-    margin-top: 7px; }
+    margin-top: 7px;
+  }
   .tamañoCard {
-    width: 50%; }
+    width: 50%;
+  }
   .conteCardCarrito {
     margin-top: 120px;
-    width: 106%; }
+    width: 106%;
+  }
   .conteResumen {
-    width: 99%; }
+    width: 99%;
+  }
   .list-group-item {
     font-size: 12px;
     width: 107%;
-    margin-left: -12px; }
+    margin-left: -12px;
+  }
   .btnResumen {
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .conteBotonesResumen {
-    gap: 5px; }
+    gap: 5px;
+  }
   .caracteProd {
     font-size: 14px;
-    margin-bottom: 5px; }
+    margin-bottom: 5px;
+  }
   .tituloCarrito {
-    font-size: 20px; }
+    font-size: 20px;
+  }
   .conteResumen {
     width: 102% !important;
-    margin-left: -5px; } }
-
+    margin-left: -5px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .tamañoCard {
-    width: 50%; }
+    width: 50%;
+  }
   .conteCardCarrito {
-    width: 105%; }
+    width: 105%;
+  }
   .conteResumen {
-    width: 99%; }
+    width: 99%;
+  }
   .list-group-item {
     font-size: 13px;
     width: 105%;
-    margin-left: -10px; }
+    margin-left: -10px;
+  }
   .conteBotonesResumen {
-    justify-content: space-evenly; }
+    justify-content: space-evenly;
+  }
   .caracteProd {
     margin-bottom: 5px;
-    font-size: 14px; }
+    font-size: 14px;
+  }
   .tituloCarrito {
-    font-size: 20px; } }
-
+    font-size: 20px;
+  }
+}
 .mainTimer {
   min-height: 70vh;
-  padding-top: 160px; }
+  padding-top: 160px;
+}
 
 .contenedorFlexTiempos {
   display: flex;
   justify-content: center;
   gap: 100px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+}
 
 .btnAcordion {
   width: 66%;
@@ -1766,13 +2205,15 @@ tr:nth-child(even) {
   font-size: 25px;
   font-family: "Bebas Neue", sans-serif;
   background-color: #3F4239;
-  color: white; }
+  color: white;
+}
 
 .inputTiempos {
   width: 84px;
   text-align: center;
   border-radius: 5px;
-  margin-left: 10px; }
+  margin-left: 10px;
+}
 
 .textoTiempos {
   font-size: 18px;
@@ -1780,7 +2221,8 @@ tr:nth-child(even) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 240px; }
+  width: 240px;
+}
 
 .configuracionTimer {
   margin: auto;
@@ -1788,7 +2230,8 @@ tr:nth-child(even) {
   color: white;
   width: 53%;
   border-radius: 18px;
-  padding: 5px; }
+  padding: 5px;
+}
 
 /* Aplica a tu acordeón personalizado */
 /* Cuando está abierto (activo) */
@@ -1796,21 +2239,24 @@ tr:nth-child(even) {
   background-color: #3F4239;
   /* mantiene tu color */
   color: #000;
-  box-shadow: none; }
+  box-shadow: none;
+}
 
 /* Quitar borde azul y sombra al hacer focus */
 .btnAcordion:focus {
   box-shadow: none;
   border: none;
-  outline: none; }
+  outline: none;
+}
 
 /* Evitar cambio de color al pasar el mouse */
 .btnAcordion:hover {
   background-color: #87877F;
-  color: #000; }
+  color: #000;
+}
 
 .estados {
-  background-color: #f1f107;
+  background-color: rgb(241, 241, 7);
   text-align: center;
   margin-top: 25px;
   font-family: "Bebas Neue", sans-serif;
@@ -1818,7 +2264,8 @@ tr:nth-child(even) {
   width: 70%;
   margin: auto;
   border-radius: 15px;
-  margin-top: 45px; }
+  margin-top: 45px;
+}
 
 .tiempo {
   text-align: center;
@@ -1830,13 +2277,15 @@ tr:nth-child(even) {
   margin-top: 12px;
   border-radius: 15px;
   color: white;
-  font-family: "Bebas Neue", sans-serif; }
+  font-family: "Bebas Neue", sans-serif;
+}
 
 .botonesTimer {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 40px; }
+  margin-top: 40px;
+}
 
 .estiloBtn {
   padding: 5px;
@@ -1846,107 +2295,137 @@ tr:nth-child(even) {
   background-color: grey;
   border-radius: 5px;
   width: 16%;
-  color: black; }
-  .estiloBtn:hover {
-    background-color: #3F4239;
-    color: white; }
-  .estiloBtn:focus {
-    background-color: #3F4239;
-    color: white; }
+  color: black;
+}
+.estiloBtn:hover {
+  background-color: #3F4239;
+  color: white;
+}
+.estiloBtn:focus {
+  background-color: #3F4239;
+  color: white;
+}
 
 .entrComp {
-  font-size: 49px; }
+  font-size: 49px;
+}
 
 .estatado-prep-desc {
-  background-color: #f1f107; }
+  background-color: rgb(241, 241, 7);
+}
 
 .estado-entre-compl {
-  background-color: #2df52d; }
+  background-color: rgb(45, 245, 45);
+}
 
 @media (max-width: 430px) {
   .btnAcordion {
-    width: 91%; }
+    width: 91%;
+  }
   .configuracionTimer {
     width: 107%;
-    margin-left: -13px; }
+    margin-left: -13px;
+  }
   .inputTiempos {
-    width: 35px; }
+    width: 35px;
+  }
   .contenedorFlexTiempos {
     justify-content: flex-start;
     padding-left: 26px;
     gap: 48px;
-    padding-right: 11px; }
+    padding-right: 11px;
+  }
   .estados {
     width: 90%;
     font-size: 47px;
     margin-top: 29px;
-    padding: 5px; }
+    padding: 5px;
+  }
   .tiempo {
     font-size: 95px;
-    width: 51%; }
+    width: 51%;
+  }
   .estiloBtn {
     font-size: 16px;
-    width: 25%; }
+    width: 25%;
+  }
   .botonesTimer {
-    gap: 25px; }
+    gap: 25px;
+  }
   .mainTimer {
-    padding-top: 125px; }
+    padding-top: 125px;
+  }
   .textoTiempos {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .menuTimer {
-    margin-left: -25px; } }
-
+    margin-left: -25px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .btnAcordion {
-    width: 88%; }
+    width: 88%;
+  }
   .configuracionTimer {
     width: 105%;
-    margin-left: -11px; }
+    margin-left: -11px;
+  }
   .estados {
     font-size: 55px;
     width: 89%;
     margin-top: 17px;
     padding-top: 5px;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+  }
   .tiempo {
     font-size: 146px;
-    width: 65%; }
+    width: 65%;
+  }
   .estiloBtn {
     font-size: 21px;
-    width: 30%; }
+    width: 30%;
+  }
   .botonesTimer {
     gap: 14px;
-    margin-top: 30px; }
+    margin-top: 30px;
+  }
   .textoTiempos {
-    font-size: 13px; }
+    font-size: 13px;
+  }
   .contenedorFlexTiempos {
     justify-content: flex-start;
     padding: 0 10px;
-    gap: 48px; } }
-
+    gap: 48px;
+  }
+}
 .mainMiPlan {
   min-height: 70vh;
   padding-top: 175px;
-  background-color: #C9C6C7; }
+  background-color: #C9C6C7;
+}
 
 .tituloMiPlan {
   font-family: "Oswald", sans-serif;
   text-align: center;
-  font-size: 37px; }
+  font-size: 37px;
+}
 
 .acordeonMiPlan {
   width: 97%;
   margin: auto;
-  background-color: #b0b0b0; }
+  background-color: #b0b0b0;
+}
 
 .acorBtnMiPlan {
   background-color: #272924;
   color: white;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 30px; }
+  font-size: 30px;
+}
 
 .acItemMiPlan {
-  margin-bottom: 13px; }
+  margin-bottom: 13px;
+}
 
 .acorBtnMiPlan:not(.collapsed) {
   background-color: #272924;
@@ -1954,12 +2433,14 @@ tr:nth-child(even) {
   color: white;
   /* Mantiene el color de texto original */
   box-shadow: 0 4px 8px black;
-  /* Quita el resplandor azul en los bordes */ }
+  /* Quita el resplandor azul en los bordes */
+}
 
 /* Opcional: Quita el borde azul de enfoque (focus) al hacer click */
 .acorBtnMiPlan:focus {
   border-color: rgba(240, 240, 240, 0.125);
-  box-shadow: 0 4px 8px black; }
+  box-shadow: 0 4px 8px black;
+}
 
 .tituloGrupo {
   text-align: center;
@@ -1968,58 +2449,82 @@ tr:nth-child(even) {
   font-weight: bold;
   color: black;
   padding-right: 155px;
-  background-color: white; }
+  background-color: white;
+}
 
 .filaEj td {
   font-family: "Oswald", sans-serif;
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 .fila-titulo th {
   font-family: "Bebas Neue", sans-serif;
   font-size: 23px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .tablaAct td {
   font-family: "Oswald", sans-serif;
-  font-size: 20px; }
+  font-size: 20px;
+}
 
 .tituloThGrupo th {
-  color: blue; }
+  color: blue;
+}
+
+.filaEj td:nth-child(2) {
+  width: 60%;
+}
+
+.filaEj td:nth-child(3) {
+  width: 30%;
+}
 
 @media (max-width: 430px) {
   .tituloMiPlan {
     font-size: 23px;
     margin-top: -61px;
-    margin-bottom: 17px; }
+    margin-bottom: 17px;
+  }
   .tabla {
     width: 109%;
-    margin-left: -16px; }
+    margin-left: -16px;
+  }
   .fila-titulo th {
-    font-size: 20px; }
+    font-size: 20px;
+  }
   .tituloGrupo {
-    padding-right: 39px; }
+    padding-right: 39px;
+  }
   .tablaAct td {
-    font-size: 18px; } }
-
+    font-size: 18px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .tituloMiPlan {
     font-size: 23px;
     margin-top: -39px;
-    margin-bottom: 17px; }
+    margin-bottom: 17px;
+  }
   .tabla {
     width: 109%;
-    margin-left: -16px; }
+    margin-left: -16px;
+  }
   .fila-titulo th {
-    font-size: 20px; }
+    font-size: 20px;
+  }
   .tituloGrupo {
-    padding-right: 39px; }
+    padding-right: 39px;
+  }
   .tablaAct td {
-    font-size: 18px; } }
-
+    font-size: 18px;
+  }
+}
 .mainCuota {
   min-height: 70vh;
   padding-top: 175px;
-  background-color: #C9C6C7; }
+  background-color: #C9C6C7;
+}
 
 .sectionCuota {
   background-color: #272924;
@@ -2029,7 +2534,8 @@ tr:nth-child(even) {
   box-shadow: 0 4px 8px black;
   width: 54%;
   margin: auto;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+}
 
 .mesCuota {
   font-family: "Bebas Neue", sans-serif;
@@ -2037,12 +2543,14 @@ tr:nth-child(even) {
   border-radius: 11px;
   color: black;
   font-size: 41px;
-  padding: 3px; }
+  padding: 3px;
+}
 
 .contenedorFlexCuota {
   display: flex;
   justify-content: center;
-  gap: 149px; }
+  gap: 149px;
+}
 
 .btnEstado {
   font-family: "Bebas Neue", sans-serif;
@@ -2050,34 +2558,47 @@ tr:nth-child(even) {
   padding: 5px;
   border-radius: 10px;
   font-size: 35px;
-  border-color: transparent; }
+  border-color: transparent;
+}
 
 .parrafosCuota {
   font-size: 27px;
-  font-family: "Oswald", sans-serif; }
+  font-family: "Oswald", sans-serif;
+}
 
 .estado-verde {
-  background-color: #45e445;
-  color: black !important; }
+  background-color: rgb(69, 228, 69);
+  color: black !important;
+}
 
 .estado-rojo {
   background-color: red;
-  color: black !important; }
+  color: black !important;
+}
 
 @media (max-width: 430px) {
   .sectionCuota {
     width: 96%;
-    margin-top: -39px; }
+    margin-top: -39px;
+  }
   .contenedorFlexCuota {
-    gap: 47px; }
+    gap: 47px;
+  }
   .parrafosCuota {
-    font-size: 18px; } }
-
+    font-size: 18px;
+  }
+}
 @media (min-width: 431px) and (max-width: 768px) {
   .sectionCuota {
     width: 96%;
-    margin-top: -39px; }
+    margin-top: -39px;
+  }
   .contenedorFlexCuota {
-    gap: 47px; }
+    gap: 47px;
+  }
   .parrafosCuota {
-    font-size: 18px; } }
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

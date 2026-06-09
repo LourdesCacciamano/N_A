@@ -72,7 +72,13 @@
 .tituloThGrupo th {
     color: blue;
 }
+.filaEj td:nth-child(2) {
+    width: 60%;
+}
 
+.filaEj td:nth-child(3) {
+    width: 30%;
+}
 @media (max-width: 430px) {
     .tituloMiPlan {
         font-size: 23px;
