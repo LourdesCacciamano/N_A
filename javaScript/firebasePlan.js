@@ -209,12 +209,4 @@ async function cargarRutina() {
     });
 }
 
-signInAnonymously(auth)
-  .then(() => {
-    console.log("Usuario autenticado anónimamente");
-    cargarRutina(); // 🔥 importante: se ejecuta DESPUÉS del login
-  })
-  .catch((error) => {
-    console.error("Error en auth:", error);
-  });
-
+cargarRutina();
