@@ -1255,7 +1255,7 @@ hr {
 .btnVerMas {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #C6FF3D;
+  color: white;
   font-family: "Open Sans", sans-serif;
   font-size: 13px;
   font-weight: 700;
@@ -1374,8 +1374,7 @@ hr {
 
 .precios-vesti {
   font-family: "Bebas Neue", sans-serif;
-  margin-top: -34px;
-  color: white;
+  color: #C6FF3D;
   font-size: 27px;
   text-align: center;
 }
@@ -1479,11 +1478,12 @@ hr {
 .labelColor {
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 7px;
   align-items: flex-start;
   font-family: "Oswald", sans-serif;
   font-size: 17px;
+  margin-bottom: 5px;
 }
 
 .labelTalle {
@@ -1650,6 +1650,20 @@ hr {
     margin-top: -21px;
   }
 }
+.carouselVestiImg {
+  height: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.mediaProducto .carousel {
+  width: 100%;
+  max-width: 420px;
+}
+
 .mainPlan {
   min-height: 70vh;
   padding-top: 175px;

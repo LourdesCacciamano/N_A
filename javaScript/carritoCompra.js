@@ -39,15 +39,6 @@ function capturarProductos(e) {
     }
 };
 
-function capturarVestimenta(e) {
-    const boton = e.target.closest('.botonVestiJs');
-
-    if (boton) {
-        const card = boton.closest('.cardVesti');
-        seleccionarDatosVestimenta(card, boton);
-    }
-};
-
 function seleccionarDatos(productos, boton) {
     const select = productos.querySelector('select[name="suple"]');
     if (select && !select.value) {
@@ -66,50 +57,6 @@ function seleccionarDatos(productos, boton) {
         cantidad: parseInt(productos.querySelector('.cantidad-card').textContent)
     };
     guardarEnCarrito(producto);
-};
-
-function seleccionarDatosVestimenta(card, boton) {
-    const talleInput = card.querySelectorAll('input[name^="talle"]');
-    const colorInput = card.querySelectorAll('input[name^="color"]');
-
-    const talle = card.querySelector('input[name^="talle"]:checked');
-    const color = card.querySelector('input[name^="color"]:checked');
-
-    //si o si eligan talle
-    if (talleInput.length > 0 && !talle) {
-        mostrarToast('¡Seleccioná un talle!', 'warning');
-        return;
-    }
-    //si o si eliga color
-    if (colorInput.length > 0 && !color) {
-        mostrarToast('¡Seleccioná un color!', 'warning');
-        return;
-    }
-
-    const detalles = [];
-
-    if (talle) {
-        detalles.push(`Talle: ${talle.value}`);
-    }
-    if (color) {
-        detalles.push(`Color: ${color.value}`);
-    }
-
-    const producto = {
-        img: card.querySelector('.imag').src,
-        titulo: card.querySelector('.card-title-vesti').textContent,
-        marca: '- Marca: NA',
-        precio: parseFloat(
-            card.querySelector('.precios-vesti').textContent
-                .replace('$', '')
-                .replace('.', '')
-        ),
-        detalles: detalles.join('\n'),
-        id: parseInt(boton.dataset.id),
-        cantidad: parseInt(card.querySelector('.cantidad-card').textContent)
-    };
-    guardarEnCarrito(producto);
-
 };
 
 

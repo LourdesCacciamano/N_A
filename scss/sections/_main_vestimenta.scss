@@ -33,8 +33,7 @@
 
 .precios-vesti {
     font-family: $bebas-neue;
-    margin-top: -34px;
-    color: white;
+    color: #C6FF3D;
     font-size: 27px;
     text-align: center;
 }
@@ -143,11 +142,12 @@
 .labelColor {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 7px;
     align-items: flex-start;
     font-family: $oswald;
     font-size: 17px;
+    margin-bottom: 5px;
 }
 
 .labelTalle {
@@ -338,3 +338,43 @@
 }
 
 //iphone 17 mide 440px
+
+// ============================================================
+// Agregar esto a scss/sections/_main_vestimenta.scss
+// (reemplaza las reglas por-ID de las imágenes del carrusel,
+// que ya no aplican porque los carruseles ahora se generan
+// dinámicamente con IDs distintos por producto)
+// ============================================================
+
+// Buscá y BORRÁ este bloque viejo (ya no matchea nada):
+//
+// #carouselProducto2 .imag,
+// #carouselProducto1 .imag,
+// ... etc
+// {
+//     height: 100%;
+//     border-radius: 12px;
+// }
+
+// Y reemplazalo por esta clase única, que ya viene puesta en
+// cada <img> que genera renderVestimenta.js y detalleVestimenta.js:
+.carouselVestiImg {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 12px;
+}
+
+// ============================================================
+// Esto va en el mismo archivo o en _main-detalleProducto.scss
+// (donde tengas .mediaProducto) - hace que el carrusel de la
+// ficha de producto ocupe el mismo cuadro que antes ocupaba
+// una sola imagen.
+// ============================================================
+.mediaProducto {
+    .carousel {
+        width: 100%;
+        max-width: 420px;
+    }
+}
