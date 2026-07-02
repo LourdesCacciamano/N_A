@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -1070,66 +1071,39 @@ strong {
   background-color: rgba(53, 52, 52, 0.525);
 }
 
-.btnCreatina {
-  margin-top: 10px;
-}
-
 .titleSuple {
   font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  margin-bottom: 2px;
 }
 
 /* Flecha cuando está cerrado */
 .accordion-button::after {
   filter: invert(1);
-  /* Cambia de negro a blanco */
 }
 
 /* Flecha cuando está abierto */
 .accordion-button:not(.collapsed)::after {
   filter: invert(1);
-  /* Blanco */
 }
 
-.conteTiposProte {
-  display: flex;
-  justify-content: space-around;
-}
-
-.conteTiposCrea {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.separador1CardOtros {
-  display: flex;
-  justify-content: space-around;
-}
-
-.separador2CardOtros {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
-}
-
-.separador3CardOtros {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 15px;
-  margin-left: 9px;
-  gap: 18px;
-}
-
-.cardShaker {
-  margin-left: 9px;
-}
-
+/* Contenedores de cada categoría: 4 columnas en compu, 2 en celu */
+.conteTiposProte,
+.conteTiposCrea,
 .conteTiposOtros {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
+@media (max-width: 768px) {
+  .conteTiposProte,
+  .conteTiposCrea,
+  .conteTiposOtros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
 .card-title {
   text-align: center;
   color: white;
@@ -1142,16 +1116,33 @@ hr {
 }
 
 .cardSuple,
-.cardOtros {
+.cardOtros,
+.cardSuple-creatin,
+.cardCreProb {
   background-color: #3F4239;
-  max-width: 19rem;
   width: 100%;
-}
-
-.cardSuple {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.cardSuple:hover,
+.cardOtros:hover,
+.cardSuple-creatin:hover,
+.cardCreProb:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -14px rgba(0, 0, 0, 0.55);
+  border-color: rgba(198, 255, 61, 0.35);
+}
+
+.cardImgSuple {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
 
 /* Oculto el radio original */
@@ -1159,7 +1150,6 @@ hr {
   display: none;
 }
 
-/* La “cápsula” */
 .radioPersonalizadoSabor span {
   display: inline-block;
   color: white;
@@ -1189,7 +1179,6 @@ hr {
   margin-bottom: 2px;
 }
 
-/* Cuando está seleccionado */
 .radioPersonalizadoSabor input[type=radio]:checked + span {
   background-color: #000;
   color: #fff;
@@ -1216,24 +1205,6 @@ hr {
   gap: 6px;
 }
 
-.mediaProte1 {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.btnSuple,
-.btnOtros {
-  margin-top: 10px;
-}
-
-.btnCreatina,
-.btnOtros,
-.btnSuple {
-  width: 53px;
-}
-
 .agregarCar {
   font-size: 22px;
   margin-right: 2px;
@@ -1245,23 +1216,6 @@ hr {
   margin-top: -14px;
 }
 
-.cardCrea2 {
-  display: flex;
-}
-
-.conteCrea {
-  display: flex;
-  gap: 10px;
-}
-
-.cardSuple-creatin,
-.cardCreProb {
-  max-width: 19rem;
-  width: 100%;
-  margin-right: 20px;
-  background-color: #3F4239;
-}
-
 .espacio-parrafos {
   margin-bottom: 5px;
 }
@@ -1270,8 +1224,16 @@ hr {
   text-align: center;
   font-size: 24px;
   font-family: "Bebas Neue", sans-serif;
-  color: white;
+  color: #C6FF3D;
   margin-bottom: -5px;
+  margin-top: 2px;
+}
+
+.precioTachado {
+  -webkit-text-decoration: line-through red !important;
+          text-decoration: line-through red !important;
+  font-size: 18px !important;
+  color: white;
 }
 
 /* Quitar fondo blanco del accordion */
@@ -1282,46 +1244,49 @@ hr {
   border-color: transparent !important;
 }
 
-.sepaPrimerParteOtros {
-  display: contents;
-  gap: 5px;
-}
-
 .card-body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* 🔥 hace que el body ocupe todo el alto */
+  padding: 16px 16px 18px;
 }
 
-.dtoSuplemento {
-  color: rgb(47, 240, 47);
-  font-size: 25px;
-  background-color: black;
-  padding: 5px;
-  border-radius: 5px;
+/* Botón "Ver producto" que lleva a la ficha del producto */
+.btnVerMas {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #C6FF3D;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin: 10px auto 0;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.btnVerMas:hover {
+  background: rgba(198, 255, 61, 0.12);
+  border-color: #C6FF3D;
 }
 
-.precioTachado {
-  text-decoration: line-through !important;
-  font-size: 18px !important;
+@media (prefers-reduced-motion: reduce) {
+  .cardSuple,
+  .cardOtros,
+  .cardSuple-creatin,
+  .cardCreProb,
+  .btnVerMas {
+    transition: none;
+  }
 }
-
 @media (max-width: 430px) {
   .mainSuple {
     margin-top: 122px;
-  }
-  .mediaProte1 {
-    display: flex;
-    gap: 2px;
-  }
-  .cardSuple {
-    width: 12rem !important;
-  }
-  .conteTiposProte {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
   }
   .text-vesti {
     margin-top: 8px;
@@ -1329,46 +1294,6 @@ hr {
   }
   h6 {
     font-size: 12px;
-  }
-  .btnSuple {
-    margin-left: 15px;
-    font-size: 13px;
-    width: 139px;
-  }
-  .conteCrea {
-    display: flex;
-    gap: 2px;
-    justify-content: center;
-  }
-  .cardCrea2 {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .conteTiposCrea {
-    justify-content: center;
-  }
-  .btnCreatina {
-    margin-left: 15px;
-    font-size: 13px;
-    width: 139px;
-  }
-  .conteTiposOtros {
-    gap: 0px;
-  }
-  .separador1CardOtros,
-  .separador2CardOtros, .separador3CardOtros {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .opSaborLargo {
-    margin-left: 7px;
-  }
-  .cardSuple-creatin,
-  .cardCreProb {
-    margin-right: 0px;
-    width: 12rem;
-    margin: auto;
   }
   .precioSuple {
     font-size: 19px;
@@ -1391,112 +1316,15 @@ hr {
     gap: 8px;
     margin-top: 8px;
   }
-  .separador3CardOtros {
-    margin-left: 0px;
-  }
-  .sepaPrimerParteOtros {
-    display: flex;
-    gap: 2px;
-    justify-content: center;
-  }
-  .cardOtros {
-    width: 12rem !important;
-    min-width: 12rem;
-    /* Evita que flexbox las achique */
-    flex-shrink: 0;
-  }
-  .btnOtros {
-    margin: auto;
-    font-size: 13px;
-    width: 49px;
-  }
-  .selecLargo {
-    font-size: 13px;
-  }
-  .tilLabelLargo {
-    font-size: 12px;
-  }
-  .contenedorCantAgreOtros {
-    margin-top: -2px;
-  }
-  .cardShaker {
-    width: 12rem !important;
-    margin-left: -24px;
-  }
   .menuLineSuple {
     margin-left: -13px;
   }
-  .dtoSuplemento {
-    font-size: 19px;
-  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
-  .mediaProte1 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .cardSuple {
-    width: 13rem !important;
-    margin-right: 7px;
-  }
-  .conteTiposProte {
-    justify-content: center;
-    align-items: flex-start;
-    width: 103%;
-  }
   .opcionesSabor {
     flex-wrap: wrap;
     justify-content: center;
     gap: 7px;
-  }
-  .btnSuple {
-    font-size: 14px;
-  }
-  .conteCrea {
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  .cardSuple-creatin {
-    width: 13rem;
-    height: 25rem;
-    margin-right: 4px;
-  }
-  .cardCreProb {
-    width: 13rem;
-    height: 49%;
-    margin-right: 2px;
-  }
-  .cardCrea2 {
-    gap: 0px;
-  }
-  .conteTiposCrea {
-    justify-content: center;
-  }
-  .btnCreatina {
-    margin-top: 24px;
-    font-size: 14px;
-  }
-  .cardOtros {
-    width: 15rem;
-  }
-  .separador1CardOtros,
-  .separador2CardOtros, .separador3CardOtros {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .separador3CardOtros {
-    margin-left: 0px;
-  }
-  .sepaPrimerParteOtros {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-  }
-  .conteTiposOtros {
-    gap: 5px;
-    width: 104%;
   }
   .radioPersonalizadoSabor span {
     font-size: 13px;
@@ -1509,16 +1337,6 @@ hr {
   }
   .text-suple {
     text-align: unset;
-  }
-  .contenedorCantAgregCreatina {
-    align-items: baseline;
-  }
-  .cardShaker {
-    width: 12rem !important;
-    margin-left: 0px;
-  }
-  .dtoSuplemento {
-    font-size: 19px;
   }
 }
 .conteCards-vesti {
@@ -2606,5 +2424,198 @@ tr:nth-child(even) {
   }
   .parrafosCuota {
     font-size: 18px;
+  }
+}
+#topProducto {
+  background-color: #121212;
+}
+
+.contenedorProducto {
+  max-width: 980px;
+  margin: 140px auto 80px;
+  padding: 0 16px;
+}
+
+.volverListado {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+.volverListado:hover {
+  color: #ffffff;
+}
+
+.fichaProducto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px;
+}
+
+.mediaProducto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mediaProducto img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.infoProducto {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriaProducto {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8b8b8b;
+  margin: 0 0 6px;
+}
+
+.tituloProducto {
+  font-family: "Bebas Neue", sans-serif;
+  color: #fff;
+  font-size: 40px;
+  letter-spacing: 0.02em;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.precioProducto {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 34px;
+  color: #C6FF3D;
+  margin: 0 0 18px;
+}
+
+.precioViejoProducto {
+  color: #fff;
+  -webkit-text-decoration: line-through red;
+          text-decoration: line-through red;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.metaProducto {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 0;
+  margin-bottom: 18px;
+}
+.metaProducto p {
+  font-family: "Open Sans", sans-serif;
+  color: whitesmoke;
+  font-size: 14.5px;
+  margin: 0 0 6px;
+}
+.metaProducto p:last-child {
+  margin-bottom: 0;
+}
+
+.labelSaborProducto {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.selecProducto {
+  width: 100%;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 18px;
+}
+
+.filaAccionProducto {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.contadorProducto {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.contadorProducto button {
+  width: 40px;
+  height: 46px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.contadorProducto button:hover {
+  background: rgba(198, 255, 61, 0.12);
+  color: #C6FF3D;
+}
+.contadorProducto span {
+  width: 36px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+.btnAgregarProducto {
+  flex: 1;
+  background-color: #C6FF3D;
+  border: none;
+  border-radius: 10px;
+  height: 46px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  color: #0d1a00;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+.btnAgregarProducto:hover {
+  background-color: #b0e635;
+}
+.btnAgregarProducto i {
+  margin-right: 6px;
+}
+
+@media (max-width: 700px) {
+  .contenedorProducto {
+    margin-top: 122px;
+  }
+  .fichaProducto {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .tituloProducto {
+    font-size: 30px;
   }
 }/*# sourceMappingURL=main.css.map */
