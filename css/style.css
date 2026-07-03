@@ -2382,7 +2382,7 @@ tr:nth-child(even) {
 
 .btnEstado {
   font-family: "Bebas Neue", sans-serif;
-  width: 63%;
+  width: 75%;
   padding: 5px;
   border-radius: 10px;
   font-size: 35px;
@@ -2415,6 +2415,9 @@ tr:nth-child(even) {
   .parrafosCuota {
     font-size: 18px;
   }
+  .btnEstado {
+    width: 98%;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   .sectionCuota {
@@ -2426,6 +2429,9 @@ tr:nth-child(even) {
   }
   .parrafosCuota {
     font-size: 18px;
+  }
+  .btnEstado {
+    width: 99%;
   }
 }
 #topProducto {

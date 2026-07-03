@@ -28,7 +28,7 @@
 }
 .btnEstado{
     font-family: $bebas-neue;
-    width: 63%;
+    width: 75%;
     padding: 5px;
     border-radius: 10px;
     font-size: 35px;
@@ -57,6 +57,9 @@
     .parrafosCuota{
         font-size: 18px;
     }
+    .btnEstado{
+        width: 98%;
+    }
 }
 
 @media (min-width:431px) and (max-width:768px){
@@ -69,5 +72,8 @@
     }
     .parrafosCuota{
         font-size: 18px;
+    }
+    .btnEstado{
+        width: 99%;
     }
 }
