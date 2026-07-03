@@ -1,23 +1,69 @@
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+// ============================================================
+// CUOTA - lee Firestore directo por REST (sin el SDK)
+// Mismo motivo que firebasePlan.js: evitar la negociación del
+// canal de streaming del SDK para una lectura única.
+// ============================================================
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
-    authDomain: "asesoramiento-na.firebaseapp.com",
-    projectId: "asesoramiento-na",
-    storageBucket: "asesoramiento-na.firebasestorage.app",
-    messagingSenderId: "774206761497",
-    appId: "1:774206761497:web:042ed21a39fcee75329888",
-};
-
-import { getApps, initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
-const app = getApps().length === 0
-  ? initializeApp(firebaseConfig)
-  : getApps()[0];
-  
-const db = getFirestore(app);
-
+const PROJECT_ID = "asesoramiento-na";
 const dni = localStorage.getItem("dni");
+
+function parseFirestoreValue(value) {
+    if (value == null) return null;
+    if ("stringValue" in value) return value.stringValue;
+    if ("integerValue" in value) return parseInt(value.integerValue, 10);
+    if ("doubleValue" in value) return value.doubleValue;
+    if ("booleanValue" in value) return value.booleanValue;
+    if ("nullValue" in value) return null;
+    if ("timestampValue" in value) return new Date(value.timestampValue);
+    if ("mapValue" in value) return parseFirestoreFields(value.mapValue.fields || {});
+    if ("arrayValue" in value) return (value.arrayValue.values || []).map(parseFirestoreValue);
+    return null;
+}
+
+function parseFirestoreFields(fields) {
+    const out = {};
+    for (const key in fields) {
+        out[key] = parseFirestoreValue(fields[key]);
+    }
+    return out;
+}
+
+// Intenta interpretar la fecha venga como venga: objeto Date ya
+// parseado, string "yyyy-mm-dd", o string "dd/mm/yyyy".
+function parsearVencimiento(valor) {
+    if (!valor) return null;
+
+    if (valor instanceof Date && !isNaN(valor)) {
+        return valor;
+    }
+
+    if (typeof valor === "string") {
+        if (valor.includes("-")) {
+            const [a, m, d] = valor.split("-");
+            const f = new Date(a, m - 1, d);
+            if (!isNaN(f)) return f;
+        }
+        if (valor.includes("/")) {
+            const [d, m, a] = valor.split("/");
+            const f = new Date(a, m - 1, d);
+            if (!isNaN(f)) return f;
+        }
+        const f = new Date(valor);
+        if (!isNaN(f)) return f;
+    }
+
+    return null;
+}
+
+async function obtenerUsuario(dni) {
+    const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/usuarios/${dni}`;
+    const res = await fetch(url);
+
+    if (!res.ok) return null;
+
+    const json = await res.json();
+    return parseFirestoreFields(json.fields || {});
+}
 
 async function cargarCuota() {
 
@@ -26,45 +72,34 @@ async function cargarCuota() {
         return;
     }
 
-    const docRef = doc(db, "usuarios", dni);
-    const docSnap = await getDoc(docRef);
+    const data = await obtenerUsuario(dni);
 
-    if (!docSnap.exists()) {
+    if (!data) {
         console.log("Usuario no encontrado");
         return;
     }
 
-    const data = docSnap.data();
     const cuota = data.cuota;
 
-    // 👉 mostrar datos
     document.getElementById("planCuota").innerText = cuota.plan;
     document.getElementById("valorCuota").innerText = cuota.valor;
 
-    let fecha;
+    console.log("vencimiento crudo:", cuota.vencimiento, typeof cuota.vencimiento);
 
-    if (cuota.vencimiento.toDate) {
-        // 👉 Timestamp (esto está perfecto, no lo toques)
-        fecha = cuota.vencimiento.toDate();
+    const fecha = parsearVencimiento(cuota.vencimiento);
+
+    if (!fecha) {
+        console.error("No se pudo interpretar la fecha de vencimiento:", cuota.vencimiento);
+        document.getElementById("vntoCuota").innerText = "-";
     } else {
-        // 👉 STRING tipo "yyyy-mm-dd" (acá está el fix)
-        const partes = cuota.vencimiento.split("-");
-        fecha = new Date(
-            partes[0],        // año
-            partes[1] - 1,    // mes (0-11)
-            partes[2]         // día
-        );
+        const fechaFormateada = fecha.toLocaleDateString("es-AR", {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        });
+        document.getElementById("vntoCuota").innerText = fechaFormateada;
     }
 
-    const fechaFormateada = fecha.toLocaleDateString("es-AR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric"
-    });
-
-    document.getElementById("vntoCuota").innerText = fechaFormateada;
-
-    // 👉 estado visual
     const estadoBtn = document.getElementById("estadoCuota");
 
     if (cuota.estado === "al_dia") {
@@ -75,13 +110,9 @@ async function cargarCuota() {
         estadoBtn.classList.add("estado-rojo");
     }
 
-    // 👉 mes actual
     const hoy = new Date();
     const mes = hoy.toLocaleString('es-AR', { month: 'long' });
     document.getElementById("mesCuota").innerText = "Mes: " + mes;
 }
 
-
-
-// esperar DOM
 window.addEventListener("DOMContentLoaded", cargarCuota);

@@ -1,31 +1,18 @@
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+// ============================================================
+// MI PLAN - lee Firestore directo por REST (sin el SDK)
+// ============================================================
+// Por qué: el SDK de Firestore negocia una conexión de streaming
+// (WebChannel) antes de responder, incluso para una lectura única.
+// En un sitio estático (cada página = carga nueva) esa negociación
+// se paga de cero en cada visita. Pidiendo el documento por REST
+// con fetch() nos ahorramos esa negociación por completo: es una
+// sola llamada HTTP normal.
+// ============================================================
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCpuRMkYLZOPTBm77KqTmEx94ZPgU3iQPE",
-    authDomain: "asesoramiento-na.firebaseapp.com",
-    projectId: "asesoramiento-na",
-    storageBucket: "asesoramiento-na.firebasestorage.app",
-    messagingSenderId: "774206761497",
-    appId: "1:774206761497:web:042ed21a39fcee75329888",
-};
-
-import { getApps, initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-
-const app = getApps().length === 0
-  ? initializeApp(firebaseConfig)
-  : getApps()[0];
-  
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// DNI guardado
+const PROJECT_ID = "asesoramiento-na";
 const dni = localStorage.getItem("dni");
-
-//  DÍAS
 const dias = ["Dia1", "Dia2", "Dia3", "Dia4", "Dia5"];
 
-//  función grupos
 function obtenerGruposDias(totalDias) {
     if (totalDias === 5) return ["Días 1, 3 y 5", "Días 2 y 4"];
     if (totalDias === 4) return ["Días 1 y 3", "Días 2 y 4"];
@@ -34,42 +21,63 @@ function obtenerGruposDias(totalDias) {
     return ["Días", ""];
 }
 
+// Convierte el JSON "tipado" que devuelve la API REST de Firestore
+// ({ fields: { x: { stringValue: "..." } } }) a un objeto JS normal.
+function parseFirestoreValue(value) {
+    if (value == null) return null;
+    if ("stringValue" in value) return value.stringValue;
+    if ("integerValue" in value) return parseInt(value.integerValue, 10);
+    if ("doubleValue" in value) return value.doubleValue;
+    if ("booleanValue" in value) return value.booleanValue;
+    if ("nullValue" in value) return null;
+    if ("timestampValue" in value) return new Date(value.timestampValue);
+    if ("mapValue" in value) return parseFirestoreFields(value.mapValue.fields || {});
+    if ("arrayValue" in value) return (value.arrayValue.values || []).map(parseFirestoreValue);
+    return null;
+}
+
+function parseFirestoreFields(fields) {
+    const out = {};
+    for (const key in fields) {
+        out[key] = parseFirestoreValue(fields[key]);
+    }
+    return out;
+}
+
+async function obtenerUsuario(dni) {
+    const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/usuarios/${dni}`;
+    const res = await fetch(url);
+
+    if (!res.ok) {
+        // 404 = no existe el documento; cualquier otro código = error real
+        return null;
+    }
+
+    const json = await res.json();
+    return parseFirestoreFields(json.fields || {});
+}
+
 async function cargarRutina() {
 
-    const docRef = doc(db, "usuarios", dni);
-    const docSnap = await getDoc(docRef);
-    
+    const data = await obtenerUsuario(dni);
 
-    console.log("DNI: ", dni);
-    console.log("Doc existe:", docSnap.exists());
-
-    
-
-
-    if (!docSnap.exists()) {
+    if (!data) {
         console.log("No se encontró usuario");
         return;
     }
 
-    const data = docSnap.data();
-    console.log("DATA COMPLETA:", data);
-
     const rutina = data.rutina;
-    console.log("RUTINA:", rutina);
 
-    // 👉 nombre
     const nombreSpan = document.getElementById("nombreUsuario");
     if (data.nombre) {
         nombreSpan.innerText = data.nombre;
     }
 
-    // 👉 cantidad de días
     const cantidadDias = Object.keys(rutina)
         .filter(k => k.includes("dia")).length;
 
     const grupos = obtenerGruposDias(cantidadDias);
 
-    // ACTIVACIÓN
     const tablaActivacion = document.getElementById("tablaActivacion");
 
     if (rutina.activacion && tablaActivacion) {
@@ -78,132 +86,76 @@ async function cargarRutina() {
         const tieneGrupo2 = rutina.activacion?.grupo2?.length > 0;
         const tieneGrupo3 = rutina.activacion?.grupo3?.length > 0;
 
-        tablaActivacion.innerHTML = "";
-
+        // 👉 armamos todo el HTML en un string primero, y recién al
+        // final lo pisamos UNA sola vez (antes se hacía innerHTML +=
+        // fila por fila, que fuerza a reconstruir toda la tabla en
+        // cada vuelta del loop)
+        let html = "";
         let contador = 1;
 
-        //  GRUPO 1
         if (tieneGrupo1) {
-
             let titulo;
-
             if (!tieneGrupo2 && !tieneGrupo3) {
                 titulo = "Todos los días";
             } else if (tieneGrupo3 && cantidadDias === 5) {
-                titulo = "Días 1 y 3"; // solo para este caso
+                titulo = "Días 1 y 3";
             } else {
-                titulo = grupos[0]; // 🔥 TODO lo demás sigue igual
+                titulo = grupos[0];
             }
 
-            tablaActivacion.innerHTML += `
-    <tr>
-        <td colspan="3" class="tituloGrupo">${titulo}</td>
-    </tr>
-    `;
+            html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
 
             rutina.activacion.grupo1.forEach((ej) => {
-                tablaActivacion.innerHTML += `
-        <tr class="filaEj">
-            <td>${contador++}</td>
-            <td>${ej.ejercicio}</td>
-            <td>${ej.cantidad}</td>
-        </tr>
-        `;
+                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
             });
         }
 
-        //  GRUPO 2
         if (tieneGrupo2) {
-
             let titulo;
-
             if (tieneGrupo3 && cantidadDias === 5) {
-                titulo = "Días 2 y 4"; // solo este caso especial
+                titulo = "Días 2 y 4";
             } else {
-                titulo = grupos[1]; // 🔥 comportamiento original
+                titulo = grupos[1];
             }
 
-            tablaActivacion.innerHTML += `
-    <tr>
-        <td colspan="3" class="tituloGrupo">${titulo}</td>
-    </tr>
-    `;
+            html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
 
             rutina.activacion.grupo2.forEach((ej) => {
-                tablaActivacion.innerHTML += `
-        <tr class="filaEj">
-            <td>${contador++}</td>
-            <td>${ej.ejercicio}</td>
-            <td>${ej.cantidad}</td>
-        </tr>
-        `;
+                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
             });
         }
 
-        // GRUPO 3
         if (tieneGrupo3) {
-
-            tablaActivacion.innerHTML += `
-    <tr>
-        <td colspan="3" class="tituloGrupo">Día 5</td>
-    </tr>
-    `;
+            html += `<tr><td colspan="3" class="tituloGrupo">Día 5</td></tr>`;
 
             rutina.activacion.grupo3.forEach((ej) => {
-                tablaActivacion.innerHTML += `
-        <tr class="filaEj">
-            <td>${contador++}</td>
-            <td>${ej.ejercicio}</td>
-            <td>${ej.cantidad}</td>
-        </tr>
-        `;
+                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
             });
         }
 
-        //  MOVILIDAD
         if (rutina.activacion.movilidad && rutina.activacion.movilidad.length > 0) {
-
-            tablaActivacion.innerHTML += `
-    <tr>
-        <td colspan="3" class="tituloGrupo">Movilidad</td>
-    </tr>
-    `;
+            html += `<tr><td colspan="3" class="tituloGrupo">Movilidad</td></tr>`;
 
             rutina.activacion.movilidad.forEach((ej) => {
-                tablaActivacion.innerHTML += `
-        <tr class="filaEj">
-            <td>${contador++}</td>
-            <td>${ej.ejercicio}</td>
-            <td>${ej.cantidad}</td>
-        </tr>
-        `;
+                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
             });
         }
 
+        tablaActivacion.innerHTML = html;
     }
 
-    //Días rutina
     dias.forEach(nombre => {
         const tabla = document.getElementById(`tabla${nombre}`);
         const bloque = document.getElementById(`bloque${nombre}`);
         const clave = nombre.toLowerCase();
 
         if (rutina[clave] && tabla) {
-
-            tabla.innerHTML = "";
-
+            let html = "";
             rutina[clave].forEach((ej, index) => {
-                tabla.innerHTML += `
-                <tr>
-                    <td>${index + 1}</td>
-                    <td>${ej.ejercicio.replace(/\n/g, '<br>')}</td>
-                    <td>${ej.cantidad.replace(/\n/g, '<br>')}</td>
-                </tr>
-            `;
+                html += `<tr><td>${index + 1}</td><td>${ej.ejercicio.replace(/\n/g, '<br>')}</td><td>${ej.cantidad.replace(/\n/g, '<br>')}</td></tr>`;
             });
-
+            tabla.innerHTML = html;
         } else {
-            // oculta días que no existen
             if (bloque) bloque.style.display = "none";
         }
     });
