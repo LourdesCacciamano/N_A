@@ -11,6 +11,7 @@ const SHEET_RANGO = "CONTROL DE PAGO!A3:J200";
 const EMAILJS_SERVICE_ID = "service_2dnwbtb";
 const EMAILJS_TEMPLATE_ID = "template_gta9vkl";
 const EMAILJS_PUBLIC_KEY = "GzCo-Bpl2dSrUjLIr";
+const EMAILJS_PRIVATE_KEY = "ALBY1-i5KqMD5DyZmouWh"
 
 const CREDENCIALES_PATH = path.join(__dirname, "credenciales.json");
 // ─────────────────────────────────────────────────────────────────
@@ -45,6 +46,7 @@ async function mandarMail(nombre, email, fechaVencimiento) {
         service_id: EMAILJS_SERVICE_ID,
         template_id: EMAILJS_TEMPLATE_ID,
         user_id: EMAILJS_PUBLIC_KEY,
+        accessToken: EMAILJS_PRIVATE_KEY,
         template_params: {
             nombre: nombre,
             fecha_vencimiento: fechaVencimiento,

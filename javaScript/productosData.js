@@ -41,7 +41,7 @@ const PRODUCTOS_NA = [
         marca: "- Marca: ONE FIT",
         contenido: "- Contiene: 1kg",
         precioViejo: null,
-        precio: 46500,
+        precio: 37000,
         sabores: ["Vainilla", "Frutos Rojos", "Chocolate"]
     },
     {
