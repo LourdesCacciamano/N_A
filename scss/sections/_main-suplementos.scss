@@ -108,7 +108,8 @@
 @media (max-width: 768px) {
     .conteTiposProte,
     .conteTiposCrea,
-    .conteTiposOtros {
+    .conteTiposOtros, 
+    .conteTiposCombos {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }

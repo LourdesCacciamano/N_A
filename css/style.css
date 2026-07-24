@@ -675,6 +675,10 @@ body {
   .descripCambios {
     font-size: 18px;
   }
+  .combo img {
+    object-fit: contain !important;
+    background-color: #000;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
@@ -1099,7 +1103,8 @@ strong {
 @media (max-width: 768px) {
   .conteTiposProte,
   .conteTiposCrea,
-  .conteTiposOtros {
+  .conteTiposOtros,
+  .conteTiposCombos {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
