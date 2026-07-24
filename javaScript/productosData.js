@@ -18,8 +18,8 @@ const PRODUCTOS_NA = [
         img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1782931073/NA/ceb4c583-81b6-4d51-b9a0-0096dc5a9c01_kfj2uf.jpg",
         marca: "- Marca: STAR NUTRITION",
         contenido: "- Contiene: 1kg",
-        precioViejo: 75000,
-        precio: 65000,
+        precioViejo: 85000,
+        precio: 73000,
         sabores: ["Vainilla", "Frutilla", "Chocolate"]
     },
     {
@@ -41,7 +41,7 @@ const PRODUCTOS_NA = [
         marca: "- Marca: ONE FIT",
         contenido: "- Contiene: 1kg",
         precioViejo: null,
-        precio: 37000,
+        precio: 45500,
         sabores: ["Vainilla", "Frutos Rojos", "Chocolate"]
     },
     {
@@ -60,7 +60,7 @@ const PRODUCTOS_NA = [
         id: 5,
         categoria: "Creatinas",
         titulo: "CREATINA",
-        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1772570034/NA/C-startNutrition_mlzhs7_c845e5.jpg",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784293447/NA/35f103e9-3b10-487c-bd62-c5fd463173fd_cszb7l.jpg",
         marca: "- Marca: STAR NUTRITION",
         contenido: "- Contiene: 300g - Sin sabor",
         precioViejo: 38000,
@@ -71,7 +71,7 @@ const PRODUCTOS_NA = [
         id: 6,
         categoria: "Creatinas",
         titulo: "CREATINA",
-        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1772570153/NA/C-creatina-hochSport_qcg7ud_433ba2.jpg",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784293447/NA/688d102d-7cd3-479b-956e-6a893fa8d857_xt2v89.jpg",
         marca: "- Marca: HOCH SPORT",
         contenido: "- Contiene: 300g - Sin sabor",
         precioViejo: 38000,
@@ -86,7 +86,18 @@ const PRODUCTOS_NA = [
         marca: "- Marca: ONE FIT",
         contenido: "- Contiene: 200g <br> - Sin Sabor",
         precioViejo: null,
-        precio: 20000,
+        precio: 23800,
+        sabores: []
+    },
+    {
+        id: 17,
+        categoria: "Creatinas",
+        titulo: "CREATINA",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784811825/NA/WhatsApp_Image_2026-07-22_at_17.45.51_vqzxzp.jpg",
+        marca: "- Marca: ONE FIT",
+        contenido: "- Contiene: 500g <br> - Sin Sabor",
+        precioViejo: null,
+        precio: 36000,
         sabores: []
     },
     // OTROS
@@ -99,6 +110,17 @@ const PRODUCTOS_NA = [
         contenido: "- Contiene: 60 cápsulas",
         precioViejo: null,
         precio: 25200,
+        sabores: []
+    },
+    {
+        id: 18,
+        categoria: "Otros",
+        titulo: "MULTIVITAMINICO",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784811825/NA/WhatsApp_Image_2026-07-22_at_17.46.36_wuencs.jpg",
+        marca: "- Marca: ONE FIT",
+        contenido: "- Contiene: 60 cápsulas",
+        precioViejo: null,
+        precio: 17800,
         sabores: []
     },
     {
@@ -169,6 +191,17 @@ const PRODUCTOS_NA = [
         sabores: []
     },
     {
+        id: 15,
+        categoria: "Otros",
+        titulo: "MAGNESIO",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784811825/NA/WhatsApp_Image_2026-07-22_at_17.46.15_favrr5.jpg",
+        marca: "- Marca: ONE FIT",
+        contenido: "- Contiene: 150g",
+        precioViejo: null,
+        precio: 17800,
+        sabores: []
+    },
+    {
         id: 13,
         categoria: "Otros",
         titulo: "OMEGA 3",
@@ -189,7 +222,29 @@ const PRODUCTOS_NA = [
         precioViejo: 35000,
         precio: 31800,
         sabores: []
-    }
+    },
+    {
+        id: 19,
+        categoria: "Combos",
+        titulo: "STAR NUTRITION",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784811826/NA/WhatsApp_Image_2026-07-22_at_18.03.46_igupyy.jpg",
+        marca:"Marca: STAR NUTRITION" ,
+        contenido: "- Contiene: <br> WHEY PROTEIN: 1kg + <br>  CREATINE MONOHYDRATE: 300g ",
+        precioViejo: null,
+        precio: 99000,
+        sabores: []
+    },
+       {
+        id: 20,
+        categoria: "Combos",
+        titulo: "ONE FIT  ",
+        img: "https://res.cloudinary.com/dhxbif0h1/image/upload/v1784811825/NA/WhatsApp_Image_2026-07-22_at_18.03.46_1_gufblk.jpg",
+        marca:"Marca: ONE FIT" ,
+        contenido: "- Contiene: <br> WHEY PROTEIN: 1Kg + <br> CREATINE MICRONIZED: 200g + <br> CITRATO DE MAGNESIO: 150g + <br>  MULTIVITAMINICO: 60 Cápsulas",
+        precioViejo: null,
+        precio: 79900,
+        sabores: []
+    },
 ];
 
 // PARA REUTILIZAR

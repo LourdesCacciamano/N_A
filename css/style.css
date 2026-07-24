@@ -394,6 +394,10 @@ body {
   object-position: top;
 }
 
+.combo img {
+  object-position: center !important;
+}
+
 .cambiosTitulo {
   margin-top: 20px;
   font-size: 22px;
@@ -1085,7 +1089,8 @@ strong {
 /* Contenedores de cada categoría: 4 columnas en compu, 2 en celu */
 .conteTiposProte,
 .conteTiposCrea,
-.conteTiposOtros {
+.conteTiposOtros,
+.conteTiposCombos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;

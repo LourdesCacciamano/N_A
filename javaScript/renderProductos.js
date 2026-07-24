@@ -40,6 +40,7 @@ function renderizarTodasLasCards() {
     renderizarCategoria('Proteínas', '.conteTiposProte');
     renderizarCategoria('Creatinas', '.conteTiposCrea');
     renderizarCategoria('Otros', '.conteTiposOtros');
+    renderizarCategoria('Combos', '.conteTiposCombos');
 }
 
 document.addEventListener('DOMContentLoaded', renderizarTodasLasCards);

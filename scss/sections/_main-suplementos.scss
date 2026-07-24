@@ -98,7 +98,8 @@
 /* Contenedores de cada categoría: 4 columnas en compu, 2 en celu */
 .conteTiposProte,
 .conteTiposCrea,
-.conteTiposOtros {
+.conteTiposOtros,
+.conteTiposCombos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
