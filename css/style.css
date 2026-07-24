@@ -688,6 +688,10 @@ body {
     width: 86% !important;
     margin-left: 7%;
   }
+  .combo img {
+    object-fit: contain !important;
+    background-color: #000;
+  }
   .flechaIzqCambios {
     margin-left: -15px;
   }
