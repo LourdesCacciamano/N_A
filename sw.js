@@ -1,10 +1,13 @@
-const CACHE_NAME = "na-cache-v3";
+const CACHE_NAME = "na-cache-v4"; // subí el número respecto al que tengas ahora
 
 // Rutas estáticas clave que queremos disponibles offline
 const URLS_A_CACHEAR = [
     "/",
     "/index.html",
+    "/paginasLogin/miPlan.html",
     "/css/style.css",
+    "/javaScript/firebasePlan.js",
+    "/javaScript/menuAuth.js",
     "/imagenes/logoB.png",
     "/manifest.json"
 ];
@@ -30,11 +33,6 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-    // No cachear páginas que dependen de login/datos personales
-    if (event.request.url.includes("miPlan") || event.request.url.includes("cuota")) {
-        return;
-    }
-
     event.respondWith(
         caches.match(event.request).then((respuestaCache) => {
             return (
