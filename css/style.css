@@ -2535,6 +2535,9 @@ tr:nth-child(even) {
   .tablaAct td {
     font-size: 18px;
   }
+  .tituloDiaTexto {
+    font-size: 21px;
+  }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   .tituloMiPlan {
@@ -2554,6 +2557,9 @@ tr:nth-child(even) {
   }
   .tablaAct td {
     font-size: 18px;
+  }
+  .tituloDiaTexto {
+    font-size: 22px;
   }
 }
 .mainCuota {

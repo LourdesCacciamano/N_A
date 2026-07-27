@@ -147,6 +147,7 @@ async function cargarRutina() {
     dias.forEach(nombre => {
         const tabla = document.getElementById(`tabla${nombre}`);
         const bloque = document.getElementById(`bloque${nombre}`);
+        const tituloSpan = document.getElementById(`titulo${nombre}`); // 👈 nuevo
         const clave = nombre.toLowerCase();
 
         if (rutina[clave] && tabla) {
@@ -155,6 +156,12 @@ async function cargarRutina() {
                 html += `<tr><td>${index + 1}</td><td>${ej.ejercicio.replace(/\n/g, '<br>')}</td><td>${ej.cantidad.replace(/\n/g, '<br>')}</td></tr>`;
             });
             tabla.innerHTML = html;
+
+            // 👇 nuevo: pinta el título si existe
+            const tituloDia = rutina[`${clave}Titulo`];
+            if (tituloSpan) {
+                tituloSpan.innerText = tituloDia ? ` | ${tituloDia}` : "";
+            }
         } else {
             if (bloque) bloque.style.display = "none";
         }
