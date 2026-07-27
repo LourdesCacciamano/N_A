@@ -46,18 +46,46 @@ function parseFirestoreFields(fields) {
 
 async function obtenerUsuario(dni) {
     const url = `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/usuarios/${dni}`;
-    const res = await fetch(url);
+    const claveCache = `rutinaCache_${dni}`;
 
-    if (!res.ok) {
-        // 404 = no existe el documento; cualquier otro código = error real
+    try {
+        const res = await fetch(url);
+
+        if (!res.ok) {
+            // 404 = no existe el documento; cualquier otro código = error real
+            return null;
+        }
+
+        const json = await res.json();
+        const datos = parseFirestoreFields(json.fields || {});
+
+        // Guardamos la última rutina obtenida con éxito, por si después no hay internet
+        localStorage.setItem(claveCache, JSON.stringify(datos));
+
+        return datos;
+    } catch (err) {
+        // fetch() tira error cuando no hay conexión (a diferencia de un 404, que sí responde)
+        const cacheGuardado = localStorage.getItem(claveCache);
+
+        if (cacheGuardado) {
+            console.log("Sin conexión: mostrando la última rutina guardada");
+            return JSON.parse(cacheGuardado);
+        }
+
+        console.log("Sin conexión y sin datos guardados previamente");
         return null;
     }
-
-    const json = await res.json();
-    return parseFirestoreFields(json.fields || {});
 }
 
 async function cargarRutina() {
+
+
+    if (!navigator.onLine) {
+        const aviso = document.createElement("div");
+        aviso.className = "avisoOffline";
+        aviso.innerText = "📡 Estás sin conexión — mostrando la última rutina guardada";
+        document.body.prepend(aviso);
+    }
 
     const data = await obtenerUsuario(dni);
 

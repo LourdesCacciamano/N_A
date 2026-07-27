@@ -79,6 +79,15 @@
 .filaEj td:nth-child(3) {
     width: 30%;
 }
+
+.avisoOffline {
+    background: #fff3cd;
+    color: #664d03;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
 @media (max-width: 430px) {
     .tituloMiPlan {
         font-size: 23px;
