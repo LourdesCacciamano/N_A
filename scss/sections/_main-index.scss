@@ -51,6 +51,11 @@ body {
     object-position: center !important;
 }
 
+.img5Carrousel {
+    object-fit: contain !important;
+    background-color: #0d0d0d; // mismo tono oscuro que el fondo de la imagen
+}
+
 //CARROUSEL CAMBIOS ---------------------------------------------------------------- 
 .cambiosTitulo {
     margin-top: 20px;

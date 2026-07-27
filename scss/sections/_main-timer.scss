@@ -76,10 +76,12 @@
     margin-top: 25px;
     font-family: $bebas-neue;
     font-size: 60px;
-    width: 70%;
+    width: 63%;
+    height: 106px;
+    padding: 9px;
     margin: auto;
     border-radius: 15px;
-    margin-top: 45px;
+    // margin-top: 45px;
 }
 
 .tiempo {
@@ -87,9 +89,9 @@
     font-size: 112px;
     font-weight: bold;
     background-color: black;
-    width: 22%;
+    width: 45%;
     margin: auto;
-    margin-top: 12px;
+    margin-top: 6px;
     border-radius: 15px;
     color: white;
     font-family: $bebas-neue;
@@ -109,8 +111,9 @@
     border-color: #7e6969;
     background-color: grey;
     border-radius: 5px;
-    width: 16%;
+    width: 20%;
     color: black;
+    height: 72px;
 
     &:hover {
         background-color: $gris-oscuro;
@@ -135,6 +138,146 @@
     background-color: rgb(45, 245, 45);
 }
 
+.vista-oculta {
+    display: none !important;
+}
+
+/* reloj y estado mucho más grandes en la vista de cronómetro */
+.tiempoGrande {
+    font-size: 300px;
+    line-height: 1;
+}
+
+.estadoGrande {
+    font-size: 71px;
+}
+
+@media (max-width: 600px) {
+    .tiempoGrande {
+        font-size: 4rem;
+    }
+
+    .estadoGrande {
+        font-size: 1.4rem;
+    }
+}
+
+.btnVolver {
+    background: #a9a1a1;
+    margin-left: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.estiloBtnSecundario {
+    background-color: #555;
+    /* ajustá al color que uses de acento */
+}
+
+.botonesConfig {
+    justify-content: center;
+    gap: 16px;
+}
+
+.panelTiempos {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 24px;
+}
+
+.grupoTiempos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grupoTiempos-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.08em;
+    font-size: 26px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+}
+
+.filaTiempo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f7f7f6;
+    border-radius: 14px;
+    padding: 12px 16px;
+}
+
+.filaTiempo-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.filaTiempo-icono {
+    width: 20px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.filaTiempo-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stepper-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepper-btn:active {
+    opacity: 0.7;
+}
+
+.stepper-input {
+    width: 46px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.stepper-input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: none;
+}
 
 @media (max-width: 430px) {
     .btnAcordion {
@@ -170,12 +313,13 @@
     }
 
     .estiloBtn {
-        font-size: 16px;
-        width: 25%;
+        font-size: 21px;
+        width: 41%;
     }
 
     .botonesTimer {
-        gap: 25px
+        gap: 25px;
+        margin-top: 18px;
     }
 
     .mainTimer {
@@ -188,6 +332,33 @@
 
     .menuTimer {
         margin-left: -25px;
+    }
+
+    .grupoTiempos-titulo {
+        padding: 0 11px;
+
+    }
+
+    .filaTiempo {
+        width: 363px;
+        margin-left: 16px;
+    }
+
+    .entrComp {
+        font-size: 29px;
+    }
+
+    .estados {
+        width: 87%;
+        font-size: 45px;
+        margin-top: 20px;
+        padding: 16px;
+        height: 84px;
+    }
+
+    .tiempo {
+        font-size: 154px;
+        width: 77%;
     }
 }
 
@@ -215,13 +386,13 @@
     }
 
     .estiloBtn {
-        font-size: 21px;
-        width: 30%;
+        font-size: 22px;
+        width: 41%;
     }
 
     .botonesTimer {
         gap: 14px;
-        margin-top: 30px;
+        margin-top: 15px;
     }
 
     .textoTiempos {
@@ -232,5 +403,31 @@
         justify-content: flex-start;
         padding: 0 10px;
         gap: 48px;
+    }
+     .grupoTiempos-titulo {
+        padding: 0 11px;
+
+    }
+
+    .filaTiempo {
+        width: 363px;
+        margin-left: 16px;
+    }
+
+    .entrComp {
+        font-size: 29px;
+    }
+
+    .estados {
+        width: 87%;
+        font-size: 45px;
+        margin-top: 13px;
+        padding: 16px;
+        height: 84px;
+    }
+
+    .tiempo {
+        font-size: 154px;
+        width: 77%;
     }
 }

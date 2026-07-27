@@ -3,6 +3,10 @@ const tiempo = document.getElementById("tiempo");
 const beep = document.getElementById("beep");
 const pausaBtn = document.getElementById("pausar");
 const restablecer = document.getElementById("restablecer");
+const vistaConfig = document.getElementById("vistaConfig");
+const vistaCronometro = document.getElementById("vistaCronometro");
+const volverBtn = document.getElementById("volver");
+const predefinidoBtn = document.getElementById("predefinido");
 
 let timer = null;
 let segundos = 0;
@@ -15,6 +19,15 @@ let tiempos = {};
 let descansoActual = null;
 let tipoEstado = "";
 let enCuentaFinal = false;
+
+// Valores del "Timer Predefinido" (los más comunes) — ajustá a gusto
+const TIMER_PREDEFINIDO = {
+    entrenar: 30,
+    rondas: 4,
+    descansar: 15,
+    ciclos: 3,
+    descansarCiclo: 60
+};
 
 function playBeep(reiniciar = false) {
     if (reiniciar) {
@@ -33,6 +46,16 @@ function formatoTiempo(s) {
     const m = Math.floor(s / 60);
     const sec = s % 60;
     return `${m.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
+}
+
+function mostrarVistaCronometro() {
+    vistaConfig.classList.add("vista-oculta");
+    vistaCronometro.classList.remove("vista-oculta");
+}
+
+function mostrarVistaConfig() {
+    vistaCronometro.classList.add("vista-oculta");
+    vistaConfig.classList.remove("vista-oculta");
 }
 
 function iniciarCuenta(nombre, duracion, restante) {
@@ -64,12 +87,12 @@ function cuentaRegresiva() {
     tiempo.textContent = formatoTiempo(segundos);
 
     if (segundos <= 3 && segundos > 0) {
-        enCuentaFinal=true;
+        enCuentaFinal = true;
         if (beep.paused) {
             beep.play().catch(() => { });
         }
-    } else{
-        enCuentaFinal=false;
+    } else {
+        enCuentaFinal = false;
     }
 
     segundos--;
@@ -79,14 +102,11 @@ function cuentaRegresiva() {
 
         setTimeout(() => {
             descansoActual && descansoActual();
-        },200)
+        }, 200)
     }
 }
 
 function iniciarRonda() {
-    //beep.currentTime = 0;
-   // beep.play().then(() => beep.pause()).catch(() => { });
-
     iniciarCuenta(
         `ENTRENAR: Ronda ${rondaActual}/${totalRondas}`,
         tiempos.entrenar,
@@ -106,7 +126,7 @@ function iniciarDescansoRonda() {
                 if (cicloActual < totalCiclos) {
                     iniciarDescansoCiclo();
                 } else {
-                    estado.innerHTML = `ENTRENAMIENTO COMPLETADO <i class="fa-regular fa-circle-check entrComp" style="color: #000000;"></i`;
+                    estado.innerHTML = `COMPLETADO <i class="fa-regular fa-circle-check entrComp" style="color: #000000;"></i`;
                     background("ENTRENAMIENTO COMPLETADO")
                 }
             }
@@ -160,7 +180,11 @@ function background(nombre) {
     }
 }
 
-document.getElementById("empezar").addEventListener("click", () => {
+// Arranca el entrenamiento leyendo los valores actuales de los inputs
+function iniciarEntrenamiento() {
+    activarWakeLock();
+    beep.play().then(() => { beep.pause(); beep.currentTime = 0; }).catch(() => { });
+
     beep.play().then(() => { beep.pause(); beep.currentTime = 0; }).catch(() => { });
     pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
@@ -177,7 +201,39 @@ document.getElementById("empezar").addEventListener("click", () => {
     rondaActual = 1;
     cicloActual = 1;
 
+    mostrarVistaCronometro();
     iniciarCuenta("PREPÁRATE", tiempos.preparate, iniciarRonda);
+}
+
+document.getElementById("empezar").addEventListener("click", iniciarEntrenamiento);
+
+predefinidoBtn.addEventListener("click", () => {
+    Swal.fire({
+        title: "Timer Predefinido",
+        html: `
+            <div style="text-align:left; font-size:1rem; line-height:1.8;">
+                <p><b>Entrenar:</b> ${TIMER_PREDEFINIDO.entrenar} seg</p>
+                <p><b>Rondas:</b> ${TIMER_PREDEFINIDO.rondas}</p>
+                <p><b>Descanso entre rondas:</b> ${TIMER_PREDEFINIDO.descansar} seg</p>
+                <p><b>Ciclos:</b> ${TIMER_PREDEFINIDO.ciclos}</p>
+                <p><b>Descanso entre ciclos:</b> ${TIMER_PREDEFINIDO.descansarCiclo} seg</p>
+            </div>
+        `,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "Usar estos valores",
+        cancelButtonText: "Cancelar"
+    }).then((resultado) => {
+        if (resultado.isConfirmed) {
+            document.getElementById("entrenar").value = TIMER_PREDEFINIDO.entrenar;
+            document.getElementById("rondas").value = TIMER_PREDEFINIDO.rondas;
+            document.getElementById("descansar").value = TIMER_PREDEFINIDO.descansar;
+            document.getElementById("ciclos").value = TIMER_PREDEFINIDO.ciclos;
+            document.getElementById("descansarCiclo").value = TIMER_PREDEFINIDO.descansarCiclo;
+
+            iniciarEntrenamiento();
+        }
+    });
 });
 
 pausaBtn.addEventListener("click", () => {
@@ -188,10 +244,12 @@ pausaBtn.addEventListener("click", () => {
 
     if (pausado) {
         beep.pause();
+        liberarWakeLock();
     } else {
         if (enCuentaFinal && segundos > 0) {
-            beep.play().catch(() => {});
+            beep.play().catch(() => { });
         }
+        activarWakeLock();
     }
 });
 
@@ -199,13 +257,10 @@ restablecer.addEventListener("click", () => {
     clearInterval(timer);
     timer = null;
     pausado = false;
-
     segundos = 0;
+
     rondaActual = 1;
     cicloActual = 1;
-
-    estado.textContent = "PREPÁRATE";
-    tiempo.textContent = "00:00";
 
     pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
 
@@ -213,6 +268,72 @@ restablecer.addEventListener("click", () => {
         audio.pause();
         audio.currentTime = 0;
     });
+
+    // Vuelve a arrancar el entrenamiento completo desde "Prepárate"
+    iniciarCuenta("PREPÁRATE", tiempos.preparate, iniciarRonda);
+});
+
+// Botón "volver": detiene el timer y vuelve a la pantalla de configuración
+// para poder editar los números, sin borrar lo que ya cargó el usuario
+volverBtn.addEventListener("click", () => {
+    clearInterval(timer);
+    timer = null;
+    pausado = false;
+    segundos = 0;
+
+    estado.textContent = "PREPÁRATE";
+    tiempo.textContent = "00:00";
+    pausaBtn.innerHTML = `<i class="fa-solid fa-pause" style="color: #f3f3f1;"></i> PAUSAR`;
+
+    [beep].forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
+
+    liberarWakeLock();
+    mostrarVistaConfig();
+});
+
+document.querySelectorAll(".stepper-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const input = document.getElementById(btn.dataset.target);
+        const step = parseInt(btn.dataset.step, 10);
+        const nuevoValor = Math.max(0, (parseInt(input.value, 10) || 0) + step);
+        input.value = nuevoValor;
+    });
+});
+
+let wakeLock = null;
+
+async function activarWakeLock() {
+    try {
+        if ("wakeLock" in navigator) {
+            wakeLock = await navigator.wakeLock.request("screen");
+
+            wakeLock.addEventListener("release", () => {
+                wakeLock = null;
+            });
+        }
+    } catch (err) {
+        console.log("No se pudo activar wakeLock:", err);
+    }
+}
+
+async function liberarWakeLock() {
+    if (wakeLock) {
+        try {
+            await wakeLock.release();
+        } catch (err) { }
+        wakeLock = null;
+    }
+}
+
+// Si el usuario cambia de pestaña/app y vuelve, el wakeLock se pierde solo:
+// hay que volver a pedirlo si el timer sigue corriendo
+document.addEventListener("visibilitychange", async () => {
+    if (document.visibilityState === "visible" && timer && !pausado) {
+        await activarWakeLock();
+    }
 });
 
 /*para que el navegador en mobile no me bloquee el sonido */

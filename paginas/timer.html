@@ -13,7 +13,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Charm:wght@400;700&display=swap');
     </style>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -23,7 +23,8 @@
                 <div class="conteHeader">
                     <a class="navbar-brand nav2 navPlanes" href="../index.html">
                         <!-- Aca estan las opciones del navbar -->
-                        <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1773408617/NA/logoB_nkaugk.png" class="imgLogoTimer logoPlan " width="20%" alt="Logo">
+                        <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1773408617/NA/logoB_nkaugk.png"
+                            class="imgLogoTimer logoPlan " width="20%" alt="Logo">
                         <div class="barra-vertical-timer"></div>
                         <h3 class="inicioSuplementos animate__animated animate__backInRight">TIMER</h3>
                     </a>
@@ -48,7 +49,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active opMenu" aria-current="page" href="../index.html">INICIO</a>
                             </li>
-                            <li><a class="dropdown-item opMenu" href="./planesDeAdaptacion.html"> 
+                            <li><a class="dropdown-item opMenu" href="./planesDeAdaptacion.html">
                                     ADAPTACIÓN</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle opMenu" href="#" role="button"
@@ -80,61 +81,117 @@
     </header>
 
     <main class="mainTimer">
-        <div class="timer">
 
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button btnAcordion" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Configurar Tiempos (Segundos)
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="configuracionTimer">
-                                <div class="contenedorFlexTiempos conteFlexTime1">
-                                    <label class="textoTiempos">Prepárate: 3<input type="hidden" id="preparate" value="3"
-                                            class="inputTiempos" ></label>
-                                    <label class="textoTiempos">Entrenar: <input type="number" id="entrenar" value="0"
-                                            class="inputTiempos"></label>
-                                </div>
-                                <div class="contenedorFlexTiempos">
-                                    <label class="textoTiempos">Rondas: <input type="number" id="rondas" value="0"
-                                            class="inputTiempos"></label>
-                                    <label class="textoTiempos">Descansar por Rondas: <input type="number" id="descansar" value="0"
-                                            class="inputTiempos"></label>
-                                </div>
-                                <div class="contenedorFlexTiempos">
-                                    <label class="textoTiempos">Ciclos: <input type="number" id="ciclos" value="0"
-                                            class="inputTiempos"></label>
-                                    <label class="textoTiempos">Descansar por Ciclos: <input type="number"
-                                            id="descansarCiclo" value="0" class="inputTiempos"></label>
-                                    
-                                </div>
-                            </div>
+        <!-- ===== VISTA 1: CONFIGURACIÓN ===== -->
+        <div id="vistaConfig" class="timer">
+
+            <div class="panelTiempos">
+
+                <div class="grupoTiempos">
+                    <span class="grupoTiempos-titulo">Entrenamiento</span>
+
+                    <div class="filaTiempo">
+                        <div class="filaTiempo-info">
+                            <i class="fa-solid fa-fire filaTiempo-icono"></i>
+                            <span class="filaTiempo-label">Entrenar (seg)</span>
+                        </div>
+                        <div class="stepper">
+                            <button type="button" class="stepper-btn" data-target="entrenar" data-step="-5">−</button>
+                            <input type="number" id="entrenar" value="0" class="stepper-input" inputmode="numeric">
+                            <button type="button" class="stepper-btn" data-target="entrenar" data-step="5">+</button>
+                        </div>
+                    </div>
+
+                    <div class="filaTiempo">
+                        <div class="filaTiempo-info">
+                            <i class="fa-solid fa-repeat filaTiempo-icono"></i>
+                            <span class="filaTiempo-label">Rondas</span>
+                        </div>
+                        <div class="stepper">
+                            <button type="button" class="stepper-btn" data-target="rondas" data-step="-1">−</button>
+                            <input type="number" id="rondas" value="0" class="stepper-input" inputmode="numeric">
+                            <button type="button" class="stepper-btn" data-target="rondas" data-step="1">+</button>
                         </div>
                     </div>
                 </div>
 
+                <div class="grupoTiempos">
+                    <span class="grupoTiempos-titulo">Descanso</span>
+
+                    <div class="filaTiempo">
+                        <div class="filaTiempo-info">
+                            <i class="fa-solid fa-mug-hot filaTiempo-icono"></i>
+                            <span class="filaTiempo-label">Entre rondas (seg)</span>
+                        </div>
+                        <div class="stepper">
+                            <button type="button" class="stepper-btn" data-target="descansar" data-step="-5">−</button>
+                            <input type="number" id="descansar" value="0" class="stepper-input" inputmode="numeric">
+                            <button type="button" class="stepper-btn" data-target="descansar" data-step="5">+</button>
+                        </div>
+                    </div>
+
+                    <div class="filaTiempo">
+                        <div class="filaTiempo-info">
+                            <i class="fa-solid fa-layer-group filaTiempo-icono"></i>
+                            <span class="filaTiempo-label">Ciclos</span>
+                        </div>
+                        <div class="stepper">
+                            <button type="button" class="stepper-btn" data-target="ciclos" data-step="-1">−</button>
+                            <input type="number" id="ciclos" value="0" class="stepper-input" inputmode="numeric">
+                            <button type="button" class="stepper-btn" data-target="ciclos" data-step="1">+</button>
+                        </div>
+                    </div>
+
+                    <div class="filaTiempo">
+                        <div class="filaTiempo-info">
+                            <i class="fa-solid fa-hourglass-half filaTiempo-icono"></i>
+                            <span class="filaTiempo-label">Entre ciclos (seg)</span>
+                        </div>
+                        <div class="stepper">
+                            <button type="button" class="stepper-btn" data-target="descansarCiclo"
+                                data-step="-5">−</button>
+                            <input type="number" id="descansarCiclo" value="0" class="stepper-input"
+                                inputmode="numeric">
+                            <button type="button" class="stepper-btn" data-target="descansarCiclo"
+                                data-step="5">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="hidden" id="preparate" value="3">
             </div>
 
+            <div class="botonesTimer botonesConfig">
+                <button id="predefinido" class="estiloBtn estiloBtnSecundario">
+                    <i class="fa-solid fa-bolt" style="color: #f3f3f1;"></i> TIMER PREDEFINIDO
+                </button>
+                <button id="empezar" class="estiloBtn">
+                    <i class="fa-solid fa-play" style="color: #ffffff;"></i> EMPEZAR
+                </button>
+            </div>
+        </div>
 
-            <h1 id="estado" class="estados"> PREPÁRATE </h1>
-            <div id="tiempo" class="tiempo">00:00</div>
+        <!-- ===== VISTA 2: CRONÓMETRO ===== -->
+        <div id="vistaCronometro" class="timer vista-oculta">
+
+            <button id="volver" class="btnVolver">
+                <i class="fa-solid fa-arrow-left"></i> EDITAR / VOLVER
+            </button>
+
+            <h1 id="estado" class="estados estadoGrande"> PREPÁRATE </h1>
+            <div id="tiempo" class="tiempo tiempoGrande">00:00</div>
 
             <div class="botonesTimer">
-                <button id="pausar" class="estiloBtn"> <i class="fa-solid fa-pause" style="color: #f3f3f1;"></i>  PAUSAR</button>
-                <button id="empezar" class="estiloBtn"> <i class="fa-solid fa-play" style="color: #ffffff;"></i>  EMPEZAR</button>
-                <button id="restablecer" class="estiloBtn"><i class="fa-solid fa-arrows-rotate" style="color: #fafafa;"></i>  RESTABLECER </button>
+                <button id="pausar" class="estiloBtn"> <i class="fa-solid fa-pause" style="color: #f3f3f1;"></i>
+                    PAUSAR</button>
+                <button id="restablecer" class="estiloBtn"><i class="fa-solid fa-arrows-rotate"
+                        style="color: #fafafa;"></i> RESTABLECER</button>
             </div>
+        </div>
 
-            <!--Sonidos-->
-            <audio id="beep" preload="auto"
-                src="../audios/5-second-countdown-timer-with-beep-sound-and-alarm-digital-clock-green-fire-fla_eTMRMHsa.mp3"></audio>
-
-
-            
+        <!--Sonidos-->
+        <audio id="beep" preload="auto"
+            src="../audios/5-second-countdown-timer-with-beep-sound-and-alarm-digital-clock-green-fire-fla_eTMRMHsa.mp3"></audio>
 
     </main>
 
@@ -154,7 +211,8 @@
 
             </div>
             <div class="logoCopy">
-                <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1773408617/NA/logoB_nkaugk.png" class="imgLogoFoot" width="20%" alt="Logo">
+                <img src="https://res.cloudinary.com/dhxbif0h1/image/upload/v1773408617/NA/logoB_nkaugk.png"
+                    class="imgLogoFoot" width="20%" alt="Logo">
                 <p class="footer-copy">Asesoramientos Nahuel Aballay</p>
             </div>
             <div class="volverArriba">
