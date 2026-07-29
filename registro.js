@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    emailjs.send("service_2dnwbtb", "template_o2qau7s", data)
+    emailjs.send("service_x70xy8o", "template_o2qau7s", data)
         .then(() => {
             Swal.fire({
                 icon: "success",

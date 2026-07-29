@@ -8,7 +8,7 @@ const path = require("path");
 const SHEET_ID = "1SPCuHNxKMLrJsIsnYw2TqSWzALIp7KJ9igWAPhklHVM";
 const SHEET_RANGO = "CONTROL DE PAGO!A3:J200";
 
-const EMAILJS_SERVICE_ID = "service_2dnwbtb";
+const EMAILJS_SERVICE_ID = "service_x70xy8o";
 const EMAILJS_TEMPLATE_ID = "template_gta9vkl";
 const EMAILJS_PUBLIC_KEY = "GzCo-Bpl2dSrUjLIr";
 const EMAILJS_PRIVATE_KEY = "ALBY1-i5KqMD5DyZmouWh"
