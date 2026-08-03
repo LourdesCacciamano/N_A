@@ -13,14 +13,6 @@ const PROJECT_ID = "asesoramiento-na";
 const dni = localStorage.getItem("dni");
 const dias = ["Dia1", "Dia2", "Dia3", "Dia4", "Dia5"];
 
-function obtenerGruposDias(totalDias) {
-    if (totalDias === 5) return ["Días 1, 3 y 5", "Días 2 y 4"];
-    if (totalDias === 4) return ["Días 1 y 3", "Días 2 y 4"];
-    if (totalDias === 3) return ["Días 1 y 3", "Día 2"];
-    if (totalDias === 6) return ["Días 1, 3 y 5", "Días 2, 4 y 6"];
-    return ["Días", ""];
-}
-
 // Convierte el JSON "tipado" que devuelve la API REST de Firestore
 // ({ fields: { x: { stringValue: "..." } } }) a un objeto JS normal.
 function parseFirestoreValue(value) {
@@ -101,18 +93,9 @@ async function cargarRutina() {
         nombreSpan.innerText = data.nombre;
     }
 
-    const cantidadDias = Object.keys(rutina)
-        .filter(k => k.includes("dia")).length;
-
-    const grupos = obtenerGruposDias(cantidadDias);
-
     const tablaActivacion = document.getElementById("tablaActivacion");
 
     if (rutina.activacion && tablaActivacion) {
-
-        const tieneGrupo1 = rutina.activacion?.grupo1?.length > 0;
-        const tieneGrupo2 = rutina.activacion?.grupo2?.length > 0;
-        const tieneGrupo3 = rutina.activacion?.grupo3?.length > 0;
 
         // 👉 armamos todo el HTML en un string primero, y recién al
         // final lo pisamos UNA sola vez (antes se hacía innerHTML +=
@@ -121,48 +104,36 @@ async function cargarRutina() {
         let html = "";
         let contador = 1;
 
-        if (tieneGrupo1) {
-            let titulo;
-            if (!tieneGrupo2 && !tieneGrupo3) {
-                titulo = "Todos los días";
-            } else if (tieneGrupo3 && cantidadDias === 5) {
-                titulo = "Días 1 y 3";
-            } else {
-                titulo = grupos[0];
-            }
+        // Los títulos de cada grupo (ej: "Días 1 y 3") ya no se calculan
+        // solos: se cargan desde Firestore (rutina.activacion.grupoNTitulo).
+        // Tampoco hay un límite fijo de grupos: se leen todos los "grupoN"
+        // que existan en el documento (grupo1, grupo2, grupo3, grupo4...),
+        // para que cada usuario pueda tener tantos grupos como necesite.
+        const clavesGrupos = Object.keys(rutina.activacion)
+            .filter(k => /^grupo\d+$/.test(k) && rutina.activacion[k]?.length > 0)
+            .sort((a, b) => parseInt(a.slice(5), 10) - parseInt(b.slice(5), 10));
+
+        // Si hay un solo grupo cargado, por default es porque la rutina
+        // no separa por días: se llama "Todos los días" en vez de "Día 1".
+        clavesGrupos.forEach(clave => {
+            const grupo = rutina.activacion[clave];
+
+            const tituloDefault = clavesGrupos.length === 1
+                ? "TODOS LOS DÍAS"
+                : `Día ${clave.slice(5)}`;
+            const titulo = rutina.activacion[`${clave}Titulo`] || tituloDefault;
 
             html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
 
-            rutina.activacion.grupo1.forEach((ej) => {
+            grupo.forEach((ej) => {
                 html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
             });
-        }
-
-        if (tieneGrupo2) {
-            let titulo;
-            if (tieneGrupo3 && cantidadDias === 5) {
-                titulo = "Días 2 y 4";
-            } else {
-                titulo = grupos[1];
-            }
-
-            html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
-
-            rutina.activacion.grupo2.forEach((ej) => {
-                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
-            });
-        }
-
-        if (tieneGrupo3) {
-            html += `<tr><td colspan="3" class="tituloGrupo">Día 5</td></tr>`;
-
-            rutina.activacion.grupo3.forEach((ej) => {
-                html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;
-            });
-        }
+        });
 
         if (rutina.activacion.movilidad && rutina.activacion.movilidad.length > 0) {
-            html += `<tr><td colspan="3" class="tituloGrupo">Movilidad</td></tr>`;
+            const titulo = rutina.activacion.movilidadTitulo || "Movilidad";
+
+            html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
 
             rutina.activacion.movilidad.forEach((ej) => {
                 html += `<tr class="filaEj"><td>${contador++}</td><td>${ej.ejercicio}</td><td>${ej.cantidad}</td></tr>`;

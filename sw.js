@@ -1,4 +1,4 @@
-const CACHE_NAME = "na-cache-v5"; // subí el número respecto al que tengas ahora
+const CACHE_NAME = "na-cache-v7"; // subí el número respecto al que tengas ahora
 
 // Rutas estáticas clave que queremos disponibles offline
 const URLS_A_CACHEAR = [

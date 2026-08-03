@@ -2484,7 +2484,6 @@ tr:nth-child(even) {
   font-size: 25px !important;
   font-weight: bold;
   color: black;
-  padding-right: 155px;
   background-color: white;
 }
 
@@ -2538,9 +2537,6 @@ tr:nth-child(even) {
   .fila-titulo th {
     font-size: 20px;
   }
-  .tituloGrupo {
-    padding-right: 39px;
-  }
   .tablaAct td {
     font-size: 18px;
   }
@@ -2560,9 +2556,6 @@ tr:nth-child(even) {
   }
   .fila-titulo th {
     font-size: 20px;
-  }
-  .tituloGrupo {
-    padding-right: 39px;
   }
   .tablaAct td {
     font-size: 18px;
