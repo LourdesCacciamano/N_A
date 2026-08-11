@@ -1,17 +1,35 @@
 .mainIndex {
     min-height: 70vh;
     padding-top: 200px; // para separarlo del header
-    background-color: $gris-mas-claro;
+    // sin background acá: se ve el degradé único de body::before (_header.scss) por detrás
 
-    h2 {
-        margin-bottom: 12px;
-        margin-top: -49px;
-        font-family: $bebas-neue;
+    // sólo el título hero (hijo directo) — así no pisa el de .cambiosTitulo,
+    // que va anidado más adentro (dentro de .cambiosWrap)
+    > h2 {
+        margin: -75px 0 0;
+        padding: 20px 0;
+        background-color: black;
+        font-family: "Bebas Neue", sans-serif;
         font-weight: bold;
-        color: $gris-mas-oscuro;
+        color: white;
         text-align: center;
-        font-size: 40px;
+        font-size: 59px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            width: 84px;
+            background: #fffdfd;
+            opacity: 0.5;
+        }
     }
+
+
 
     .animate__pulse {
         animation-iteration-count: 2;
@@ -20,9 +38,8 @@
     }
 }
 
-body {
-    background-color: $gris-mas-claro !important;
-}
+// el degradé de fondo ahora vive en body::before (_header.scss), uno solo
+// para todo el sitio — no lo repitas acá.
 
 /*CARROUSEL FOTOS ALEATORIAS ---------------------------*/
 
@@ -47,6 +64,7 @@ body {
     object-fit: cover;
     object-position: top;
 }
+
 .combo img {
     object-position: center !important;
 }
@@ -58,88 +76,163 @@ body {
 
 //CARROUSEL CAMBIOS ---------------------------------------------------------------- 
 .cambiosTitulo {
-    margin-top: 20px;
-    font-size: 22px;
-    text-align: center;
-    font-family: 'DM Sans';
-    color: $gris-mas-oscuro;
-    margin-bottom: 6px;
-    text-decoration: underline;
-}
-
-.carouselImgCambios {
-    width: 44% !important;
-    margin-left: 28%;
-    margin-top: 42px;
-}
-
-.flechaIzqCambios {
-    margin-left: 146px;
-}
-
-.flechaDerCambios {
-    margin-right: 146px;
-}
-
-.descripCambios {
-    text-align: center;
-    font-family: $open-sans;
-    font-size: 22px;
-    background-color: #494949;
+    // mismo estilo que el h2 hero (banda negra + líneas a los costados),
+    // pero en su propia clase para poder tunear el margin sin tocar el otro
+    margin: 0 0 18px;
+    padding: 20px 0;
+    background-color: black;
+    font-family: $bebas-neue;
+    font-weight: bold;
     color: white;
-    border-radius: 3px;
+    text-align: center;
+    font-size: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    &::before,
+    &::after {
+        content: "";
+        height: 1px;
+        width: 84px;
+        background: #fffdfd;
+        opacity: 0.5;
+    }
+}
+
+.cambiosGrid {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 20px 44px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+
+    // sin grid-row: las fotos son horizontales (700x497), así que el alto
+    // de cada tile lo define su propio aspect-ratio, no una fila fija
+    .cambioTile:nth-child(1) {
+        grid-column: span 4;
+        transition-delay: 0ms;
+    }
+
+    .cambioTile:nth-child(2) {
+        grid-column: span 2;
+        transition-delay: 90ms;
+    }
+
+    .cambioTile:nth-child(3) {
+        grid-column: span 2;
+        transition-delay: 180ms;
+    }
+
+    .cambioTile:nth-child(4) {
+        grid-column: span 2;
+        transition-delay: 270ms;
+    }
+
+    .cambioTile:nth-child(5) {
+        grid-column: span 2;
+        transition-delay: 360ms;
+    }
+}
+
+.cambioTile {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 700 / 497; // proporción real de las fotos (horizontales) — sin esto quedaba espacio negro de más
+    background-color: $gris-mas-oscuro; // por si alguna foto no calza justo
+    cursor: ew-resize;
+    touch-action: pan-y; // deja hacer scroll vertical de la página, solo el arrastre horizontal es del tile
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+}
+
+.cambioImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; // la foto se ve completa siempre, sin recortar
+    object-position: center;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
+
+.cambioAntes {
+    filter: grayscale(1) brightness(0.55) contrast(1.05);
+}
+
+.cambioDespues {
+    clip-path: inset(0 0 0 var(--split, 50%));
+}
+
+.cambioScrim {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, 0));
+    pointer-events: none;
+}
+
+.cambioHandle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--split, 50%);
+    width: 2px;
+    background: #fffdfd;
+    opacity: .85;
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #fffdfd;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
+    }
+}
+
+.cambioCaption {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 14px;
+    pointer-events: none;
+
+    .cambioCat {
+        display: inline-block;
+        font-family: $open-sans;
+        font-size: 11px;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #fffdfd;
+        opacity: .75;
+        margin-bottom: 4px;
+    }
+
+    h3 {
+        font-family: $bebas-neue;
+        font-size: 22px;
+        font-weight: normal;
+        color: white;
+        margin: 0;
+        line-height: 1.05;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+    }
 }
 
 //CARROUSEL CARDS PLANES ---------------------
-.card1,
-.card2,
-.card3 {
-    background-color: $gris-oscuro;
-    box-shadow: 0px 4px 10px black;
-    width: 20rem;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 50px;
-}
-
-
-.cardImgIndex {
-    border-radius: 10px;
-    height: 165px !important;
-    object-fit: cover !important;
-    object-position: center !important;
-}
-
-
-.card-body-index {
-    background-color: $gris-oscuro;
-    border-radius: 4px;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding-top: 32px;
-}
-
-.card-title-index {
-    font-family: $bebas-neue;
-    font-size: 26px;
-    margin-top: -19px;
-}
-
-.precio {
-    font-family: $bebas-neue;
-    font-size: 26px;
-}
-
-.card-text-index {
-    font-family: $open-sans;
-    text-align: left;
-    font-size: 16px;
-    color: whitesmoke;
-    padding: 11px;
-}
-
 .btn {
     color: white;
     background-color: black;
@@ -151,80 +244,242 @@ body {
     }
 }
 
-.btnIndex {
-    width: 110px;
-    margin: auto;
-    margin-bottom: 10px;
-    margin-top: -13px;
-    font-family: $open-sans;
-}
+//PLANES (fila comparativa, sin carrusel) ---------------------
+// sin background acá: se ve el degradé único de body::before (_header.scss) por detrás
 
-.btn3 {
-    margin-bottom: 10px;
-}
-
-.btnIndex:active {
-    background-color: #615f5f !important;
-    border-color: #615f5f !important;
-}
-
-.lineaSeparadoraIndex {
-    margin-top: -5px;
-    margin-bottom: 2px;
+.planesTitulo {
+    // mismo estilo que el h2 hero y .cambiosTitulo (banda negra + líneas),
+    // en su propia clase para poder tunear el margin sin tocar los otros
+    margin: 0;
+    padding: 20px 0;
+    background-color: black;
+    font-family: $bebas-neue;
+    font-weight: bold;
     color: white;
-    width: 261px;
-    margin: auto;
+    text-align: center;
+    font-size: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    &::before,
+    &::after {
+        content: "";
+        height: 1px;
+        width: 84px;
+        background: #fffdfd;
+        opacity: 0.5;
+    }
 }
 
-.carousel-indicators {
-    margin-bottom: -28px;
+.planRow {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden; // sin esto, el navegador agrega scroll vertical solo (spec de CSS overflow)
+    padding: 50px 20px 20px;
+
+    // la del navegador se ve distinto según sistema/navegador (a veces
+    // finita o invisible) — la escondemos y usamos .planScrollTrack, una
+    // barra propia, así se ve siempre igual de grande
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
-.flechaIzq {
-    margin-left: 25%;
+.planScrollTrack {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto 40px;
+    height: 8px;
+    background: rgba(255, 255, 255, .15);
+    border-radius: 999px;
 }
 
-.flechaDer {
-    margin-right: 25%;
+.planScrollThumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 33%;
+    background: white;
+    border-radius: 999px;
+    transition: transform .1s linear;
+}
+
+.planCard {
+    position: relative;
+    flex: 1 1 280px;
+    min-width: 240px;
+    background-color: $gris-mas-oscuro;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px black;
+    display: flex;
+    flex-direction: column;
+}
+
+.planCard.planDestacado {
+    transform: translateY(-14px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .5);
+}
+
+.planTag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background-color: white;
+    color: black;
+    font-family: $open-sans;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.planImg {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.planBody {
+    padding: 20px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    color: white;
+    text-align: center;
+}
+
+.planTitle {
+    font-family: $bebas-neue;
+    font-size: 26px;
+    margin: 0;
+}
+
+.planPrecio {
+    font-family: $bebas-neue;
+    font-size: 28px;
+    margin: -6px 0 0;
+}
+
+.planLista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    text-align: left;
+
+    li {
+        font-family: $open-sans;
+        font-size: 14px;
+        color: whitesmoke;
+        line-height: 1.4;
+        padding-left: 14px;
+        position: relative;
+
+        &::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: $gris-claro;
+        }
+    }
+}
+
+.planBtn {
+    margin-top: 6px;
+    text-align: center;
+    padding: 11px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    font-family: $open-sans;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: #4b4a4a;
+        color: white;
+    }
+}
+
+.planCard.planDestacado .planBtn {
+    background-color: white;
+    color: black;
+
+    &:hover {
+        background-color: $gris-mas-claro;
+    }
 }
 
 
 //LOGIN
 
-.modal-body{
-    background-color: $gris-mas-claro;
+.modal-body {
+    background-color: $gris-claro;
 }
-.modal-header,.btnIniciarSesion{
+
+.modal-header,
+.btnIniciarSesion {
     background-color: $gris-mas-oscuro;
     color: white;
 }
-.hrLogin{
+
+.hrLogin {
     color: black;
 }
-.crearCuenta{
+
+.crearCuenta {
     color: black;
     font-size: 17px !important;
 }
-.infoCuenta{
-    font-size: 11px ;
+
+.infoCuenta {
+    font-size: 11px;
     text-align: center;
     margin-top: 8px;
     font-family: $open-sans;
 }
-.modal-title{
+
+.modal-title {
     font-family: $bebas-neue !important;
     font-size: 20px !important;
 }
-.labelLogin{
+
+.labelLogin {
     font-family: $oswald !important;
 }
-.btnIniciarSesion{
+
+.btnIniciarSesion {
     font-family: $oswald !important;
     font-size: 17px !important;
 }
-.text-center, .crearCuenta{
+
+.text-center,
+.crearCuenta {
     font-family: $oswald !important;
 }
+
 .btnEstado:hover,
 .btnEstado:focus,
 .btnEstado:active {
@@ -234,34 +489,38 @@ body {
 }
 
 //Promociones
-.contePromos{
+.contePromos {
     background-color: #696969;
     padding: 15px 0px 15px 0px;
     margin-top: 38px;
 }
-.cardPromo{
+
+.cardPromo {
     margin: auto !important;
     background-color: #0b0a0a;
     color: white;
     border-radius: 9px;
     border: 5px solid white;
 }
-.bodyPromo{
-     font-family: $open-sans; 
+
+.bodyPromo {
+    font-family: $open-sans;
     font-size: 16px;
     padding: 11px;
     text-align: left;
 }
-.imgPromo{
-     height: 219px;
+
+.imgPromo {
+    height: 219px;
 }
-.btnPromo{
+
+.btnPromo {
     color: black;
     background-color: white;
     border-color: #767171;
     font-family: $bebas-neue;
     font-size: 23px;
-        width: 177px;
+    width: 177px;
     border-radius: 7px;
     border: none;
     margin: auto;
@@ -271,7 +530,7 @@ body {
     .mainIndex {
         padding-top: 208px;
 
-        h2 {
+        > h2 {
             margin-bottom: 3px;
             margin-top: -107px;
             font-size: 30px;
@@ -288,99 +547,103 @@ body {
     }
 
     //CAMBIOS
-    .carouselImgCambios {
-        width: 97% !important;
-        margin-left: 7px;
+    .cambiosTitulo {
+        font-size: 27px;
+        padding-top: 24px;
     }
 
-    .flechaDerCambios {
-        margin-right: -14px;
+    .cambiosGrid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 14px 14px 34px;
+
+        .cambioTile:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .cambioTile:nth-child(2),
+        .cambioTile:nth-child(3) {
+            grid-column: span 1;
+        }
+
+        .cambioTile:nth-child(4),
+        .cambioTile:nth-child(5) {
+            grid-column: span 2;
+        }
     }
 
-    .flechaIzqCambios {
-        margin-left: -12px;
+    // PLANES
+    .planesTitulo {
+        font-size: 27px;
+        padding: 16px 20px;
     }
 
-    // CARDS
-    .card1,
-    .card2,
-    .card3 {
-        margin: auto;
-        width: 79% !important;
-        margin-top: 65px;
-        max-width: none;
+    .planRow {
+        padding: 30px 14px;
     }
 
-    .card-text-index {
-        font-size: 16px;
+    .planCard.planDestacado {
+        transform: none;
     }
 
-    .cardImgIndex {
-        height: 185px;
-        object-fit: cover;
-    }
-
-    .card-body-index {
-        margin-bottom: 10px;
-        padding: 15px;
-    }
-
-    .card-title-index,
-    .precio {
-        font-size: 23px;
-        margin-top: 0;
-    }
-
-    .btnIndex {
-        margin-bottom: -4px;
-        margin-top: -22px;
-    }
-
-    .flechaIzq {
-        margin-left: -6px;
-    }
-
-    .flechaDer {
-        margin-right: -6px;
-    }
-    .descripCambios{
-        font-size: 18px;
-    }
     .combo img {
         object-fit: contain !important;
         background-color: #000;
+    }
+     .mainIndex{
+        
+        h2::before{
+            width: 60px;
+        }
+        h2::after{
+            width: 60px;
+        }
     }
 }
 
 @media (min-width:431px) and (max-width:768px) {
+
     // CARROUSEL 1
     #carouselExampleSlidesOnly {
         height: 35dvh;
     }
+
     //CAMBIOS
-    .carouselImgCambios {
-        width: 86% !important;
-        margin-left: 7%;
+    .cambiosGrid {
+        grid-template-columns: repeat(2, 1fr);
+
+        .cambioTile:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .cambioTile:nth-child(2),
+        .cambioTile:nth-child(3) {
+            grid-column: span 1;
+        }
+
+        .cambioTile:nth-child(4),
+        .cambioTile:nth-child(5) {
+            grid-column: span 2;
+        }
     }
+
     .combo img {
         object-fit: contain !important;
         background-color: #000;
     }
 
-    .flechaIzqCambios{
-        margin-left: -15px;
+    .planCard.planDestacado {
+        transform: none;
     }
-    .flechaDerCambios{
-        margin-right: -10px;
-    }
-    .flechaIzq{
-        margin-left: 0%;
-    }
-    .flechaDer{
-        margin-right: 0%;
-    }
-    
-    .descripCambios{
-        font-size: 18px;
+
+    .mainIndex{
+        h2{
+            font-size: 35px;
+        }
+        h2::before{
+            width: 60px;
+        }
+        h2::after{
+            width: 60px;
+        }
     }
 }

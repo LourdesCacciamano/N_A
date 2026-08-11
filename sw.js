@@ -33,14 +33,20 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+    if (event.request.method !== "GET") return; // no se puede cachear POST/PUT, etc.
+
+    // Red primero: si hay internet, siempre trae la versión real y de paso
+    // actualiza la caché. Solo si falla (sin conexión) usa lo guardado.
+    // Así los cambios se ven al toque, sin depender de subir CACHE_NAME.
     event.respondWith(
-        caches.match(event.request).then((respuestaCache) => {
-            return (
-                respuestaCache ||
-                fetch(event.request).catch(() => {
-                    // acá podrías devolver una página offline.html si querés
-                })
-            );
-        })
+        fetch(event.request)
+            .then((respuestaRed) => {
+                if (respuestaRed.ok) {
+                    const copia = respuestaRed.clone();
+                    caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copia));
+                }
+                return respuestaRed;
+            })
+            .catch(() => caches.match(event.request))
     );
 });

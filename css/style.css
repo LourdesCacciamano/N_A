@@ -5,14 +5,49 @@
   padding: 0;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /*------------- HEADER------------------*/
 body {
+  position: relative;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 html, body {
   overflow-x: hidden;
+  overflow-y: visible;
+}
+
+body:has(.mainIndex)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(50deg, white, black);
+}
+
+main {
+  flex: 1;
 }
 
 .header {
@@ -20,7 +55,8 @@ html, body {
   width: 100%;
   height: 135px;
   padding: 0 16px;
-  box-shadow: 0 1px 4px black;
+  box-shadow: 0 1px 4px white;
+  border-bottom: 3px solid #ffffff;
 }
 
 .header .container-fluid {
@@ -350,25 +386,32 @@ html, body {
 .mainIndex {
   min-height: 70vh;
   padding-top: 200px;
-  background-color: #C9C6C7;
 }
-.mainIndex h2 {
-  margin-bottom: 12px;
-  margin-top: -49px;
+.mainIndex > h2 {
+  margin: -75px 0 0;
+  padding: 20px 0;
+  background-color: black;
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
-  color: #272924;
+  color: white;
   text-align: center;
-  font-size: 40px;
+  font-size: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.mainIndex > h2::before, .mainIndex > h2::after {
+  content: "";
+  height: 1px;
+  width: 84px;
+  background: #fffdfd;
+  opacity: 0.5;
 }
 .mainIndex .animate__pulse {
   animation-iteration-count: 2;
   animation-duration: 2s;
   animation-delay: 1s;
-}
-
-body {
-  background-color: #C9C6C7 !important;
 }
 
 /*CARROUSEL FOTOS ALEATORIAS ---------------------------*/
@@ -404,83 +447,146 @@ body {
 }
 
 .cambiosTitulo {
-  margin-top: 20px;
-  font-size: 22px;
-  text-align: center;
-  font-family: "DM Sans";
-  color: #272924;
-  margin-bottom: 6px;
-  text-decoration: underline;
-}
-
-.carouselImgCambios {
-  width: 44% !important;
-  margin-left: 28%;
-  margin-top: 42px;
-}
-
-.flechaIzqCambios {
-  margin-left: 146px;
-}
-
-.flechaDerCambios {
-  margin-right: 146px;
-}
-
-.descripCambios {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 22px;
-  background-color: #494949;
-  color: white;
-  border-radius: 3px;
-}
-
-.card1,
-.card2,
-.card3 {
-  background-color: #3F4239;
-  box-shadow: 0px 4px 10px black;
-  width: 20rem;
-  border-radius: 10px;
-  margin: auto;
-  margin-top: 50px;
-}
-
-.cardImgIndex {
-  border-radius: 10px;
-  height: 165px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
-.card-body-index {
-  background-color: #3F4239;
-  border-radius: 4px;
+  margin: 0 0 18px;
+  padding: 20px 0;
+  background-color: black;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
   color: white;
   text-align: center;
+  font-size: 59px;
   display: flex;
-  flex-direction: column;
-  padding-top: 32px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.cambiosTitulo::before, .cambiosTitulo::after {
+  content: "";
+  height: 1px;
+  width: 84px;
+  background: #fffdfd;
+  opacity: 0.5;
 }
 
-.card-title-index {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 26px;
-  margin-top: -19px;
+.cambiosGrid {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 20px 44px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+}
+.cambiosGrid .cambioTile:nth-child(1) {
+  grid-column: span 4;
+  transition-delay: 0ms;
+}
+.cambiosGrid .cambioTile:nth-child(2) {
+  grid-column: span 2;
+  transition-delay: 90ms;
+}
+.cambiosGrid .cambioTile:nth-child(3) {
+  grid-column: span 2;
+  transition-delay: 180ms;
+}
+.cambiosGrid .cambioTile:nth-child(4) {
+  grid-column: span 2;
+  transition-delay: 270ms;
+}
+.cambiosGrid .cambioTile:nth-child(5) {
+  grid-column: span 2;
+  transition-delay: 360ms;
 }
 
-.precio {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 26px;
+.cambioTile {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 700/497;
+  background-color: #272924;
+  cursor: ew-resize;
+  touch-action: pan-y;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
-.card-text-index {
+.cambioImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.cambioAntes {
+  filter: grayscale(1) brightness(0.55) contrast(1.05);
+}
+
+.cambioDespues {
+  clip-path: inset(0 0 0 var(--split, 50%));
+}
+
+.cambioScrim {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.cambioHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split, 50%);
+  width: 2px;
+  background: #fffdfd;
+  opacity: 0.85;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.cambioHandle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fffdfd;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.cambioCaption {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  pointer-events: none;
+}
+.cambioCaption .cambioCat {
+  display: inline-block;
   font-family: "Open Sans", sans-serif;
-  text-align: left;
-  font-size: 16px;
-  color: whitesmoke;
-  padding: 11px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fffdfd;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+.cambioCaption h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  color: white;
+  margin: 0;
+  line-height: 1.05;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .btn {
@@ -493,48 +599,184 @@ body {
   border-color: black;
 }
 
-.btnIndex {
-  width: 110px;
-  margin: auto;
-  margin-bottom: 10px;
-  margin-top: -13px;
-  font-family: "Open Sans", sans-serif;
-}
-
-.btn3 {
-  margin-bottom: 10px;
-}
-
-.btnIndex:active {
-  background-color: #615f5f !important;
-  border-color: #615f5f !important;
-}
-
-.lineaSeparadoraIndex {
-  margin-top: -5px;
-  margin-bottom: 2px;
+.planesTitulo {
+  margin: 0;
+  padding: 20px 0;
+  background-color: black;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
   color: white;
-  width: 261px;
-  margin: auto;
+  text-align: center;
+  font-size: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.planesTitulo::before, .planesTitulo::after {
+  content: "";
+  height: 1px;
+  width: 84px;
+  background: #fffdfd;
+  opacity: 0.5;
 }
 
-.carousel-indicators {
-  margin-bottom: -28px;
+.planRow {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 50px 20px 20px;
+  scrollbar-width: none;
+}
+.planRow::-webkit-scrollbar {
+  display: none;
 }
 
-.flechaIzq {
-  margin-left: 25%;
+.planScrollTrack {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto 40px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
 }
 
-.flechaDer {
-  margin-right: 25%;
+.planScrollThumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 33%;
+  background: white;
+  border-radius: 999px;
+  transition: transform 0.1s linear;
 }
 
-.modal-body {
+.planCard {
+  position: relative;
+  flex: 1 1 280px;
+  min-width: 240px;
+  background-color: #272924;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px black;
+  display: flex;
+  flex-direction: column;
+}
+
+.planCard.planDestacado {
+  transform: translateY(-14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.planTag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background-color: white;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.planImg {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.planBody {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  color: white;
+  text-align: center;
+}
+
+.planTitle {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 26px;
+  margin: 0;
+}
+
+.planPrecio {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28px;
+  margin: -6px 0 0;
+}
+
+.planLista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  text-align: left;
+}
+.planLista li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: whitesmoke;
+  line-height: 1.4;
+  padding-left: 14px;
+  position: relative;
+}
+.planLista li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #87877F;
+}
+
+.planBtn {
+  margin-top: 6px;
+  text-align: center;
+  padding: 11px;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.planBtn:hover {
+  background-color: #4b4a4a;
+  color: white;
+}
+
+.planCard.planDestacado .planBtn {
+  background-color: white;
+  color: black;
+}
+.planCard.planDestacado .planBtn:hover {
   background-color: #C9C6C7;
 }
 
-.modal-header, .btnIniciarSesion {
+.modal-body {
+  background-color: #87877F;
+}
+
+.modal-header,
+.btnIniciarSesion {
   background-color: #272924;
   color: white;
 }
@@ -569,7 +811,8 @@ body {
   font-size: 17px !important;
 }
 
-.text-center, .crearCuenta {
+.text-center,
+.crearCuenta {
   font-family: "Oswald", sans-serif !important;
 }
 
@@ -622,7 +865,7 @@ body {
   .mainIndex {
     padding-top: 208px;
   }
-  .mainIndex h2 {
+  .mainIndex > h2 {
     margin-bottom: 3px;
     margin-top: -107px;
     font-size: 30px;
@@ -633,84 +876,79 @@ body {
   #carouselExampleSlidesOnly {
     height: 35dvh;
   }
-  .carouselImgCambios {
-    width: 97% !important;
-    margin-left: 7px;
+  .cambiosTitulo {
+    font-size: 27px;
+    padding-top: 24px;
   }
-  .flechaDerCambios {
-    margin-right: -14px;
+  .cambiosGrid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 14px 14px 34px;
   }
-  .flechaIzqCambios {
-    margin-left: -12px;
+  .cambiosGrid .cambioTile:nth-child(1) {
+    grid-column: span 2;
   }
-  .card1,
-  .card2,
-  .card3 {
-    margin: auto;
-    width: 79% !important;
-    margin-top: 65px;
-    max-width: none;
+  .cambiosGrid .cambioTile:nth-child(2),
+  .cambiosGrid .cambioTile:nth-child(3) {
+    grid-column: span 1;
   }
-  .card-text-index {
-    font-size: 16px;
+  .cambiosGrid .cambioTile:nth-child(4),
+  .cambiosGrid .cambioTile:nth-child(5) {
+    grid-column: span 2;
   }
-  .cardImgIndex {
-    height: 185px;
-    object-fit: cover;
+  .planesTitulo {
+    font-size: 27px;
+    padding: 16px 20px;
   }
-  .card-body-index {
-    margin-bottom: 10px;
-    padding: 15px;
+  .planRow {
+    padding: 30px 14px;
   }
-  .card-title-index,
-  .precio {
-    font-size: 23px;
-    margin-top: 0;
-  }
-  .btnIndex {
-    margin-bottom: -4px;
-    margin-top: -22px;
-  }
-  .flechaIzq {
-    margin-left: -6px;
-  }
-  .flechaDer {
-    margin-right: -6px;
-  }
-  .descripCambios {
-    font-size: 18px;
+  .planCard.planDestacado {
+    transform: none;
   }
   .combo img {
     object-fit: contain !important;
     background-color: #000;
+  }
+  .mainIndex h2::before {
+    width: 60px;
+  }
+  .mainIndex h2::after {
+    width: 60px;
   }
 }
 @media (min-width: 431px) and (max-width: 768px) {
   #carouselExampleSlidesOnly {
     height: 35dvh;
   }
-  .carouselImgCambios {
-    width: 86% !important;
-    margin-left: 7%;
+  .cambiosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cambiosGrid .cambioTile:nth-child(1) {
+    grid-column: span 2;
+  }
+  .cambiosGrid .cambioTile:nth-child(2),
+  .cambiosGrid .cambioTile:nth-child(3) {
+    grid-column: span 1;
+  }
+  .cambiosGrid .cambioTile:nth-child(4),
+  .cambiosGrid .cambioTile:nth-child(5) {
+    grid-column: span 2;
   }
   .combo img {
     object-fit: contain !important;
     background-color: #000;
   }
-  .flechaIzqCambios {
-    margin-left: -15px;
+  .planCard.planDestacado {
+    transform: none;
   }
-  .flechaDerCambios {
-    margin-right: -10px;
+  .mainIndex h2 {
+    font-size: 35px;
   }
-  .flechaIzq {
-    margin-left: 0%;
+  .mainIndex h2::before {
+    width: 60px;
   }
-  .flechaDer {
-    margin-right: 0%;
-  }
-  .descripCambios {
-    font-size: 18px;
+  .mainIndex h2::after {
+    width: 60px;
   }
 }
 .footer {

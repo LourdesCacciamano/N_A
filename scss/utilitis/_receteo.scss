@@ -2,3 +2,24 @@
     margin: 0;
     padding: 0;
 }
+
+// Aparición al scrollear: usado en index (carruseles, título de cambios,
+// cards, footer) — arranca invisible/corrido y sube al entrar en pantalla.
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

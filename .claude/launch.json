@@ -4,8 +4,8 @@
     {
       "name": "paginaWeb-NA",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["-y", "serve", ".", "-l", "5500"],
-      "port": 5500
+      "runtimeArgs": ["-y", "serve", ".", "-l", "5799"],
+      "port": 5799
     }
   ]
 }
