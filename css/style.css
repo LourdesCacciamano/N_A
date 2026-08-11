@@ -422,6 +422,7 @@ main {
   max-height: 350px;
   /* <--- Limita la altura del carrusel */
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .carInner,
