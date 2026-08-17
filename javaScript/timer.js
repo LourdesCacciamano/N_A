@@ -24,9 +24,9 @@ let enCuentaFinal = false;
 const TIMER_PREDEFINIDO = {
     entrenar: 30,
     rondas: 4,
-    descansar: 15,
+    descansar: 10,
     ciclos: 3,
-    descansarCiclo: 60
+    descansarCiclo: 20
 };
 
 function playBeep(reiniciar = false) {

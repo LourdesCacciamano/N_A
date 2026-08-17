@@ -94,8 +94,25 @@ async function cargarRutina() {
     }
 
     const tablaActivacion = document.getElementById("tablaActivacion");
+    const bloqueActivacion = document.getElementById("bloqueActivacion");
 
-    if (rutina.activacion && tablaActivacion) {
+    // Los títulos de cada grupo (ej: "Días 1 y 3") ya no se calculan solos:
+    // se cargan desde Firestore (rutina.activacion.grupoNTitulo). Tampoco
+    // hay un límite fijo de grupos: se leen todos los "grupoN" que existan
+    // (grupo1, grupo2, grupo3, grupo4...), para que cada usuario tenga
+    // tantos grupos como necesite.
+    const clavesGrupos = rutina.activacion
+        ? Object.keys(rutina.activacion)
+            .filter(k => /^grupo\d+$/.test(k) && rutina.activacion[k]?.length > 0)
+            .sort((a, b) => parseInt(a.slice(5), 10) - parseInt(b.slice(5), 10))
+        : [];
+    const tieneMovilidad = rutina.activacion?.movilidad?.length > 0;
+
+    if (!rutina.activacion || (clavesGrupos.length === 0 && !tieneMovilidad)) {
+        // sin activación cargada: no mostramos el bloque vacío
+        if (bloqueActivacion) bloqueActivacion.style.display = "none";
+    } else if (tablaActivacion) {
+        if (bloqueActivacion) bloqueActivacion.style.display = "";
 
         // 👉 armamos todo el HTML en un string primero, y recién al
         // final lo pisamos UNA sola vez (antes se hacía innerHTML +=
@@ -103,15 +120,6 @@ async function cargarRutina() {
         // cada vuelta del loop)
         let html = "";
         let contador = 1;
-
-        // Los títulos de cada grupo (ej: "Días 1 y 3") ya no se calculan
-        // solos: se cargan desde Firestore (rutina.activacion.grupoNTitulo).
-        // Tampoco hay un límite fijo de grupos: se leen todos los "grupoN"
-        // que existan en el documento (grupo1, grupo2, grupo3, grupo4...),
-        // para que cada usuario pueda tener tantos grupos como necesite.
-        const clavesGrupos = Object.keys(rutina.activacion)
-            .filter(k => /^grupo\d+$/.test(k) && rutina.activacion[k]?.length > 0)
-            .sort((a, b) => parseInt(a.slice(5), 10) - parseInt(b.slice(5), 10));
 
         // Si hay un solo grupo cargado, por default es porque la rutina
         // no separa por días: se llama "Todos los días" en vez de "Día 1".
@@ -130,7 +138,7 @@ async function cargarRutina() {
             });
         });
 
-        if (rutina.activacion.movilidad && rutina.activacion.movilidad.length > 0) {
+        if (tieneMovilidad) {
             const titulo = rutina.activacion.movilidadTitulo || "Movilidad";
 
             html += `<tr><td colspan="3" class="tituloGrupo">${titulo}</td></tr>`;
