@@ -2275,6 +2275,7 @@ tr:nth-child(even) {
 .mainTimer {
   min-height: 70vh;
   padding-top: 160px;
+  background-color: #C9C6C7;
 }
 
 .contenedorFlexTiempos {
